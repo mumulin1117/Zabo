@@ -57,6 +57,17 @@
                             <constraint firstAttribute="height" constant="260" id="aUC-fS-gra"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cb-OF-lRj">
+                        <rect key="frame" x="23" y="104" width="146" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="TYj-mD-XXC"/>
+                            <constraint firstAttribute="height" constant="20" id="n6Q-kz-Kpt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="expressiveP"/>
+                        <state key="selected" backgroundImage="exIOUpressiveP"/>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ER-yF-YtK">
                         <rect key="frame" x="15" y="363" width="60" height="23"/>
                         <constraints>
@@ -99,12 +110,14 @@
                 <constraint firstItem="F1W-em-MHL" firstAttribute="top" secondItem="ctY-gF-H9G" secondAttribute="bottom" constant="16" id="5LG-Ca-xtR"/>
                 <constraint firstItem="F4Q-am-cpW" firstAttribute="leading" secondItem="F1W-em-MHL" secondAttribute="leading" id="5XO-sV-dET"/>
                 <constraint firstItem="oHu-0p-A4a" firstAttribute="centerY" secondItem="F1W-em-MHL" secondAttribute="centerY" id="6pA-Vx-CNT"/>
+                <constraint firstItem="4xi-bn-uzn" firstAttribute="top" secondItem="0cb-OF-lRj" secondAttribute="top" constant="-9" id="8hB-41-4ZO"/>
                 <constraint firstItem="Tc2-7c-0Wi" firstAttribute="leading" secondItem="4ER-yF-YtK" secondAttribute="trailing" constant="23" id="9a0-Rt-XcS"/>
                 <constraint firstItem="4Lj-NF-ApC" firstAttribute="centerY" secondItem="F1W-em-MHL" secondAttribute="centerY" id="EXk-HP-anB"/>
                 <constraint firstAttribute="trailing" secondItem="ctY-gF-H9G" secondAttribute="trailing" id="H5r-HB-aL4"/>
                 <constraint firstItem="Tc2-7c-0Wi" firstAttribute="centerY" secondItem="4ER-yF-YtK" secondAttribute="centerY" id="IcZ-oB-Zhx"/>
                 <constraint firstItem="4xi-bn-uzn" firstAttribute="top" secondItem="F4Q-am-cpW" secondAttribute="bottom" constant="10" id="MvL-Ig-tKv"/>
                 <constraint firstItem="ctY-gF-H9G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ta4-A6-HRD"/>
+                <constraint firstItem="4xi-bn-uzn" firstAttribute="leading" secondItem="0cb-OF-lRj" secondAttribute="leading" constant="-8" id="acL-uD-j7y"/>
                 <constraint firstItem="F4Q-am-cpW" firstAttribute="trailing" secondItem="4Lj-NF-ApC" secondAttribute="trailing" id="bw3-dw-qs9"/>
                 <constraint firstItem="4ER-yF-YtK" firstAttribute="top" secondItem="4xi-bn-uzn" secondAttribute="bottom" constant="8" symbolic="YES" id="daq-ul-Hbe"/>
                 <constraint firstItem="4ER-yF-YtK" firstAttribute="leading" secondItem="4xi-bn-uzn" secondAttribute="leading" id="fCl-7J-277"/>
@@ -122,6 +135,8 @@
     </objects>
     <resources>
         <image name="KIjokll" width="84" height="28"/>
+        <image name="exIOUpressiveP" width="146" height="22"/>
+        <image name="expressiveP" width="146" height="22"/>
         <image name="moweirDarkn" width="24" height="24"/>
         <image name="scenComHER" width="24.333333969116211" height="24"/>
         <image name="sceneDirection" width="24" height="24.333333969116211"/>

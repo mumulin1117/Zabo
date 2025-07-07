@@ -104,7 +104,7 @@
                             <constraint firstItem="Nv3-WJ-rtu" firstAttribute="top" secondItem="BEa-8E-DCQ" secondAttribute="bottom" constant="4" id="uyZ-3h-sLH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="eop-C9-YRs"/>
+                    <tabBarItem key="tabBarItem" title="" image="paofho" selectedImage="paofho_dec" id="eop-C9-YRs"/>
                     <connections>
                         <outlet property="roleplayGuide" destination="rjK-qx-x41" id="HM2-dX-bt2"/>
                     </connections>
@@ -287,7 +287,7 @@
                             <constraint firstItem="zgV-NU-lTn" firstAttribute="trailing" secondItem="UlJ-kb-RBO" secondAttribute="trailing" constant="14" id="x26-nF-fLg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="lLM-7a-ibE"/>
+                    <tabBarItem key="tabBarItem" title="" image="sOSDK" selectedImage="sOSDK_dec" id="lLM-7a-ibE"/>
                     <connections>
                         <outlet property="roleplayGuide" destination="nGt-8w-wdv" id="X2R-cj-osj"/>
                     </connections>
@@ -305,13 +305,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-K2-Mut">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-Xn-4Qr">
                                 <rect key="frame" x="15" y="26" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="LIJ-dg-ebu"/>
-                                    <constraint firstAttribute="height" constant="24" id="zdb-fG-fvN"/>
+                                    <constraint firstAttribute="width" constant="24" id="V71-kZ-0A0"/>
+                                    <constraint firstAttribute="height" constant="24" id="wpq-uM-1Lu"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="NIuline"/>
@@ -323,7 +323,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maingroup" translatesAutoresizingMaskIntoConstraints="NO" id="8x7-cs-7B2">
-                                <rect key="frame" x="132.5" y="351" width="110" height="110"/>
+                                <rect key="frame" x="132.5" y="278.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="7XE-sa-l2t"/>
                                     <constraint firstAttribute="width" constant="110" id="eYv-IF-saW"/>
@@ -333,15 +333,14 @@
                         <viewLayoutGuide key="safeArea" id="LXS-bD-gzd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="L0P-Xn-4Qr" firstAttribute="top" secondItem="LXS-bD-gzd" secondAttribute="top" constant="6" id="2dR-BU-ofx"/>
                             <constraint firstItem="pzV-K2-Mut" firstAttribute="trailing" secondItem="LXS-bD-gzd" secondAttribute="trailing" id="3Fs-if-Obv"/>
                             <constraint firstItem="pzV-K2-Mut" firstAttribute="leading" secondItem="LXS-bD-gzd" secondAttribute="leading" id="3Xb-41-DwD"/>
-                            <constraint firstItem="L0P-Xn-4Qr" firstAttribute="leading" secondItem="LXS-bD-gzd" secondAttribute="leading" constant="15" id="LJl-tV-xzb"/>
-                            <constraint firstItem="VCF-E4-wiz" firstAttribute="centerY" secondItem="L0P-Xn-4Qr" secondAttribute="centerY" id="VrS-50-jMv"/>
                             <constraint firstItem="8x7-cs-7B2" firstAttribute="centerY" secondItem="cVt-Gv-YTd" secondAttribute="centerY" id="ZLs-4v-es0"/>
-                            <constraint firstItem="VCF-E4-wiz" firstAttribute="centerY" secondItem="cVt-Gv-YTd" secondAttribute="centerY" id="Zmc-uX-5UV"/>
+                            <constraint firstItem="VCF-E4-wiz" firstAttribute="centerY" secondItem="L0P-Xn-4Qr" secondAttribute="centerY" id="c49-PD-uyR"/>
+                            <constraint firstItem="L0P-Xn-4Qr" firstAttribute="leading" secondItem="LXS-bD-gzd" secondAttribute="leading" constant="15" id="dPy-q1-mM5"/>
                             <constraint firstItem="VCF-E4-wiz" firstAttribute="centerX" secondItem="cVt-Gv-YTd" secondAttribute="centerX" id="h6N-0W-oPk"/>
                             <constraint firstItem="pzV-K2-Mut" firstAttribute="top" secondItem="cVt-Gv-YTd" secondAttribute="top" id="hXE-6s-FBI"/>
-                            <constraint firstItem="L0P-Xn-4Qr" firstAttribute="top" secondItem="LXS-bD-gzd" secondAttribute="top" constant="6" id="sR1-fe-rre"/>
                             <constraint firstItem="8x7-cs-7B2" firstAttribute="centerX" secondItem="cVt-Gv-YTd" secondAttribute="centerX" id="sWm-6A-gM8"/>
                             <constraint firstItem="pzV-K2-Mut" firstAttribute="bottom" secondItem="LXS-bD-gzd" secondAttribute="bottom" id="x1h-46-YJa"/>
                         </constraints>
@@ -491,7 +490,7 @@
                             <constraint firstItem="OMt-VY-fT1" firstAttribute="top" secondItem="mpl-CD-G3X" secondAttribute="top" id="qSE-N6-sQR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="Wji-hg-fyF"/>
+                    <tabBarItem key="tabBarItem" title="" image="bellJIso" selectedImage="bellJIso_dec" id="Wji-hg-fyF"/>
                     <connections>
                         <outlet property="noenuill" destination="QRB-3b-cXZ" id="lwY-1h-Ah8"/>
                         <outlet property="roleplayGuide" destination="p53-4e-Q7W" id="RVW-v7-yNN"/>
@@ -511,7 +510,7 @@
                         <viewLayoutGuide key="safeArea" id="LeI-1I-j1s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="j73-bz-lV2"/>
+                    <tabBarItem key="tabBarItem" title="" image="centver" selectedImage="centver" id="j73-bz-lV2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ2-ej-Wm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -631,6 +630,7 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="Sjdyuim"/>
+                                <state key="selected" backgroundImage="Sjdyuimdf"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q19-ja-qeh">
                                 <rect key="frame" x="307" y="463" width="59" height="22"/>
@@ -906,7 +906,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z2Q-06-plt">
                                 <rect key="frame" x="16" y="112" width="343" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Data Collected
+                                <string key="text">Data Collected
 To enable immersive roleplay, Zabo collects:
 
 Voice/Video Data: Processed in real-time for conversations but not stored unless you save clips.
@@ -921,7 +921,7 @@ User Controls
 
 Delete persona profiles anytime in settings.
 Opt out of analytics via the "Privacy" tab.
-Contact zabo5566@gmail.com for data deletion requests.</mutableString>
+Contact zabo5566@gmail.com for data deletion requests.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -988,7 +988,7 @@ Contact zabo5566@gmail.com for data deletion requests.</mutableString>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eib-2L-Ogg">
                                 <rect key="frame" x="16" y="112" width="343" height="463"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">License Grant
+                                <string key="text">License Grant
 Zabo ("the App") grants you a limited, non-exclusive, revocable license to use its voice-based roleplay platform for personal, non-commercial purposes. This includes access to real-time conversations, persona creation tools, and community features.
 
 User Conduct Restrictions
@@ -1002,7 +1002,7 @@ Termination
 Zabo may terminate your access immediately if you violate these terms, with or without notice. Severe breaches (e.g., predatory behavior) may result in permanent bans and legal action.
 
 Updates &amp; Support
-The App may update features (e.g., new voice filters) without prior notice. Support is available at zabo5566@gmail.com.</mutableString>
+The App may update features (e.g., new voice filters) without prior notice. Support is available at zabo5566@gmail.com.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1088,7 +1088,7 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dJr-x0-Gy5">
                                 <rect key="frame" x="16" y="112" width="343" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">
+                                <string key="text">
 Eligibility
 Zabo is for users aged 13+. Minors must have parental consent for video features.
 
@@ -1109,7 +1109,7 @@ Key Highlights for Zabo’s Unique Needs
 
 Voice/Video Focus: Explicit consent clauses for real-time data.
 Roleplay-Specific Rules: Bans on deceptive impersonation.
-Community Safety: Age gates and content moderation emphasis.</mutableString>
+Community Safety: Age gates and content moderation emphasis.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1142,25 +1142,33 @@ Community Safety: Age gates and content moderation emphasis.</mutableString>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6dp-82-J4y"/>
+        <segue reference="kmY-Ym-nro"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Jiookil" width="30" height="30"/>
         <image name="NIuline" width="24" height="24"/>
         <image name="Pubualevel" width="32" height="32"/>
         <image name="Sjdyuim" width="217" height="36"/>
+        <image name="Sjdyuimdf" width="217" height="36"/>
+        <image name="bellJIso" width="24" height="24"/>
+        <image name="bellJIso_dec" width="24" height="40"/>
+        <image name="centver" width="44.5" height="44.5"/>
         <image name="fantasyCharacter" width="375" height="812"/>
-        <image name="groupRoleplay" width="38" height="36"/>
+        <image name="groupRoleplay" width="36" height="36"/>
         <image name="icon-bianji" width="14" height="14"/>
         <image name="icon-shezhi" width="24" height="24"/>
         <image name="maingroup" width="150.5" height="114.5"/>
         <image name="meiahufi" width="44.5" height="37.5"/>
+        <image name="paofho" width="24" height="24"/>
+        <image name="paofho_dec" width="24" height="40"/>
+        <image name="sOSDK" width="24" height="24"/>
+        <image name="sOSDK_dec" width="24" height="40"/>
         <image name="sceneSetting" width="375" height="812"/>
         <image name="sdvbhu" width="8" height="14"/>
         <image name="sevoicdulation" width="15" height="15"/>
         <image name="storyArc" width="63.5" height="38"/>
         <image name="userUaij" width="24" height="24"/>
-        <image name="userUaij_dec" width="24" height="24"/>
+        <image name="userUaij_dec" width="24" height="40"/>
         <image name="virostuatusHER" width="24.5" height="4.5"/>
         <image name="voicdulation" width="20" height="20"/>
         <systemColor name="labelColor">
