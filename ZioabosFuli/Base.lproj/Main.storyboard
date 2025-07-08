@@ -354,7 +354,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JrQ-dt-gbT">
             <objects>
-                <navigationController navigationBarHidden="YES" id="ONA-Qq-MyS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoaSionMain" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="ONA-Qq-MyS" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="mlf-F7-56j">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -689,7 +689,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7w2-po-8Vu">
             <objects>
-                <navigationController navigationBarHidden="YES" id="YMG-Fu-Uhu" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="MainNOrisiinlog" storyboardIdentifier="MainNOrisiinlog" navigationBarHidden="YES" id="YMG-Fu-Uhu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="D0Z-m9-qBP">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -749,6 +749,9 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sevoicdulation"/>
                                 <state key="selected" image="voicdulation"/>
+                                <connections>
+                                    <action selector="voiceReactions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77e-5f-9gW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="continue need to Agree to the " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4z-SM-KBh">
                                 <rect key="frame" x="45" y="618" width="176" height="16"/>
@@ -780,6 +783,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="voicePitchControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tWZ-SJ-wTA"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HP-W0-09K">
                                 <rect key="frame" x="24" y="432.5" width="327" height="50"/>
@@ -824,7 +830,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yU1-5a-JSi" kind="show" id="xTa-3m-bOJ"/>
+                                    <segue destination="yU1-5a-JSi" kind="show" id="aSR-WI-ROp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -866,6 +872,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="knS-uE-ozQ"/>
+                    <connections>
+                        <outlet property="audioEffects" destination="6HP-W0-09K" id="voU-mi-E8R"/>
+                        <outlet property="audioReactivity" destination="OaV-pQ-1eu" id="v0n-VF-B7S"/>
+                        <outlet property="backgroundAmbience" destination="FuU-Lz-JLJ" id="bO3-CI-Dlu"/>
+                        <outlet property="voiceActing" destination="yon-Vf-H6P" id="1e0-z0-efg"/>
+                        <outlet property="voiceCloning" destination="V1K-Ma-npE" id="Txb-PS-roM"/>
+                        <outlet property="voiceModulation" destination="kL1-Zt-xcn" id="ugY-jo-ddD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -890,6 +904,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="NIuline"/>
+                                <connections>
+                                    <segue destination="Abr-0V-rHe" kind="unwind" unwindAction="unwindBWithUnwindSegue:" id="G2y-Pg-8Ql"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-dQ-OKt">
                                 <rect key="frame" x="105.5" y="27" width="164" height="22"/>
@@ -936,7 +953,7 @@ Contact zabo5566@gmail.com for data deletion requests.</string>
                             <constraint firstItem="Nh8-el-R69" firstAttribute="trailing" secondItem="f16-Tb-0MV" secondAttribute="trailing" id="HVL-Wz-Ai3"/>
                             <constraint firstItem="DA0-Gw-Qxf" firstAttribute="leading" secondItem="f16-Tb-0MV" secondAttribute="leading" constant="15" id="HaR-Fk-vNT"/>
                             <constraint firstItem="8U7-dQ-OKt" firstAttribute="centerX" secondItem="ff5-L1-8xL" secondAttribute="centerX" id="JhT-yR-exw"/>
-                            <constraint firstItem="Nh8-el-R69" firstAttribute="bottom" secondItem="f16-Tb-0MV" secondAttribute="bottom" id="Lpp-4t-SDI"/>
+                            <constraint firstItem="Nh8-el-R69" firstAttribute="bottom" secondItem="ff5-L1-8xL" secondAttribute="bottom" id="Lpp-4t-SDI"/>
                             <constraint firstItem="Nh8-el-R69" firstAttribute="leading" secondItem="f16-Tb-0MV" secondAttribute="leading" id="PAj-0c-0Xh"/>
                             <constraint firstItem="DA0-Gw-Qxf" firstAttribute="top" secondItem="ONU-TX-XUF" secondAttribute="bottom" constant="20" id="QSV-6h-CPt"/>
                             <constraint firstItem="z2Q-06-plt" firstAttribute="top" secondItem="DA0-Gw-Qxf" secondAttribute="bottom" constant="22.5" id="WmL-Y3-S9s"/>
@@ -949,20 +966,20 @@ Contact zabo5566@gmail.com for data deletion requests.</string>
                     <navigationItem key="navigationItem" id="eia-30-gjU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tD-2e-9g5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Abr-0V-rHe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="737" y="301"/>
         </scene>
-        <!--View Controller-->
+        <!--Enhancementller-->
         <scene sceneID="aew-WV-9Qd">
             <objects>
-                <viewController id="yU1-5a-JSi" sceneMemberID="viewController">
+                <viewController id="yU1-5a-JSi" customClass="Enhancementller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7f4-ML-fco">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="tty-7c-Av8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="tty-7c-Av8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-Mu-6bf">
                                 <rect key="frame" x="15" y="26" width="24" height="24"/>
@@ -972,6 +989,9 @@ Contact zabo5566@gmail.com for data deletion requests.</string>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="NIuline"/>
+                                <connections>
+                                    <segue destination="BpV-Cd-SGX" kind="unwind" unwindAction="unwindBWithUnwindSegue:" id="eMy-us-124"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo ELUA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtA-vo-S6E">
                                 <rect key="frame" x="141" y="27" width="93" height="22"/>
@@ -985,7 +1005,7 @@ Contact zabo5566@gmail.com for data deletion requests.</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eib-2L-Ogg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eib-2L-Ogg">
                                 <rect key="frame" x="16" y="112" width="343" height="463"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">License Grant
@@ -1004,7 +1024,7 @@ Zabo may terminate your access immediately if you violate these terms, with or w
 Updates &amp; Support
 The App may update features (e.g., new voice filters) without prior notice. Support is available at zabo5566@gmail.com.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bd-Cn-mQc">
@@ -1013,6 +1033,9 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="characterCustomization:" destination="yU1-5a-JSi" eventType="touchUpInside" id="oPy-pK-U3u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-KI-39P">
                                 <rect key="frame" x="197.5" y="591" width="150.5" height="48"/>
@@ -1023,6 +1046,9 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Agree"/>
+                                <connections>
+                                    <action selector="personaCreation:" destination="yU1-5a-JSi" eventType="touchUpInside" id="pgV-kH-Kkk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M2G-9d-EEd"/>
@@ -1036,20 +1062,29 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                             <constraint firstItem="72t-k4-xGg" firstAttribute="top" secondItem="TkG-Mu-6bf" secondAttribute="bottom" constant="20" id="F6R-Af-M02"/>
                             <constraint firstItem="5bd-Cn-mQc" firstAttribute="height" secondItem="zt5-KI-39P" secondAttribute="height" id="JlQ-FN-1fX"/>
                             <constraint firstItem="M2G-9d-EEd" firstAttribute="trailing" secondItem="eib-2L-Ogg" secondAttribute="trailing" constant="16" id="L40-EN-6p3"/>
+                            <constraint firstItem="tty-7c-Av8" firstAttribute="leading" secondItem="M2G-9d-EEd" secondAttribute="leading" id="Mb9-Uq-GS1"/>
                             <constraint firstItem="M2G-9d-EEd" firstAttribute="trailing" secondItem="zt5-KI-39P" secondAttribute="trailing" constant="27" id="NZO-3s-by0"/>
                             <constraint firstItem="5bd-Cn-mQc" firstAttribute="width" secondItem="zt5-KI-39P" secondAttribute="width" id="Omk-OF-8rG"/>
                             <constraint firstItem="WtA-vo-S6E" firstAttribute="centerX" secondItem="7f4-ML-fco" secondAttribute="centerX" id="S5r-j9-DyV"/>
+                            <constraint firstItem="tty-7c-Av8" firstAttribute="bottom" secondItem="7f4-ML-fco" secondAttribute="bottom" id="XLJ-Wl-HkJ"/>
                             <constraint firstItem="TkG-Mu-6bf" firstAttribute="top" secondItem="M2G-9d-EEd" secondAttribute="top" constant="6" id="bm0-r9-nxT"/>
                             <constraint firstItem="M2G-9d-EEd" firstAttribute="bottom" secondItem="zt5-KI-39P" secondAttribute="bottom" constant="28" id="ejx-2S-b9F"/>
+                            <constraint firstItem="tty-7c-Av8" firstAttribute="trailing" secondItem="M2G-9d-EEd" secondAttribute="trailing" id="ffa-pJ-H6E"/>
                             <constraint firstItem="zt5-KI-39P" firstAttribute="top" secondItem="eib-2L-Ogg" secondAttribute="bottom" constant="16" id="ghX-lH-0y3"/>
                             <constraint firstItem="eib-2L-Ogg" firstAttribute="leading" secondItem="M2G-9d-EEd" secondAttribute="leading" constant="16" id="kL8-tp-rzA"/>
+                            <constraint firstItem="tty-7c-Av8" firstAttribute="top" secondItem="7f4-ML-fco" secondAttribute="top" id="tqK-fA-1WV"/>
                             <constraint firstItem="72t-k4-xGg" firstAttribute="leading" secondItem="M2G-9d-EEd" secondAttribute="leading" constant="15" id="w8M-Cf-NRb"/>
                             <constraint firstItem="zt5-KI-39P" firstAttribute="leading" secondItem="5bd-Cn-mQc" secondAttribute="trailing" constant="20" id="wZP-GE-PMr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1aN-ZQ-wfb"/>
+                    <connections>
+                        <outlet property="audioLatency" destination="zt5-KI-39P" id="yFh-3D-PGM"/>
+                        <outlet property="voiceMorphing" destination="5bd-Cn-mQc" id="kbA-73-ept"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1e-VS-piS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BpV-Cd-SGX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="744.79999999999995" y="-1015.1424287856073"/>
         </scene>
@@ -1072,6 +1107,9 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="NIuline"/>
+                                <connections>
+                                    <segue destination="QeL-dM-VDR" kind="unwind" unwindAction="unwindBWithUnwindSegue:" id="SAV-hx-TXL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo User Agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-vK-8is">
                                 <rect key="frame" x="95.5" y="27" width="184.5" height="22"/>
@@ -1131,12 +1169,13 @@ Community Safety: Age gates and content moderation emphasis.</string>
                             <constraint firstItem="zff-tn-GKP" firstAttribute="leading" secondItem="GLd-LC-kIv" secondAttribute="leading" constant="15" id="iDg-R9-rt5"/>
                             <constraint firstItem="dJr-x0-Gy5" firstAttribute="top" secondItem="7ne-CT-nd8" secondAttribute="bottom" constant="22.5" id="kPB-Pw-kIJ"/>
                             <constraint firstItem="GLd-LC-kIv" firstAttribute="trailing" secondItem="dJr-x0-Gy5" secondAttribute="trailing" constant="16" id="uOi-g5-pI2"/>
-                            <constraint firstItem="ByX-Rw-ObC" firstAttribute="bottom" secondItem="GLd-LC-kIv" secondAttribute="bottom" id="xGd-CO-QgP"/>
+                            <constraint firstItem="ByX-Rw-ObC" firstAttribute="bottom" secondItem="Ls4-Hu-KFk" secondAttribute="bottom" id="xGd-CO-QgP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qsg-nl-Qwu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgC-ep-oIR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="QeL-dM-VDR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="738" y="-374"/>
         </scene>
