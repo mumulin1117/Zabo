@@ -51,7 +51,7 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4xi-bn-uzn">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4xi-bn-uzn">
                         <rect key="frame" x="15" y="95" width="507" height="260"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="260" id="aUC-fS-gra"/>
@@ -76,7 +76,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="  0" image="sceneDirection"/>
+                        <state key="normal" title="  0" image="IconBasrdomenf">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <state key="selected" image="sceneDirectionHER"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-7c-0Wi">
@@ -87,7 +89,9 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="  0" image="scenComHER"/>
+                        <state key="normal" title="  0" image="IconHieComenf">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <state key="selected" image="sceneDirectionHER"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc2-an-YLf">
@@ -101,6 +105,15 @@
                         <state key="normal" image="moweirDarkn"/>
                         <state key="selected" image="sceneDirectionHER"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQU-I3-Vvs">
+                        <rect key="frame" x="130" y="107" width="39" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="39" id="8QX-Jj-Pv8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -112,6 +125,7 @@
                 <constraint firstItem="oHu-0p-A4a" firstAttribute="centerY" secondItem="F1W-em-MHL" secondAttribute="centerY" id="6pA-Vx-CNT"/>
                 <constraint firstItem="4xi-bn-uzn" firstAttribute="top" secondItem="0cb-OF-lRj" secondAttribute="top" constant="-9" id="8hB-41-4ZO"/>
                 <constraint firstItem="Tc2-7c-0Wi" firstAttribute="leading" secondItem="4ER-yF-YtK" secondAttribute="trailing" constant="23" id="9a0-Rt-XcS"/>
+                <constraint firstItem="kQU-I3-Vvs" firstAttribute="centerY" secondItem="0cb-OF-lRj" secondAttribute="centerY" id="AEM-da-M34"/>
                 <constraint firstItem="4Lj-NF-ApC" firstAttribute="centerY" secondItem="F1W-em-MHL" secondAttribute="centerY" id="EXk-HP-anB"/>
                 <constraint firstAttribute="trailing" secondItem="ctY-gF-H9G" secondAttribute="trailing" id="H5r-HB-aL4"/>
                 <constraint firstItem="Tc2-7c-0Wi" firstAttribute="centerY" secondItem="4ER-yF-YtK" secondAttribute="centerY" id="IcZ-oB-Zhx"/>
@@ -120,6 +134,7 @@
                 <constraint firstItem="4xi-bn-uzn" firstAttribute="leading" secondItem="0cb-OF-lRj" secondAttribute="leading" constant="-8" id="acL-uD-j7y"/>
                 <constraint firstItem="F4Q-am-cpW" firstAttribute="trailing" secondItem="4Lj-NF-ApC" secondAttribute="trailing" id="bw3-dw-qs9"/>
                 <constraint firstItem="4ER-yF-YtK" firstAttribute="top" secondItem="4xi-bn-uzn" secondAttribute="bottom" constant="8" symbolic="YES" id="daq-ul-Hbe"/>
+                <constraint firstItem="kQU-I3-Vvs" firstAttribute="trailing" secondItem="0cb-OF-lRj" secondAttribute="trailing" id="egr-dX-qBz"/>
                 <constraint firstItem="4ER-yF-YtK" firstAttribute="leading" secondItem="4xi-bn-uzn" secondAttribute="leading" id="fCl-7J-277"/>
                 <constraint firstItem="vc2-an-YLf" firstAttribute="centerY" secondItem="Tc2-7c-0Wi" secondAttribute="centerY" id="h03-Yb-W7G"/>
                 <constraint firstItem="oHu-0p-A4a" firstAttribute="leading" secondItem="F1W-em-MHL" secondAttribute="trailing" constant="9" id="hWf-gD-0vc"/>
@@ -130,16 +145,27 @@
                 <constraint firstItem="vc2-an-YLf" firstAttribute="trailing" secondItem="4xi-bn-uzn" secondAttribute="trailing" id="u1I-FS-NlM"/>
             </constraints>
             <size key="customSize" width="537" height="406"/>
+            <connections>
+                <outlet property="Precision" destination="F4Q-am-cpW" id="j3c-he-FhE"/>
+                <outlet property="anatomicalStudy" destination="0cb-OF-lRj" id="kon-mK-Y4l"/>
+                <outlet property="dynamicPose" destination="4Lj-NF-ApC" id="5aT-vd-10c"/>
+                <outlet property="fabricFolds" destination="4xi-bn-uzn" id="CtY-yg-FrN"/>
+                <outlet property="geometric" destination="oHu-0p-A4a" id="wLc-x5-JKq"/>
+                <outlet property="glassTransparency" destination="Tc2-7c-0Wi" id="FDW-TT-uHl"/>
+                <outlet property="metalReflection" destination="4ER-yF-YtK" id="Whk-24-w0p"/>
+                <outlet property="organicShapes" destination="F1W-em-MHL" id="3oc-rL-Pbk"/>
+                <outlet property="woodGrain" destination="vc2-an-YLf" id="JYf-4E-Cdp"/>
+            </connections>
             <point key="canvasLocation" x="267.93893129770993" y="144.36619718309859"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="IconBasrdomenf" width="24" height="24"/>
+        <image name="IconHieComenf" width="24" height="24"/>
         <image name="KIjokll" width="84" height="28"/>
         <image name="exIOUpressiveP" width="146" height="22"/>
         <image name="expressiveP" width="146" height="22"/>
         <image name="moweirDarkn" width="24" height="24"/>
-        <image name="scenComHER" width="24.333333969116211" height="24"/>
-        <image name="sceneDirection" width="24" height="24.333333969116211"/>
         <image name="sceneDirectionHER" width="24.333333969116211" height="24"/>
     </resources>
 </document>

@@ -19,6 +19,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-t9-gbf">
                         <rect key="frame" x="0.0" y="0.0" width="429" height="375"/>
+                        <color key="backgroundColor" red="0.48627450979999998" green="0.13725490200000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjX-m6-ERn">
                         <rect key="frame" x="396" y="13" width="20" height="20"/>
@@ -29,13 +30,6 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="voiceActing"/>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voiceTimbre" translatesAutoresizingMaskIntoConstraints="NO" id="dXp-aW-8Ej">
-                        <rect key="frame" x="182.66666666666666" y="155.66666666666666" width="64" height="64"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="64" id="iKi-84-vyt"/>
-                            <constraint firstAttribute="width" constant="64" id="rjP-9I-6S4"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQf-GJ-PTi">
                         <rect key="frame" x="15" y="343" width="343" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -113,7 +107,6 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="dXp-aW-8Ej" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1Hw-nr-sKd"/>
                 <constraint firstAttribute="trailing" secondItem="mYa-t9-gbf" secondAttribute="trailing" id="1x0-Hr-Hg0"/>
                 <constraint firstItem="vel-e1-kv0" firstAttribute="leading" secondItem="XQf-GJ-PTi" secondAttribute="trailing" constant="8" symbolic="YES" id="2M6-p8-ux0"/>
                 <constraint firstItem="XQf-GJ-PTi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="4uW-DS-QJJ"/>
@@ -126,11 +119,17 @@
                 <constraint firstItem="Qhv-Xc-XWN" firstAttribute="leading" secondItem="XQf-GJ-PTi" secondAttribute="leading" id="ifv-ZM-31n"/>
                 <constraint firstItem="mYa-t9-gbf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="j5C-94-BEl"/>
                 <constraint firstAttribute="bottom" secondItem="vel-e1-kv0" secondAttribute="bottom" constant="14" id="oDN-D0-MAt"/>
-                <constraint firstItem="dXp-aW-8Ej" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="rg7-0H-mif"/>
                 <constraint firstItem="Qhv-Xc-XWN" firstAttribute="trailing" secondItem="XQf-GJ-PTi" secondAttribute="trailing" id="sAE-ca-ybv"/>
                 <constraint firstAttribute="trailing" secondItem="rjX-m6-ERn" secondAttribute="trailing" constant="13" id="tqq-3Q-rsI"/>
             </constraints>
             <size key="customSize" width="429" height="375"/>
+            <connections>
+                <outlet property="antiExploitation" destination="mYa-t9-gbf" id="WRM-BE-u5G"/>
+                <outlet property="antiHarassment" destination="vel-e1-kv0" id="xt8-jX-pch"/>
+                <outlet property="behavioralAnalysis" destination="XQf-GJ-PTi" id="rCJ-X0-j8Q"/>
+                <outlet property="trustAndSafety" destination="rjX-m6-ERn" id="o9O-gk-48p"/>
+                <outlet property="userVerification" destination="Qhv-Xc-XWN" id="jKc-2S-qf1"/>
+            </connections>
             <point key="canvasLocation" x="135.1145038167939" y="101.7605633802817"/>
         </collectionViewCell>
     </objects>
@@ -139,6 +138,5 @@
         <image name="sceneDirection" width="24" height="24.333333969116211"/>
         <image name="viroComHER" width="24.333333969116211" height="24"/>
         <image name="voiceActing" width="20" height="20"/>
-        <image name="voiceTimbre" width="64" height="64"/>
     </resources>
 </document>

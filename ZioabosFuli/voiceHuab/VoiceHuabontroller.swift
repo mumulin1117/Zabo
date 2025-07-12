@@ -4,7 +4,7 @@
 //
 //  Created by mumu on 2025/7/5.
 //
-
+import SVProgressHUD
 import UIKit
 //log in
 class VoiceHuabontroller: UIViewController {
@@ -54,7 +54,64 @@ class VoiceHuabontroller: UIViewController {
     @IBAction func unwindB(unwindSegue: UIStoryboardSegue) {  }
 
     @IBAction func voicePitchControl(_ sender: UIButton) {
+        if voiceCloning.isSelected == true {
+            guard let antiExploitation = voiceModulation.text,antiExploitation.isEmpty == false else{
+                SVProgressHUD.showInfo(withStatus: "Please enter your email first!")
+                
+                return
+            }
+            
+            
+            guard let antiSpam = audioEffects.text,antiSpam.isEmpty == false else{
+                SVProgressHUD.showInfo(withStatus: "Please enter your password first!")
+                
+                return
+            }
+            guard let antiHarassment = UserDefaults.standard.object(forKey: antiExploitation) else {
+                ////如果邮箱id，对应的值不存在。则是注册
+                let trustAndSafety = ["auIDG":antiExploitation,
+                             "audioClarity":"No name",
+                            
+                             "auuserBreCla":"No Signature",
+                             "auusAblan":"0"]
+                
+                UserDefaults.standard.set(trustAndSafety, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
+                UserDefaults.standard.set(trustAndSafety, forKey: antiExploitation)//存储到已经存在的账户
+                SVProgressHUD.show(withStatus: "Sign in.....")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
+                    AppDelegate.accessibilityOptions(darkMode: true)
+                    
+                    SVProgressHUD.showSuccess(withStatus: "Create Account successful!")
+                    
+                }))
+                return
+            }
+            
+            //如果邮箱id，对应的值存在。则是登陆
+            UserDefaults.standard.set(antiHarassment, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
+           
+            
+            SVProgressHUD.show(withStatus: "login.....")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
+                
+                AppDelegate.accessibilityOptions(darkMode: true)
+                SVProgressHUD.showSuccess(withStatus: "Log in successful!")
+            }))
+            
+            
+            
+            
+            
+            
+            
+            
+        }else{
+            trustAndSafety()
+        }
+        
     }
     
-
+    private func trustAndSafety()  {
+        SVProgressHUD.showInfo(withStatus: "Please read our privacy policy and user first")
+    }
 }

@@ -30,6 +30,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="NIuline"/>
+                    <connections>
+                        <action selector="OIDShu:" destination="-1" eventType="touchUpInside" id="9iq-QT-OaO"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CharBuild AI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGl-od-3pG">
                     <rect key="frame" x="130.66666666666666" y="65.666666666666671" width="131.99999999999997" height="23"/>

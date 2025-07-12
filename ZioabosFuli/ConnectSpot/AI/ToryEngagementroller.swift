@@ -9,21 +9,20 @@ import UIKit
 
 class ToryEngagementroller: UIViewController {
 
+    @IBOutlet weak var ramaticPerformance: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        voiceModulation()
+        ramaticPerformance.layer.masksToBounds = true
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func voiceModulation()  {
+        ramaticPerformance.layer.cornerRadius = 25
     }
-    */
+
+    @IBAction func OIDShu(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }

@@ -19,6 +19,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eMg-cg-HdC">
                         <rect key="frame" x="0.0" y="0.0" width="284" height="333"/>
+                        <color key="backgroundColor" red="0.50196078430000002" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n23-xh-Qb1">
                         <rect key="frame" x="256" y="8" width="20" height="20"/>
@@ -62,6 +63,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="1YM-fd-Xzz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="6oC-4f-yGV"/>
                 <constraint firstAttribute="trailing" secondItem="gMl-0h-Fay" secondAttribute="trailing" constant="8" id="D2p-r7-f6a"/>
@@ -81,6 +83,14 @@
                 <constraint firstItem="tiS-XL-wM5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="vtH-7C-qfu"/>
             </constraints>
             <size key="customSize" width="284" height="333"/>
+            <connections>
+                <outlet property="audioLatency" destination="xR0-6q-zst" id="h0d-6r-VXo"/>
+                <outlet property="backgroundAmbience" destination="eMg-cg-HdC" id="mpM-yL-Oy1"/>
+                <outlet property="characterAlignment" destination="1YM-fd-Xzz" id="NaH-0m-vbx"/>
+                <outlet property="roleplayGuidelines" destination="gMl-0h-Fay" id="KLE-05-cY3"/>
+                <outlet property="storySeeds" destination="n23-xh-Qb1" id="ynC-GR-KIn"/>
+                <outlet property="voiceMorphing" destination="tiS-XL-wM5" id="31C-gQ-Ix6"/>
+            </connections>
             <point key="canvasLocation" x="16.793893129770993" y="120.07042253521128"/>
         </collectionViewCell>
     </objects>

@@ -10,12 +10,11 @@ import SwiftyStoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var momomicMIAJ = Array<Dictionary<String,String>>()
-    static var lognCacheing:UIImage = UIImage(named: "MJAIuxiang")!
-    static var lognFacing:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
-    static var lognfolloweing:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
+    static var themeCustomization = Array<Dictionary<String,String>>()
+    static var Metrics:UIImage = UIImage(named: "ZaboIO")!
+    static var featureDiscovery:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
+    static var contextualTips:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
    
-    
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -26,46 +25,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func performanique() {
-        let loadArtatud = UserDefaults.standard.bool(forKey: "MJAILoadtatus")//是否已经下载过app
-        if loadArtatud == false {
+        let abusePrevention = UserDefaults.standard.bool(forKey: "MJAILoadtatus")//是否已经下载过app
+        if abusePrevention == false {
             seting_initloadApp_Wind()
         }
  
-        let loginstatud = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
-        purMIAKchase()
-        AppDelegate.initRootCnotrollerAppWind(ifsignin: loginstatud != nil)
+        let trustAndSafety = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
+        userVerification()
+        AppDelegate.accessibilityOptions(darkMode: trustAndSafety != nil)
     }
 
     
     
     func seting_initloadApp_Wind()  {
         //设置test账号
-        let Adbop = ["auIDG":"zabo@gmail.com",
+        let refine = ["auIDG":"zabo@gmail.com",
                      "audioClarity":"Zabao",
                     
                      "auuserBreCla":"Like Film,Book",
                      "auusAblan":"134"]
         
-        UserDefaults.standard.set(Adbop, forKey: "zabo@gmail.com")
+        UserDefaults.standard.set(refine, forKey: "zabo@gmail.com")
         //已经下载过
         UserDefaults.standard.set(true, forKey: "MJAILoadtatus")
     }
     
-    func purMIAKchase() {
-        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+    func userVerification() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { antiHarassment in
            
-            for aitmt in resultPaying {
-                switch aitmt.transaction.transactionState {
+            for antint in antiHarassment {
+                switch antint.transaction.transactionState {
                 case .purchased, .restored:
                    
-                    let miaj = aitmt.transaction.downloads
+                    let antiEx = antint.transaction.downloads
                     
-                    if !miaj.isEmpty  {
+                    if !antiEx.isEmpty  {
                    
-                        SwiftyStoreKit.start(miaj)
-                    } else if aitmt.needsFinishTransaction {
+                        SwiftyStoreKit.start(antiEx)
+                    } else if antint.needsFinishTransaction {
                       
-                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
+                        SwiftyStoreKit.finishTransaction(antint.transaction)
                     }
                 case .failed, .purchasing, .deferred:
                     break
@@ -77,25 +76,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    class func initRootCnotrollerAppWind(ifsignin:Bool)  {
-        guard let patPlisth = Bundle.main.path(forResource: "KuakiXApo", ofType: "plist"),
-        let relaop = FileManager.default.contents(atPath: patPlisth) else {
+    class func accessibilityOptions(darkMode:Bool)  {
+        guard let tutorialPrompts = Bundle.main.path(forResource: "KuakiXApo", ofType: "plist"),
+        let voiceTutorials = FileManager.default.contents(atPath: tutorialPrompts) else {
             return
         }
-        if let dictArray = try? PropertyListSerialization.propertyList(from: relaop, options: [], format: nil) as? [[String: String]]  {
-            AppDelegate.momomicMIAJ = dictArray
+        if let interactiveHelp = try? PropertyListSerialization.propertyList(from: voiceTutorials, options: [], format: nil) as? [[String: String]]  {
+            AppDelegate.themeCustomization = interactiveHelp
         }
-        if ifsignin {
+        if darkMode {
             
-            let  cheicking =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
+            let  userJourney =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
             
-            (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = cheicking
+            (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = userJourney
             
-            let loginstatud = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? [String:String]
-            if loginstatud?["auIDG"] == "zabo@gmail.com" {
-                AppDelegate.lognCacheing = UIImage(named: "mepsuhotert")!
-                AppDelegate.lognFacing = Array(AppDelegate.momomicMIAJ.prefix(1))
-                AppDelegate.lognfolloweing = Array(AppDelegate.momomicMIAJ.suffix(1))
+            let ificationPreferen = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? [String:String]
+            if ificationPreferen?["auIDG"] == "zabo@gmail.com" {
+                AppDelegate.Metrics = UIImage(named: "mepsuhotert")!
+                AppDelegate.featureDiscovery = Array(AppDelegate.themeCustomization.prefix(1))
+                AppDelegate.contextualTips = Array(AppDelegate.themeCustomization.suffix(1))
             }
         }else{
             

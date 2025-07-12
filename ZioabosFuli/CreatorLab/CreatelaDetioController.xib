@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatelaDetioController" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
+                <outlet property="antiExploitation" destination="V63-Nt-3QN" id="OQv-h9-EFl"/>
+                <outlet property="darkMode" destination="H4O-gg-LjF" id="BlH-Yp-TTg"/>
+                <outlet property="interactiveHelp" destination="2aX-fv-Y1N" id="XRa-md-ORH"/>
+                <outlet property="privacyControls" destination="CMs-3U-q80" id="TG6-cL-gLK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +34,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="NIuline"/>
+                    <connections>
+                        <action selector="OIDShu:" destination="-1" eventType="touchUpInside" id="CAx-3Y-esU"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo ELUA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMs-3U-q80">
                     <rect key="frame" x="96" y="72.666666666666671" width="74.333333333333314" height="17"/>
@@ -37,7 +44,7 @@
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V63-Nt-3QN">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V63-Nt-3QN">
                     <rect key="frame" x="52" y="63" width="36" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="YAw-YN-nCa"/>
@@ -52,6 +59,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="KIjokll"/>
+                    <connections>
+                        <action selector="tutorialPrompts:" destination="-1" eventType="touchUpInside" id="Z3y-F2-GTT"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2aX-fv-Y1N">
                     <rect key="frame" x="15" y="125" width="363" height="595"/>
@@ -77,6 +87,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="sceneRealism"/>
+                            <connections>
+                                <action selector="accessibilityOptions:" destination="-1" eventType="touchUpInside" id="eE4-4Q-wEf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

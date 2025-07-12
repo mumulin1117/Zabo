@@ -8,6 +8,41 @@
 import UIKit
 
 class StoryBabuStageontroller: UIViewController {
+    var ifChiej:Int = 0
+    
+ 
+    
+    @IBOutlet weak var scroindiView: UIImageView!
+    
+  
+   
+    @IBAction func impressionisticStyle(_ sender: UIButton) {
+        expressionisticStroke()
+        sender.isSelected = true
+        scroindiView .center.x = sender.center.x
+        if sender.tag == 40 {
+            ifChiej = 0
+        }else{
+            ifChiej = 1
+        }
+        
+        self.roleplayGuide.reloadData()
+    }
+    
+    private func expressionisticStroke()  {
+        let cStroke = self.view.viewWithTag(40) as? UIButton
+        cStroke?.isSelected = false
+        let cStroke1 = self.view.viewWithTag(50) as? UIButton
+        cStroke1?.isSelected = false
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     
     @IBOutlet weak var noenuill: UIImageView!
     
@@ -38,11 +73,7 @@ class StoryBabuStageontroller: UIViewController {
         roleplayGuide.register(UINib.init(nibName: "StoryBabuSmeaCell", bundle: nil), forCellWithReuseIdentifier: "StoryBabuSmeaCell")
         roleplayGuide.showsVerticalScrollIndicator = false
     }
-    
-    //message
-    @IBAction func interactiveScene(_ sender: UIButton) {
-    }
-    
+
    
 
 }

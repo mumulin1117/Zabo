@@ -9,6 +9,6 @@ target 'ZioabosFuli' do
 pod 'SwiftyStoreKit'
 pod 'SnapKit'
 pod "SVProgressHUD"
-
+pod 'SDCycleScrollView'
 pod "IQKeyboardManager"
 end

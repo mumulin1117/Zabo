@@ -26,6 +26,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="caninilinf"/>
+                    <connections>
+                        <action selector="OIDShu:" destination="-1" eventType="touchUpInside" id="sx9-IP-nn4"/>
+                    </connections>
                 </button>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBG-L9-KwO">
                     <rect key="frame" x="126.66666666666669" y="414" width="140" height="140"/>

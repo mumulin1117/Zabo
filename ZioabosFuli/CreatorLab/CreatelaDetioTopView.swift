@@ -9,12 +9,21 @@ import UIKit
 
 class CreatelaDetioTopView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var antiExploitation: UIImageView!
+    
+
+    @IBOutlet weak var aimagheuti: UIImageView!
+    
+    @IBOutlet weak var trustAndSafety: UIButton!
+    
+    
+    @IBOutlet weak var userVerification: UILabel!
+    
+    
+    @IBOutlet weak var behavioralAnalysis: UILabel!
+    
+    
+    
+    @IBOutlet weak var antiHarassment: UIView!
 
 }
