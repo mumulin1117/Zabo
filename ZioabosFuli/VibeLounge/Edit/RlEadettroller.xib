@@ -11,7 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RlEadettroller" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
+                <outlet property="audioClarity" destination="zYU-ED-EVP" id="xrX-Ja-cEj"/>
+                <outlet property="audioQuality" destination="eeP-y8-74O" id="uPI-3F-urb"/>
+                <outlet property="realTimeFeedback" destination="16O-ni-l9k" id="fUC-35-OrM"/>
+                <outlet property="storyTexture" destination="iXM-G0-tTo" id="51o-nh-9HM"/>
                 <outlet property="view" destination="YVD-1R-thQ" id="Rik-rA-ZuK"/>
+                <outlet property="voiceStyle" destination="7k9-Ta-R8E" id="0Qy-03-mj1"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -45,7 +50,10 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Log in"/>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="dynamicddDialoguefsFor:" destination="-1" eventType="touchUpInside" id="Ple-n7-z0Z"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Character Bio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYU-ED-EVP">
                     <rect key="frame" x="24" y="599" width="345" height="50"/>
@@ -91,6 +99,20 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="NIuline"/>
+                    <connections>
+                        <action selector="Higuas:" destination="-1" eventType="touchUpInside" id="wb3-jT-ajH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXM-G0-tTo">
+                    <rect key="frame" x="166.66666666666666" y="428" width="60" height="25"/>
+                    <color key="backgroundColor" red="0.50196078430000002" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="H4p-Ny-QFZ"/>
+                        <constraint firstAttribute="height" constant="25" id="bMX-Zo-LfX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Edit" image="icon-bianji"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="gWa-XC-EZn"/>
@@ -106,6 +128,7 @@
                 <constraint firstItem="aaB-gD-Uql" firstAttribute="trailing" secondItem="gWa-XC-EZn" secondAttribute="trailing" id="KSa-21-NyV"/>
                 <constraint firstItem="XW0-7i-Gef" firstAttribute="leading" secondItem="vRx-Eh-JM0" secondAttribute="leading" id="O7L-79-ke2"/>
                 <constraint firstItem="16O-ni-l9k" firstAttribute="trailing" secondItem="zYU-ED-EVP" secondAttribute="trailing" id="OYw-i9-Hw2"/>
+                <constraint firstItem="iXM-G0-tTo" firstAttribute="top" secondItem="eeP-y8-74O" secondAttribute="bottom" constant="-14" id="S9p-n2-ozh"/>
                 <constraint firstItem="yRC-1s-93U" firstAttribute="centerY" secondItem="Pre-SN-KJh" secondAttribute="centerY" id="Td8-EM-Cbx"/>
                 <constraint firstItem="aaB-gD-Uql" firstAttribute="top" secondItem="eeP-y8-74O" secondAttribute="top" constant="50" id="V3q-FC-phI"/>
                 <constraint firstItem="16O-ni-l9k" firstAttribute="leading" secondItem="zYU-ED-EVP" secondAttribute="leading" id="VeN-3P-cZx"/>
@@ -117,6 +140,7 @@
                 <constraint firstItem="Z2k-mT-1Wq" firstAttribute="top" secondItem="YVD-1R-thQ" secondAttribute="top" id="fiq-HF-0xe"/>
                 <constraint firstItem="eeP-y8-74O" firstAttribute="centerX" secondItem="aaB-gD-Uql" secondAttribute="centerX" id="hg4-n9-oPd"/>
                 <constraint firstItem="7k9-Ta-R8E" firstAttribute="leading" secondItem="gWa-XC-EZn" secondAttribute="leading" constant="15" id="ijT-5D-Rih"/>
+                <constraint firstItem="iXM-G0-tTo" firstAttribute="centerX" secondItem="eeP-y8-74O" secondAttribute="centerX" id="iwx-vQ-N0l"/>
                 <constraint firstItem="Z2k-mT-1Wq" firstAttribute="leading" secondItem="gWa-XC-EZn" secondAttribute="leading" id="nfx-ez-N8o"/>
                 <constraint firstItem="gWa-XC-EZn" firstAttribute="trailing" secondItem="zYU-ED-EVP" secondAttribute="trailing" constant="24" id="oNX-LJ-Qb9"/>
                 <constraint firstItem="gWa-XC-EZn" firstAttribute="trailing" secondItem="7k9-Ta-R8E" secondAttribute="trailing" constant="15" id="pB7-u0-GN9"/>
@@ -129,6 +153,7 @@
     <resources>
         <image name="NIuline" width="24" height="24"/>
         <image name="fantasyCharacter" width="375" height="812"/>
+        <image name="icon-bianji" width="14" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

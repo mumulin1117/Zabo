@@ -74,6 +74,11 @@
                 <constraint firstItem="8mD-l5-A3t" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xp1-mO-3AI"/>
             </constraints>
             <size key="customSize" width="154" height="144"/>
+            <connections>
+                <outlet property="dataAnonymization" destination="z5P-U8-p0r" id="36k-06-t0f"/>
+                <outlet property="lowLatencyAudio" destination="hlH-P4-heE" id="FCn-wY-SD2"/>
+                <outlet property="realTimeSync" destination="g26-X5-ixY" id="dOF-Uc-bLy"/>
+            </connections>
             <point key="canvasLocation" x="180.15267175572518" y="53.521126760563384"/>
         </collectionViewCell>
     </objects>

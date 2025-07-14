@@ -1,13 +1,13 @@
 //
-//  OaiRecifrignController.swift
+//  RAccutettroller.swift
 //  ZioabosFuli
 //
-//  Created by ZioabosFuli on 2025/7/7.
+//  Created by ZioabosFuli on 2025/7/8.
 //
 
 import UIKit
 
-class OaiRecifrignController: UIViewController {
+class RAccutettroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class OaiRecifrignController: UIViewController {
     }
 
 
-    @IBAction func OIDShu(_ sender: UIButton) {
+    @IBAction func Higuas(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 

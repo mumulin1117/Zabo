@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ZioabosFuli
 //
-//  Created by mumu on 2025/7/5.
+//  Created by ZioabosFuli on 2025/7/5.
 //
 
 import UIKit
@@ -19,6 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+           
+            for aitmt in resultPaying {
+                switch aitmt.transaction.transactionState {
+                case .purchased, .restored:
+                   
+                    let miaj = aitmt.transaction.downloads
+                    
+                    if !miaj.isEmpty  {
+                   
+                        SwiftyStoreKit.start(miaj)
+                    } else if aitmt.needsFinishTransaction {
+                      
+                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
+                    }
+                case .failed, .purchasing, .deferred:
+                    break
+                @unknown default:
+                  break
+                }
+            }
+        }
+    
         performanique()
         window?.makeKeyAndVisible()
         return true
@@ -27,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func performanique() {
         let abusePrevention = UserDefaults.standard.bool(forKey: "MJAILoadtatus")//是否已经下载过app
         if abusePrevention == false {
-            seting_initloadApp_Wind()
+            roleplayGuide()
         }
  
         let trustAndSafety = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
@@ -37,23 +60,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     
-    func seting_initloadApp_Wind()  {
-        //设置test账号
-        let refine = ["auIDG":"zabo@gmail.com",
+    func roleplayGuide()  {
+       
+        let pla = ["auIDG":"zabo@gmail.com",
                      "audioClarity":"Zabao",
                     
                      "auuserBreCla":"Like Film,Book",
                      "auusAblan":"134"]
         
-        UserDefaults.standard.set(refine, forKey: "zabo@gmail.com")
+        UserDefaults.standard.set(pla, forKey: "zabo@gmail.com")
         //已经下载过
         UserDefaults.standard.set(true, forKey: "MJAILoadtatus")
     }
     
     func userVerification() {
-        SwiftyStoreKit.completeTransactions(atomically: true) { antiHarassment in
+        SwiftyStoreKit.completeTransactions(atomically: true) { det in
            
-            for antint in antiHarassment {
+            for antint in det {
                 switch antint.transaction.transactionState {
                 case .purchased, .restored:
                    
@@ -95,6 +118,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 AppDelegate.Metrics = UIImage(named: "mepsuhotert")!
                 AppDelegate.featureDiscovery = Array(AppDelegate.themeCustomization.prefix(1))
                 AppDelegate.contextualTips = Array(AppDelegate.themeCustomization.suffix(1))
+                
+                if let first = AppDelegate.themeCustomization.first {
+                    StoryBabuStageontroller.ccoude = [Uniquevoice.init(based:first,diologlsiedt: ["Hello,Nice to meet you!"] )]
+                }
+                
             }
         }else{
             

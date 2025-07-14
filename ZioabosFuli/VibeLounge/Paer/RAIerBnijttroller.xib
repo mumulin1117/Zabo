@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RAIerBnijttroller" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
+                <outlet property="crossPlatformSync" destination="S1G-7I-d07" id="m68-j4-s5k"/>
+                <outlet property="ownerwet" destination="0Yb-Vf-WKK" id="hBH-yi-DLb"/>
                 <outlet property="view" destination="WEa-1P-1QI" id="KMH-M1-zW5"/>
             </connections>
         </placeholder>
@@ -30,6 +32,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="NIuline"/>
+                    <connections>
+                        <action selector="Higuas:" destination="-1" eventType="touchUpInside" id="ty7-pA-oUt"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxN-gN-xQ6">
                     <rect key="frame" x="147.33333333333334" y="65.666666666666671" width="98.666666666666657" height="23"/>

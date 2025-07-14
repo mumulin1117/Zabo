@@ -2,12 +2,20 @@
 //  StoryBabuStageontroller.swift
 //  ZioabosFuli
 //
-//  Created by mumu on 2025/7/5.
+//  Created by ZioabosFuli on 2025/7/5.
 //
 
 import UIKit
 
+struct Uniquevoice {
+    var based:Dictionary<String,String> = Dictionary<String,String>()//聊天对象
+    var diologlsiedt:Array<String> = Array<String>()
+    
+    
+}
 class StoryBabuStageontroller: UIViewController {
+    static var ccoude:Array<Uniquevoice> =  Array<Uniquevoice>()
+    
     var ifChiej:Int = 0
     
  
@@ -27,6 +35,12 @@ class StoryBabuStageontroller: UIViewController {
         }
         
         self.roleplayGuide.reloadData()
+        
+        if ifChiej == 0 && StoryBabuStageontroller.ccoude.count > 0{
+            noenuill.isHidden = true
+        }else{
+            noenuill.isHidden = false
+        }
     }
     
     private func expressionisticStroke()  {
@@ -61,7 +75,7 @@ class StoryBabuStageontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
-        
+        noenuill.isHidden = true
     }
     
     private func dialogueFlow()  {
@@ -79,11 +93,21 @@ class StoryBabuStageontroller: UIViewController {
 }
 extension StoryBabuStageontroller:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        if ifChiej == 0 {
+            return StoryBabuStageontroller.ccoude.count
+        }
+        return 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let jjIo = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryBabuSmeaCell", for: indexPath) as! StoryBabuSmeaCell
+        let autolay = StoryBabuStageontroller.ccoude[indexPath.row]
+        
+        jjIo.refined.image = UIImage(named: autolay.based["ayChallenge"] ?? "")
+        jjIo.spatialAudio.text = autolay.based["audioClarity"] ?? ""
+        
+        jjIo.voiceActing.text =   autolay.diologlsiedt.first
         return jjIo
         
     }
@@ -91,6 +115,10 @@ extension StoryBabuStageontroller:UICollectionViewDelegate,UICollectionViewDataS
   
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let autolay = StoryBabuStageontroller.ccoude[indexPath.row]
+        let paetaikl = SayHIontroller.init(nnsteArry: autolay)
+        self.navigationController?.pushViewController(paetaikl, animated: true)
         
     }
     

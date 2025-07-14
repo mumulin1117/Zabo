@@ -2,19 +2,29 @@
 //  StoryBabuSmeaCell.swift
 //  ZioabosFuli
 //
-//  Created by mumu on 2025/7/5.
+//  Created by ZioabosFuli on 2025/7/5.
 //
 
 import UIKit
 
 class StoryBabuSmeaCell: UICollectionViewCell {
-
+    @IBOutlet weak var refined: UIImageView!
     
+    @IBOutlet weak var spatialAudio: UILabel!
+    
+    
+    
+    @IBOutlet weak var voiceActing: UILabel!
+    
+    private func voicePitchControl()  {
+        refined.layer.cornerRadius = 30
+        refined.layer.masksToBounds = true
+    }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        voicePitchControl()
     }
 
 }

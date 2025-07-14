@@ -17,27 +17,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="515" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YLw-l0-s0t">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YLw-l0-s0t">
                         <rect key="frame" x="450" y="10" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="vPt-2e-d2L"/>
                             <constraint firstAttribute="height" constant="50" id="zpR-SS-0Ik"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-Gy-kxe">
+                        <rect key="frame" x="367.33333333333331" y="15" width="70.666666666666686" height="40"/>
+                        <color key="backgroundColor" red="0.50196078431372548" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPK-xw-6zQ">
                         <rect key="frame" x="387.33333333333331" y="22" width="40.666666666666686" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="WjI-sR-euM"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40.670000000000002" id="vZh-Rn-23u"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-Gy-kxe">
-                        <rect key="frame" x="367.33333333333331" y="15" width="70.666666666666686" height="40"/>
-                        <color key="backgroundColor" red="0.50196078431372548" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="YLw-l0-s0t" secondAttribute="trailing" constant="15" id="1pC-iv-z1T"/>
@@ -53,6 +53,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="DusioBackground" destination="NQ6-Gy-kxe" id="W84-QP-1QZ"/>
+                <outlet property="characterPortrayal" destination="MPK-xw-6zQ" id="s2V-Lt-SqZ"/>
+                <outlet property="revocable" destination="YLw-l0-s0t" id="CN1-r6-cCO"/>
+            </connections>
             <point key="canvasLocation" x="249.61832061068702" y="29.577464788732396"/>
         </tableViewCell>
     </objects>

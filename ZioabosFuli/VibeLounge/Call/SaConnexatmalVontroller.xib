@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaConnexatmalVontroller" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
+                <outlet property="audioClarity" destination="0s2-IO-bUQ" id="jfn-ay-icK"/>
+                <outlet property="dialogueNaturalness" destination="jle-fY-MH7" id="8Ke-an-zml"/>
+                <outlet property="performanceDirection" destination="6bY-EA-piQ" id="pYD-EY-vHb"/>
+                <outlet property="roleplayTheme" destination="HaU-ad-cPA" id="nLh-Yt-QIj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nef-Ly-QIq">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paoaiudcc" translatesAutoresizingMaskIntoConstraints="NO" id="nef-Ly-QIq">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s2-IO-bUQ">
@@ -42,6 +46,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="audioEnhancement"/>
+                    <connections>
+                        <action selector="performanceIntensity:" destination="-1" eventType="touchUpInside" id="cak-eZ-L71"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jle-fY-MH7">
                     <rect key="frame" x="260" y="512" width="120" height="158"/>
@@ -72,6 +79,7 @@
     </objects>
     <resources>
         <image name="audioEnhancement" width="72" height="72"/>
+        <image name="paoaiudcc" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

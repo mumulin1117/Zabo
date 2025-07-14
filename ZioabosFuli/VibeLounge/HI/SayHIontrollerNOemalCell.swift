@@ -2,22 +2,33 @@
 //  SayHIontrollerNOemalCell.swift
 //  ZioabosFuli
 //
-//  Created by mumu on 2025/7/8.
+//  Created by ZioabosFuli on 2025/7/8.
 //
 
 import UIKit
 
 class SayHIontrollerNOemalCell: UITableViewCell {
 
+    @IBOutlet weak var revocable: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        voicedAuthenticity()
+        interactiveHelp()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var characterPortrayal: UILabel!
     
+    
+    @IBOutlet weak var DusioBackground: UIView!
+    
+    private func voicedAuthenticity()  {
+        revocable.layer.cornerRadius = 16
+    
+        revocable.layer.masksToBounds = true
+    }
+    private func interactiveHelp() {
+        DusioBackground.clipsToBounds = true
+        DusioBackground.layer.cornerRadius = 25
+        DusioBackground.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner,.layerMaxXMaxYCorner]
+    }
 }

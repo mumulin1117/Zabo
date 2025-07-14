@@ -9,7 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SayHIontroller" customModule="ZioabosFuli" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SayHIontroller" customModule="ZioabosFuli" customModuleProvider="target">
+            <connections>
+                <outlet property="roleplayTheme" destination="6yH-lN-DKq" id="DmB-zy-c2w"/>
+                <outlet property="sceneHarmony" destination="SuX-vY-OJu" id="f6d-Ul-oy9"/>
+                <outlet property="storyRhythm" destination="EAD-1O-uMC" id="nMi-c2-urL"/>
+                <outlet property="view" destination="bXT-8L-B4z" id="LG1-TB-5SY"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bXT-8L-B4z">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -26,6 +33,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="audioImmersion"/>
+                    <connections>
+                        <action selector="interactiveRoleplay:" destination="-1" eventType="touchUpInside" id="JOH-ub-cjP"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFY-im-w3l">
                     <rect key="frame" x="15" y="65" width="24" height="24"/>
@@ -35,6 +45,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="NIuline"/>
+                    <connections>
+                        <action selector="voiceRange:" destination="-1" eventType="touchUpInside" id="nZg-Wa-bfU"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuX-vY-OJu">
                     <rect key="frame" x="172.33333333333334" y="65.666666666666671" width="48.666666666666657" height="23"/>
@@ -63,6 +76,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="sceneRealism"/>
+                    <connections>
+                        <action selector="sceneRealism:" destination="-1" eventType="touchUpInside" id="xcz-AC-pbf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUB-HJ-pud">
                     <rect key="frame" x="342" y="59" width="36" height="36"/>
@@ -72,6 +88,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="roleplayEvent"/>
+                    <connections>
+                        <action selector="performanceIntensity:" destination="-1" eventType="touchUpInside" id="kEn-3j-oQM"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="T3Q-uY-5cF"/>

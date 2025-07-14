@@ -52,6 +52,11 @@
                 <constraint firstItem="4KY-QE-Z56" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zI2-PA-i5w"/>
             </constraints>
             <size key="customSize" width="386" height="67"/>
+            <connections>
+                <outlet property="accessibilityOptions" destination="DSS-Cg-kKP" id="Spf-cW-sJz"/>
+                <outlet property="interactiveHelp" destination="4KY-QE-Z56" id="bRY-lV-44S"/>
+                <outlet property="tutorialPrompts" destination="AXr-ql-i19" id="yrL-Ws-80X"/>
+            </connections>
             <point key="canvasLocation" x="357.25190839694653" y="26.408450704225352"/>
         </collectionViewCell>
     </objects>

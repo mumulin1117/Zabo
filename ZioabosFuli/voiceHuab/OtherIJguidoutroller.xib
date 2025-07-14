@@ -12,6 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherIJguidoutroller" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
                 <outlet property="ZuoGeuo" destination="O3v-VZ-5QK" id="fyd-dq-7ud"/>
+                <outlet property="audioQuality" destination="CBv-11-1MJ" id="RPw-eu-qT6"/>
+                <outlet property="dialogueSystem" destination="d7j-HD-MTX" id="Y5B-eT-cE1"/>
+                <outlet property="storyTexture" destination="juq-Io-sgL" id="OeM-Q4-W6X"/>
                 <outlet property="view" destination="Hgf-K3-Eoi" id="jeS-cT-HAz"/>
             </connections>
         </placeholder>
@@ -61,6 +64,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" backgroundImage="edFGFGFGit"/>
+                    <connections>
+                        <action selector="dialogueSystemd:" destination="-1" eventType="touchUpInside" id="WBP-Sv-Og3"/>
+                    </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPT-CQ-4hy">
                     <rect key="frame" x="16" y="235" width="343" height="432"/>
@@ -109,7 +115,7 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Gifts Recived  &gt;">
+                                    <state key="normal" title="Gifts Recived ">
                                         <color key="titleColor" red="0.74509803919999995" green="0.61176470589999998" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                 </button>
@@ -122,6 +128,9 @@
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" backgroundImage="Sjdyuim"/>
                                     <state key="selected" backgroundImage="Sjdyuimdf"/>
+                                    <connections>
+                                        <action selector="characterNuance:" destination="-1" eventType="touchUpInside" id="X2h-IL-w6X"/>
+                                    </connections>
                                 </button>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-0b-UZP">
                                     <rect key="frame" x="0.0" y="172" width="348" height="457"/>
