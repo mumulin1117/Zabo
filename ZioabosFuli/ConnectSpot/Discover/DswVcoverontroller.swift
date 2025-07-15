@@ -6,8 +6,68 @@
 //
 
 import UIKit
+import AVFoundation
+import SVProgressHUD
 
 class DswVcoverontroller: UIViewController {
+    private var audioPlayer: AVPlayer?
+    private var currentPlayingIndex: Int?
+    private func playAudio(at index: Int) {
+            // 停止当前播放的音频
+            stopCurrentAudio()
+            
+            // 更新当前播放索引
+            currentPlayingIndex = index
+            
+            // 更新 UI（播放按钮状态）
+        abstractGeometry.reloadData()
+            
+            // 创建新的 AVPlayer 并播放
+        let audioItem = ((ifChiej == 0) ? AppDelegate.themeCustomization[index] : AppDelegate.featureDiscovery[index])
+        guard let urlstr = Bundle.main.url(forResource: audioItem["audioDepth"] ?? "", withExtension: "MP3")
+        else{
+            SVProgressHUD.showInfo(withStatus: "Noting to play")
+            return
+        }
+        
+        
+        let playerItem = AVPlayerItem(url:urlstr )
+            
+        audioPlayer = AVPlayer(playerItem: playerItem)
+        audioPlayer?.play()
+            
+            // 监听播放完成（自动切换到下一首）
+//            NotificationCenter.default.addObserver(
+//                self,
+//                selector: #selector(playerDidFinishPlaying),
+//                name: .AVPlayerItemDidPlayToEndTime,
+//                object: playerItem
+//            )
+        }
+    
+    private func stopCurrentAudio() {
+//            if let index = currentPlayingIndex {
+////                if ifChiej == 0 {
+////                    AppDelegate.themeCustomization[index]["isplaying"] = "0"
+////                }else{
+////                    AppDelegate.featureDiscovery[index]["isplaying"] = "0"
+////                }
+//               
+//                abstractGeometry.reloadItems(at: [IndexPath(item: index, section: 0)])
+//            }
+        abstractGeometry.reloadData()
+            audioPlayer?.pause()
+            audioPlayer = nil
+            currentPlayingIndex = nil
+        }
+        
+        @objc private func playerDidFinishPlaying() {
+            if let currentIndex = currentPlayingIndex, currentIndex < AppDelegate.featureDiscovery.count - 1 {
+                playAudio(at: currentIndex + 1) // 播放下一首
+            } else {
+                stopCurrentAudio() // 停止播放
+            }
+        }
 
     @IBOutlet weak var abstractGeometry: UICollectionView!
     
@@ -109,7 +169,11 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
         VcoverCell.glassTransparency.tag = indexPath.row
         VcoverCell.glassTransparency.addTarget(self, action: #selector(tutorialPrompts(dsu:)), for: .touchUpInside)
         
-        
+        if indexPath.row == self.currentPlayingIndex {
+            VcoverCell.anatomicalStudy.isSelected = true
+        }else{
+            VcoverCell.anatomicalStudy.isSelected = false
+        }
         return VcoverCell
         
     }
@@ -120,19 +184,27 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
             juice =  AppDelegate.featureDiscovery[dsu.tag]
         }
         
-        self.navigationController?.pushViewController(OtherIJguidoutroller.init(), animated: true)
+        self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: juice), animated: true)
     }
     //heart
     @objc func accessibilityOptions(dsu:UIButton)  {
         dsu.isSelected = !dsu.isSelected
+        
+        
      }
     
     //播放
     @objc func playintColors(dsu:UIButton)  {
-        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
-        if ifChiej == 1 {
-            juice =  AppDelegate.featureDiscovery[dsu.tag]
+//        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
+//        if ifChiej == 1 {
+//            juice =  AppDelegate.featureDiscovery[dsu.tag]
+//        }
+        if self.currentPlayingIndex == dsu.tag {
+            self.stopCurrentAudio()
+            dsu.isSelected = false
+            return
         }
+        self.playAudio(at: dsu.tag)
     }
     //举报
     @objc func storyboardTools()  {
@@ -150,7 +222,5 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
     
    
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
+   
 }

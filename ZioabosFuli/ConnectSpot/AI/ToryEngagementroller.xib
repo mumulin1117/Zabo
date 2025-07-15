@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcT-V9-qhW">
-                    <rect key="frame" x="15" y="680" width="360" height="64"/>
+                    <rect key="frame" x="15" y="712" width="360" height="64"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="KqU-UC-2IR"/>
@@ -32,6 +32,9 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" backgroundImage="smMasuiodk"/>
+                    <connections>
+                        <action selector="accessibilityLabels:" destination="-1" eventType="touchUpInside" id="Odz-Hd-NUB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28G-7C-c9c">
                     <rect key="frame" x="15" y="53" width="24" height="24"/>
@@ -58,26 +61,8 @@
                         <constraint firstAttribute="height" constant="204" id="zmQ-Bi-Rd4"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining 2 times," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-2d-4hC">
-                    <rect key="frame" x="59" y="759" width="123" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.054901960784313725" green="0.054901960784313725" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-IF-6mX">
-                    <rect key="frame" x="183" y="751" width="116" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="4Nm-Ql-kb5"/>
-                        <constraint firstAttribute="width" constant="116" id="xif-aF-dpi"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Start chatting">
-                        <color key="titleColor" red="0.50196078431372548" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jPQ-DU-ET6">
-                    <rect key="frame" x="15" y="302.66666666666674" width="360" height="327.33333333333326"/>
+                    <rect key="frame" x="15" y="302.66666666666674" width="360" height="359.33333333333326"/>
                     <color key="backgroundColor" red="0.50196078430000002" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <string key="text">Got a voice but no character yet? Wondering how to step into a new identity? Let me assist you.
   I'll answer your questions and provide personalized role ideas, dialogue prompts, and immersive backstory twists.
@@ -91,14 +76,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="b52-jY-bdR" firstAttribute="leading" secondItem="udX-qN-Crm" secondAttribute="leading" id="0RZ-A3-gAY"/>
-                <constraint firstItem="LGO-IF-6mX" firstAttribute="top" secondItem="dcT-V9-qhW" secondAttribute="bottom" constant="7" id="1px-bV-2Vc"/>
+                <constraint firstItem="udX-qN-Crm" firstAttribute="bottom" secondItem="dcT-V9-qhW" secondAttribute="bottom" constant="34" id="3C8-OT-19n"/>
                 <constraint firstItem="b52-jY-bdR" firstAttribute="trailing" secondItem="udX-qN-Crm" secondAttribute="trailing" id="4FO-Nl-wmT"/>
                 <constraint firstItem="jPQ-DU-ET6" firstAttribute="leading" secondItem="udX-qN-Crm" secondAttribute="leading" constant="15" id="5OW-ba-jat"/>
                 <constraint firstItem="aKD-O2-8wA" firstAttribute="centerX" secondItem="NyE-H7-3P0" secondAttribute="centerX" id="6Pi-o4-mVp"/>
                 <constraint firstItem="nxQ-gc-TEs" firstAttribute="centerX" secondItem="NyE-H7-3P0" secondAttribute="centerX" id="8dc-LX-QnW"/>
                 <constraint firstAttribute="bottom" secondItem="b52-jY-bdR" secondAttribute="bottom" id="A66-HG-v9u"/>
-                <constraint firstItem="LGO-IF-6mX" firstAttribute="leading" secondItem="mqc-2d-4hC" secondAttribute="trailing" constant="1" id="B2F-nM-oCz"/>
-                <constraint firstItem="mqc-2d-4hC" firstAttribute="leading" secondItem="udX-qN-Crm" secondAttribute="leading" constant="59" id="DQn-Jh-6WB"/>
                 <constraint firstItem="dcT-V9-qhW" firstAttribute="leading" secondItem="udX-qN-Crm" secondAttribute="leading" constant="15" id="GBK-wN-kre"/>
                 <constraint firstItem="b52-jY-bdR" firstAttribute="top" secondItem="NyE-H7-3P0" secondAttribute="top" id="KhA-9h-saP"/>
                 <constraint firstItem="jPQ-DU-ET6" firstAttribute="top" secondItem="nxQ-gc-TEs" secondAttribute="bottom" constant="9" id="KqS-O4-Ml3"/>
@@ -107,10 +90,8 @@
                 <constraint firstItem="28G-7C-c9c" firstAttribute="top" secondItem="udX-qN-Crm" secondAttribute="top" constant="6" id="YMK-gT-tOI"/>
                 <constraint firstItem="udX-qN-Crm" firstAttribute="trailing" secondItem="jPQ-DU-ET6" secondAttribute="trailing" constant="15" id="aIO-bE-GDP"/>
                 <constraint firstItem="nxQ-gc-TEs" firstAttribute="top" secondItem="aKD-O2-8wA" secondAttribute="bottom" constant="13" id="eUW-D3-HuY"/>
-                <constraint firstItem="udX-qN-Crm" firstAttribute="bottom" secondItem="mqc-2d-4hC" secondAttribute="bottom" constant="34" id="ohV-kJ-JkC"/>
                 <constraint firstItem="aKD-O2-8wA" firstAttribute="centerY" secondItem="28G-7C-c9c" secondAttribute="centerY" id="xIN-6h-Wg7"/>
                 <constraint firstItem="28G-7C-c9c" firstAttribute="leading" secondItem="udX-qN-Crm" secondAttribute="leading" constant="15" id="zBU-8i-DY6"/>
-                <constraint firstItem="LGO-IF-6mX" firstAttribute="centerY" secondItem="mqc-2d-4hC" secondAttribute="centerY" id="zeA-TP-qAz"/>
             </constraints>
             <point key="canvasLocation" x="108" y="20.239880059970016"/>
         </view>

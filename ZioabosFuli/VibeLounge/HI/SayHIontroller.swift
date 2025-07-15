@@ -26,8 +26,8 @@ class SayHIontroller: UIViewController {
     
 
     @IBAction func performanceIntensity(_ sender: Any) {
-        let VCoice = CumidtoneRangentroller.init()
-        self.present(VCoice, animated: true)
+        self.showBlockReportAlert(for: nnsteArry.based["auIDG"] ?? "")
+        
     }
     
     @IBAction func voiceRange(_ sender: Any) {
@@ -62,6 +62,7 @@ class SayHIontroller: UIViewController {
         sceneHarmony.text = nnsteArry.based["audioClarity"]
         storyRhythm.dataSource = self
         storyRhythm.backgroundColor = .clear
+        NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
         storyRhythm.separatorStyle = .none
         storyRhythm.allowsSelection = false
         storyRhythm.register(UINib.init(nibName: "SayHIontrollerNOemalCell", bundle: nil), forCellReuseIdentifier: "SayHIontrollerNOemalCell")

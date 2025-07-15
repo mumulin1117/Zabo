@@ -9,13 +9,16 @@ import UIKit
 
 class Enougthatroller: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func disomaif(_ sender: Any) {
+        self.dismiss(animated: true)
     }
+    
+  
 
 
+    @IBAction func storyVibrancy(_ sender: UIButton) {
+        self.navigationController?.pushViewController(RAIerBnijttroller.init(), animated: true)
+    }
     /*
     // MARK: - Navigation
 

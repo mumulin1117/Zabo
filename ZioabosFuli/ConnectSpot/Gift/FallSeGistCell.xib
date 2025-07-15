@@ -53,6 +53,11 @@
                 <constraint firstItem="Tmo-j4-7A9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="rJy-OM-IXr"/>
             </constraints>
             <size key="customSize" width="226" height="131"/>
+            <connections>
+                <outlet property="edgeComputing" destination="gFE-Yh-zNS" id="Vuf-bE-wzX"/>
+                <outlet property="iotConnectivity" destination="Tmo-j4-7A9" id="gPK-18-B2U"/>
+                <outlet property="quantumResistant" destination="Nx7-fu-j1R" id="x3v-hU-8Yd"/>
+            </connections>
             <point key="canvasLocation" x="273.28244274809157" y="48.943661971830991"/>
         </collectionViewCell>
     </objects>

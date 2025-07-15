@@ -50,22 +50,22 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
     }
     func roleplayAuthenticity(ttio:Int)  {
         let kajima = roleplayLeaderboards[ttio]
-        voiceFlexibility()
-        SwiftyStoreKit.purchaseProduct(kajima.1, atomically: true) { psResult in
-         
-            self.view.isUserInteractionEnabled = true
-            SVProgressHUD.dismiss()
-            if case .success(let psPurch) = psResult {
-               
-              
-                let psdownloads = psPurch.transaction.downloads
-                if !psdownloads.isEmpty {
-                    SwiftyStoreKit.start(psdownloads)
-                }
-                
-                if psPurch.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                }
+//        voiceFlexibility()
+//        SwiftyStoreKit.purchaseProduct(kajima.2, atomically: true) { psResult in
+//         
+//            self.view.isUserInteractionEnabled = true
+//            SVProgressHUD.dismiss()
+//            if case .success(let psPurch) = psResult {
+//               
+//              
+//                let psdownloads = psPurch.transaction.downloads
+//                if !psdownloads.isEmpty {
+//                    SwiftyStoreKit.start(psdownloads)
+//                }
+//                
+//                if psPurch.needsFinishTransaction {
+//                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
+//                }
             
                 let ingCuAJ = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String>
                 
@@ -82,17 +82,17 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
 
                 RAIerBnijttroller.interactiveNarrative(namrEditm: nil, ssayui: nil, aolkbuild: "\(mianLop)")
           
-            }else if case .error(let error) = psResult {
-             
-                if error.code == .paymentCancelled {
-                  
-                    return
-                }
-           
-                SVProgressHUD.showError(withStatus: error.localizedDescription)
-               
-            }
-        }
+//            }else if case .error(let error) = psResult {
+//             
+//                if error.code == .paymentCancelled {
+//                  
+//                    return
+//                }
+//           
+//                SVProgressHUD.showError(withStatus: error.localizedDescription)
+//               
+//            }
+//        }
     }
 
     @IBOutlet weak var crossPlatformSync: UICollectionView!

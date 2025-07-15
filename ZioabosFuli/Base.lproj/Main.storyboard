@@ -529,10 +529,10 @@
             </objects>
             <point key="canvasLocation" x="-1845.5999999999999" y="891.90404797601207"/>
         </scene>
-        <!--View Controller-->
+        <!--Roleplay Studio Controller-->
         <scene sceneID="GYK-lc-bui">
             <objects>
-                <viewController id="gJK-ie-Y4l" sceneMemberID="viewController">
+                <viewController id="gJK-ie-Y4l" customClass="RoleplayStudioController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoU-tk-Nqd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -553,6 +553,10 @@
                                 <rect key="frame" x="28" y="54" width="319" height="351"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="JKanvhuf"/>
+                                <connections>
+                                    <action selector="featureRequestPrioritization:" destination="gJK-ie-Y4l" eventType="touchUpInside" id="kya-mg-W2F"/>
+                                    <action selector="gestureNavigation:" destination="gJK-ie-Y4l" eventType="touchUpInside" id="qYv-hn-Wg7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say Something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89B-pd-rWv">
                                 <rect key="frame" x="28" y="447" width="319" height="70"/>
@@ -608,6 +612,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="centver" selectedImage="centver" id="j73-bz-lV2"/>
+                    <connections>
+                        <outlet property="fluidTransitions" destination="TxM-Ul-cZH" id="yfy-pt-NCF"/>
+                        <outlet property="seasonalTrends" destination="Gdp-04-XRo" id="vRK-nx-FpC"/>
+                        <outlet property="stagedRollouts" destination="89B-pd-rWv" id="JYG-mc-FDt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ2-ej-Wm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

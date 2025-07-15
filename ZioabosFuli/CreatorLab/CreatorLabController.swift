@@ -26,7 +26,7 @@ class CreatorLabController: UIViewController {
             ifChiej = 1
         }
         
-        self.roleplayGuide.reloadData()
+        ZuoGeuoGhhh()
     }
     
     private func expressionisticStroke()  {
@@ -70,11 +70,17 @@ class CreatorLabController: UIViewController {
     private func dialogueFlow()  {
         roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
         roleplayGuide.delegate = self
+        
         roleplayGuide.dataSource = self
        
         roleplayGuide.collectionViewLayout = self.voiceTimbre
         roleplayGuide.register(UINib.init(nibName: "CreatorLabCell", bundle: nil), forCellWithReuseIdentifier: "CreatorLabCell")
         roleplayGuide.showsVerticalScrollIndicator = false
+        NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+    }
+    
+    @objc func ZuoGeuoGhhh()  {
+        self.roleplayGuide.reloadData()
     }
     
     //message
@@ -109,7 +115,7 @@ extension CreatorLabController:UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let hoafeel = viroeitLise[indexPath.row]
-        let detaidlo = CreatelaDetioController.init()
+        let detaidlo = CreatelaDetioController.init(nnsteBase: hoafeel)
         detaidlo.hoafeel = hoafeel
         self.navigationController?.pushViewController(detaidlo, animated: true)
     }

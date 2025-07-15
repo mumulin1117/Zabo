@@ -6,24 +6,48 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private var talkingContet:Array<String> = Array<String>()
+    
+    let customGiftView = Bundle.main.loadNibNamed(
+                "GiaftinhView",
+                owner: nil,
+                options: nil
+            )?.first as! GiaftinhView
     
     
+    var nnsteBase:Dictionary<String,String>
+    @IBOutlet weak var quantumResistant: UILabel!
     
+    @IBOutlet weak var proceduralGeneration: UIImageView!
+    @IBOutlet weak var sayHiyui: UITextField!
+    init(nnsteBase: Dictionary<String,String>) {
+        self.nnsteBase = nnsteBase
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        talkingContet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bgoki = tableView.dequeueReusableCell(withIdentifier: "InNRooemCellCell", for: indexPath) as!  InNRooemCellCell
+        bgoki.cakkliname.text = "Me:"
+        
+        bgoki.contetnenBme.text = talkingContet[indexPath.row]
         return bgoki
         
     }
     
 
+    
     //owener
     @IBOutlet weak var dynamicDialogue: UIButton!
     
@@ -32,11 +56,13 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     //me
     @IBOutlet weak var fantasyCharacter: UIButton!
     
+    @IBOutlet weak var tensorFlowLite: UILabel!
     
     @IBOutlet weak var roleplayScenarios: UILabel!
     
     @IBOutlet weak var dramaticPerformance: UITableView!
     
+    @IBOutlet weak var applayTaogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +71,38 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         storyCollaboration()
         roleplayScenarios.layer.masksToBounds = true
         
+        applayTaogin.layer.cornerRadius = 23
+        applayTaogin.layer.masksToBounds = true
+        
+        self.dynamicDialogue.setBackgroundImage(UIImage(named: nnsteBase["ayChallenge"] ?? ""), for: .normal)
+        proceduralGeneration.layer.cornerRadius = 15.5
+        proceduralGeneration.layer.masksToBounds = true
+        
+        proceduralGeneration.image = UIImage(named: nnsteBase["Roomjoin"] ?? "")
+        quantumResistant.text = "\(Int.random(in: 0...3))"
+        tensorFlowLite.text = nnsteBase["audioClarity"]
+        
+        self.improvPrompts.setBackgroundImage(UIImage(named: nnsteBase["Roomjoin"] ?? ""), for: .normal)
+//        self.fantasyCharacter.setBackgroundImage(AppDelegate.Metrics, for: .normal)
+        
+        self.view.addSubview(customGiftView)
+        customGiftView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.width.equalTo(290)
+            make.height.equalTo(40)
+            make.top.equalTo(improvPrompts.snp.bottom).offset(30)
+        }
+        customGiftView.isHidden = true
+       
     }
 
     
     private func storyCollaboration()  {
         dramaticPerformance.delegate = self
+        sayHiyui.attributedPlaceholder = NSAttributedString(string: "Say hi..", attributes: [.foregroundColor:UIColor.white])
         dramaticPerformance.dataSource = self
+        sayHiyui.rightViewMode = .always
+        sayHiyui.rightView = UIView(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
         dramaticPerformance.backgroundColor = .clear
         dramaticPerformance.separatorStyle = .none
         dramaticPerformance.allowsSelection = false
@@ -70,7 +122,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
 //            juice =  AppDelegate.featureDiscovery[dsu.tag]
 //        }
         
-        self.navigationController?.pushViewController(OtherIJguidoutroller.init(), animated: true)
+        self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: nnsteBase), animated: true)
     }
     
     
@@ -80,11 +132,18 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
 //            juice =  AppDelegate.featureDiscovery[dsu.tag]
 //        }
         
-        self.navigationController?.pushViewController(OtherIJguidoutroller.init(), animated: true)
+//        self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: nnsteBase), animated: true)
     }
     
     
     @IBAction func applyjoin(_ sender: UIButton) {
+        SVProgressHUD.show()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+            sender.isSelected = true
+            SVProgressHUD.showSuccess(withStatus: "The application has been submitted and is waiting for the homeowner's review")
+           
+        }))
     }
     //report
     @IBAction func storyboardTools()  {
@@ -103,9 +162,46 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     //gift
     @IBAction func showingGusftotePush(_ sender: Any) {
         let  cheicking =  FallSeGistiproller.init()
+        cheicking.gistClosure = { (name,count) in
+            self.customGiftView.isHidden = false
+            self.customGiftView.coaunZai.text = "x\(count)"
+            self.customGiftView.whatGidt.image = UIImage(named: name)
+            self.customGiftView.ShiaiIacon.image = AppDelegate.Metrics
+            self.customGiftView.saiNae.text = "Me"
+            self.customGiftView.SianfFor.text = ">> " + (self.nnsteBase["audioClarity"] ?? "")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3,execute: DispatchWorkItem(block: {
+                self.customGiftView.isHidden = true
+            }))
+        }
         
-        self.present(cheicking, animated: true)
+        let gogobc = UINavigationController(rootViewController: cheicking)
+        gogobc.navigationBar.isHidden = true
+        self.present(gogobc, animated: true)
         
+    }
+    
+    
+    
+    @IBAction func senfroorrmeInfog(_ sender: Any) {
+        
+        guard let enterquest = sayHiyui.text,!enterquest.isEmpty else {
+            SVProgressHUD.showInfo(withStatus: "Please enter your content first!")
+            return
+        }
+        self.sayHiyui.text = nil
+        sayHiyui.resignFirstResponder()
+        generateresult(questuin:enterquest)
+    }
+    
+    func generateresult(questuin:String)  {
+        SVProgressHUD.show()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+            SVProgressHUD.dismiss()
+            self.talkingContet.append(questuin)
+            self.dramaticPerformance.reloadData()
+        }))
+      
     }
 }
 

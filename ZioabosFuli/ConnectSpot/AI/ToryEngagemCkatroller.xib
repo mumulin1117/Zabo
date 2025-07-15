@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToryEngagemCkatroller" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
+                <outlet property="dialogueAuthenticity" destination="onB-wT-dbI" id="Hkt-DZ-XC6"/>
+                <outlet property="roleplaySynergy" destination="lpG-JS-B0p" id="Gpu-Rh-tko"/>
                 <outlet property="view" destination="neW-H5-6MY" id="EqF-Ex-RbD"/>
             </connections>
         </placeholder>
@@ -64,6 +66,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="sceneRealism"/>
+                    <connections>
+                        <action selector="sendYenoti:" destination="-1" eventType="touchUpInside" id="dHN-Nf-UJ2"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="W2a-FK-KbV"/>

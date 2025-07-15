@@ -12,9 +12,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherIJguidoutroller" customModule="ZioabosFuli" customModuleProvider="target">
             <connections>
                 <outlet property="ZuoGeuo" destination="O3v-VZ-5QK" id="fyd-dq-7ud"/>
+                <outlet property="afniaver" destination="ZqN-46-6H5" id="ULl-VD-Svl"/>
                 <outlet property="audioQuality" destination="CBv-11-1MJ" id="RPw-eu-qT6"/>
                 <outlet property="dialogueSystem" destination="d7j-HD-MTX" id="Y5B-eT-cE1"/>
+                <outlet property="ertfhn" destination="0pU-yF-w5u" id="42d-Jp-Y8B"/>
+                <outlet property="manfui" destination="NYq-Wr-AUg" id="4eI-ve-mi9"/>
+                <outlet property="noaoudit" destination="X0A-if-vXx" id="duh-9Q-sTm"/>
+                <outlet property="operate" destination="OdZ-0b-UZP" id="ViD-LC-a5b"/>
                 <outlet property="storyTexture" destination="juq-Io-sgL" id="OeM-Q4-W6X"/>
+                <outlet property="tapgi" destination="d5Z-cl-OHI" id="Cxs-L7-4Nf"/>
                 <outlet property="view" destination="Hgf-K3-Eoi" id="jeS-cT-HAz"/>
             </connections>
         </placeholder>
@@ -46,6 +52,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="moweirDarkn"/>
+                    <connections>
+                        <action selector="availablrCpisjck:" destination="-1" eventType="touchUpInside" id="8HZ-iy-Dyz"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBv-11-1MJ">
                     <rect key="frame" x="112.5" y="71" width="150" height="150"/>
@@ -64,6 +73,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" backgroundImage="edFGFGFGit"/>
+                    <state key="selected" backgroundImage="edFGFGFGitDE"/>
                     <connections>
                         <action selector="dialogueSystemd:" destination="-1" eventType="touchUpInside" id="WBP-Sv-Og3"/>
                     </connections>
@@ -118,6 +128,9 @@
                                     <state key="normal" title="Gifts Recived ">
                                         <color key="titleColor" red="0.74509803919999995" green="0.61176470589999998" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="voiceRichness:" destination="-1" eventType="touchUpInside" id="Y4D-DD-enq"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5Z-cl-OHI">
                                     <rect key="frame" x="0.0" y="128" width="217" height="36"/>
@@ -211,6 +224,7 @@
         <image name="Sjdyuim" width="217" height="36"/>
         <image name="Sjdyuimdf" width="217" height="36"/>
         <image name="edFGFGFGit" width="60" height="22"/>
+        <image name="edFGFGFGitDE" width="60" height="22"/>
         <image name="moweirDarkn" width="24" height="24"/>
         <image name="sceneSetting" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">

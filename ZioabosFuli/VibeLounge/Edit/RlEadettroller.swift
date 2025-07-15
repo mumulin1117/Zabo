@@ -7,9 +7,10 @@
 
 import UIKit
 import SVProgressHUD
-
-class RlEadettroller: UIViewController {
+import Photos
+class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var audioQuality: UIImageView!
+    var recorinfIamger:UIImage?
     
     @IBOutlet weak var realTimeFeedback: UITextField!
     
@@ -49,6 +50,10 @@ class RlEadettroller: UIViewController {
 
     @IBAction func dynamicddDialoguefsFor(_ sender: Any) {
         RAIerBnijttroller.interactiveNarrative(namrEditm: realTimeFeedback.text, ssayui: audioClarity.text, aolkbuild: nil)
+        if let im = self.recorinfIamger {
+            AppDelegate.Metrics = im
+        }
+       
         supplementary()
     }
     
@@ -60,4 +65,35 @@ class RlEadettroller: UIViewController {
            
         }))
     }
+    
+    
+    @IBAction func roleplayAuthenticity(_ sender: UIButton) {
+        
+        PHPhotoLibrary.requestAuthorization { status in
+                DispatchQueue.main.async {
+                    if status == .authorized {
+                        let picker = UIImagePickerController()
+                        picker.sourceType = .photoLibrary
+                        picker.delegate = self
+                        self.present(picker, animated: true)
+                    } else {
+                        let alert = UIAlertController(title: "No album permission", message: "Please allow access to the album in the settings", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "sure", style: .default))
+                        self.present(alert, animated: true)
+                    }
+                }
+            }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true)
+            
+            guard let image = info[.originalImage] as? UIImage else {
+                SVProgressHUD.showInfo(withStatus: "Unable to obtain image")
+               
+                return
+            }
+            
+        self.recorinfIamger = image
+        self.audioQuality.image = image
+        }
 }

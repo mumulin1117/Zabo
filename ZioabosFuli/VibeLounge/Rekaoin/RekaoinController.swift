@@ -21,13 +21,7 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
         return eniui
     }
     
-     var quickStartGuides:Int = 12 {
-        didSet{
-            offlineMode.text = quickStartGuides >= 12 ? "Following" :"Fans"
-            interactiveHelp.reloadData()
-        }
-    }
-    
+     var quickStartGuides:Int = 12
     
     
 
@@ -50,7 +44,11 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
        
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        offlineMode.text = quickStartGuides >= 12 ? "Following" :"Fans"
+        interactiveHelp.reloadData()
+    }
     @IBAction func Higuas(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

@@ -25,6 +25,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="notienoudgth"/>
+                    <connections>
+                        <action selector="storyVibrancy:" destination="-1" eventType="touchUpInside" id="9ga-JQ-JIO"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NZ-tU-kvc">
                     <rect key="frame" x="176.66666666666666" y="456" width="40" height="40"/>
@@ -34,6 +37,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="aidark"/>
+                    <connections>
+                        <action selector="disomaif:" destination="-1" eventType="touchUpInside" id="PNl-LZ-5Df"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

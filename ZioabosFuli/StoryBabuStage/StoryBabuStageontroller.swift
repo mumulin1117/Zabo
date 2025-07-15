@@ -76,6 +76,11 @@ class StoryBabuStageontroller: UIViewController {
         super.viewDidLoad()
         dialogueFlow()
         noenuill.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+    }
+    
+    @objc func ZuoGeuoGhhh()  {
+        self.roleplayGuide.reloadData()
     }
     
     private func dialogueFlow()  {

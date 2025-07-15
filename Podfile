@@ -6,9 +6,11 @@ target 'ZioabosFuli' do
   use_frameworks!
 
   # Pods for ZioabosFuli
+pod 'Alamofire'
 pod 'SwiftyStoreKit'
 pod 'SnapKit'
 pod "SVProgressHUD"
 pod 'SDCycleScrollView'
+pod "Player"
 pod "IQKeyboardManager"
 end

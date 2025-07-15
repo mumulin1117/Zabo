@@ -27,7 +27,13 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
         super.viewDidLoad()
         dialogueFlow()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
     }
+    
+    @objc func ZuoGeuoGhhh()  {
+        self.roleplayGuide.reloadData()
+    }
+    
     @IBAction func unwindB(unwindSegue: UIStoryboardSegue) {  }
     private func dialogueFlow()  {
         roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
@@ -88,7 +94,7 @@ extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let roromedetail = FallINreoomtiproller.init()
+        let roromedetail = FallINreoomtiproller.init(nnsteBase: AppDelegate.themeCustomization[indexPath.row])
         self.navigationController?.pushViewController(roromedetail, animated: true)
         
     }
@@ -116,6 +122,14 @@ extension ConnectSpoController{
     }
     
     @objc func vibrantColors()  {
+        
+        if ToryEngagementroller.aiGEtingTimes >= 1 {
+            ToryEngagementroller.aiGEtingTimes -= 1
+            let  cheicking =  ToryEngagemCkatroller.init()
+            
+            self.navigationController?.pushViewController(cheicking, animated: true)
+            return
+        }
         let  cheicking =  ToryEngagementroller.init()
         
         self.navigationController?.pushViewController(cheicking, animated: true)

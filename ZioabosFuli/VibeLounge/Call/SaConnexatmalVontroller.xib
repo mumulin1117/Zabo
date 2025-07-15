@@ -57,6 +57,18 @@
                         <constraint firstAttribute="width" constant="120" id="8yt-EW-4fZ"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDl-E0-jVd">
+                    <rect key="frame" x="341" y="53" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="OOe-s4-hdK"/>
+                        <constraint firstAttribute="width" constant="36" id="deI-FR-YNN"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="roleplayEvent"/>
+                    <connections>
+                        <action selector="sfhhhhhtensity:" destination="-1" eventType="touchUpInside" id="bm3-t7-MuW"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -72,6 +84,8 @@
                 <constraint firstItem="nef-Ly-QIq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lZp-tW-dbw"/>
                 <constraint firstItem="6bY-EA-piQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mHc-2k-4Gf"/>
                 <constraint firstItem="6bY-EA-piQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mNZ-ZN-OEn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pDl-E0-jVd" secondAttribute="trailing" constant="16" id="oM2-V2-lul"/>
+                <constraint firstItem="pDl-E0-jVd" firstAttribute="centerY" secondItem="6bY-EA-piQ" secondAttribute="centerY" id="qCN-66-UDL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HaU-ad-cPA" secondAttribute="bottom" constant="48" id="zhX-94-Na1"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
@@ -80,6 +94,7 @@
     <resources>
         <image name="audioEnhancement" width="72" height="72"/>
         <image name="paoaiudcc" width="375" height="812"/>
+        <image name="roleplayEvent" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

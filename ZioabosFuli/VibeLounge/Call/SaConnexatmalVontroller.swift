@@ -32,6 +32,7 @@ class SaConnexatmalVontroller: UIViewController {
         super.viewDidLoad()
         dialogueNaturalness.image =  UIImage(named: nnsteArry.based["ayChallenge"] ?? "")
         dialogueNaturalness.layer.cornerRadius = 20
+        NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
         dialogueNaturalness.layer.masksToBounds = true
         
         audioClarity.text = "Connecting....."
@@ -40,6 +41,12 @@ class SaConnexatmalVontroller: UIViewController {
 
     @IBAction func performanceIntensity(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func sfhhhhhtensity(_ sender: Any) {
+        self.showBlockReportAlert(for: nnsteArry.based["auIDG"] ?? "")
+        
     }
     
 }

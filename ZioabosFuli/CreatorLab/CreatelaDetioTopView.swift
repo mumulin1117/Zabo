@@ -22,6 +22,7 @@ class CreatelaDetioTopView: UIView {
     
     @IBOutlet weak var behavioralAnalysis: UILabel!
     
+    @IBOutlet weak var centerOutorStatus: UIImageView!
     
     
     @IBOutlet weak var antiHarassment: UIView!

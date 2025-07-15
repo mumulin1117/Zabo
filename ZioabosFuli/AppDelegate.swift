@@ -104,8 +104,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let voiceTutorials = FileManager.default.contents(atPath: tutorialPrompts) else {
             return
         }
-        if let interactiveHelp = try? PropertyListSerialization.propertyList(from: voiceTutorials, options: [], format: nil) as? [[String: String]]  {
+        if var interactiveHelp = try? PropertyListSerialization.propertyList(from: voiceTutorials, options: [], format: nil) as? [[String: String]]  {
+           
             AppDelegate.themeCustomization = interactiveHelp
+            
+            for (i,item) in AppDelegate.themeCustomization.enumerated() {
+                AppDelegate.themeCustomization[i]["isplaying"] = "0"
+            }
+           
         }
         if darkMode {
             
