@@ -17,7 +17,9 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
         let bsd = tableView.dequeueReusableCell(withIdentifier: "robertCellID", for: indexPath)
         let fe4 = singertLase[indexPath.row]
         bsd.imageView?.image = (fe4.tag == 1) ? UIImage(named:"asfdvvfvvAIO" ) : AppDelegate.Metrics
-        bsd.textLabel?.text = (fe4.tag == 1) ? "AI:" + fe4.Xcbau : "Me:"  + fe4.Xcbau
+        bsd.imageView?.frame.size = CGSize(width: 45, height: 45)
+        bsd.textLabel?.text = (fe4.tag == 1) ? "AI: " + fe4.Xcbau : "Me: "  + fe4.Xcbau
+        bsd.textLabel?.numberOfLines = 0
         bsd.backgroundColor = .clear
         
         return bsd
@@ -44,7 +46,7 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
         roleplaySynergy.allowsSelection = false
         roleplaySynergy.register(UITableViewCell.self, forCellReuseIdentifier: "robertCellID")
         roleplaySynergy.rowHeight = UITableView.automaticDimension
-        roleplaySynergy.estimatedRowHeight = 70
+        roleplaySynergy.estimatedRowHeight = 140
         roleplaySynergy.showsVerticalScrollIndicator = false
     }
     override func viewDidLoad() {
@@ -87,6 +89,8 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
             SVProgressHUD.showInfo(withStatus: "Please enter your question first!")
             return
         }
+        self.singertLase.append((0,enterquest))
+        self.roleplaySynergy.reloadData()
         self.dialogueAuthenticity.text = nil
         dialogueAuthenticity.resignFirstResponder()
         generateresult(questuin:enterquest)

@@ -27,6 +27,7 @@ class ConnectSpotusedView: UICollectionReusableView, SDCycleScrollViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        cycleViewFall.isUserInteractionEnabled = true
         if let cycleScrollView = SDCycleScrollView(frame: frame, delegate: self, placeholderImage: UIImage(named: "placeholder")){
             cycleScrollView.autoScroll = true
             
@@ -46,7 +47,7 @@ class ConnectSpotusedView: UICollectionReusableView, SDCycleScrollViewDelegate {
             cycleScrollView.localizationImageNamesGroup = AppDelegate.themeCustomization.map { da in
                 da["audpico"] ?? ""
             }
-            cycleScrollView.delegate = self
+            cycleScrollView.isUserInteractionEnabled = false
             cycleScrollView.titleLabelTextColor   = .white
             cycleScrollView.titleLabelTextFont = UIFont.systemFont(ofSize: 10, weight: .medium)
             cycleScrollView.showPageControl = true

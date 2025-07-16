@@ -6,9 +6,27 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SayHIontroller: UIViewController {
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        for (i,item) in StoryBabuStageontroller.ccoude.enumerated() {
+            if item.based["auIDG"] == nnsteArry.based["auIDG"] {
+                
+                if nnsteArry.diologlsiedt.count == 0 {
+                    StoryBabuStageontroller.ccoude.remove(at: i)
+                    return
+                }
+                
+                StoryBabuStageontroller.ccoude[i] = nnsteArry
+                break
+            }
+        }
+        
+      
+    }
     
     var nnsteArry:Uniquevoice
     init(nnsteArry: Uniquevoice) {
@@ -54,6 +72,15 @@ class SayHIontroller: UIViewController {
     }
     
     @IBAction func sceneRealism(_ sender: UIButton) {
+        guard let enterquest = roleplayTheme.text,!enterquest.isEmpty else {
+            SVProgressHUD.showInfo(withStatus: "Please enter your content first!")
+            return
+        }
+        self.nnsteArry.diologlsiedt.append(enterquest)
+        self.storyRhythm.reloadData()
+        self.roleplayTheme.text = nil
+        roleplayTheme.resignFirstResponder()
+        
     }
     
     

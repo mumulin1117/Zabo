@@ -163,8 +163,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
             VcoverCell.Precision.text = nnsteBase["roleplayTheme"]
             
             
-            VcoverCell.anatomicalStudy.addTarget(self, action: #selector(playintColors(dsu:)), for: .touchUpInside)
-            
+             
             VcoverCell.fabricFolds.image = UIImage(named: nnsteBase["audpico"] ?? "")
             
             VcoverCell.woodGrain.addTarget(self, action: #selector(storyboardTools), for: .touchUpInside)
@@ -195,10 +194,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         dsu.isSelected = !dsu.isSelected
      }
     
-    //播放
-    @objc func playintColors(dsu:UIButton)  {
-       
-    }
+   
     //举报
     @objc func storyboardTools()  {
         let VCoice = CumidtoneRangentroller.init()
@@ -212,6 +208,37 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
 //       VCoice.modalPresentationStyle = .fullScreen
        self.present(VCoice, animated: true)
     }
+    
+    @IBAction func divreVascr(_ sender: UIButton) {
+        if sender.tag == 35 {
+            if let filterResult = StoryBabuStageontroller.ccoude.filter({ dio in
+                dio.based["auIDG"] == nnsteBase["auIDG"]
+            }).first{
+                self.navigationController?.pushViewController(SayHIontroller.init(nnsteArry: filterResult), animated: true)
+            }else{
+              let newChui =  Uniquevoice.init(based: nnsteBase,diologlsiedt:[])
+                StoryBabuStageontroller.ccoude.append(newChui)
+                self.navigationController?.pushViewController(SayHIontroller.init(nnsteArry: newChui), animated: true)
+            }
+            
+            
+        }
+        
+        if sender.tag == 45 {
+            if let filterResult = StoryBabuStageontroller.ccoude.filter({ dio in
+                dio.based["auIDG"] == nnsteBase["auIDG"]
+            }).first{
+                self.navigationController?.pushViewController(SaConnexatmalVontroller.init(nnsteArry: filterResult), animated: true)
+            }else{
+              let newChui =  Uniquevoice.init(based: nnsteBase,diologlsiedt:[])
+                StoryBabuStageontroller.ccoude.append(newChui)
+                self.navigationController?.pushViewController(SaConnexatmalVontroller.init(nnsteArry: newChui), animated: true)
+            }
+            
+        }
+    }
+    
+    
 }
 
 
@@ -293,4 +320,8 @@ extension UIViewController{
         
         present(alert, animated: true)
     }
+    
+    
+    
+    
 }

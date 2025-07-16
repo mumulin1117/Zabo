@@ -22,13 +22,13 @@ class SayHIontrollerNOemalCell: UITableViewCell {
     @IBOutlet weak var DusioBackground: UIView!
     
     private func voicedAuthenticity()  {
-        revocable.layer.cornerRadius = 16
+        revocable.layer.cornerRadius = 10
     
         revocable.layer.masksToBounds = true
     }
     private func interactiveHelp() {
         DusioBackground.clipsToBounds = true
-        DusioBackground.layer.cornerRadius = 25
+        DusioBackground.layer.cornerRadius = 10
         DusioBackground.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner,.layerMaxXMaxYCorner]
     }
 }

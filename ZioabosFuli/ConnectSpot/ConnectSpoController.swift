@@ -88,7 +88,7 @@ extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSour
         header.disvoverpage.addTarget(self, action: #selector(monochromeArt), for: .touchUpInside)
         header.creeatertoem.addTarget(self, action: #selector(warmTones), for: .touchUpInside)
         header.buildAio.addTarget(self, action: #selector(vibrantColors), for: .touchUpInside)
-            
+        header.cycleViewFall.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(monochromeArt)))
         return header
         
     }

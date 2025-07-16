@@ -195,19 +195,47 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="eu6-8j-hjY"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="wmC-sw-trO"/>
                 </scrollView>
+                <button opaque="NO" tag="35" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84n-32-XK3">
+                    <rect key="frame" x="25" y="599" width="156" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="156" id="adh-Qb-Caz"/>
+                        <constraint firstAttribute="height" constant="48" id="sbI-8f-6mk"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="menaifuio"/>
+                    <connections>
+                        <action selector="divreVascr:" destination="-1" eventType="touchUpInside" id="PI4-h1-gPl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="45" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh4-ZF-UTK">
+                    <rect key="frame" x="194" y="599" width="156" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="156" id="OMI-BA-Ip0"/>
+                        <constraint firstAttribute="height" constant="48" id="Rzk-BG-dgW"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="Centertei"/>
+                    <connections>
+                        <action selector="divreVascr:" destination="-1" eventType="touchUpInside" id="L8C-7f-VFI"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="IS1-X3-sns"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="HPT-CQ-4hy" firstAttribute="leading" secondItem="Hgf-K3-Eoi" secondAttribute="leading" constant="16" id="2UR-jT-Idd"/>
                 <constraint firstItem="juq-Io-sgL" firstAttribute="centerX" secondItem="CBv-11-1MJ" secondAttribute="centerX" id="93T-97-Hi6"/>
+                <constraint firstItem="IS1-X3-sns" firstAttribute="bottom" secondItem="84n-32-XK3" secondAttribute="bottom" constant="20" id="KWW-0s-V6e"/>
+                <constraint firstItem="IS1-X3-sns" firstAttribute="trailing" secondItem="fh4-ZF-UTK" secondAttribute="trailing" constant="25" id="LOJ-A6-itd"/>
                 <constraint firstItem="CBv-11-1MJ" firstAttribute="centerX" secondItem="Hgf-K3-Eoi" secondAttribute="centerX" id="Mn7-Pd-cni"/>
                 <constraint firstItem="FOb-co-9RK" firstAttribute="leading" secondItem="IS1-X3-sns" secondAttribute="leading" id="Okg-Eq-Qzn"/>
+                <constraint firstItem="fh4-ZF-UTK" firstAttribute="centerY" secondItem="84n-32-XK3" secondAttribute="centerY" id="PYP-cD-PjQ"/>
                 <constraint firstAttribute="trailing" secondItem="HPT-CQ-4hy" secondAttribute="trailing" constant="16" id="Q4m-o3-44n"/>
                 <constraint firstAttribute="bottom" secondItem="FOb-co-9RK" secondAttribute="bottom" id="UpJ-kk-TO2"/>
                 <constraint firstItem="O3v-VZ-5QK" firstAttribute="centerY" secondItem="nYm-Qb-RZV" secondAttribute="centerY" id="Vaj-nd-XMM"/>
                 <constraint firstItem="O3v-VZ-5QK" firstAttribute="leading" secondItem="IS1-X3-sns" secondAttribute="leading" constant="15" id="b2d-i9-m1u"/>
                 <constraint firstItem="nYm-Qb-RZV" firstAttribute="top" secondItem="IS1-X3-sns" secondAttribute="top" constant="15" id="bID-nT-A0O"/>
+                <constraint firstItem="84n-32-XK3" firstAttribute="leading" secondItem="IS1-X3-sns" secondAttribute="leading" constant="25" id="bdY-mO-tob"/>
                 <constraint firstItem="HPT-CQ-4hy" firstAttribute="top" secondItem="juq-Io-sgL" secondAttribute="bottom" id="ctF-ye-vKN"/>
                 <constraint firstItem="FOb-co-9RK" firstAttribute="trailing" secondItem="IS1-X3-sns" secondAttribute="trailing" id="dkr-Ia-mie"/>
                 <constraint firstItem="juq-Io-sgL" firstAttribute="top" secondItem="CBv-11-1MJ" secondAttribute="bottom" constant="-10" id="gNc-Gx-F6B"/>
@@ -220,11 +248,13 @@
         </view>
     </objects>
     <resources>
+        <image name="Centertei" width="156" height="48"/>
         <image name="NIuline" width="24" height="24"/>
         <image name="Sjdyuim" width="217" height="36"/>
         <image name="Sjdyuimdf" width="217" height="36"/>
         <image name="edFGFGFGit" width="60" height="22"/>
         <image name="edFGFGFGitDE" width="60" height="22"/>
+        <image name="menaifuio" width="156" height="48"/>
         <image name="moweirDarkn" width="24" height="24"/>
         <image name="sceneSetting" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">

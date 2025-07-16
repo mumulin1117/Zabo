@@ -75,7 +75,7 @@ class StoryBabuStageontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
-        noenuill.isHidden = true
+        
         NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
     }
     
@@ -91,6 +91,12 @@ class StoryBabuStageontroller: UIViewController {
         roleplayGuide.collectionViewLayout = self.voiceTimbre
         roleplayGuide.register(UINib.init(nibName: "StoryBabuSmeaCell", bundle: nil), forCellWithReuseIdentifier: "StoryBabuSmeaCell")
         roleplayGuide.showsVerticalScrollIndicator = false
+        
+        if ifChiej == 0 && StoryBabuStageontroller.ccoude.count > 0{
+            noenuill.isHidden = true
+        }else{
+            noenuill.isHidden = false
+        }
     }
 
    

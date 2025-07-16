@@ -555,7 +555,6 @@
                                 <state key="normal" image="JKanvhuf"/>
                                 <connections>
                                     <action selector="featureRequestPrioritization:" destination="gJK-ie-Y4l" eventType="touchUpInside" id="kya-mg-W2F"/>
-                                    <action selector="gestureNavigation:" destination="gJK-ie-Y4l" eventType="touchUpInside" id="qYv-hn-Wg7"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say Something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89B-pd-rWv">
@@ -576,6 +575,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="gestureNavigation:" destination="gJK-ie-Y4l" eventType="touchUpInside" id="qZJ-dr-6Xy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftP-8S-Etu">
                                 <rect key="frame" x="28" y="417" width="68" height="22"/>
@@ -1354,7 +1356,7 @@ Community Safety: Age gates and content moderation emphasis.</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
