@@ -9,6 +9,7 @@ import UIKit
 
 class VCoiCommentCell: UITableViewCell {
 
+    static var contextualTips:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
    
     
 }

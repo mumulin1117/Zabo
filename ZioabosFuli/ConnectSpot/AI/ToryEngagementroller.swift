@@ -29,13 +29,13 @@ class ToryEngagementroller: UIViewController {
     @IBAction func accessibilityLabels(_ sender: UIButton) {
       
         
-        let ingCuAJ = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String>
+        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
         
        
-        let quark = ingCuAJ?["auusAblan"] as? String ?? "0"
+        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
         
-        var mianLop =  Int( quark) ?? 0
-        if mianLop < 300 {
+        var purposeCxD =  Int( generic) ?? 0
+        if purposeCxD < 300 {
           let navib =  UINavigationController.init(rootViewController: Enougthatroller())
             navib.navigationBar.isHidden = true
             self.present(navib, animated: true)
@@ -43,7 +43,7 @@ class ToryEngagementroller: UIViewController {
             return
         }
         
-        mianLop = mianLop - 300
+        purposeCxD = purposeCxD - 300
         ToryEngagementroller.aiGEtingTimes += 4
         self.navigationController?.pushViewController(ToryEngagemCkatroller(), animated: true)
     }

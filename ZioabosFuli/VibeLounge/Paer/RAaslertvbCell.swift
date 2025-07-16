@@ -14,7 +14,7 @@ class RAaslertvbCell: UICollectionViewCell {
     
     @IBOutlet weak var realTimeSync: UILabel!
     
-    
+    static var themeCustomization = Array<Dictionary<String,String>>()
     
     @IBOutlet weak var lowLatencyAudio: UILabel!
     

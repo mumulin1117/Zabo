@@ -12,6 +12,10 @@ import SVProgressHUD
 class DswVcoverontroller: UIViewController {
     private var audioPlayer: AVPlayer?
     private var currentPlayingIndex: Int?
+    private var reverb: VocalType?
+    
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     private func playAudio(at index: Int) {
             // 停止当前播放的音频
             stopCurrentAudio()
@@ -23,10 +27,10 @@ class DswVcoverontroller: UIViewController {
         abstractGeometry.reloadData()
             
             // 创建新的 AVPlayer 并播放
-        let audioItem = ((ifChiej == 0) ? AppDelegate.themeCustomization[index] : AppDelegate.featureDiscovery[index])
-        guard let urlstr = Bundle.main.url(forResource: audioItem["audioDepth"] ?? "", withExtension: "MP3")
+        let audioItem = ((ifChiej == 0) ? RAaslertvbCell.themeCustomization[index] : RekaointonCell.featureDiscovery[index])
+        guard let urlstr = Bundle.main.url(forResource: audioItem["audioDepth"] ?? "", withExtension: "MrPr3".characterBelievability())
         else{
-            SVProgressHUD.showInfo(withStatus: "Noting to play")
+            SVProgressHUD.showInfo(withStatus: "Noomtpiynmgx itvol rprlcaey".characterBelievability())
             return
         }
         
@@ -48,9 +52,9 @@ class DswVcoverontroller: UIViewController {
     private func stopCurrentAudio() {
 //            if let index = currentPlayingIndex {
 ////                if ifChiej == 0 {
-////                    AppDelegate.themeCustomization[index]["isplaying"] = "0"
+////                    RAaslertvbCell.themeCustomization[index]["isplaying"] = "0"
 ////                }else{
-////                    AppDelegate.featureDiscovery[index]["isplaying"] = "0"
+////                    RekaointonCell.featureDiscovery[index]["isplaying"] = "0"
 ////                }
 //               
 //                abstractGeometry.reloadItems(at: [IndexPath(item: index, section: 0)])
@@ -62,7 +66,7 @@ class DswVcoverontroller: UIViewController {
         }
         
         @objc private func playerDidFinishPlaying() {
-            if let currentIndex = currentPlayingIndex, currentIndex < AppDelegate.featureDiscovery.count - 1 {
+            if let currentIndex = currentPlayingIndex, currentIndex < RekaointonCell.featureDiscovery.count - 1 {
                 playAudio(at: currentIndex + 1) // 播放下一首
             } else {
                 stopCurrentAudio() // 停止播放
@@ -127,11 +131,25 @@ class DswVcoverontroller: UIViewController {
     
     private func dialogueFlow()  {
         abstractGeometry.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
+        reverb = VocalType.crystalline
         abstractGeometry.delegate = self
+       
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
         abstractGeometry.dataSource = self
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
+        abstractGeometry.register(UINib.init(nibName: "DswVcoverCell", bundle: nil), forCellWithReuseIdentifier: "DswVcoverCell")
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
+        
+       
+       
        
         abstractGeometry.collectionViewLayout = self.voiceTimbre
-        abstractGeometry.register(UINib.init(nibName: "DswVcoverCell", bundle: nil), forCellWithReuseIdentifier: "DswVcoverCell")
+       
         abstractGeometry.showsVerticalScrollIndicator = false
     }
 }
@@ -140,18 +158,18 @@ class DswVcoverontroller: UIViewController {
 extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if ifChiej == 0 {
-            return AppDelegate.themeCustomization.count
+            return RAaslertvbCell.themeCustomization.count
         }
-        return AppDelegate.featureDiscovery.count
+        return RekaointonCell.featureDiscovery.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let VcoverCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DswVcoverCell", for: indexPath) as! DswVcoverCell
          
-        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[indexPath.row]
+        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[indexPath.row]
         if ifChiej == 1 {
-            juice =  AppDelegate.featureDiscovery[indexPath.row]
+            juice =  RekaointonCell.featureDiscovery[indexPath.row]
         }
         VcoverCell.organicShapes.image = UIImage(named: juice["ayChallenge"] ?? "")
         VcoverCell.geometric.text = juice["audioClarity"]
@@ -183,9 +201,9 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
     }
     //个人中心
     @objc func vibrantColors(dsu:UIButton)  {
-        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
+        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
         if ifChiej == 1 {
-            juice =  AppDelegate.featureDiscovery[dsu.tag]
+            juice =  RekaointonCell.featureDiscovery[dsu.tag]
         }
         
         self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: juice), animated: true)
@@ -199,9 +217,9 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
     
     //播放
     @objc func playintColors(dsu:UIButton)  {
-//        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
+//        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
 //        if ifChiej == 1 {
-//            juice =  AppDelegate.featureDiscovery[dsu.tag]
+//            juice =  RekaointonCell.featureDiscovery[dsu.tag]
 //        }
         if self.currentPlayingIndex == dsu.tag {
             self.stopCurrentAudio()

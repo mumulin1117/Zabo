@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//ELUA
+
 class Enhancementller: UIViewController {
 
     @IBOutlet weak var voiceMorphing: UIButton!
@@ -17,17 +17,22 @@ class Enhancementller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        voiceMorphing.layer.cornerRadius = 24
         voiceRecognition()
     }
     
     
     private func voiceRecognition()  {
-        voiceMorphing.layer.cornerRadius = 24
+        
         voiceMorphing.layer.masksToBounds = true
         
+        ScenemoodSetters()
+       
+    }
+    
+    func ScenemoodSetters()  {
         audioLatency.layer.cornerRadius = 24
         audioLatency.layer.masksToBounds = true
-       
     }
 
     

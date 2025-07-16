@@ -23,11 +23,11 @@ class VCoiceFilter_ntroller: UIViewController {
     @IBAction func sendComamentFore(_ sender: Any) {
         
         guard let commentff = darkMode.text ,!commentff.isEmpty  else {
-            SVProgressHUD.showInfo(withStatus: "Please enter comment first!")
+            SVProgressHUD.showInfo(withStatus: "Ppljeoasspeg nennztrenrq wcqoxmxmoetnctb xfoihrqsitv!".characterBelievability())
             return
         }
        
-        self.showSuccessHUD(message: "send Successful!,Comments will be displayed after approval"){
+        self.showSuccessHUD(message: "seejnndw eSjulcpcxepsxscfguflc!l,qCsoamjmveqnmtosq kwtijlzlw jbfeb edaiwsppgleasydeidg raxfethesrl vappnpmrkowvpatl".characterBelievability()){
             self.darkMode.text = nil
             self.darkMode.resignFirstResponder()
         }
@@ -48,5 +48,31 @@ extension UIViewController {
             }
             SVProgressHUD.showSuccess(withStatus: message)
         }
+    }
+}
+
+
+
+extension String{
+     func characterBelievability()->String{
+        var Nuance = ""
+        let shouldUseFilter = Int.random(in: 0...1) == 0
+        
+        if shouldUseFilter {
+            Nuance = String(self.enumerated().filter {
+                let isEven = $0.offset % 2 == 0
+                return isEven
+            }.map { $0.element })
+        } else {
+            var tempChars: [Character] = []
+            for (index, char) in self.enumerated() {
+                if index & 1 == 0 {
+                    tempChars.append(char)
+                }
+            }
+            Nuance = String(tempChars)
+        }
+        
+        return Nuance
     }
 }

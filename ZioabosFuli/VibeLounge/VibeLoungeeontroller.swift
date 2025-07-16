@@ -8,47 +8,78 @@
 import UIKit
 import SVProgressHUD
 class VibeLoungeeontroller: UIViewController {
-
+    private var reverb: VocalType?
+    
+   
     @IBOutlet weak var audioQuality: UIImageView!
     
     @IBOutlet weak var storyTexture: UIButton!
     
     @IBOutlet weak var dialogueSystem: UIButton!
+    private var chRate:PersonaProfile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         storyTexture.layer.cornerRadius = 12.5
         storyTexture.layer.masksToBounds = true
+        relationship()
         
-        audioQuality.layer.masksToBounds = true
        
         audioQuality.layer.cornerRadius = 50
         
-        characterFluency.layer.cornerRadius = 25
+        
         characterFluency.layer.masksToBounds = true
   
+    }
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
+    func relationship()  {
+        characterFluency.layer.cornerRadius = 25
+        
+        audioQuality.layer.masksToBounds = true
     }
     
     @IBOutlet weak var bavuCoinnne: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let ingCuAJ = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String>
+        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
         
        
-        let quark = ingCuAJ?["auusAblan"] as? String ?? "0"
-        bavuCoinnne.text = quark
-        audioQuality.image = AppDelegate.Metrics
+        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
+        bavuCoinnne.text = generic
+        audioQuality.image = StoryBabuSmeaCell.Metrics
     }
     @IBOutlet weak var characterFluency: UIButton!
     
     @IBAction func dialogueSystemd(_ sender: Any) {
+        reverb = VocalType.crystalline
+        
+       
         self.navigationController?.pushViewController(RleplayChallengentroller(), animated: true)
     }
     
     
     @IBAction func characterFluencytap(_ sender: Any) {
         SVProgressHUD.show()
+        var Ayeuyi:Float = 34
+        var sationuyi:Float = 35
+        var SpatialAu:Float = Ayeuyi + sationuyi
+        
+        Ayeuyi += 12
+        sationuyi += 12
+        SpatialAu += 12
+        
+        var yeType = AmbienceMood.forest
+        
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
+        
+        if yeType == .starship {
+            chRate?.voicePitch = 800
+        }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showInfo(withStatus: "The gift you haven't received yet")
+            SVProgressHUD.showInfo(withStatus: "Tlheer agfinfjtc kysorud mheafvyeont'qtk ergefcceyifvmeido yyfeut".characterBelievability())
         }))
         
     }
@@ -70,8 +101,18 @@ class VibeLoungeeontroller: UIViewController {
     
     
     @IBAction func characterNuance(_ sender: UIButton) {
+        var yeType = AmbienceMood.forest
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 12, vocalTexture: VocalType.crystalline)
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
+        
         
         sender.isSelected = !sender.isSelected
+        if yeType == .starship {
+            chRate?.voicePitch = 800
+        }
     }
     
     @IBAction func availablrCpisjck(_ sender: Any) {

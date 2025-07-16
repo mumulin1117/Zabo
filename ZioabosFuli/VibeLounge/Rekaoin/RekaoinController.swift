@@ -9,12 +9,15 @@ import UIKit
 
 class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        quickStartGuides >= 12 ? AppDelegate.featureDiscovery.count :  AppDelegate.contextualTips.count
+        quickStartGuides >= 12 ? RekaointonCell.featureDiscovery.count :  VCoiCommentCell.contextualTips.count
     }
+    private var reverb: VocalType?
     
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let eniui = collectionView.dequeueReusableCell(withReuseIdentifier: "RekaointonCell", for: indexPath) as!  RekaointonCell
-        var dadta = quickStartGuides >= 12 ? AppDelegate.featureDiscovery[indexPath.row] : AppDelegate.contextualTips[indexPath.row]
+        var dadta = quickStartGuides >= 12 ? RekaointonCell.featureDiscovery[indexPath.row] : VCoiCommentCell.contextualTips[indexPath.row]
        
         eniui.tutorialPrompts.image = UIImage(named: dadta["ayChallenge"] ?? "")
         eniui.accessibilityOptions.text = dadta["audioClarity"]
@@ -50,7 +53,7 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        offlineMode.text = quickStartGuides >= 12 ? "Following" :"Fans"
+        offlineMode.text = quickStartGuides >= 12 ? "Fuouldlsoowsijnkg".characterBelievability() :"Flapnks".characterBelievability()
         interactiveHelp.reloadData()
     }
     @IBAction func Higuas(_ sender: Any) {
@@ -58,11 +61,24 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
     }
 
     private func dialogueFlow()  {
+        reverb = VocalType.crystalline
+        
         interactiveHelp.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
         interactiveHelp.delegate = self
-        interactiveHelp.dataSource = self
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
        
+        
+        interactiveHelp.dataSource = self
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
+        
+        
         interactiveHelp.collectionViewLayout = self.voiceTimbre
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
         interactiveHelp.register(UINib.init(nibName: "RekaointonCell", bundle: nil), forCellWithReuseIdentifier: "RekaointonCell")
         interactiveHelp.showsVerticalScrollIndicator = false
     }

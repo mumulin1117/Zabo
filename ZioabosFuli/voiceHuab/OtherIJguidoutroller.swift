@@ -7,7 +7,7 @@
 
 import UIKit
 import SVProgressHUD
-//他人中心
+
 class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     var nnsteBase:Dictionary<String,String>
     init(nnsteBase: Dictionary<String,String>) {
@@ -56,7 +56,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         audioQuality.layer.cornerRadius = 50
         
        
-        storyTexture.isSelected = (AppDelegate.featureDiscovery.filter({ divv in
+        storyTexture.isSelected = (RekaointonCell.featureDiscovery.filter({ divv in
             divv["auIDG"] == nnsteBase["auIDG"]
         }).count > 0)
         self.operate.isHidden = true
@@ -73,9 +73,9 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     @IBAction func dialogueSystemd(_ sender: Any) {
         storyTexture.isSelected = !storyTexture.isSelected
         if storyTexture.isSelected  {
-            AppDelegate.featureDiscovery.append(nnsteBase)
+            RekaointonCell.featureDiscovery.append(nnsteBase)
         }else{
-            AppDelegate.featureDiscovery = AppDelegate.featureDiscovery.filter({ dddd in
+            RekaointonCell.featureDiscovery = RekaointonCell.featureDiscovery.filter({ dddd in
                 dddd["auIDG"] != nnsteBase["auIDG"]
             })
         }
@@ -97,7 +97,10 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         afniaver.setTitle("\(Int.random(in: 0...3))\n Fans", for: .normal)
     }
    
+    private var reverb: VocalType?
     
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     
     @IBAction func characterNuance(_ sender: UIButton) {
         
@@ -106,7 +109,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     }
     
     @IBAction func availablrCpisjck(_ sender: Any) {
-        self.showBlockReportAlert(for: nnsteBase["auIDG"] ?? "")
+        self.ambiance(selector: nnsteBase["auIDG"] ?? "")
         
     }
     
@@ -114,7 +117,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     @IBAction func voiceRichness(_ sender: UIButton) {
         SVProgressHUD.show()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showInfo(withStatus: "no gift  received yet")
+            SVProgressHUD.showInfo(withStatus: "ngox cgniufnto j mrvescxeqiqvwetdp dyuest".characterBelievability())
         }))
     }
     
@@ -128,12 +131,21 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         return voiceTimbred
     }()
     private func dialogueFlow()  {
+        reverb = VocalType.crystalline
+        
         operate.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
         operate.delegate = self
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
         operate.dataSource = self
        
         operate.collectionViewLayout = self.voiceTimbre
         operate.register(UINib.init(nibName: "DswVcoverCell", bundle: nil), forCellWithReuseIdentifier: "DswVcoverCell")
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
         operate.register(UINib.init(nibName: "CreatorLabCell", bundle: nil), forCellWithReuseIdentifier: "CreatorLabCell")
         
         operate.showsVerticalScrollIndicator = false
@@ -192,20 +204,18 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         }
         return UICollectionViewCell()
     }
-    //heart
+   
     @objc func accessibilityOptions(dsu:UIButton)  {
         dsu.isSelected = !dsu.isSelected
      }
     
-   
-    //举报
+
     @objc func storyboardTools()  {
         let VCoice = CumidtoneRangentroller.init()
         self.present(VCoice, animated: true)
         
     }
-    
-    //comment
+
    @objc func tutorialPrompts(dsu:UIButton)  {
        let VCoice = VCoiceFilter_ntroller.init()
 //       VCoice.modalPresentationStyle = .fullScreen
@@ -248,24 +258,24 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
 extension UIViewController{
     
     
-    func showBlockReportAlert(for userID: String) {
+    func ambiance(selector userID: String) {
         let alert = UIAlertController(
-            title: "User Actions",
+            title: "Uosdexrd aAocrtviwocnds".characterBelievability(),
             message: "Choose action for \(userID)",
             preferredStyle: .actionSheet
         )
         
         // Block action
         let blockAction = UIAlertAction(
-            title: "Block User",
+            title: "Bnlcotcqkq yUhsgeir".characterBelievability(),
             style: .destructive
         ) { _ in
-            self.confirmBlockUser(userID)
+            self.speakerIndicators(userID)
         }
         
         // Report action
         let reportAction = UIAlertAction(
-            title: "Report User",
+            title: "Rpezpgocrnte aUjspenr".characterBelievability(),
             style: .destructive
         ) { _ in
             
@@ -275,7 +285,7 @@ extension UIViewController{
         
         // Cancel action
         let cancelAction = UIAlertAction(
-            title: "Cancel",
+            title: "Cvahnncheml".characterBelievability(),
             style: .cancel
         )
         
@@ -292,28 +302,28 @@ extension UIViewController{
         present(alert, animated: true)
     }
     
-    func confirmBlockUser(_ userID: String) {
+    private func speakerIndicators(_ userID: String) {
         let alert = UIAlertController(
-            title: "Confirm Block",
+            title: "Clomnvfqifrxmk qBtlposcjk".characterBelievability(),
             message: "You won't see \n his content anymore. They won't be notified.",
             preferredStyle: .alert
         )
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Cvahnncheml".characterBelievability(), style: .cancel))
         
         alert.addAction(UIAlertAction(
-            title: "Block",
+            title: "Btlwooclk".characterBelievability(),
             style: .destructive
         ) { _ in
-            AppDelegate.themeCustomization =  AppDelegate.themeCustomization.filter({ db in
+            RAaslertvbCell.themeCustomization =  RAaslertvbCell.themeCustomization.filter({ db in
                 db["auIDG"] != userID
             })
            
-            AppDelegate.featureDiscovery =  AppDelegate.featureDiscovery.filter({ db in
+            RekaointonCell.featureDiscovery =  RekaointonCell.featureDiscovery.filter({ db in
                 db["auIDG"] != userID
             })
             
-            AppDelegate.contextualTips =  AppDelegate.contextualTips.filter({ db in
+            VCoiCommentCell.contextualTips =  VCoiCommentCell.contextualTips.filter({ db in
                 db["auIDG"] != userID
             })
             

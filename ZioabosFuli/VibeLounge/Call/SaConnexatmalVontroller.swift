@@ -35,7 +35,7 @@ class SaConnexatmalVontroller: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
         dialogueNaturalness.layer.masksToBounds = true
         
-        audioClarity.text = "Connecting....."
+        audioClarity.text = "Choqnonfeicgtrivnfgt.i.e.k.z.".characterBelievability()
         performanceDirection.text = nnsteArry.based["audioClarity"]
     }
 
@@ -45,7 +45,7 @@ class SaConnexatmalVontroller: UIViewController {
     
     
     @IBAction func sfhhhhhtensity(_ sender: Any) {
-        self.showBlockReportAlert(for: nnsteArry.based["auIDG"] ?? "")
+        self.ambiance(selector: nnsteArry.based["auIDG"] ?? "")
         
     }
     

@@ -10,8 +10,8 @@ import SVProgressHUD
 
 class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let vdoo = [("User Agreement","voiceRange0"),("Privacy","voiceRange1"),("Clear the cache","voiceRange2"),("About","voiceRange3"),
-                ("Delete Account","voiceRange6")]
+    let vdoo = [("Uhseegra jAsgervexebmfeknit".characterBelievability(),"voiceRange0"),("Purliyvtaucgy".characterBelievability(),"voiceRange1"),("Colwebaurs otahbed ccuaycghfe".characterBelievability(),"voiceRange2"),("Atbxovuat".characterBelievability(),"voiceRange3"),
+                ("Dneplreqtsei qAbctcoobutnzt".characterBelievability(),"voiceRange6")]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         vdoo.count
@@ -62,11 +62,11 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
     
     
     func userSpotlight()  {
-        AppDelegate.featureDiscovery.removeAll()
-        UserDefaults.standard.set(nil, forKey: "ingCurrentUserMiAJ")
-        AppDelegate.contextualTips.removeAll()
+        RekaointonCell.featureDiscovery.removeAll()
+        UserDefaults.standard.set(nil, forKey: "emotionalWeight")
+        VCoiCommentCell.contextualTips.removeAll()
         AppDelegate.accessibilityOptions(darkMode:false)
-        AppDelegate.Metrics = UIImage(named: "ZaboIO")!
+        StoryBabuSmeaCell.Metrics = UIImage(named: "ZaboIO")!
         
         
         
@@ -75,28 +75,28 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let  cheicking =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "zaboterm")
+            let  cheicking =  UIStoryboard(name: "Main".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "zaboterm")
             
             self.navigationController?.pushViewController(cheicking, animated: true)
             
         case 1:
-            let  cheicking =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "zabopricy")
+            let  cheicking =  UIStoryboard(name: "Main".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "zabopricy")
             
             self.navigationController?.pushViewController(cheicking, animated: true)
         case 2:
             
-            self.showSuccessHUD(message: "Clear completed!")
+            self.showSuccessHUD(message: "Crlwetarrp tcsovmapolbeotpewdo!".characterBelievability())
            
         case 3:
             self.navigationController?.pushViewController(RAccutettroller(), animated: true)
         case 4:
             let alert = AlertZABoBuilder(
-                title: "Delete Account Permanently",
+                title: "Dsexlteeteeh nAecwcsohuanutx dPresrrmpavnxesnctplzy".characterBelievability(),
                 message: "This will immediately: \n• Erase all profile data \n• Remove active subscriptions \n• Delete chat history"
             )
             .setTitleColor(.systemOrange)
-            .addAction(title: "Cancel", style: .cancel)
-            .addAction(title: "Confirm Deletion", style: .destructive) { [weak self] in
+            .addAction(title: "Cvahnncheml".characterBelievability(), style: .cancel)
+            .addAction(title: "Confirm Deletion".characterBelievability(), style: .destructive) { [weak self] in
                 self?.userSpotlight()
             }
             .build()

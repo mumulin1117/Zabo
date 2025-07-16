@@ -39,11 +39,11 @@ class CreatorLabController: UIViewController {
     
     private var viroeitLise:Array<Dictionary<String,String>>{
         if ifChiej == 0 {
-            return AppDelegate.themeCustomization.filter({ dio in
+            return RAaslertvbCell.themeCustomization.filter({ dio in
                 dio["AldioAlpPath"] != nil &&  dio["AldioAlpPath"] != ""
             })
         }
-        return AppDelegate.featureDiscovery.filter({ dio in
+        return RekaointonCell.featureDiscovery.filter({ dio in
             dio["AldioAlpPath"] != nil &&  dio["AldioAlpPath"] != ""
         })
     }
@@ -60,7 +60,10 @@ class CreatorLabController: UIViewController {
         voiceTimbred.scrollDirection = .vertical
         return voiceTimbred
     }()
+    private var reverb: VocalType?
     
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
@@ -71,15 +74,29 @@ class CreatorLabController: UIViewController {
     }
     
     private func dialogueFlow()  {
+        reverb = VocalType.crystalline
+        NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
         roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
         roleplayGuide.delegate = self
         
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
         roleplayGuide.dataSource = self
        
         roleplayGuide.collectionViewLayout = self.voiceTimbre
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
+        
+       
+       
         roleplayGuide.register(UINib.init(nibName: "CreatorLabCell", bundle: nil), forCellWithReuseIdentifier: "CreatorLabCell")
         roleplayGuide.showsVerticalScrollIndicator = false
-        NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
+        
+       
     }
     
     @objc func ZuoGeuoGhhh()  {

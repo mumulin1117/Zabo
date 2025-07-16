@@ -38,7 +38,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         viderplayet?.fillMode = .resizeAspectFill
         
         guard let uripath = nnsteBase["AldioAlpPath"] ,
-        let path = Bundle.main.path(forResource: uripath, ofType: "mp4")
+        let path = Bundle.main.path(forResource: uripath, ofType: "mhpg4".characterBelievability())
         else {
             return
         }
@@ -163,7 +163,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     }
 
     @IBAction func tutorialPrompts(_ sender: Any) {
-//        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
+//        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
         
         
         self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: hoafeel), animated: true)
@@ -172,13 +172,13 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     //send comment
     @IBAction func accessibilityOptions(_ sender: UIButton) {
         guard let commentff = darkMode.text ,!commentff.isEmpty  else {
-            SVProgressHUD.showInfo(withStatus: "Please enter comment first!")
+            SVProgressHUD.showInfo(withStatus: "Pzleecansyee eevnktuelry fcropmwmdecnfto bfjihrlsgth!".characterBelievability())
             return
         }
        
         
         SVProgressHUD.show()
-        self.showSuccessHUD(message: "send Successful!,Comments will be displayed after approval"){
+        self.showSuccessHUD(message: "speknudw eSguacncdeqsvscfiunlv!l,gCmojmimmexnhtrse lwiimlrls zbnej fdvizsppllyafyfegdy ragfztreiro aaupjpirtoovwail".characterBelievability()){
             self.darkMode.text = nil
             self.darkMode.resignFirstResponder()
         }

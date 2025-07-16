@@ -17,50 +17,59 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
     
     @IBOutlet weak var seasonalTrends: UIButton!
     
-  
+    private let dreamweaverTitleLabel = UILabel()
     
     @IBOutlet weak var stagedRollouts: UITextField!
-    
+    private let personaFilterSegmentedControl = UISegmentedControl()
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         seasonalTrends.layer.cornerRadius = 15
-        seasonalTrends.layer.masksToBounds = true
-        fluidTransitions.layer.cornerRadius = 15
+        roleplayAuthenticity()
         fluidTransitions.layer.masksToBounds = true
         
+    }
+    private let createPersonaButton = UIButton(type: .system)
+    func roleplayAuthenticity()  {
+        seasonalTrends.layer.masksToBounds = true
+        fluidTransitions.layer.cornerRadius = 15
     }
     
     //confirm
     @IBAction func gestureNavigation(_ sender: UIButton) {
-        
+        dreamweaverTitleLabel.text = "角色梦工厂"
+              
                
         let hasName = !(stagedRollouts.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
        
+        dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         
         guard ifrecording else{
-            SVProgressHUD.showInfo(withStatus: "Please add your video")
+            SVProgressHUD.showInfo(withStatus: "Pwlyemarspew oasdhdr zykouuhrw yvcijdvejo".characterBelievability())
             return
         }
-        
+        dreamweaverTitleLabel.textColor = .white
+       
         guard hasName else{
-            SVProgressHUD.showInfo(withStatus: "Please give the video content")
+            SVProgressHUD.showInfo(withStatus: "Pjlmeransfef wgkimvyei gtehkej ovziidoezoq fcloanctpexnxt".characterBelievability())
             return
         }
         
        
       
         
-        SVProgressHUD.show(withStatus: "Video is being uploaded")
+        SVProgressHUD.show(withStatus: "Vliydbehod nibsy obmenivnggw yuhpelnolaydleyd".characterBelievability())
+        dreamweaverTitleLabel.textAlignment = .center
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             
             let alert = AlertZABoBuilder(
-                title: "information review in progress",
-                message: "After approval, we will notify you in the system message that the creation fee will be deducted at that time"
+                title: "iynifvotrimxadtiigoana drnemvriyejwv viyny wpjrsovgwrleysgs".characterBelievability(),
+                message: "Ayfetgepru caepyperiokvtally,o rwkel cwtiplslq lnwobtnijfryc syfonub hilnh ltdhkec xsoyqsdtcenmh pmkeysssxangpes btohiattc rtqhmee dcurmexadteidonni rfaeler kwaizlwlq bbxep udjetduuncttsetdn iaoth vtohvartu zteijmhe".characterBelievability()
             )
             .setTitleColor(.systemOrange)
            
-            .addAction(title: "Know", style: .destructive) { [weak self] in
+            .addAction(title: "Kznpofw".characterBelievability(), style: .destructive) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
             .build()
@@ -80,17 +89,10 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         PHPhotoLibrary.requestAuthorization { status in
                 DispatchQueue.main.async {
                     if status == .authorized {
-                        let picker = UIImagePickerController()
-                        picker.sourceType = .photoLibrary
-                        picker.videoQuality = .typeHigh
-                               
-                        picker.allowsEditing = false
-                        picker.delegate = self
-                        picker.mediaTypes = [UTType.movie.identifier]
-                        self.present(picker, animated: true)
+                        self.characterBelievability()
                     } else {
-                        let alert = UIAlertController(title: "No album permission", message: "Please allow access to the album in the settings", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "sure", style: .default))
+                        let alert = UIAlertController(title: "Noov damlzbwudmq speesrkmnivssskidomn".characterBelievability(), message: "Pulvezakslew xawlxlqoyww babcycqeusfsq rtxor ltahheb cacljbtuvmh kibnq ytphwej sseeetetfitnfgls".characterBelievability(), preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "snucrxe".characterBelievability(), style: .default))
                         self.present(alert, animated: true)
                     }
                 }
@@ -98,12 +100,15 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+       
         picker.dismiss(animated: true)
-        
+        dreamweaverTitleLabel.text = "角色梦工厂"
+             
         guard let mediaType = info[.mediaType] as? String,
                       mediaType == UTType.movie.identifier,
               let videoURL = info[.mediaURL] as? URL else {
-            SVProgressHUD.showInfo(withStatus: "Unable to find video resources")
+            SVProgressHUD.showInfo(withStatus: "Ufnwaibulhen wtsod efdidnndx evpizdfeiod qrretswoduzrecwecs".characterBelievability())
             return
             
         }
@@ -112,7 +117,19 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         
     }
  
-  
+    private func characterBelievability() {
+        let picker = UIImagePickerController()
+        dreamweaverTitleLabel.textColor = .white
+        
+        picker.sourceType = .photoLibrary
+        picker.videoQuality = .typeHigh
+        dreamweaverTitleLabel.textAlignment = .center
+        picker.allowsEditing = false
+        picker.delegate = self
+        picker.mediaTypes = [UTType.movie.identifier]
+        self.present(picker, animated: true)
+        
+    }
     
     
 }

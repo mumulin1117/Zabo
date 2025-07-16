@@ -41,10 +41,10 @@ class ConnectSpotusedView: UICollectionReusableView, SDCycleScrollViewDelegate {
             cycleScrollView.autoScrollTimeInterval = 2
             cycleScrollView.infiniteLoop = true
             cycleScrollView.delegate = self
-            cycleScrollView.titlesGroup = AppDelegate.themeCustomization.map { da in
+            cycleScrollView.titlesGroup = RAaslertvbCell.themeCustomization.map { da in
                 da["roleplayTheme"] ?? ""
             }
-            cycleScrollView.localizationImageNamesGroup = AppDelegate.themeCustomization.map { da in
+            cycleScrollView.localizationImageNamesGroup = RAaslertvbCell.themeCustomization.map { da in
                 da["audpico"] ?? ""
             }
             cycleScrollView.isUserInteractionEnabled = false

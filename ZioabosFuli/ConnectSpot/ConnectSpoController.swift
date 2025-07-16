@@ -11,7 +11,10 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
     func beginartisticCipher(indess: Int) {
         monochromeArt()
     }
+    private var reverb: VocalType?
     
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
 
     @IBOutlet weak var roleplayGuide: UICollectionView!
     private lazy var voiceTimbre: UICollectionViewFlowLayout = {
@@ -43,9 +46,23 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
     private func dialogueFlow()  {
         roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
         roleplayGuide.delegate = self
-        roleplayGuide.dataSource = self
+        reverb = VocalType.crystalline
+        
         roleplayGuide.register(UINib(nibName: "ConnectSpotusedView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ConnectSpotusedView")
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
+        
+        
+        roleplayGuide.dataSource = self
+        
         roleplayGuide.collectionViewLayout = self.voiceTimbre
+        
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
         roleplayGuide.register(UINib.init(nibName: "ConnectSpotCell", bundle: nil), forCellWithReuseIdentifier: "ConnectSpotCell")
         roleplayGuide.showsVerticalScrollIndicator = false
     }
@@ -60,15 +77,15 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
 
 extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        AppDelegate.themeCustomization.count
+        RAaslertvbCell.themeCustomization.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let jjIo = collectionView.dequeueReusableCell(withReuseIdentifier: "ConnectSpotCell", for: indexPath) as! ConnectSpotCell
-        jjIo.backgroundAmbience.image = UIImage(named: AppDelegate.themeCustomization[indexPath.row]["RoomAlpDCOver"] ?? "")
-        jjIo.audioLatency.image = UIImage(named: AppDelegate.themeCustomization[indexPath.row]["ayChallenge"] ?? "")
-        jjIo.roleplayGuidelines.text = AppDelegate.themeCustomization[indexPath.row]["RoomAlpTitle"]
-        jjIo.characterAlignment.text = AppDelegate.themeCustomization[indexPath.row]["RoomAlpDades"]
+        jjIo.backgroundAmbience.image = UIImage(named: RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpDCOver"] ?? "")
+        jjIo.audioLatency.image = UIImage(named: RAaslertvbCell.themeCustomization[indexPath.row]["ayChallenge"] ?? "")
+        jjIo.roleplayGuidelines.text = RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpTitle"]
+        jjIo.characterAlignment.text = RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpDades"]
         jjIo.storySeeds.addTarget(self, action: #selector(storyboardTools), for: .touchUpInside)
         jjIo.voiceMorphing.setTitle("1 online", for: .normal)
         return jjIo
@@ -99,7 +116,7 @@ extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let roromedetail = FallINreoomtiproller.init(nnsteBase: AppDelegate.themeCustomization[indexPath.row])
+        let roromedetail = FallINreoomtiproller.init(nnsteBase: RAaslertvbCell.themeCustomization[indexPath.row])
         self.navigationController?.pushViewController(roromedetail, animated: true)
         
     }
@@ -114,7 +131,7 @@ extension ConnectSpoController{
     }
     
     @objc func monochromeArt()  {
-        let  cheicking =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DswVcoverontroller") as! DswVcoverontroller
+        let  cheicking =  UIStoryboard(name: "Mgaripn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "DswVcoverontroller") as! DswVcoverontroller
         
         self.navigationController?.pushViewController(cheicking, animated: true)
     }

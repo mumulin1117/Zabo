@@ -9,7 +9,7 @@ import UIKit
 
 class RekaointonCell: UICollectionViewCell {
     @IBOutlet weak var tutorialPrompts: UIImageView!
-    
+    static var featureDiscovery:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
     
     @IBOutlet weak var accessibilityOptions: UILabel!
     
@@ -18,6 +18,7 @@ class RekaointonCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         tutorialPrompts.layer.cornerRadius = 28
+        
         tutorialPrompts.layer.masksToBounds = true
     }
 

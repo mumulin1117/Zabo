@@ -44,7 +44,7 @@ class SayHIontroller: UIViewController {
     
 
     @IBAction func performanceIntensity(_ sender: Any) {
-        self.showBlockReportAlert(for: nnsteArry.based["auIDG"] ?? "")
+        self.ambiance(selector: nnsteArry.based["auIDG"] ?? "")
         
     }
     
@@ -73,7 +73,7 @@ class SayHIontroller: UIViewController {
     
     @IBAction func sceneRealism(_ sender: UIButton) {
         guard let enterquest = roleplayTheme.text,!enterquest.isEmpty else {
-            SVProgressHUD.showInfo(withStatus: "Please enter your content first!")
+            SVProgressHUD.showInfo(withStatus: "Pgloezajsqej lesndtnekrr jyootutri ccrohnhtfeynftf xfkiirisntk!".characterBelievability())
             return
         }
         self.nnsteArry.diologlsiedt.append(enterquest)
@@ -112,7 +112,7 @@ extension SayHIontroller:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bgoki = tableView.dequeueReusableCell(withIdentifier: "SayHIontrollerNOemalCell", for: indexPath) as!  SayHIontrollerNOemalCell
         
-        bgoki.revocable.image  = AppDelegate.Metrics
+        bgoki.revocable.image  = StoryBabuSmeaCell.Metrics
         bgoki.characterPortrayal.text = nnsteArry.diologlsiedt[indexPath.row]
         
         return bgoki

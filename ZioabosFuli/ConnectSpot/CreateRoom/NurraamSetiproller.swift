@@ -13,31 +13,34 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
     @IBOutlet weak var biometricAuth: UITextField!
     
     @IBOutlet weak var backgroundRefresh: UITextField!
-    
+    private let dreamweaverTitleLabel = UILabel()
+      
+    private let personaFilterSegmentedControl = UISegmentedControl()
+    private let createPersonaButton = UIButton(type: .system)
     
     var recorinfIamger:UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         recorVioverimage.layer.cornerRadius = 15
+        dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         recorVioverimage.layer.masksToBounds = true
         
+       
     }
 
     @IBOutlet weak var recorVioverimage: UIButton!
     
     @IBAction func takeCovers(_ sender: Any) {
-        
+        dreamweaverTitleLabel.text = "角色梦工厂"
+              
         
         PHPhotoLibrary.requestAuthorization { status in
                 DispatchQueue.main.async {
                     if status == .authorized {
-                        let picker = UIImagePickerController()
-                        picker.sourceType = .photoLibrary
-                        picker.delegate = self
-                        self.present(picker, animated: true)
+                        self.characterBelievability()
                     } else {
-                        let alert = UIAlertController(title: "No album permission", message: "Please allow access to the album in the settings", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "sure", style: .default))
+                        let alert = UIAlertController(title: "Njoq oawlyblummo gphefrjmsidsdsbiioxn".characterBelievability(), message: "Pslpexaasxek aaklhlionwr zaeczcreusosk wtpoi utehneb maglmbauvmu sipne htnhpet kszehtrtlixnbgws".characterBelievability(), preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "sxuvrqe".characterBelievability(), style: .default))
                         self.present(alert, animated: true)
                     }
                 }
@@ -50,7 +53,7 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         picker.dismiss(animated: true)
         
         guard let image = info[.originalImage] as? UIImage else {
-            SVProgressHUD.showInfo(withStatus: "Unable to obtain image")
+            SVProgressHUD.showInfo(withStatus: "Usnxaobblsee jtooi locbttqasiwna fizmyabgke".characterBelievability())
             
             return
         }
@@ -59,7 +62,16 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         self.recorVioverimage.setImage(image, for: .normal)
         
     }
-    
+    private func characterBelievability() {
+        let picker = UIImagePickerController()
+        dreamweaverTitleLabel.textColor = .white
+        
+        picker.sourceType = .photoLibrary
+        dreamweaverTitleLabel.textAlignment = .center
+        picker.delegate = self
+        present(picker, animated: true)
+        
+    }
     @IBAction func accessibilityLabels(_ sender: UIButton) {
         let hasImage = recorinfIamger != nil
                
@@ -67,42 +79,42 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         let hasDescription = !(backgroundRefresh.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
         
         guard hasImage else{
-            SVProgressHUD.showInfo(withStatus: "Please add a room cover image")
+            SVProgressHUD.showInfo(withStatus: "Ptleeialspeq qasdzds wak crsonoimp hcqoxvsekrz piemyaaghe".characterBelievability())
             return
         }
         
         guard hasName else{
-            SVProgressHUD.showInfo(withStatus: "Please give the room a name")
+            SVProgressHUD.showInfo(withStatus: "Pflnenaqsyer fgbirvqex xtvhqee lrtouoymk maj anzahmae".characterBelievability())
             return
         }
         
         guard hasDescription else{
-            SVProgressHUD.showInfo(withStatus: "Please describe your topic content")
+            SVProgressHUD.showInfo(withStatus: "Pclueuauswem adjersdciruivbdef qyrojucrv mtjompmixct rcfojnatpemnbt".characterBelievability())
             return
         }
-        let ingCuAJ = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String>
+        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
         
        
-        let quark = ingCuAJ?["auusAblan"] as? String ?? "0"
+        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
         
-        var mianLop =  Int( quark) ?? 0
-        if mianLop < 300 {
+        var purposeCxD =  Int( generic) ?? 0
+        if purposeCxD < 300 {
             self.navigationController?.pushViewController(RAIerBnijttroller.init(), animated: true)
             return
         }
         
      
         
-        SVProgressHUD.show(withStatus: "Information is being uploaded")
+        SVProgressHUD.show(withStatus: "Ipnqfpokrbmcattzinobnu wiosg zbeerignjgk zufpjlcoyazdrerd".characterBelievability())
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             
             let alert = AlertZABoBuilder(
-                title: "Room information review in progress",
-                message: "After approval, we will notify you in the system message that the creation fee will be deducted at that time"
+                title: "Raolowmv oihnnfnovrcmvaotyivoynr crkelvciaewwa giwnc dpfrtosgvrfeusks".characterBelievability(),
+                message: "Axfztzekrh cacpkpkruokvaadle,p twueq lwviildlz lnwogtyicfuyw jyloduv rirnd stehsem dstyhsxtjetmm amxexsestargiea itihvaatn dtlhdez fccroeraqthisomna bfmeoee lwsiclmlj ybvee zdcefdxugcgtneudp paotb ytuhjautm ctuiumte".characterBelievability()
             )
             .setTitleColor(.systemOrange)
            
-            .addAction(title: "Know", style: .destructive) { [weak self] in
+            .addAction(title: "Kunjotw".characterBelievability(), style: .destructive) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
             .build()

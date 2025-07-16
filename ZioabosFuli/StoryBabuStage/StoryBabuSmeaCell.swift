@@ -12,7 +12,7 @@ class StoryBabuSmeaCell: UICollectionViewCell {
     
     @IBOutlet weak var spatialAudio: UILabel!
     
-    
+    static var Metrics:UIImage = UIImage(named: "ZaboIO")!
     
     @IBOutlet weak var voiceActing: UILabel!
     

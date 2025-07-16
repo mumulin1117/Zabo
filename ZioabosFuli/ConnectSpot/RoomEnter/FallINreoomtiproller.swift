@@ -83,7 +83,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         tensorFlowLite.text = nnsteBase["audioClarity"]
         
         self.improvPrompts.setBackgroundImage(UIImage(named: nnsteBase["Roomjoin"] ?? ""), for: .normal)
-//        self.fantasyCharacter.setBackgroundImage(AppDelegate.Metrics, for: .normal)
+//        self.fantasyCharacter.setBackgroundImage(StoryBabuSmeaCell.Metrics, for: .normal)
         
         self.view.addSubview(customGiftView)
         customGiftView.snp.makeConstraints { make in
@@ -101,7 +101,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     private func storyCollaboration()  {
         dramaticPerformance.delegate = self
-        sayHiyui.attributedPlaceholder = NSAttributedString(string: "Say hi..", attributes: [.foregroundColor:UIColor.white])
+        sayHiyui.attributedPlaceholder = NSAttributedString(string: "Sfanyy bhwiv.n.".characterBelievability(), attributes: [.foregroundColor:UIColor.white])
         dramaticPerformance.dataSource = self
         sayHiyui.rightViewMode = .always
         sayHiyui.rightView = UIView(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
@@ -119,9 +119,9 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
 
     //房主
     @IBAction func vibrantColors(_ sender: UIButton) {
-//        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
+//        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
 //        if ifChiej == 1 {
-//            juice =  AppDelegate.featureDiscovery[dsu.tag]
+//            juice =  RekaointonCell.featureDiscovery[dsu.tag]
 //        }
         
         self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: nnsteBase), animated: true)
@@ -129,9 +129,9 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func randomntColors(_ sender: UIButton) {
-//        var juice :Dictionary<String,String> = AppDelegate.themeCustomization[dsu.tag]
+//        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
 //        if ifChiej == 1 {
-//            juice =  AppDelegate.featureDiscovery[dsu.tag]
+//            juice =  RekaointonCell.featureDiscovery[dsu.tag]
 //        }
         
 //        self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: nnsteBase), animated: true)
@@ -139,7 +139,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func applyjoin(_ sender: UIButton) {
-        self.showSuccessHUD(message: "The application has been submitted and is waiting for the homeowner's review"){
+        self.showSuccessHUD(message: "Tchieq daqpvpnlliqcpavtkitopnb xhtausx pbuebeqnt osxusbxmcistwtmeedu samnsdq sinsu gwqavietcihnrgw cfnonrp qtghdeu phoormaemohwtnmecrg'mss frjekveivejw".characterBelievability()){
             sender.isSelected = true
            
         }
@@ -153,7 +153,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
    
     @IBAction func normaiRemotePush(_ sender: Any) {
-        let  cheicking =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "notiafationYID") 
+        let  cheicking =  UIStoryboard(name: "Myaiinn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "notiafationYID")
         
         self.navigationController?.pushViewController(cheicking, animated: true)
         
@@ -167,8 +167,8 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
             self.customGiftView.isHidden = false
             self.customGiftView.coaunZai.text = "x\(count)"
             self.customGiftView.whatGidt.image = UIImage(named: name)
-            self.customGiftView.ShiaiIacon.image = AppDelegate.Metrics
-            self.customGiftView.saiNae.text = "Me"
+            self.customGiftView.ShiaiIacon.image = StoryBabuSmeaCell.Metrics
+            self.customGiftView.saiNae.text = "Mje".characterBelievability()
             self.customGiftView.SianfFor.text = ">> " + (self.nnsteBase["audioClarity"] ?? "")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3,execute: DispatchWorkItem(block: {
                 self.customGiftView.isHidden = true
@@ -186,7 +186,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func senfroorrmeInfog(_ sender: UIButton) {
       
         guard let enterquest = sayHiyui.text,!enterquest.isEmpty else {
-            SVProgressHUD.showInfo(withStatus: "Please enter your content first!")
+            SVProgressHUD.showInfo(withStatus: "Pllkefaqsfet decnotyetrl uyqowudrx rclocnstuexnxtd ufhihrosktt!".characterBelievability())
             return
         }
         self.sayHiyui.text = nil

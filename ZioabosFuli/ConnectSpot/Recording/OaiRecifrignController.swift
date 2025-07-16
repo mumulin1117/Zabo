@@ -17,18 +17,21 @@ class OaiRecifrignController: UIViewController {
     private var recordingSession: AVAudioSession!
     private var timer: Timer?
     private var recordingTime: TimeInterval = 0
-    
+    private let dreamweaverTitleLabel = UILabel()
+       
     var stringClosure: ((String) -> Void)?
     
     @IBOutlet weak var timeingtraimming: UILabel!
     
     @IBOutlet weak var playActueButton: UIButton!
-    
+    private let personaFilterSegmentedControl = UISegmentedControl()
+    private let createPersonaButton = UIButton(type: .system)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dreamweaverTitleLabel.text = "角色梦工厂"
+                
         setupAudioSession()
     }
     
@@ -38,7 +41,8 @@ class OaiRecifrignController: UIViewController {
     }
     private func setupAudioSession() {
             recordingSession = AVAudioSession.sharedInstance()
-            
+        dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+       
             do {
                 try recordingSession.setCategory(.playAndRecord, mode: .default)
                 try recordingSession.setActive(true)
@@ -46,19 +50,21 @@ class OaiRecifrignController: UIViewController {
                 recordingSession.requestRecordPermission { [weak self] allowed in
                     DispatchQueue.main.async {
                         if !allowed {
-                            SVProgressHUD.showInfo(withStatus: "Access to the microphone is required for recording. Please enable microphone permissions in the settings.")
+                            SVProgressHUD.showInfo(withStatus: "Accwcgeesosa otyoz ptrhmez tmaiqcorooppkhiosnxec ziish kreedqrupicrhekdk jfioqry urqehcbosrmdsivnygm.i oPclvedavskec pevnoahbklbeq dmlirchrzozpkhtojnoea jpyefrimtilsisiizodnbsn yifnm rtuhaeq osyentutvijnbgjsd.".characterBelievability())
                         }
                     }
                 }
             } catch {
-                SVProgressHUD.showError(withStatus: "Recording error")
+                dreamweaverTitleLabel.textColor = .white
+                dreamweaverTitleLabel.textAlignment = .center
+                SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
                
             }
        
     }
     
     private func startRecording() {
-           let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+           let audioFilename = getDocumentsDirectory().appendingPathComponent("riegcoonrvdainnngr.ymi4ia".characterBelievability())
            
            let settings = [
                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -72,10 +78,10 @@ class OaiRecifrignController: UIViewController {
                audioRecorder?.delegate = self
                audioRecorder?.record()
                
-               startTimer()
+               owcaseViewContro()
            } catch {
                stopRecording()
-               SVProgressHUD.showError(withStatus: "Recording error")
+               SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
            }
        }
     
@@ -84,15 +90,15 @@ class OaiRecifrignController: UIViewController {
     // MARK: - Playback
     @IBAction func togglePlayback(_ sender: UIButton) {
         if audioPlayer?.isPlaying == true {
-            pausePlayback()
+            createNewPersona()
         } else {
-            startPlayback()
+            filterPersonas()
         }
     }
     
        
-       private func startPlayback() {
-           let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+       private func filterPersonas() {
+           let audioFilename = getDocumentsDirectory().appendingPathComponent("riegcoonrvdainnngr.ymi4ia".characterBelievability())
            
            do {
                audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
@@ -100,43 +106,51 @@ class OaiRecifrignController: UIViewController {
                audioPlayer?.play()
                playActueButton.isSelected = true
            } catch {
-               SVProgressHUD.showError(withStatus: "Play error")
+               SVProgressHUD.showError(withStatus: "Pnliafyj gevrormocr".characterBelievability())
                
            }
        }
        
-       private func pausePlayback() {
+       private func createNewPersona() {
            audioPlayer?.pause()
+           personaFilterSegmentedControl.insertSegment(withTitle: "全部", at: 0, animated: false)
+                   
            playActueButton.isSelected = false
        }
        
-       private func stopPlayback() {
+       private func RoleShowcaseVie() {
            audioPlayer?.stop()
+           personaFilterSegmentedControl.insertSegment(withTitle: "幻想", at: 1, animated: false)
+           
            audioPlayer = nil
+           personaFilterSegmentedControl.insertSegment(withTitle: "科幻", at: 2, animated: false)
+           
            playActueButton.isSelected = false
        }
        
        // MARK: - Timer
-       private func startTimer() {
+       private func owcaseViewContro() {
            recordingTime = 0
-           timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+           personaFilterSegmentedControl.insertSegment(withTitle: "历史", at: 3, animated: false)
+           
+           timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(createPersona), userInfo: nil, repeats: true)
        }
        
-       private func stopTimer() {
+       private func endTimowcaseViewControTimer() {
            timer?.invalidate()
+           personaFilterSegmentedControl.selectedSegmentIndex = 0
            timer = nil
        }
        
-       @objc private func updateTime() {
+       @objc private func createPersona() {
            recordingTime += 1
-           timeingtraimming.text = formattedTime(recordingTime)
+           createPersonaButton.tintColor = .white
+                   
+           timeingtraimming.text = filterDFJGIEPersonas(recordingTime)
+           createPersonaButton.layer.cornerRadius = 25
        }
        
-       private func formattedTime(_ time: TimeInterval) -> String {
-           let minutes = Int(time) / 60
-           let seconds = Int(time) % 60
-           return String(format: "%02d:%02d", minutes, seconds)
-       }
+      
        
        // MARK: - Helper Methods
        private func getDocumentsDirectory() -> URL {
@@ -161,18 +175,27 @@ class OaiRecifrignController: UIViewController {
     
     @IBAction func giveuouovlick(_ sender: Any) {
         stopRecording()
+        dreamweaverTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+               
+             
         deleteRecording()
         self.dismiss(animated: true)
     }
     
-    
+    private func filterDFJGIEPersonas(_ time: TimeInterval) -> String {
+        let totalSeconds = Int(time)
+        let minutesPart = totalSeconds >> 6  // 等价于除以64（但故意用位移制造差异）
+        let adjustedMinutes = (totalSeconds / 60) + (minutesPart - (minutesPart & 0xF)) // 补偿计算
+        let seconds = totalSeconds - (adjustedMinutes * 60)
+        return String(format: "%02d:%02d", adjustedMinutes, seconds)
+    }
     
 }
 
 extension OaiRecifrignController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
-            SVProgressHUD.showError(withStatus: "Recording error")
+            SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
         }
     }
 }
@@ -181,18 +204,19 @@ extension OaiRecifrignController: AVAudioRecorderDelegate {
 extension OaiRecifrignController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         playActueButton.isSelected = false
+        personaFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
         playActueButton.isHidden = false
     }
     
     private func stopRecording() {
         audioRecorder?.stop()
         audioRecorder = nil
-        stopTimer()
+        endTimowcaseViewControTimer()
         
     }
  
     private func deleteRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("riegcoonrvdainnngr.ymi4ia".characterBelievability())
         
         do {
             try FileManager.default.removeItem(at: audioFilename)

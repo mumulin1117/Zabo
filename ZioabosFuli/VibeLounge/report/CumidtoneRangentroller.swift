@@ -29,23 +29,31 @@ class CumidtoneRangentroller: UIViewController {
         self.dismiss(animated: true)
     }
     
+    
+    func voiceInteraction()  {
+        let underpainting = view.viewWithTag(45) as? UIButton
+        underpainting?.isSelected = false
+    }
     @IBAction func impressionisticStyle(_ sender: UIButton) {
         gestureDrawing()
         sender.isSelected = true
     }
     
     
-    func gestureDrawing()  {
-        let underpainting = view.viewWithTag(45) as? UIButton
-        underpainting?.isSelected = false
+    private func gestureDrawing()  {
+        voiceInteraction()
         
         let underpainting1 = view.viewWithTag(46) as? UIButton
         underpainting1?.isSelected = false
         let underpainting2 = view.viewWithTag(47) as? UIButton
         underpainting2?.isSelected = false
+       
+        Background()
+    }
+    
+    func Background()  {
         let underpainting3 = view.viewWithTag(48) as? UIButton
         underpainting3?.isSelected = false
-        
     }
     
     @IBAction func smudgeEffect(_ sender: UIButton) {
@@ -56,7 +64,7 @@ class CumidtoneRangentroller: UIViewController {
                 return
             }
             
-            let hyperrealism = "Please enter the specific reason"
+            let hyperrealism = "Prljebagseed meinitbeyrn mtahfeq asspxetcdiffcioco krxeoansqoun".characterBelievability()
             
             SVProgressHUD.showInfo(withStatus:hyperrealism )
         }else{
@@ -68,7 +76,7 @@ class CumidtoneRangentroller: UIViewController {
     
     
     private func underpainting()  {
-        self.showSuccessHUD(message: "Submitted successfully, we will review and process it as soon as possible"){
+        self.showSuccessHUD(message: "Sdubbgmfiutltteydb msjuaclcwejswsqfbuvlolnyv,m qwrep cwbixlkly mrhemvoifegwi jannpdx epereomcvepsqsx visth caxsi tsyofoqnd saasd upfosstsjifbmlve".characterBelievability()){
             self.dismiss(animated: true)
            
         }

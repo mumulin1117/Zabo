@@ -12,7 +12,10 @@ class FallSeGistiproller: UIViewController {
     
     var gistClosure: ((String,Int) -> Void)?
     
+    private var reverb: VocalType?
     
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     private var criog:Array<(gistName:String,gistCoin:Int)> = Array<(gistName:String,gistCoin:Int)>()
     @IBOutlet weak var niangColloe: UICollectionView!
     
@@ -48,14 +51,28 @@ class FallSeGistiproller: UIViewController {
     private func dialogueFlow()  {
         niangColloe.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 30, right: 0)
         niangColloe.delegate = self
+        reverb = VocalType.crystalline
+        
+       
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
+        
+        
         quantumResistant.layer.cornerRadius = 17.5
         
         niangColloe.dataSource = self
         quantumResistant.layer.masksToBounds = true
-        niangColloe.selectItem(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
-        niangColloe.collectionViewLayout = self.voiceTimbre
-        niangColloe.register(UINib.init(nibName: "FallSeGistCell", bundle: nil), forCellWithReuseIdentifier: "FallSeGistCell")
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
         niangColloe.showsVerticalScrollIndicator = false
+       
+        niangColloe.collectionViewLayout = self.voiceTimbre
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
+        niangColloe.register(UINib.init(nibName: "FallSeGistCell", bundle: nil), forCellWithReuseIdentifier: "FallSeGistCell")
+        niangColloe.selectItem(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
     
     var noiewrCount:Int = 1
@@ -73,16 +90,16 @@ class FallSeGistiproller: UIViewController {
     
     
     @IBAction func sendGiftNoing(_ sender: Any) {
-        let ingCuAJ = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String>
+        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
         
-        let quark = ingCuAJ?["auusAblan"] as? String ?? "0"
+        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
         
-        var mianLop =  Int( quark) ?? 0
-        if mianLop < noiewrCount*10 {
+        var purposeCxD =  Int( generic) ?? 0
+        if purposeCxD < noiewrCount*10 {
             self.navigationController?.pushViewController(RAIerBnijttroller.init(), animated: true)
             return
         }
-        mianLop -= noiewrCount*10
+        purposeCxD -= noiewrCount*10
         let padiu = criog[singta]
         self.gistClosure?(padiu.gistName,noiewrCount)
         

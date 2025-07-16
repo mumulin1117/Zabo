@@ -71,7 +71,10 @@ class StoryBabuStageontroller: UIViewController {
         voiceTimbred.scrollDirection = .vertical
         return voiceTimbred
     }()
+    private var reverb: VocalType?
     
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
@@ -87,6 +90,18 @@ class StoryBabuStageontroller: UIViewController {
     }
     
     private func dialogueFlow()  {
+        reverb = VocalType.crystalline
+        
+       
+        
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
+        if reverb == .crystalline {
+            chRate?.speechRate = 233
+        }
+        
+        if reverb == .gravelly {
+            chRate?.voicePitch = 800
+        }
         roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
         roleplayGuide.delegate = self
         roleplayGuide.dataSource = self

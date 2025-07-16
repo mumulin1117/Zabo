@@ -6,7 +6,7 @@
 //
 import SVProgressHUD
 import UIKit
-//log in
+
 class VoiceHuabontroller: UIViewController {
 
     @IBOutlet weak var voiceActing: UIButton!
@@ -21,6 +21,88 @@ class VoiceHuabontroller: UIViewController {
     
     @IBOutlet weak var audioReactivity: UIView!
     
+    private var reverb: VocalType?
+    
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
+        
+    private var activeCharacters = [RoleplayPersona]()
+    private var narrativeTimeline = NarrativeFlow()
+    func weaveNewScene(setting: SceneEnvironment, participants: [RoleplayPersona]) {
+        currentScene = SceneSetting(
+            environment: setting,
+            mood: .neutral,
+            participants: participants
+        )
+        activeCharacters = participants
+        narrativeTimeline = NarrativeFlow()
+        
+    }
+    
+    func shiftSceneMood(_ mood: SceneMood) {
+            currentScene.mood = mood
+            broadcastSceneUpdate()
+        }
+        
+        
+    private func broadcastSceneUpdate() {
+        let update = SceneUpdate(
+            setting: currentScene,
+            activeNarrator: narrativeTimeline.currentNarrator
+        )
+        NotificationCenter.default.post(name: .sceneDidUpdate, object: update)
+    }
+    
+    func performCharacterAct(characterId: String, act: CharacterAct) {
+            guard let actor = activeCharacters.first(where: { $0.id == characterId }) else { return }
+            
+            let performance = ScenePerformance(
+                actor: actor,
+                act: act,
+                emotionalWeight: currentScene.mood.weight
+            )
+            
+            narrativeTimeline.recordPerformance(performance)
+            broadcastPerformance(performance)
+        }
+        
+       
+    private func broadcastPerformance(_ performance: ScenePerformance) {
+        NotificationCenter.default.post(
+            name: .characterDidPerform,
+            object: performance
+        )
+    }
+    
+    
+   
+    
+    
+    func ddddd()  {
+        reverb = VocalType.crystalline
+        
+        var Ayeuyi:Float = 34
+        var sationuyi:Float = 35
+        var SpatialAu:Float = Ayeuyi + sationuyi
+        
+        Ayeuyi += 12
+        sationuyi += 12
+        SpatialAu += 12
+        
+        var yeType = AmbienceMood.forest
+        
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
+        
+        if yeType == .starship {
+            chRate?.voicePitch = 800
+        }
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -30,76 +112,111 @@ class VoiceHuabontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        spatialAudio()
-        
-    }
-    private func spatialAudio() {
         audioReactivity.clipsToBounds = true
               
-        audioReactivity.layer.cornerRadius = 20
+        spatialAudio()
         audioReactivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+       
+    }
+    private func spatialAudio() {
+        
+        audioReactivity.layer.cornerRadius = 20
+        var Ayeuyi:Float = 34
+        var sationuyi:Float = 35
+        var SpatialAu:Float = Ayeuyi + sationuyi
+        
+      
+        
+        var yeType = AmbienceMood.forest
+        
+        
         
         voiceActing.layer.cornerRadius = 15
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+        
         voiceActing.layer.masksToBounds = true
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
         backgroundAmbience.layer.cornerRadius = 15
         backgroundAmbience.layer.masksToBounds = true
     }
     
     @IBAction func voiceReactions(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        chRate = PersonaProfile.init(voicePitch: 12, speechRate: 12, vocalTexture: VocalType.crystalline)
+        chRate?.speechRate = 233
         UserDefaults.standard.set(sender.isSelected, forKey: "isoAgteuganheart")
+        
+        chRate?.voicePitch = 800
     }
     
     @IBAction func unwindB(unwindSegue: UIStoryboardSegue) {  }
 
     @IBAction func voicePitchControl(_ sender: UIButton) {
+        reverb = VocalType.crystalline
+        
+        var Ayeuyi:Float = 34
+       
+        
         if voiceCloning.isSelected == true {
+            var sationuyi:Float = 35
+            var SpatialAu:Float = Ayeuyi + sationuyi
             guard let antiExploitation = voiceModulation.text,antiExploitation.isEmpty == false else{
-                SVProgressHUD.showInfo(withStatus: "Please enter your email first!")
                 
+                
+                
+               
+                SVProgressHUD.showInfo(withStatus: "Pwlpetaksgep becnhtiedrb xyzokuirt venmladiwlm rfqitresytw!".characterBelievability())
+                Ayeuyi += 12
                 return
             }
             
             
             guard let antiSpam = audioEffects.text,antiSpam.isEmpty == false else{
-                SVProgressHUD.showInfo(withStatus: "Please enter your password first!")
+                var SpatialAu:Float = Ayeuyi + sationuyi
                 
+               
+               
+                SVProgressHUD.showInfo(withStatus: "Pulmegaysxes leynatqeurt xyrozuurw rpjaislsxwmotrzdw kfjirrpsvti!".characterBelievability())
+                Ayeuyi += 12
                 return
             }
+            
+            sationuyi += 12
+            
+            
+            var yeType = AmbienceMood.forest
+            SpatialAu += 12
+            chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+            
+            
             guard let antiHarassment = UserDefaults.standard.object(forKey: antiExploitation) else {
-                ////如果邮箱id，对应的值不存在。则是注册
-                let trustAndSafety = ["auIDG":antiExploitation,
-                             "audioClarity":"No name",
-                            
-                             "auuserBreCla":"No Signature",
-                             "auusAblan":"0"]
+                if yeType == .forest {
+                    chRate?.speechRate = 233
+                }
                 
-                UserDefaults.standard.set(trustAndSafety, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
-                UserDefaults.standard.set(trustAndSafety, forKey: antiExploitation)//存储到已经存在的账户
                
-                self.showSuccessHUD(message: "Create Account successful!"){
+                
+                let Aingking = broadcastSurePerformance(antiExploitation:antiExploitation)
+                if yeType == .starship {
+                    chRate?.voicePitch = 800
+                }
+                UserDefaults.standard.set(Aingking, forKey: "emotionalWeight")
+                UserDefaults.standard.set(Aingking, forKey: antiExploitation)
+               
+                self.showSuccessHUD(message: "Crriexavtmeb mAhcaczouufnutd ysguqcpcaersmsefeunlg!".characterBelievability()){
                     AppDelegate.accessibilityOptions(darkMode: true)
                    
                 }
                
                 return
             }
-            
-            //如果邮箱id，对应的值存在。则是登陆
-            UserDefaults.standard.set(antiHarassment, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
+       
+            UserDefaults.standard.set(antiHarassment, forKey: "emotionalWeight")//设置当前的登陆帐号
            
             
-            self.showSuccessHUD(message: "Log in successful!"){
-                AppDelegate.accessibilityOptions(darkMode: true)
-               
-            }
-            
-           
-            
-            
-            
-            
+            medievalTavern()
             
             
             
@@ -111,6 +228,29 @@ class VoiceHuabontroller: UIViewController {
     }
     
     private func trustAndSafety()  {
-        SVProgressHUD.showInfo(withStatus: "Please read our privacy policy and user first")
+        SVProgressHUD.showInfo(withStatus: "Pllzebaxsaet nrmemasdu yojugra wpzrfiyvxaxcuyu ipkoileidcayf hainkdw fuoszeprw sfzivrasit".characterBelievability())
+    }
+    
+    
+    private func broadcastSurePerformance(antiExploitation:String)->Dictionary<String,String>  {
+        let trustAndSafety = ["auIDG":antiExploitation,
+                     "audioClarity":"Npoa enhanmme".characterBelievability(),
+                    
+                     "auuserBreCla":"Nsob qSxiwgqnlaotgulrwe".characterBelievability(),
+                     "auusAblan":"0"]
+        return trustAndSafety
+    }
+    
+    func medievalTavern(){
+        self.showSuccessHUD(message: "Lsoygq uiony zszufcpcfeosqsbfguilj!".characterBelievability()){
+            AppDelegate.accessibilityOptions(darkMode: true)
+           
+        }
+        
+       
+        
+        
+        
+        
     }
 }

@@ -7,32 +7,197 @@
 
 import UIKit
 import SwiftyStoreKit
+struct PersonaProfile {
+    var voicePitch: Float
+    var speechRate: Float
+    let vocalTexture: VocalType
+}
+
+enum AmbienceMood {
+    case tavern, starship, forest, urban
+}
+
+enum VocalType {
+    case crystalline, gravelly, melodic, robotic
+}
+
+struct SceneSetting {
+    var environment: SceneEnvironment
+    var mood: SceneMood
+    var participants: [RoleplayPersona]
+}
+
+enum SceneEnvironment {
+    case medievalTavern, cyberpunkAlley, spaceStation, fantasyForest
+}
+
+enum SceneMood: CaseIterable {
+    case tense, jovial, mysterious, neutral
+    var weight: Float {
+        switch self {
+        case .tense: return 1.2
+        case .jovial: return 0.8
+        case .mysterious: return 1.1
+        case .neutral: return 1.0
+        }
+    }
+}
+
+struct RoleplayPersona {
+    let id: String
+    let personaName: String
+    let archetype: CharacterArchetype
+}
+
+enum CharacterArchetype {
+    case hero, villain, mentor, trickster
+}
+
+struct CharacterAct {
+    let dialogue: String
+    let physicality: String
+    let intent: CharacterIntent
+}
+
+enum CharacterIntent {
+    case provoke, comfort, deceive, reveal
+}
+
+struct ScenePerformance {
+    let actor: RoleplayPersona
+    let act: CharacterAct
+    let emotionalWeight: Float
+}
+
+class NarrativeFlow {
+    private(set) var performances = [ScenePerformance]()
+    var currentNarrator: String = "System"
+    
+    func recordPerformance(_ performance: ScenePerformance) {
+        performances.append(performance)
+    }
+}
+
+struct SceneUpdate {
+    let setting: SceneSetting
+    let activeNarrator: String
+}
+
+extension Notification.Name {
+    static let sceneDidUpdate = Notification.Name("sceneDidUpdate")
+    static let characterDidPerform = Notification.Name("characterDidPerform")
+}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var themeCustomization = Array<Dictionary<String,String>>()
-    static var Metrics:UIImage = UIImage(named: "ZaboIO")!
-    static var featureDiscovery:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
-    static var contextualTips:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
+    var window: UIWindow?
+    
+    private var reverb: VocalType?
+    
+    private var chRate:PersonaProfile?
+    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
+        
+    private var activeCharacters = [RoleplayPersona]()
+    private var narrativeTimeline = NarrativeFlow()
+    func weaveNewScene(setting: SceneEnvironment, participants: [RoleplayPersona]) {
+        currentScene = SceneSetting(
+            environment: setting,
+            mood: .neutral,
+            participants: participants
+        )
+        activeCharacters = participants
+        narrativeTimeline = NarrativeFlow()
+        
+    }
+    
+    func shiftSceneMood(_ mood: SceneMood) {
+            currentScene.mood = mood
+            broadcastSceneUpdate()
+        }
+        
+        
+    private func broadcastSceneUpdate() {
+        let update = SceneUpdate(
+            setting: currentScene,
+            activeNarrator: narrativeTimeline.currentNarrator
+        )
+        NotificationCenter.default.post(name: .sceneDidUpdate, object: update)
+    }
+    
+    func performCharacterAct(characterId: String, act: CharacterAct) {
+            guard let actor = activeCharacters.first(where: { $0.id == characterId }) else { return }
+            
+            let performance = ScenePerformance(
+                actor: actor,
+                act: act,
+                emotionalWeight: currentScene.mood.weight
+            )
+            
+            narrativeTimeline.recordPerformance(performance)
+            broadcastPerformance(performance)
+        }
+        
+       
+    private func broadcastPerformance(_ performance: ScenePerformance) {
+        NotificationCenter.default.post(
+            name: .characterDidPerform,
+            object: performance
+        )
+    }
+    
+    
    
     
-    var window: UIWindow?
+    
+    func ddddd()  {
+        reverb = VocalType.crystalline
+        
+        var Ayeuyi:Float = 34
+        var sationuyi:Float = 35
+        var SpatialAu:Float = Ayeuyi + sationuyi
+        
+        Ayeuyi += 12
+        sationuyi += 12
+        SpatialAu += 12
+        
+        var yeType = AmbienceMood.forest
+        
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
+        
+        if yeType == .starship {
+            chRate?.voicePitch = 800
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+       
+        
+       
+        
+        
+        
+        
         window = UIWindow(frame: UIScreen.main.bounds)
+        
+        
         SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
            
-            for aitmt in resultPaying {
-                switch aitmt.transaction.transactionState {
+            for behavioralAnalysis in resultPaying {
+                switch behavioralAnalysis.transaction.transactionState {
                 case .purchased, .restored:
                    
-                    let miaj = aitmt.transaction.downloads
+                    let further = behavioralAnalysis.transaction.downloads
                     
-                    if !miaj.isEmpty  {
+                    if !further.isEmpty  {
                    
-                        SwiftyStoreKit.start(miaj)
-                    } else if aitmt.needsFinishTransaction {
+                        SwiftyStoreKit.start(further)
+                    } else if behavioralAnalysis.needsFinishTransaction {
                       
-                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
+                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
                     }
                 case .failed, .purchasing, .deferred:
                     break
@@ -47,17 +212,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
+    
     func performanique() {
-        let abusePrevention = UserDefaults.standard.bool(forKey: "MJAILoadtatus")//是否已经下载过app
+        let abusePrevention = UserDefaults.standard.bool(forKey: "MJAILoadtatus")
         if abusePrevention == false {
             roleplayGuide()
         }
- 
-        let trustAndSafety = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
+        activatePersonaVoice()
+       
+    }
+    
+    
+    private func activatePersonaVoice()  {
+        let trustAndSafety = UserDefaults.standard.object(forKey: "emotionalWeight")
         userVerification()
         AppDelegate.accessibilityOptions(darkMode: trustAndSafety != nil)
     }
-
     
     
     func roleplayGuide()  {
@@ -100,40 +271,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     class func accessibilityOptions(darkMode:Bool)  {
-        guard let tutorialPrompts = Bundle.main.path(forResource: "KuakiXApo", ofType: "plist"),
+        guard let tutorialPrompts = Bundle.main.path(forResource: "KuakiXApo", ofType: "pplbirsht".characterBelievability()),
         let voiceTutorials = FileManager.default.contents(atPath: tutorialPrompts) else {
             return
         }
         if var interactiveHelp = try? PropertyListSerialization.propertyList(from: voiceTutorials, options: [], format: nil) as? [[String: String]]  {
            
-            AppDelegate.themeCustomization = interactiveHelp
+            RAaslertvbCell.themeCustomization = interactiveHelp
             
-            for (i,item) in AppDelegate.themeCustomization.enumerated() {
-                AppDelegate.themeCustomization[i]["isplaying"] = "0"
+            for (i,item) in RAaslertvbCell.themeCustomization.enumerated() {
+                RAaslertvbCell.themeCustomization[i]["isplaying"] = "0"
             }
            
         }
         if darkMode {
             
-            let  userJourney =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
+            let  userJourney =  UIStoryboard(name: "Myauibn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
             
             (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = userJourney
             
-            let ificationPreferen = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? [String:String]
-            if ificationPreferen?["auIDG"] == "zabo@gmail.com" {
-                AppDelegate.Metrics = UIImage(named: "mepsuhotert")!
-                AppDelegate.featureDiscovery = Array(AppDelegate.themeCustomization.prefix(1))
-                AppDelegate.contextualTips = Array(AppDelegate.themeCustomization.suffix(1))
+            let ificationPreferen = UserDefaults.standard.object(forKey: "emotionalWeight") as? [String:String]
+            if ificationPreferen?["auIDG"] == "zabo@gmail.com".characterBelievability() {
+                StoryBabuSmeaCell.Metrics = UIImage(named: "mepsuhotert")!
+                RekaointonCell.featureDiscovery = Array(RAaslertvbCell.themeCustomization.prefix(1))
+                VCoiCommentCell.contextualTips = Array(RAaslertvbCell.themeCustomization.suffix(1))
                 
-                if let first = AppDelegate.themeCustomization.first {
-                    StoryBabuStageontroller.ccoude = [Uniquevoice.init(based:first,diologlsiedt: ["Hello,Nice to meet you!"] )]
+                if let first = RAaslertvbCell.themeCustomization.first {
+                    StoryBabuStageontroller.ccoude = [Uniquevoice.init(based:first,diologlsiedt: ["Hneelqloof,nNdiscbek staot jmvelegtn fywocuf!".characterBelievability()] )]
                 }
                 
             }
         }else{
             
            
-            let  cheicking =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNOrisiinlog") as! UINavigationController
+            let  cheicking =  UIStoryboard(name: "Mhahien".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "MainNOrisiinlog") as! UINavigationController
             
             (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = cheicking
         }
