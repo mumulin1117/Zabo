@@ -59,7 +59,10 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         storyTexture.isSelected = (AppDelegate.featureDiscovery.filter({ divv in
             divv["auIDG"] == nnsteBase["auIDG"]
         }).count > 0)
-        
+        self.operate.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.operate.isHidden = false
+        }
         dialogueSystem.layer.cornerRadius = 25
         dialogueSystem.layer.masksToBounds = true
         
@@ -111,7 +114,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     @IBAction func voiceRichness(_ sender: UIButton) {
         SVProgressHUD.show()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showInfo(withStatus: "The gift you haven't received yet")
+            SVProgressHUD.showInfo(withStatus: "no gift  received yet")
         }))
     }
     

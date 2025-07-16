@@ -84,10 +84,9 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
             
             self.navigationController?.pushViewController(cheicking, animated: true)
         case 2:
-            SVProgressHUD.show()
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                SVProgressHUD.showSuccess(withStatus: "Clear completed!")
-            }))
+            
+            self.showSuccessHUD(message: "Clear completed!")
+           
         case 3:
             self.navigationController?.pushViewController(RAccutettroller(), animated: true)
         case 4:

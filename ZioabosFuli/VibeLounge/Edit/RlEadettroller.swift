@@ -58,12 +58,11 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     func supplementary() {
-        SVProgressHUD.show()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showSuccess(withStatus: "save Successful!")
+        self.showSuccessHUD(message: "save Successful!"){
             self.navigationController?.popViewController(animated: true)
            
-        }))
+        }
+        
     }
     
     

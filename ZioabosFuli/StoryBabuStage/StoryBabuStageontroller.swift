@@ -75,7 +75,10 @@ class StoryBabuStageontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
-        
+        self.roleplayGuide.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.roleplayGuide.isHidden = false
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
     }
     

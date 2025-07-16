@@ -73,6 +73,10 @@ class DswVcoverontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.abstractGeometry.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.abstractGeometry.isHidden = false
+        }
         dialogueFlow()
        
     }

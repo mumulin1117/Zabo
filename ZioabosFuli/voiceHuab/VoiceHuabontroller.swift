@@ -77,13 +77,12 @@ class VoiceHuabontroller: UIViewController {
                 
                 UserDefaults.standard.set(trustAndSafety, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
                 UserDefaults.standard.set(trustAndSafety, forKey: antiExploitation)//存储到已经存在的账户
-                SVProgressHUD.show(withStatus: "Sign in.....")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
+               
+                self.showSuccessHUD(message: "Create Account successful!"){
                     AppDelegate.accessibilityOptions(darkMode: true)
-                    
-                    SVProgressHUD.showSuccess(withStatus: "Create Account successful!")
-                    
-                }))
+                   
+                }
+               
                 return
             }
             
@@ -91,12 +90,12 @@ class VoiceHuabontroller: UIViewController {
             UserDefaults.standard.set(antiHarassment, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
            
             
-            SVProgressHUD.show(withStatus: "login.....")
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
-                
+            self.showSuccessHUD(message: "Log in successful!"){
                 AppDelegate.accessibilityOptions(darkMode: true)
-                SVProgressHUD.showSuccess(withStatus: "Log in successful!")
-            }))
+               
+            }
+            
+           
             
             
             

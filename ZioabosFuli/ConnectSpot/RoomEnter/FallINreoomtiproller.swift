@@ -94,6 +94,8 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         }
         customGiftView.isHidden = true
        
+       
+        self.showSuccessHUD(message: nil)
     }
 
     
@@ -137,13 +139,12 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func applyjoin(_ sender: UIButton) {
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+        self.showSuccessHUD(message: "The application has been submitted and is waiting for the homeowner's review"){
             sender.isSelected = true
-            SVProgressHUD.showSuccess(withStatus: "The application has been submitted and is waiting for the homeowner's review")
            
-        }))
+        }
+        
+      
     }
     //report
     @IBAction func storyboardTools()  {
@@ -182,8 +183,8 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     
-    @IBAction func senfroorrmeInfog(_ sender: Any) {
-        
+    @IBAction func senfroorrmeInfog(_ sender: UIButton) {
+      
         guard let enterquest = sayHiyui.text,!enterquest.isEmpty else {
             SVProgressHUD.showInfo(withStatus: "Please enter your content first!")
             return
@@ -194,13 +195,13 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func generateresult(questuin:String)  {
-        SVProgressHUD.show()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.dismiss()
+        self.showSuccessHUD(message: nil){
             self.talkingContet.append(questuin)
             self.dramaticPerformance.reloadData()
-        }))
+        }
+        
+       
       
     }
 }

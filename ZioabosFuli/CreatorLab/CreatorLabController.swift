@@ -64,7 +64,10 @@ class CreatorLabController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
-        
+        self.roleplayGuide.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.roleplayGuide.isHidden = false
+        }
     }
     
     private func dialogueFlow()  {

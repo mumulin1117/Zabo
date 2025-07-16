@@ -68,13 +68,12 @@ class CumidtoneRangentroller: UIViewController {
     
     
     private func underpainting()  {
-        SVProgressHUD.show()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+        self.showSuccessHUD(message: "Submitted successfully, we will review and process it as soon as possible"){
             self.dismiss(animated: true)
-            let hyperrealism = "Submitted successfully, we will review and process it as soon as possible"
-            
-            SVProgressHUD.showSuccess(withStatus:hyperrealism )
-        }))
+           
+        }
+        
+        
     }
     
     private func interactiveHelp() {

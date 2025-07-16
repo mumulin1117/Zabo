@@ -41,6 +41,10 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
+        self.interactiveHelp.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.interactiveHelp.isHidden = false
+        }
        
     }
 

@@ -51,7 +51,10 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         self.viderplayet?.playbackLoops = true
         NotificationCenter.default.addObserver(self, selector: #selector(OIDShu), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
         
-//        self.viderplayet?.playFromBeginning()
+        self.interactiveHelp.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.interactiveHelp.isHidden = false
+        }
     }
     @objc func tapVideoStatusChange()  {
     
@@ -175,13 +178,11 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
        
         
         SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+        self.showSuccessHUD(message: "send Successful!,Comments will be displayed after approval"){
             self.darkMode.text = nil
             self.darkMode.resignFirstResponder()
-            SVProgressHUD.showSuccess(withStatus: "send Successful!,Comments will be displayed after approval")
-           
-        }))
+        }
+       
     }
     
    

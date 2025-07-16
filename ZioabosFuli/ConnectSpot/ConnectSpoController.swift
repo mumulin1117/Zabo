@@ -25,6 +25,11 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.roleplayGuide.isHidden = true
+        self.showSuccessHUD(message: nil){
+            self.roleplayGuide.isHidden = false
+        }
+        
         dialogueFlow()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)

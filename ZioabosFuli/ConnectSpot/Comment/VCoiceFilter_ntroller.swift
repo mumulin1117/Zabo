@@ -9,7 +9,11 @@ import UIKit
 import SVProgressHUD
 
 class VCoiceFilter_ntroller: UIViewController {
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.showSuccessHUD(message: nil)
+    }
     @IBOutlet weak var darkMode: UITextField!
    
     @IBAction func OIDShu(_ sender: UIButton) {
@@ -23,14 +27,26 @@ class VCoiceFilter_ntroller: UIViewController {
             return
         }
        
-        
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+        self.showSuccessHUD(message: "send Successful!,Comments will be displayed after approval"){
             self.darkMode.text = nil
             self.darkMode.resignFirstResponder()
-            SVProgressHUD.showSuccess(withStatus: "send Successful!,Comments will be displayed after approval")
-           
-        }))
+        }
+       
+    }
+}
+
+
+extension UIViewController {
+    func showSuccessHUD(after delay: TimeInterval = 1.2, message: String?, completion: (() -> Void)? = nil) {
+        SVProgressHUD.show()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            completion?()
+            if message == nil{
+                SVProgressHUD.dismiss()
+                return
+            }
+            SVProgressHUD.showSuccess(withStatus: message)
+        }
     }
 }
