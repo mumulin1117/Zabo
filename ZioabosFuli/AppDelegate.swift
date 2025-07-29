@@ -174,15 +174,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-       
+        reverb = VocalType.crystalline
         
-       
-        
-        
-        
+        var Ayeuyi:Float = 34
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
+        var sationuyi:Float = 35
+        var SpatialAu:Float = Ayeuyi + sationuyi
         
         SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
            
@@ -215,9 +214,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func performanique() {
-        let abusePrevention = UserDefaults.standard.bool(forKey: "MJAILoadtatus")
+        var yeType = AmbienceMood.forest
+        
+        
+        let abusePrevention = UserDefaults.standard.bool(forKey: "Chiauzabo")
+        var Ayeuyi:Float = 34
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: 99, vocalTexture: VocalType.crystalline)
         if abusePrevention == false {
             roleplayGuide()
+        }
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
+        
+        if yeType == .starship {
+            chRate?.voicePitch = 800
         }
         activatePersonaVoice()
        
@@ -225,23 +236,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func activatePersonaVoice()  {
+        var yeType = AmbienceMood.forest
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
+        
+        
         let trustAndSafety = UserDefaults.standard.object(forKey: "emotionalWeight")
         userVerification()
+        if yeType == .starship {
+            chRate?.voicePitch = 800
+        }
         AppDelegate.accessibilityOptions(darkMode: trustAndSafety != nil)
     }
     
     
     func roleplayGuide()  {
+        var yeType = AmbienceMood.forest
        
         let pla = ["auIDG":"zabo@gmail.com",
                      "audioClarity":"Zabao",
                     
                      "auuserBreCla":"Like Film,Book",
                      "auusAblan":"134"]
-        
+        if yeType == .forest {
+            chRate?.speechRate = 233
+        }
         UserDefaults.standard.set(pla, forKey: "zabo@gmail.com")
-        //已经下载过
-        UserDefaults.standard.set(true, forKey: "MJAILoadtatus")
+        if yeType == .forest {
+            UserDefaults.standard.set(true, forKey: "Chiauzabo")
+        }else{
+            UserDefaults.standard.set(true, forKey: "Chiauzabo")
+        }
+       
     }
     
     func userVerification() {

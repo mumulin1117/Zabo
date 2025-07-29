@@ -96,7 +96,7 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
             )
             .setTitleColor(.systemOrange)
             .addAction(title: "Cvahnncheml".characterBelievability(), style: .cancel)
-            .addAction(title: "Confirm Deletion".characterBelievability(), style: .destructive) { [weak self] in
+            .addAction(title: "Sure", style: .destructive) { [weak self] in
                 self?.userSpotlight()
             }
             .build()
