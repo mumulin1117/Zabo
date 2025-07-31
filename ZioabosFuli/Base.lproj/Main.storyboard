@@ -853,6 +853,14 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-pQ-1eu">
                                 <rect key="frame" x="0.0" y="207" width="375" height="460"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the  account  does not exist, it will be automatically  created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6B-Ye-0Nj">
+                                        <rect key="frame" x="24" y="260" width="327" height="28"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
+                                        <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="460" id="rCh-1d-hZ6"/>
@@ -928,7 +936,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HP-W0-09K">
-                                <rect key="frame" x="24" y="432.5" width="327" height="50"/>
+                                <rect key="frame" x="24" y="402.5" width="327" height="50"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tcC-ea-Hr0"/>
@@ -937,13 +945,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9A-Qk-Yux">
-                                <rect key="frame" x="24" y="399.5" width="76" height="21"/>
+                                <rect key="frame" x="24" y="369.5" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7FC-my-QF0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kL1-Zt-xcn">
-                                <rect key="frame" x="24" y="325.5" width="327" height="50"/>
+                                <rect key="frame" x="24" y="295.5" width="327" height="50"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1v5-Lf-llR"/>
@@ -952,7 +963,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3Q-Qx-2Ue">
-                                <rect key="frame" x="24" y="292.5" width="43" height="21"/>
+                                <rect key="frame" x="24" y="262.5" width="43" height="21"/>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -992,19 +1003,22 @@
                             <constraint firstItem="FuU-Lz-JLJ" firstAttribute="centerY" secondItem="jzG-eo-ZDf" secondAttribute="centerY" id="THo-ol-fFz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6HP-W0-09K" secondAttribute="trailing" constant="24" id="Ybg-i9-spG"/>
                             <constraint firstItem="V1K-Ma-npE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="a1e-GX-r5f"/>
+                            <constraint firstItem="j6B-Ye-0Nj" firstAttribute="leading" secondItem="6HP-W0-09K" secondAttribute="leading" id="cca-ig-xOx"/>
                             <constraint firstItem="IWS-6L-sdi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eSY-U8-gv3"/>
                             <constraint firstItem="kL1-Zt-xcn" firstAttribute="top" secondItem="j3Q-Qx-2Ue" secondAttribute="bottom" constant="12" id="gDK-eh-LfO"/>
                             <constraint firstItem="P9A-Qk-Yux" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="gon-kh-Cop"/>
                             <constraint firstItem="wfV-sT-M2i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hVH-iO-Vgy"/>
                             <constraint firstAttribute="bottom" secondItem="OaV-pQ-1eu" secondAttribute="bottom" id="iQe-cR-b9x"/>
                             <constraint firstItem="fEh-Gf-RKx" firstAttribute="centerY" secondItem="g4z-SM-KBh" secondAttribute="centerY" id="j4O-RN-lw4"/>
-                            <constraint firstItem="yon-Vf-H6P" firstAttribute="top" secondItem="6HP-W0-09K" secondAttribute="bottom" constant="30" id="jcY-02-rQ6"/>
+                            <constraint firstItem="yon-Vf-H6P" firstAttribute="top" secondItem="6HP-W0-09K" secondAttribute="bottom" constant="60" id="jcY-02-rQ6"/>
                             <constraint firstItem="kL1-Zt-xcn" firstAttribute="trailing" secondItem="6HP-W0-09K" secondAttribute="trailing" id="lIQ-vJ-AK6"/>
                             <constraint firstItem="IWS-6L-sdi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mTq-me-0Hr"/>
                             <constraint firstItem="fEh-Gf-RKx" firstAttribute="top" secondItem="yon-Vf-H6P" secondAttribute="bottom" constant="35" id="nKG-J4-S37"/>
                             <constraint firstItem="g4z-SM-KBh" firstAttribute="leading" secondItem="V1K-Ma-npE" secondAttribute="trailing" constant="7" id="pTq-ad-6T3"/>
                             <constraint firstItem="6HP-W0-09K" firstAttribute="top" secondItem="P9A-Qk-Yux" secondAttribute="bottom" constant="12" id="q5b-Ea-ntC"/>
+                            <constraint firstItem="j6B-Ye-0Nj" firstAttribute="top" secondItem="6HP-W0-09K" secondAttribute="bottom" constant="14.5" id="sCn-nh-Bsz"/>
                             <constraint firstItem="IWS-6L-sdi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sg7-2R-B3Q"/>
+                            <constraint firstItem="j6B-Ye-0Nj" firstAttribute="trailing" secondItem="6HP-W0-09K" secondAttribute="trailing" id="uwr-22-gsk"/>
                             <constraint firstItem="OaV-pQ-1eu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vEQ-AW-liP"/>
                             <constraint firstAttribute="bottom" secondItem="IWS-6L-sdi" secondAttribute="bottom" id="vRE-fJ-rdC"/>
                             <constraint firstItem="g4z-SM-KBh" firstAttribute="top" secondItem="V1K-Ma-npE" secondAttribute="top" id="x7n-VL-3Zh"/>
@@ -1048,7 +1062,7 @@
                                     <action selector="performanceIntensity:" destination="CnK-Tp-ccP" eventType="touchUpInside" id="DpL-hH-qaT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-dQ-OKt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hicla Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-dQ-OKt">
                                 <rect key="frame" x="105.5" y="27" width="164" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1063,8 +1077,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z2Q-06-plt">
                                 <rect key="frame" x="16" y="112" width="343" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Data Collected
-To enable immersive roleplay, Zabo collects:
+                                <mutableString key="text">Data Collected
+To enable immersive roleplay, Hicla collects:
 
 Voice/Video Data: Processed in real-time for conversations but not stored unless you save clips.
 Persona Details: Character names, traits, and preferences (not linked to real identity).
@@ -1078,7 +1092,7 @@ User Controls
 
 Delete persona profiles anytime in settings.
 Opt out of analytics via the "Privacy" tab.
-Contact zabo5566@gmail.com for data deletion requests.</string>
+Contact Hicla5566@gmail.com for data deletion requests.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1132,8 +1146,8 @@ Contact zabo5566@gmail.com for data deletion requests.</string>
                                     <segue destination="BpV-Cd-SGX" kind="unwind" unwindAction="unwindBWithUnwindSegue:" id="eMy-us-124"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo ELUA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtA-vo-S6E">
-                                <rect key="frame" x="141" y="27" width="93" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hicla ELUA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtA-vo-S6E">
+                                <rect key="frame" x="141.5" y="27" width="92" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1147,8 +1161,8 @@ Contact zabo5566@gmail.com for data deletion requests.</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eib-2L-Ogg">
                                 <rect key="frame" x="16" y="112" width="343" height="463"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">License Grant
-Zabo ("the App") grants you a limited, non-exclusive, revocable license to use its voice-based roleplay platform for personal, non-commercial purposes. This includes access to real-time conversations, persona creation tools, and community features.
+                                <mutableString key="text">License Grant
+Hicla ("the App") grants you a limited, non-exclusive, revocable license to use its voice-based roleplay platform for personal, non-commercial purposes. This includes access to real-time conversations, persona creation tools, and community features.
 
 User Conduct Restrictions
 You agree not to:
@@ -1158,10 +1172,10 @@ Create harmful/offensive personas (e.g., hate speech, harassment).
 Record/distribute others’ voice/video content without consent.
 Exploit roleplay scenarios for illegal activities (e.g., fraud, grooming).
 Termination
-Zabo may terminate your access immediately if you violate these terms, with or without notice. Severe breaches (e.g., predatory behavior) may result in permanent bans and legal action.
+Hicla may terminate your access immediately if you violate these terms, with or without notice. Severe breaches (e.g., predatory behavior) may result in permanent bans and legal action.
 
 Updates &amp; Support
-The App may update features (e.g., new voice filters) without prior notice. Support is available at zabo5566@gmail.com.</string>
+The App may update features (e.g., new voice filters) without prior notice. Support is available at Hicla5566@gmail.com.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1250,8 +1264,8 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                                     <action selector="performanceIntensity:" destination="JQQ-VU-Yd7" eventType="touchUpInside" id="rDA-Z5-tKa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo User Agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-vK-8is">
-                                <rect key="frame" x="95.5" y="27" width="184.5" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hicla User Agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-vK-8is">
+                                <rect key="frame" x="96" y="27" width="183.5" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1319,7 +1333,7 @@ Community Safety: Age gates and content moderation emphasis.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kmY-Ym-nro"/>
+        <segue reference="tRj-E5-XWl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="JKanvhuf" width="345" height="457"/>
@@ -1356,7 +1370,7 @@ Community Safety: Age gates and content moderation emphasis.</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

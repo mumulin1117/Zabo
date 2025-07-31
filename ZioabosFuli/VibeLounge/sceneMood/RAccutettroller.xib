@@ -47,14 +47,14 @@
                         <constraint firstAttribute="height" constant="90" id="rpF-Iq-2Bx"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drw-7G-kIB">
-                    <rect key="frame" x="166" y="320.66666666666669" width="61" height="28.666666666666686"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hicla" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drw-7G-kIB">
+                    <rect key="frame" x="166" y="320.66666666666669" width="61.333333333333343" height="29"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                     <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAo-qW-r1y">
-                    <rect key="frame" x="138.66666666666666" y="364" width="116" height="33"/>
+                    <rect key="frame" x="138.66666666666666" y="364.33333333333331" width="116" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="eoA-hr-VyS"/>
                         <constraint firstAttribute="height" constant="33" id="zZO-sc-vph"/>
@@ -75,6 +75,7 @@
                 <constraint firstItem="Qwu-eE-RwW" firstAttribute="top" secondItem="HwU-vd-Y0Z" secondAttribute="bottom" constant="120" id="D70-Yi-VBk"/>
                 <constraint firstItem="7yz-Ao-mzv" firstAttribute="trailing" secondItem="m9f-RH-tX2" secondAttribute="trailing" id="GWc-QE-nr5"/>
                 <constraint firstItem="nAo-qW-r1y" firstAttribute="top" secondItem="drw-7G-kIB" secondAttribute="bottom" constant="14.67" id="Gjl-Rc-2BV"/>
+                <constraint firstItem="drw-7G-kIB" firstAttribute="centerX" secondItem="Qwu-eE-RwW" secondAttribute="centerX" id="Vmo-22-zio"/>
                 <constraint firstItem="PGR-At-ZRU" firstAttribute="top" secondItem="m9f-RH-tX2" secondAttribute="top" constant="6" id="e09-dx-9CX"/>
                 <constraint firstItem="Qwu-eE-RwW" firstAttribute="centerX" secondItem="AGC-Ej-djx" secondAttribute="centerX" id="geM-I9-XOb"/>
                 <constraint firstItem="drw-7G-kIB" firstAttribute="top" secondItem="Qwu-eE-RwW" secondAttribute="bottom" constant="22" id="kLn-yn-bnQ"/>
@@ -84,7 +85,7 @@
                 <constraint firstItem="7yz-Ao-mzv" firstAttribute="top" secondItem="AGC-Ej-djx" secondAttribute="top" id="tRh-WX-c1O"/>
                 <constraint firstItem="7yz-Ao-mzv" firstAttribute="leading" secondItem="m9f-RH-tX2" secondAttribute="leading" id="y9g-8m-cB9"/>
             </constraints>
-            <point key="canvasLocation" x="108" y="20.239880059970016"/>
+            <point key="canvasLocation" x="107.63358778625954" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
