@@ -6,6 +6,11 @@
 //
 
 import UIKit
+struct CharacterAct {
+    let dialogue: String
+    let physicality: String
+    let intent: CharacterIntent
+}
 
 class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,10 +39,13 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
     
     private lazy var voiceTimbre: UICollectionViewFlowLayout = {
         let voiceTimbred = UICollectionViewFlowLayout.init()
-        voiceTimbred.itemSize = CGSize(width: (UIScreen.main.bounds.width - 32), height: 56)
+        voiceTimbred.scrollDirection = .vertical
+        let miasie = CGSize(width: (UIScreen.main.bounds.width - 32), height: 56)
+        
+        voiceTimbred.itemSize = miasie
         voiceTimbred.minimumLineSpacing = 5
         
-        voiceTimbred.scrollDirection = .vertical
+       
         return voiceTimbred
     }()
     
@@ -61,6 +69,7 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
     }
 
     private func dialogueFlow()  {
+        interactiveHelp.showsVerticalScrollIndicator = false
         reverb = VocalType.crystalline
         
         interactiveHelp.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
@@ -80,6 +89,6 @@ class RekaoinController: UIViewController, UICollectionViewDelegate, UICollectio
             chRate?.voicePitch = 800
         }
         interactiveHelp.register(UINib.init(nibName: "RekaointonCell", bundle: nil), forCellWithReuseIdentifier: "RekaointonCell")
-        interactiveHelp.showsVerticalScrollIndicator = false
+        
     }
 }

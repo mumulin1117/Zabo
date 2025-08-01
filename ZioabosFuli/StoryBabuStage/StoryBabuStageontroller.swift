@@ -8,7 +8,7 @@
 import UIKit
 
 struct Uniquevoice {
-    var based:Dictionary<String,String> = Dictionary<String,String>()//聊天对象
+    var based:Dictionary<String,String> = Dictionary<String,String>()
     var diologlsiedt:Array<String> = Array<String>()
     
     
@@ -25,7 +25,7 @@ class StoryBabuStageontroller: UIViewController {
   
    
     @IBAction func impressionisticStyle(_ sender: UIButton) {
-        expressionisticStroke()
+        expressionisticStroke(key: "keybaby", tab: 40)
         sender.isSelected = true
         scroindiView .center.x = sender.center.x
         if sender.tag == 40 {
@@ -43,8 +43,12 @@ class StoryBabuStageontroller: UIViewController {
         }
     }
     
-    private func expressionisticStroke()  {
-        let cStroke = self.view.viewWithTag(40) as? UIButton
+    private func expressionisticStroke(key:String,tab:Int)  {
+       
+        let cStroke = self.view.viewWithTag(tab) as? UIButton
+        if key.isEmpty  {
+            return
+        }
         cStroke?.isSelected = false
         let cStroke1 = self.view.viewWithTag(50) as? UIButton
         cStroke1?.isSelected = false
@@ -102,13 +106,12 @@ class StoryBabuStageontroller: UIViewController {
         if reverb == .gravelly {
             chRate?.voicePitch = 800
         }
-        roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
+        
         roleplayGuide.delegate = self
         roleplayGuide.dataSource = self
        
         roleplayGuide.collectionViewLayout = self.voiceTimbre
-        roleplayGuide.register(UINib.init(nibName: "StoryBabuSmeaCell", bundle: nil), forCellWithReuseIdentifier: "StoryBabuSmeaCell")
-        roleplayGuide.showsVerticalScrollIndicator = false
+        performanceArt()
         
         if ifChiej == 0 && StoryBabuStageontroller.ccoude.count > 0{
             noenuill.isHidden = true
@@ -118,7 +121,7 @@ class StoryBabuStageontroller: UIViewController {
     }
 
    
-
+   
 }
 extension StoryBabuStageontroller:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -128,7 +131,12 @@ extension StoryBabuStageontroller:UICollectionViewDelegate,UICollectionViewDataS
         return 0
         
     }
-    
+    func performanceArt()  {
+        roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
+        roleplayGuide.register(UINib.init(nibName: "StoryBabuSmeaCell", bundle: nil), forCellWithReuseIdentifier: "StoryBabuSmeaCell")
+        roleplayGuide.showsVerticalScrollIndicator = false
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let jjIo = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryBabuSmeaCell", for: indexPath) as! StoryBabuSmeaCell
         let autolay = StoryBabuStageontroller.ccoude[indexPath.row]
@@ -146,7 +154,7 @@ extension StoryBabuStageontroller:UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let autolay = StoryBabuStageontroller.ccoude[indexPath.row]
-        let paetaikl = SayHIontroller.init(nnsteArry: autolay)
+        let paetaikl = Fidelityroller.init(nnsteArry: autolay)
         self.navigationController?.pushViewController(paetaikl, animated: true)
         
     }

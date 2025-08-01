@@ -17,16 +17,15 @@ class DswVcoverontroller: UIViewController {
     private var chRate:PersonaProfile?
     private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
     private func playAudio(at index: Int) {
-            // 停止当前播放的音频
+       
             stopCurrentAudio()
-            
-            // 更新当前播放索引
+
             currentPlayingIndex = index
             
-            // 更新 UI（播放按钮状态）
+    
         abstractGeometry.reloadData()
             
-            // 创建新的 AVPlayer 并播放
+        
         let audioItem = ((ifChiej == 0) ? RAaslertvbCell.themeCustomization[index] : RekaointonCell.featureDiscovery[index])
         guard let urlstr = Bundle.main.url(forResource: audioItem["audioDepth"] ?? "", withExtension: "MrPr3".characterBelievability())
         else{
@@ -40,25 +39,11 @@ class DswVcoverontroller: UIViewController {
         audioPlayer = AVPlayer(playerItem: playerItem)
         audioPlayer?.play()
             
-            // 监听播放完成（自动切换到下一首）
-//            NotificationCenter.default.addObserver(
-//                self,
-//                selector: #selector(playerDidFinishPlaying),
-//                name: .AVPlayerItemDidPlayToEndTime,
-//                object: playerItem
-//            )
+   
         }
     
     private func stopCurrentAudio() {
-//            if let index = currentPlayingIndex {
-////                if ifChiej == 0 {
-////                    RAaslertvbCell.themeCustomization[index]["isplaying"] = "0"
-////                }else{
-////                    RekaointonCell.featureDiscovery[index]["isplaying"] = "0"
-////                }
-//               
-//                abstractGeometry.reloadItems(at: [IndexPath(item: index, section: 0)])
-//            }
+
         abstractGeometry.reloadData()
             audioPlayer?.pause()
             audioPlayer = nil
@@ -67,9 +52,9 @@ class DswVcoverontroller: UIViewController {
         
         @objc private func playerDidFinishPlaying() {
             if let currentIndex = currentPlayingIndex, currentIndex < RekaointonCell.featureDiscovery.count - 1 {
-                playAudio(at: currentIndex + 1) // 播放下一首
+                playAudio(at: currentIndex + 1)
             } else {
-                stopCurrentAudio() // 停止播放
+                stopCurrentAudio()
             }
         }
 
@@ -199,7 +184,7 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
         return VcoverCell
         
     }
-    //个人中心
+
     @objc func vibrantColors(dsu:UIButton)  {
         var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
         if ifChiej == 1 {
@@ -208,19 +193,16 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
         
         self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: juice), animated: true)
     }
-    //heart
+ 
     @objc func accessibilityOptions(dsu:UIButton)  {
         dsu.isSelected = !dsu.isSelected
         
         
      }
     
-    //播放
+
     @objc func playintColors(dsu:UIButton)  {
-//        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
-//        if ifChiej == 1 {
-//            juice =  RekaointonCell.featureDiscovery[dsu.tag]
-//        }
+
         if self.currentPlayingIndex == dsu.tag {
             self.stopCurrentAudio()
             dsu.isSelected = false
@@ -228,17 +210,16 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
         }
         self.playAudio(at: dsu.tag)
     }
-    //举报
+ 
     @objc func storyboardTools()  {
         let VCoice = CumidtoneRangentroller.init()
         self.present(VCoice, animated: true)
         
     }
-    
-    //comment
+
    @objc func tutorialPrompts(dsu:UIButton)  {
        let VCoice = VCoiceFilter_ntroller.init()
-//       VCoice.modalPresentationStyle = .fullScreen
+
        self.present(VCoice, animated: true)
     }
     

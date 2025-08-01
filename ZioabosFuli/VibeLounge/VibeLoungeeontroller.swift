@@ -21,12 +21,13 @@ class VibeLoungeeontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         storyTexture.layer.cornerRadius = 12.5
+        self.view.backgroundColor = self.view.backgroundColor
         storyTexture.layer.masksToBounds = true
         relationship()
         
        
         audioQuality.layer.cornerRadius = 50
-        
+        self.view.backgroundColor = self.view.backgroundColor
         
         characterFluency.layer.masksToBounds = true
   
@@ -46,31 +47,31 @@ class VibeLoungeeontroller: UIViewController {
        
         let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
         bavuCoinnne.text = generic
+        self.view.backgroundColor = self.view.backgroundColor
         audioQuality.image = StoryBabuSmeaCell.Metrics
     }
     @IBOutlet weak var characterFluency: UIButton!
     
     @IBAction func dialogueSystemd(_ sender: Any) {
         reverb = VocalType.crystalline
-        
+        self.view.backgroundColor = self.view.backgroundColor
        
         self.navigationController?.pushViewController(RleplayChallengentroller(), animated: true)
     }
     
     
     @IBAction func characterFluencytap(_ sender: Any) {
-        SVProgressHUD.show()
+       
         var Ayeuyi:Float = 34
-        var sationuyi:Float = 35
-        var SpatialAu:Float = Ayeuyi + sationuyi
+        SVProgressHUD.show()
+    
+        var SpatialAu:Float = Ayeuyi + 35
         
         Ayeuyi += 12
-        sationuyi += 12
-        SpatialAu += 12
-        
+     
         var yeType = AmbienceMood.forest
         
-        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: 55, vocalTexture: VocalType.crystalline)
         if yeType == .forest {
             chRate?.speechRate = 233
         }

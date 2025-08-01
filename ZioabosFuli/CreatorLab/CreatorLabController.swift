@@ -54,7 +54,10 @@ class CreatorLabController: UIViewController {
     
     private lazy var voiceTimbre: UICollectionViewFlowLayout = {
         let voiceTimbred = UICollectionViewFlowLayout.init()
-        voiceTimbred.itemSize = CGSize(width: (UIScreen.main.bounds.width - 30 ), height: 457)
+        let massi = CGSize(width: (UIScreen.main.bounds.width - 30 ), height: 457)
+        
+        voiceTimbred.itemSize = massi
+        
         voiceTimbred.minimumLineSpacing = 12
         
         voiceTimbred.scrollDirection = .vertical

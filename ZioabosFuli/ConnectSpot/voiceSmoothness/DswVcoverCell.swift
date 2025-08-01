@@ -6,7 +6,11 @@
 //
 
 import UIKit
-
+struct SceneSetting {
+    var environment: SceneEnvironment
+    var mood: SceneMood
+    var participants: [RoleplayPersona]
+}
 class DswVcoverCell: UICollectionViewCell {
 
     @IBOutlet weak var organicShapes: UIImageView!

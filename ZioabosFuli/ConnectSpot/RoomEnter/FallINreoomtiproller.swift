@@ -23,7 +23,12 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var proceduralGeneration: UIImageView!
     @IBOutlet weak var sayHiyui: UITextField!
-    init(nnsteBase: Dictionary<String,String>) {
+    
+    var sofawear:UILabel?
+    
+    
+    init(noaoudit:UILabel? = nil,nnsteBase: Dictionary<String,String>) {
+        self.sofawear = noaoudit
         self.nnsteBase = nnsteBase
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,13 +52,11 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    
-    //owener
+
     @IBOutlet weak var dynamicDialogue: UIButton!
-    
-    //enter random user
+   
     @IBOutlet weak var improvPrompts: UIButton!
-    //me
+    
     @IBOutlet weak var fantasyCharacter: UIButton!
     
     @IBOutlet weak var tensorFlowLite: UILabel!
@@ -64,20 +67,23 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var applayTaogin: UIButton!
     
+    
+    func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+        views.layer.cornerRadius = iduhoe
+        views.layer.masksToBounds = isufTruel ? true : false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        voiceClarity(iduhoe: 19, views: roleplayScenarios)
        
-        roleplayScenarios.layer.cornerRadius = 19
         storyCollaboration()
-        roleplayScenarios.layer.masksToBounds = true
+        voiceClarity(iduhoe: 23, views: applayTaogin)
+       
         
-        applayTaogin.layer.cornerRadius = 23
-        applayTaogin.layer.masksToBounds = true
         
         self.dynamicDialogue.setBackgroundImage(UIImage(named: nnsteBase["ayChallenge"] ?? ""), for: .normal)
-        proceduralGeneration.layer.cornerRadius = 15.5
-        proceduralGeneration.layer.masksToBounds = true
-        
+      
+        voiceClarity(iduhoe: 15.5, views: proceduralGeneration)
         proceduralGeneration.image = UIImage(named: nnsteBase["Roomjoin"] ?? "")
         quantumResistant.text = "\(Int.random(in: 0...3))"
         tensorFlowLite.text = nnsteBase["audioClarity"]
@@ -105,19 +111,36 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         dramaticPerformance.dataSource = self
         sayHiyui.rightViewMode = .always
         sayHiyui.rightView = UIView(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
-        dramaticPerformance.backgroundColor = .clear
-        dramaticPerformance.separatorStyle = .none
+        
         dramaticPerformance.allowsSelection = false
+        dialogueAuthenticity(keyu: "InNRooemCellCell")
         dramaticPerformance.register(UINib.init(nibName: "InNRooemCellCell", bundle: nil), forCellReuseIdentifier: "InNRooemCellCell")
-        dramaticPerformance.rowHeight = UITableView.automaticDimension
-        dramaticPerformance.estimatedRowHeight = 70
+        voiceChoreography(keyu:"InNRooemCellCell")
         dramaticPerformance.showsVerticalScrollIndicator = false
+    }
+    
+    func dialogueAuthenticity(keyu:String)  {
+        dramaticPerformance.backgroundColor = .clear
+        if keyu ==  "InNRooemCellCell"{
+            dramaticPerformance.separatorStyle = .none
+        }
+        
+    }
+    
+    
+    
+    func voiceChoreography(keyu:String)  {
+        dramaticPerformance.rowHeight = UITableView.automaticDimension
+        if keyu ==  "InNRooemCellCell"{
+            dramaticPerformance.estimatedRowHeight = 70
+        }
+        
     }
     @IBAction func OIDShu(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
 
-    //房主
+
     @IBAction func vibrantColors(_ sender: UIButton) {
 //        var juice :Dictionary<String,String> = RAaslertvbCell.themeCustomization[dsu.tag]
 //        if ifChiej == 1 {
@@ -146,7 +169,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         
       
     }
-    //report
+  
     @IBAction func storyboardTools()  {
         self.present(CumidtoneRangentroller.init(), animated: true)
      }
@@ -159,8 +182,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    
-    //gift
+   
     @IBAction func showingGusftotePush(_ sender: Any) {
         let  cheicking =  FallSeGistiproller.init()
         cheicking.gistClosure = { (name,count) in
@@ -181,7 +203,13 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    
+    func roleplaySession(keyu:String)  {
+        self.sayHiyui.text = nil
+        if keyu.isEmpty == false {
+            sayHiyui.resignFirstResponder()
+        }
+        
+    }
     
     @IBAction func senfroorrmeInfog(_ sender: UIButton) {
       
@@ -189,8 +217,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
             SVProgressHUD.showInfo(withStatus: "Pllkefaqsfet decnotyetrl uyqowudrx rclocnstuexnxtd ufhihrosktt!".characterBelievability())
             return
         }
-        self.sayHiyui.text = nil
-        sayHiyui.resignFirstResponder()
+        roleplaySession(keyu:enterquest)
         generateresult(questuin:enterquest)
     }
     

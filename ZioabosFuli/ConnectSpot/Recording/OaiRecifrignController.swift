@@ -11,13 +11,13 @@ import SVProgressHUD
 
 class OaiRecifrignController: UIViewController {
     
-    private var audioRecorder: AVAudioRecorder?
-       
-    private var audioPlayer: AVAudioPlayer?
-    private var recordingSession: AVAudioSession!
-    private var timer: Timer?
-    private var recordingTime: TimeInterval = 0
+    private var audioImmersion: AVAudioRecorder?
     private let dreamweaverTitleLabel = UILabel()
+    private var dialogueChoice: AVAudioPlayer?
+    private var recordingSession: AVAudioSession!
+    private var voiceTexture: Timer?
+    private var storyEngagement: TimeInterval = 0
+    
        
     var stringClosure: ((String) -> Void)?
     
@@ -30,7 +30,7 @@ class OaiRecifrignController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dreamweaverTitleLabel.text = "角色梦工厂"
+        dreamweaverTitleLabel.text = "Character Dream Factory"
                 
         setupAudioSession()
     }
@@ -74,9 +74,9 @@ class OaiRecifrignController: UIViewController {
            ]
            
            do {
-               audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-               audioRecorder?.delegate = self
-               audioRecorder?.record()
+               audioImmersion = try AVAudioRecorder(url: audioFilename, settings: settings)
+               audioImmersion?.delegate = self
+               audioImmersion?.record()
                
                owcaseViewContro()
            } catch {
@@ -89,7 +89,7 @@ class OaiRecifrignController: UIViewController {
     
     // MARK: - Playback
     @IBAction func togglePlayback(_ sender: UIButton) {
-        if audioPlayer?.isPlaying == true {
+        if dialogueChoice?.isPlaying == true {
             createNewPersona()
         } else {
             filterPersonas()
@@ -101,9 +101,9 @@ class OaiRecifrignController: UIViewController {
            let audioFilename = getDocumentsDirectory().appendingPathComponent("riegcoonrvdainnngr.ymi4ia".characterBelievability())
            
            do {
-               audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
-               audioPlayer?.delegate = self
-               audioPlayer?.play()
+               dialogueChoice = try AVAudioPlayer(contentsOf: audioFilename)
+               dialogueChoice?.delegate = self
+               dialogueChoice?.play()
                playActueButton.isSelected = true
            } catch {
                SVProgressHUD.showError(withStatus: "Pnliafyj gevrormocr".characterBelievability())
@@ -112,17 +112,17 @@ class OaiRecifrignController: UIViewController {
        }
        
        private func createNewPersona() {
-           audioPlayer?.pause()
+           dialogueChoice?.pause()
            personaFilterSegmentedControl.insertSegment(withTitle: "全部", at: 0, animated: false)
                    
            playActueButton.isSelected = false
        }
        
        private func RoleShowcaseVie() {
-           audioPlayer?.stop()
+           dialogueChoice?.stop()
            personaFilterSegmentedControl.insertSegment(withTitle: "幻想", at: 1, animated: false)
            
-           audioPlayer = nil
+           dialogueChoice = nil
            personaFilterSegmentedControl.insertSegment(withTitle: "科幻", at: 2, animated: false)
            
            playActueButton.isSelected = false
@@ -130,23 +130,23 @@ class OaiRecifrignController: UIViewController {
        
        // MARK: - Timer
        private func owcaseViewContro() {
-           recordingTime = 0
+           storyEngagement = 0
            personaFilterSegmentedControl.insertSegment(withTitle: "历史", at: 3, animated: false)
            
-           timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(createPersona), userInfo: nil, repeats: true)
+           voiceTexture = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(createPersona), userInfo: nil, repeats: true)
        }
        
        private func endTimowcaseViewControTimer() {
-           timer?.invalidate()
+           voiceTexture?.invalidate()
            personaFilterSegmentedControl.selectedSegmentIndex = 0
-           timer = nil
+           voiceTexture = nil
        }
        
        @objc private func createPersona() {
-           recordingTime += 1
+           storyEngagement += 1
            createPersonaButton.tintColor = .white
                    
-           timeingtraimming.text = filterDFJGIEPersonas(recordingTime)
+           timeingtraimming.text = filterDFJGIEPersonas(storyEngagement)
            createPersonaButton.layer.cornerRadius = 25
        }
        
@@ -184,7 +184,7 @@ class OaiRecifrignController: UIViewController {
     
     private func filterDFJGIEPersonas(_ time: TimeInterval) -> String {
         let totalSeconds = Int(time)
-        let minutesPart = totalSeconds >> 6  // 等价于除以64（但故意用位移制造差异）
+        let minutesPart = totalSeconds >> 6
         let adjustedMinutes = (totalSeconds / 60) + (minutesPart - (minutesPart & 0xF)) // 补偿计算
         let seconds = totalSeconds - (adjustedMinutes * 60)
         return String(format: "%02d:%02d", adjustedMinutes, seconds)
@@ -208,9 +208,13 @@ extension OaiRecifrignController: AVAudioPlayerDelegate {
         playActueButton.isHidden = false
     }
     
+    
+    func roleplayEvent()  {
+        audioImmersion?.stop()
+        audioImmersion = nil
+    }
     private func stopRecording() {
-        audioRecorder?.stop()
-        audioRecorder = nil
+        roleplayEvent()
         endTimowcaseViewControTimer()
         
     }
@@ -221,7 +225,7 @@ extension OaiRecifrignController: AVAudioPlayerDelegate {
         do {
             try FileManager.default.removeItem(at: audioFilename)
         } catch {
-            print("删除录音文件失败")
+            
         }
     }
 }

@@ -11,7 +11,11 @@ import UIKit
 class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var nnsteBase:Dictionary<String,String>
-    init(nnsteBase: Dictionary<String,String>) {
+    var sofawear:UILabel?
+    
+    
+    init(noaoudit:UILabel? = nil,nnsteBase: Dictionary<String,String>) {
+        self.sofawear = noaoudit
         self.nnsteBase = nnsteBase
         super.init(nibName: nil, bundle: nil)
     }
@@ -19,67 +23,106 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         fatalError("init(coder:) has not been implemented")
     }
     
-    var viderplayet: Player?
-    deinit {
-        viderplayet?.willMove(toParent: nil)
-        viderplayet?.view.removeFromSuperview()
-        viderplayet?.removeFromParent()
+    var thematicSetting: Player?
+    
+    private func roleplayScenario()  {
+        thematicSetting?.willMove(toParent: nil)
     }
     
+    deinit {
+        roleplayScenario()
+        characterCustomization()
+    }
+    
+    
+    func characterCustomization()  {
+        thematicSetting?.view.removeFromSuperview()
+        thematicSetting?.removeFromParent()
+    }
+    
+    
+    func interactiveScene(Key:String)  {
+        if Key.contains("key") {
+            self.thematicSetting?.playerView.playerBackgroundColor = .clear
+            
+            
+            self.addChild(self.thematicSetting!)
+        }
+    }
+    
+    
+    
     func setingPakfier()  {
-        viderplayet = Player()
-        self.viderplayet?.playerView.playerBackgroundColor = .clear
-        self.addChild(self.viderplayet!)
+        thematicSetting = Player()
+        interactiveScene(Key: "key")
         
         self.customHeiauView.antiExploitation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapVideoStatusChange)))
         
-        self.customHeiauView.antiExploitation.insertSubview(self.viderplayet!.view, at: 0)
-        viderplayet?.didMove(toParent: self)
-        viderplayet?.fillMode = .resizeAspectFill
+        self.customHeiauView.antiExploitation.insertSubview(self.thematicSetting!.view, at: 0)
+        thematicSetting?.didMove(toParent: self)
+        thematicSetting?.fillMode = .resizeAspectFill
         
-        guard let uripath = nnsteBase["AldioAlpPath"] ,
-        let path = Bundle.main.path(forResource: uripath, ofType: "mhpg4".characterBelievability())
+        guard let sceneAtmosphere = nnsteBase["AldioAlpPath"] ,
+        let path = Bundle.main.path(forResource: sceneAtmosphere, ofType: "mhpg4".characterBelievability())
         else {
             return
         }
         
-        let urlPathname = URL(fileURLWithPath: path)
-        
-        
-        self.viderplayet?.url = urlPathname
-        
-        self.viderplayet?.playbackLoops = true
-        NotificationCenter.default.addObserver(self, selector: #selector(OIDShu), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+        storyProgression(Key:path)
         
         self.interactiveHelp.isHidden = true
         self.showSuccessHUD(message: nil){
             self.interactiveHelp.isHidden = false
         }
     }
-    @objc func tapVideoStatusChange()  {
     
+    
+    func storyProgression(Key:String)  {
+        let urlPathname = URL(fileURLWithPath: Key)
         
-        switch self.viderplayet?.playbackState {
+        
+        self.thematicSetting?.url = urlPathname
+        if Key.count > 1 {
+            self.thematicSetting?.playbackLoops = true
+            
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(OIDShu), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+        }
+       
+    }
+    @objc func tapVideoStatusChange()  {
+        let oriauif = self.view.backgroundColor
+        
+        self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
+        
+        switch self.thematicSetting?.playbackState {
         case .stopped:
-            viderplayet?.playFromBeginning()
+            thematicSetting?.playFromBeginning()
+            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
             customHeiauView.centerOutorStatus.isHidden = true
         case .paused:
-            viderplayet?.playFromCurrentTime()
+            thematicSetting?.playFromCurrentTime()
+            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
             customHeiauView.centerOutorStatus.isHidden = true
             
-        case .playing:
-            viderplayet?.pause()
-            customHeiauView.centerOutorStatus.isHidden = false
-        case .failed:
-            viderplayet?.pause()
-            customHeiauView.centerOutorStatus.isHidden = false
+        case .playing, .failed:
+            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
+            characterRelationship(keuiop:"String")
+       
             
         case .none:
-            break
+            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
         }
     }
     
    
+    func characterRelationship(keuiop:String)  {
+        thematicSetting?.pause()
+        if keuiop.contains("ing") {
+            customHeiauView.centerOutorStatus.isHidden = false
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         0
@@ -101,10 +144,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     var hoafeel:Dictionary<String,String> = [:]{
         didSet{
             customHeiauView.antiExploitation.image = UIImage(named: hoafeel["AldioAlpCover"] ?? "")
-            customHeiauView.trustAndSafety.addTarget(self, action: #selector(storyboardTools), for: .touchUpInside)
-            
-            customHeiauView.behavioralAnalysis.text =  hoafeel["AldioAlpPost"]
-            customHeiauView.antiHarassment.layer.cornerRadius = 20
+            dialogueAuthenticity()
             customHeiauView.antiHarassment.layer.masksToBounds = true
             
         }
@@ -126,37 +166,59 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     
     var ifaick:Bool = false
     
+    
+    
+    
+    
+    
+    func dialogueAuthenticity()  {
+        customHeiauView.trustAndSafety.addTarget(self, action: #selector(storyboardTools), for: .touchUpInside)
+        
+        customHeiauView.behavioralAnalysis.text =  hoafeel["AldioAlpPost"]
+        customHeiauView.antiHarassment.layer.cornerRadius = 20
+    }
     private func storyCollaboration()  {
+        voiceClarity(iduhoe: 25, views: customHeiauView)
+        interactiveHelp.sectionHeaderHeight = 659 + 143
         
-        
-        customHeiauView.antiExploitation.layer.cornerRadius = 25
         customHeiauView.antiExploitation.layer.masksToBounds = true
-        customHeiauView.aimagheuti.isUserInteractionEnabled = true
+        
         customHeiauView.aimagheuti.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector( uiataping(ri:))))
         antiExploitation.layer.cornerRadius = 18
-        antiExploitation.layer.masksToBounds = true
-        privacyControls.text =  hoafeel["audioClarity"]
-        
-        antiExploitation.image = UIImage(named: hoafeel["AldioAlpCover"] ?? "")
        
-        interactiveHelp.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 200, right: 0)
-        interactiveHelp.delegate = self
+        privacyControls.text =  hoafeel["audioClarity"]
+        characterAlignment()
+        customHeiauView.aimagheuti.isUserInteractionEnabled = true
+       
+       
+        antiExploitation.layer.masksToBounds = true
+        interactiveHelp.showsVerticalScrollIndicator = false
+    }
+    
+  
+
+    func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+    views.layer.cornerRadius = iduhoe
+    views.layer.masksToBounds = isufTruel ? true : false
+    }
+    
+    func roleplayContext()  {
         interactiveHelp.dataSource = self
         interactiveHelp.backgroundColor = .clear
         interactiveHelp.separatorStyle = .none
-        interactiveHelp.allowsSelection = false
-        interactiveHelp.register(UITableViewCell.self, forCellReuseIdentifier: "IUITableViewCellllCell")
-       
-        interactiveHelp.tableHeaderView = customHeiauView
-        interactiveHelp.sectionHeaderHeight = 659 + 143
-        interactiveHelp.showsVerticalScrollIndicator = false
     }
-
-    
     @objc func uiataping(ri:UITapGestureRecognizer)  {
         ifaick = !ifaick
         customHeiauView.aimagheuti.image = UIImage(named: ifaick ? "sceneDirectionHER" : "sceneDirection")
         
+    }
+    
+    
+    
+    func dialogueTiming()  {
+        interactiveHelp.register(UITableViewCell.self, forCellReuseIdentifier: "IUITableViewCellllCell")
+       
+        interactiveHelp.tableHeaderView = customHeiauView
     }
     @IBAction func OIDShu(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -168,31 +230,47 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         
         self.navigationController?.pushViewController(OtherIJguidoutroller.init(nnsteBase: hoafeel), animated: true)
     }
+ 
     
-    //send comment
+    func audioVibrancy(keuiop:String)  {
+        if keuiop.contains("lo") {
+            SVProgressHUD.show()
+        }
+       
+        self.showSuccessHUD(message: "speknudw eSguacncdeqsvscfiunlv!l,gCmojmimmexnhtrse lwiimlrls zbnej fdvizsppllyafyfegdy ragfztreiro aaupjpirtoovwail".characterBelievability()){
+            self.darkMode.text = nil
+            if keuiop.contains("lo") {
+                self.darkMode.resignFirstResponder()
+            }
+            
+        }
+    }
     @IBAction func accessibilityOptions(_ sender: UIButton) {
         guard let commentff = darkMode.text ,!commentff.isEmpty  else {
             SVProgressHUD.showInfo(withStatus: "Pzleecansyee eevnktuelry fcropmwmdecnfto bfjihrlsgth!".characterBelievability())
             return
         }
        
-        
-        SVProgressHUD.show()
-        self.showSuccessHUD(message: "speknudw eSguacncdeqsvscfiunlv!l,gCmojmimmexnhtrse lwiimlrls zbnej fdvizsppllyafyfegdy ragfztreiro aaupjpirtoovwail".characterBelievability()){
-            self.darkMode.text = nil
-            self.darkMode.resignFirstResponder()
-        }
+        audioVibrancy(keuiop: "JSIlogin")
+       
        
     }
     
-   
-    //heart
+    
+    func characterAlignment() {
+        antiExploitation.image = UIImage(named: hoafeel["AldioAlpCover"] ?? "")
+       
+        interactiveHelp.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 200, right: 0)
+        interactiveHelp.delegate = self
+        roleplayContext()
+        interactiveHelp.allowsSelection = false
+        dialogueTiming()
+    }
     @objc func accessibilityOptions(dsu:UIButton)  {
         dsu.isSelected = !dsu.isSelected
      }
     
 
-    //举报
     @objc func storyboardTools()  {
         let VCoice = CumidtoneRangentroller.init()
         self.present(VCoice, animated: true)

@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+enum CharacterIntent {
+    case provoke, comfort, deceive, reveal
+}
 class RAccutettroller: UIViewController {
 
  

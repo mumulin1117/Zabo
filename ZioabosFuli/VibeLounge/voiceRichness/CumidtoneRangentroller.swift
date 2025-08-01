@@ -87,6 +87,7 @@ class CumidtoneRangentroller: UIViewController {
     private func interactiveHelp() {
         
         voiceTutorials.clipsToBounds = true
+        self.view.backgroundColor = self.view.backgroundColor
         voiceTutorials.layer.cornerRadius = 25
         voiceTutorials.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }

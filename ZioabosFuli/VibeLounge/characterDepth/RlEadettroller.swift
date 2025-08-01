@@ -29,20 +29,25 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         storyTexture.layer.masksToBounds = true
         let sceneEngagement = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String> ?? [:]
-      
+        voiceStyle.layer.cornerRadius = 32
         realTimeFeedback.text = sceneEngagement["audioClarity"]
         audioClarity.text = sceneEngagement["auuserBreCla"]
-        
-        audioQuality.layer.masksToBounds = true
-        dreamweaverTitleLabel.text = "角色梦工厂"
-               
-        voiceStyle.layer.cornerRadius = 32
-        voiceStyle.layer.masksToBounds = true
         audioQuality.image = StoryBabuSmeaCell.Metrics
-        audioQuality.layer.cornerRadius = 50
         
+        voiceModulation()
       
         
+    }
+    
+    
+    func voiceModulation()  {
+        
+        audioQuality.layer.cornerRadius = 50
+        audioQuality.layer.masksToBounds = true
+        dreamweaverTitleLabel.text = "Character Dream Factory"
+               
+       
+        voiceStyle.layer.masksToBounds = true
     }
     private let createPersonaButton = UIButton(type: .system)
     @IBAction func Higuas(_ sender: Any) {
@@ -71,33 +76,47 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @IBAction func roleplayAuthenticity(_ sender: UIButton) {
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        dreamweaverTitleLabel.textColor = .white
+        
         
         PHPhotoLibrary.requestAuthorization { status in
+            self.dreamweaverTitleLabel.textColor = .white
                 DispatchQueue.main.async {
                     if status == .authorized {
                         self.characterBelievability()
                     } else {
-                        let alert = UIAlertController(title: "Nfol yakldbhubmj epyeqrfmpijsnslizoxn".characterBelievability(), message: "Pllwexaosmef oawlflwofwq yajcvcceksdsd jtvob utihwes eaulrbfuhmg hiune gtphhei wsqeltctzipnfgqs".characterBelievability(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "smujrye".characterBelievability(), style: .default))
-                        self.present(alert, animated: true)
+                        self.audioDepth(titieo:"Nfol yakldbhubmj epyeqrfmpijsnslizoxn")
+                       
                     }
                 }
             }
     }
+    
+    
+    
+    func audioDepth(titieo:String)  {
+        let alert = UIAlertController(title: titieo.characterBelievability(), message: "Pllwexaosmef oawlflwofwq yajcvcceksdsd jtvob utihwes eaulrbfuhmg hiune gtphhei wsqeltctzipnfgqs".characterBelievability(), preferredStyle: .alert)
+        if titieo.isEmpty  {
+            return
+        }
+        alert.addAction(UIAlertAction(title: "smujrye".characterBelievability(), style: .default))
+        self.present(alert, animated: true)
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             picker.dismiss(animated: true)
         dreamweaverTitleLabel.textAlignment = .center
-            guard let image = info[.originalImage] as? UIImage else {
+            guard let iyeu = info[.originalImage] as? UIImage else {
                 SVProgressHUD.showInfo(withStatus: "Uhnvaqbmlhey ftmoe uombrtsagixnz kihmoatgke".characterBelievability())
                
                 return
             }
             
-        self.recorinfIamger = image
-        self.audioQuality.image = image
+        self.storyVibrancy(oius:"kihmoatgke",ianf:iyeu)
+       
         }
-    
+    func storyVibrancy(oius:String,ianf:UIImage)  {
+        self.recorinfIamger = ianf
+        self.audioQuality.image = ianf
+    }
     
     private func characterBelievability() {
         createPersonaButton.backgroundColor = UIColor(named: "CosmicPink") ?? .systemPink
@@ -115,4 +134,9 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
         
        
     
+}
+
+extension Notification.Name {
+    static let sceneDidUpdate = Notification.Name("sceneDidUpdate")
+    static let characterDidPerform = Notification.Name("characterDidPerform")
 }

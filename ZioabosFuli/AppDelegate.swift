@@ -13,54 +13,12 @@ struct PersonaProfile {
     let vocalTexture: VocalType
 }
 
-enum AmbienceMood {
-    case tavern, starship, forest, urban
-}
 
-enum VocalType {
-    case crystalline, gravelly, melodic, robotic
-}
 
-struct SceneSetting {
-    var environment: SceneEnvironment
-    var mood: SceneMood
-    var participants: [RoleplayPersona]
-}
+
 
 enum SceneEnvironment {
     case medievalTavern, cyberpunkAlley, spaceStation, fantasyForest
-}
-
-enum SceneMood: CaseIterable {
-    case tense, jovial, mysterious, neutral
-    var weight: Float {
-        switch self {
-        case .tense: return 1.2
-        case .jovial: return 0.8
-        case .mysterious: return 1.1
-        case .neutral: return 1.0
-        }
-    }
-}
-
-struct RoleplayPersona {
-    let id: String
-    let personaName: String
-    let archetype: CharacterArchetype
-}
-
-enum CharacterArchetype {
-    case hero, villain, mentor, trickster
-}
-
-struct CharacterAct {
-    let dialogue: String
-    let physicality: String
-    let intent: CharacterIntent
-}
-
-enum CharacterIntent {
-    case provoke, comfort, deceive, reveal
 }
 
 struct ScenePerformance {
@@ -78,15 +36,7 @@ class NarrativeFlow {
     }
 }
 
-struct SceneUpdate {
-    let setting: SceneSetting
-    let activeNarrator: String
-}
 
-extension Notification.Name {
-    static let sceneDidUpdate = Notification.Name("sceneDidUpdate")
-    static let characterDidPerform = Notification.Name("characterDidPerform")
-}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -125,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func performCharacterAct(characterId: String, act: CharacterAct) {
-            guard let actor = activeCharacters.first(where: { $0.id == characterId }) else { return }
+            guard let actor = activeCharacters.first(where: { $0.roloeId == characterId }) else { return }
             
             let performance = ScenePerformance(
                 actor: actor,
@@ -148,30 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
    
     
-    
-    func ddddd()  {
-        reverb = VocalType.crystalline
-        
-        var Ayeuyi:Float = 34
-        var sationuyi:Float = 35
-        var SpatialAu:Float = Ayeuyi + sationuyi
-        
-        Ayeuyi += 12
-        sationuyi += 12
-        SpatialAu += 12
-        
-        var yeType = AmbienceMood.forest
-        
-        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
-        if yeType == .forest {
-            chRate?.speechRate = 233
-        }
-        
-        if yeType == .starship {
-            chRate?.voicePitch = 800
-        }
-    }
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         reverb = VocalType.crystalline
@@ -181,17 +107,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         var sationuyi:Float = 35
-        var SpatialAu:Float = Ayeuyi + sationuyi
-        
+       
         SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
-           
+            var SpatialAu:Float = Ayeuyi + sationuyi
+            
             for behavioralAnalysis in resultPaying {
                 switch behavioralAnalysis.transaction.transactionState {
                 case .purchased, .restored:
                    
                     let further = behavioralAnalysis.transaction.downloads
                     
-                    if !further.isEmpty  {
+                    if !further.isEmpty && SpatialAu > 10 {
                    
                         SwiftyStoreKit.start(further)
                     } else if behavioralAnalysis.needsFinishTransaction {

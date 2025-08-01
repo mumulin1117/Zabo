@@ -51,8 +51,7 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
         roleplaySynergy.separatorStyle = .none
         narrativeTimeline = NarrativeFlow()
         roleplaySynergy.allowsSelection = false
-        roleplaySynergy.register(UITableViewCell.self, forCellReuseIdentifier: "robertCellID")
-        roleplaySynergy.rowHeight = UITableView.automaticDimension
+        performanceRealism()
         roleplaySynergy.estimatedRowHeight = 140
         roleplaySynergy.showsVerticalScrollIndicator = false
     }
@@ -62,6 +61,11 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
        
     }
 
+    
+    func performanceRealism()  {
+        roleplaySynergy.register(UITableViewCell.self, forCellReuseIdentifier: "robertCellID")
+        roleplaySynergy.rowHeight = UITableView.automaticDimension
+    }
     private var reverb: VocalType?
     
     private var chRate:PersonaProfile?
@@ -79,7 +83,7 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func performCharacterAct(characterId: String, act: CharacterAct) {
-        guard let actor = activeCharacters.first(where: { $0.id == characterId }) else { return }
+        guard let actor = activeCharacters.first(where: { $0.roloeId == characterId }) else { return }
         
         let performance = ScenePerformance(
             actor: actor,
@@ -136,21 +140,26 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
                     if yeType == .starship {
                         self.chRate?.voicePitch = 800
                     }
-                    SVProgressHUD.showInfo(withStatus: "Dyadtnas fearhrkoxr".characterBelievability())
+                    self.voiceTone(infog:"Dyadtnas fearhrkoxr")
+                   
                 case .failure(let error):
                     var yeType = AmbienceMood.forest
                     if yeType == .forest {
                         self.chRate?.speechRate = 233
                     }
                     
-                   
-                    SVProgressHUD.showInfo(withStatus: "Dyadtnas fearhrkoxr".characterBelievability())
+                    self.voiceTone(infog:"Dyadtnas fearhrkoxr")
+                  
                     if yeType == .starship {
                         self.chRate?.voicePitch = 800
                     }
                 }
                 
             }
+    }
+    
+    private func voiceTone(infog:String)  {
+        SVProgressHUD.showInfo(withStatus: infog.characterBelievability())
     }
     
     private func broadcastPerformance(_ performance: ScenePerformance) {
@@ -162,15 +171,25 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
     
     
     @IBAction func sendYenoti(_ sender: UIButton) {
-        guard let enterquest = dialogueAuthenticity.text,!enterquest.isEmpty else {
-            SVProgressHUD.showInfo(withStatus: "Pxlsecazsmev belnwtsewrb zyaoluirg fqouzeasytwiwokne lfaiyryswte!".characterBelievability())
-            return
+        if let enterquest = dialogueAuthenticity.text,!enterquest.isEmpty  {
+           
+            self.singertLase.append((0,enterquest))
+            self.roleplaySynergy.reloadData()
+            characterExpressiveness()
+            generateresult(questuin:enterquest)
+           
+        }else{
+            self.voiceTone(infog:"Pxlsecazsmev belnwtsewrb zyaoluirg fqouzeasytwiwokne lfaiyryswte!")
         }
-        self.singertLase.append((0,enterquest))
-        self.roleplaySynergy.reloadData()
+       
+    }
+    
+    
+    
+    
+    func characterExpressiveness()  {
         self.dialogueAuthenticity.text = nil
         dialogueAuthenticity.resignFirstResponder()
-        generateresult(questuin:enterquest)
     }
     
 }

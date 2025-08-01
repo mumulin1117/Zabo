@@ -31,19 +31,29 @@ class SaConnexatmalVontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueNaturalness.image =  UIImage(named: nnsteArry.based["ayChallenge"] ?? "")
-        dialogueNaturalness.layer.cornerRadius = 20
-        NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
-        dialogueNaturalness.layer.masksToBounds = true
-        
-        audioClarity.text = "Choqnonfeicgtrivnfgt.i.e.k.z.".characterBelievability()
+       
+        interactiveExperience()
+        roleplayChallenge()
         performanceDirection.text = nnsteArry.based["audioClarity"]
     }
 
+    
+    func interactiveExperience()  {
+        NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+        dialogueNaturalness.layer.masksToBounds = true
+    }
+    
+    
+    
+    
     @IBAction func performanceIntensity(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+    func roleplayChallenge()  {
+        dialogueNaturalness.layer.cornerRadius = 20
+        audioClarity.text = "Choqnonfeicgtrivnfgt.i.e.k.z.".characterBelievability()
+    }
     @IBAction func sfhhhhhtensity(_ sender: Any) {
         self.ambiance(selector: nnsteArry.based["auIDG"] ?? "")
         

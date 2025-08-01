@@ -1,5 +1,5 @@
 //
-//  SayHIontroller.swift
+//  Fidelityroller.swift
 //  ZioabosFuli
 //
 //  Created by ZioabosFuli on 2025/7/8.
@@ -7,13 +7,23 @@
 
 import UIKit
 import SVProgressHUD
-
-class SayHIontroller: UIViewController {
+struct RoleplayPersona {
+    let roloeId: String
+    let personaName: String
+    let archetype: CharacterArchetype
+}
+class Fidelityroller: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        
+        self.dialogueImprovisation(isjd:"auIDG")
+      
+    }
+    
+    func dialogueImprovisation(isjd:String)  {
         for (i,item) in StoryBabuStageontroller.ccoude.enumerated() {
-            if item.based["auIDG"] == nnsteArry.based["auIDG"] {
+            if item.based[isjd] == nnsteArry.based[isjd] {
                 
                 if nnsteArry.diologlsiedt.count == 0 {
                     StoryBabuStageontroller.ccoude.remove(at: i)
@@ -24,8 +34,6 @@ class SayHIontroller: UIViewController {
                 break
             }
         }
-        
-      
     }
     
     var nnsteArry:Uniquevoice
@@ -61,6 +69,15 @@ class SayHIontroller: UIViewController {
         storyCollaboration()
     }
 
+    func storySeed(enterquest:String)  {
+        self.nnsteArry.diologlsiedt.append(enterquest)
+       
+        self.storyRhythm.reloadData()
+        if enterquest.isEmpty {
+            return
+        }
+        self.roleplayTheme.text = nil
+    }
     @IBOutlet weak var storyRhythm: UITableView!
     
   
@@ -76,39 +93,46 @@ class SayHIontroller: UIViewController {
             SVProgressHUD.showInfo(withStatus: "Pgloezajsqej lesndtnekrr jyootutri ccrohnhtfeynftf xfkiirisntk!".characterBelievability())
             return
         }
-        self.nnsteArry.diologlsiedt.append(enterquest)
-        self.storyRhythm.reloadData()
-        self.roleplayTheme.text = nil
+        self.storySeed(enterquest:enterquest)
         roleplayTheme.resignFirstResponder()
         
     }
     
     
+    
+    
     private func storyCollaboration()  {
         storyRhythm.delegate = self
+        voiceIdentity(timeing:"vsdvPoaingo")
         sceneHarmony.text = nnsteArry.based["audioClarity"]
         storyRhythm.dataSource = self
-        storyRhythm.backgroundColor = .clear
-        NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
-        storyRhythm.separatorStyle = .none
-        storyRhythm.allowsSelection = false
-        storyRhythm.register(UINib.init(nibName: "SayHIontrollerNOemalCell", bundle: nil), forCellReuseIdentifier: "SayHIontrollerNOemalCell")
-        storyRhythm.rowHeight = UITableView.automaticDimension
-        storyRhythm.estimatedRowHeight = 70
+        
+        dialogueTiming(timeing:"SayHIontrollerNOemalCell")
         storyRhythm.showsVerticalScrollIndicator = false
     }
+    
+    
 }
 
-extension SayHIontroller:UITableViewDelegate, UITableViewDataSource {
+extension Fidelityroller:UITableViewDelegate, UITableViewDataSource {
     
     
-    
+    func voiceIdentity(timeing:String)  {
+        storyRhythm.backgroundColor = .clear
+        NotificationCenter.default.addObserver(self, selector: #selector(performanceIntensity), name: NSNotification.Name.init(timeing), object: nil)
+        storyRhythm.separatorStyle = .none
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         nnsteArry.diologlsiedt.count
     }
-    
+    private func dialogueTiming(timeing:String)  {
+        storyRhythm.allowsSelection = false
+        storyRhythm.register(UINib.init(nibName: timeing, bundle: nil), forCellReuseIdentifier: timeing)
+        storyRhythm.rowHeight = UITableView.automaticDimension
+        storyRhythm.estimatedRowHeight = 70
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bgoki = tableView.dequeueReusableCell(withIdentifier: "SayHIontrollerNOemalCell", for: indexPath) as!  SayHIontrollerNOemalCell
         

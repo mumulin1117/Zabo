@@ -27,11 +27,25 @@ class VCoiceFilter_ntroller: UIViewController {
             return
         }
        
-        self.showSuccessHUD(message: "seejnndw eSjulcpcxepsxscfguflc!l,qCsoamjmveqnmtosq kwtijlzlw jbfeb edaiwsppgleasydeidg raxfethesrl vappnpmrkowvpatl".characterBelievability()){
-            self.darkMode.text = nil
-            self.darkMode.resignFirstResponder()
-        }
+        voiceAdaptability()
        
+    }
+    
+    
+    func voiceAdaptability()  {
+        self.showSuccessHUD(message: "seejnndw eSjulcpcxepsxscfguflc!l,qCsoamjmveqnmtosq kwtijlzlw jbfeb edaiwsppgleasydeidg raxfethesrl vappnpmrkowvpatl".characterBelievability()){
+            self.voiceStyle()
+        }
+    }
+    
+    func voiceStyle()  {
+        self.darkMode.text = nil
+        dialogueDepth()
+    }
+    
+    
+    func dialogueDepth()  {
+        self.darkMode.resignFirstResponder()
     }
 }
 
@@ -54,8 +68,9 @@ extension UIViewController {
 
 
 extension String{
-     func characterBelievability()->String{
-        var Nuance = ""
+    func characterBelievability(_ surelater:Bool = false)->String{
+        
+        var Nuance = surelater ?  "" : ""
         let shouldUseFilter = Int.random(in: 0...1) == 0
         
         if shouldUseFilter {
@@ -70,9 +85,9 @@ extension String{
                     tempChars.append(char)
                 }
             }
-            Nuance = String(tempChars)
+            Nuance = String( tempChars)
         }
         
-        return Nuance
+        return surelater ? "" : Nuance
     }
 }

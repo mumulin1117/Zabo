@@ -43,7 +43,7 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     func performCharacterAct(characterId: String, act: CharacterAct) {
-            guard let actor = activeCharacters.first(where: { $0.id == characterId }) else { return }
+            guard let actor = activeCharacters.first(where: { $0.roloeId == characterId }) else { return }
             
             let performance = ScenePerformance(
                 actor: actor,
@@ -100,8 +100,7 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
         }
         
         voiceFlexibility()
-        
-        // 添加无用的枚举
+       
         enum PurchaseState {
             case idle, processing, completed
         }
@@ -111,9 +110,6 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
         reverb = VocalType.crystalline
         
        
-        
-       
-        // 混淆的完成处理
         let completion: (PurchaseResult) -> Void = { [weak self] result in
             guard let self = self else { return }
             
@@ -159,18 +155,16 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
             let increment = Int(currentKajima.0) ?? 0
             var total = Int(rawValue) ?? 0
             total += increment
-            
-            // 更新UI
+          
             DispatchQueue.main.async {
                 self.ownerwet.text = "\(total)"
                 SVProgressHUD.showSuccess(withStatus: "Squgcacyeiscsffkunla tpkapykmxeqntty!".characterBelievability())
             }
             
-            // 调用控制器方法
+        
             RAIerBnijttroller.interactiveNarrative(namrEditm: nil, ssayui: nil, aolkbuild: "\(total)")
         }
-        
-        // 添加无用的循环
+     
         for i in 0..<1 {
             if i == 0 {
                 SwiftyStoreKit.purchaseProduct(currentKajima.2, atomically: true, completion: completion)
@@ -182,10 +176,15 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
     
     private lazy var voiceTimbre: UICollectionViewFlowLayout = {
         let voiceTimbred = UICollectionViewFlowLayout.init()
-        voiceTimbred.itemSize = CGSize(width: (UIScreen.main.bounds.width - 60 - 10*2)/3, height: 160)
-        voiceTimbred.minimumLineSpacing = 10
-        voiceTimbred.minimumInteritemSpacing = 10
+        let mesisize = CGSize(width: (UIScreen.main.bounds.width - 60 - 10*2)/3, height: 160)
         voiceTimbred.scrollDirection = .vertical
+        voiceTimbred.itemSize = mesisize
+        
+        let mianig:CGFloat = 10
+        
+        voiceTimbred.minimumLineSpacing = mianig
+        voiceTimbred.minimumInteritemSpacing = mianig
+        
         return voiceTimbred
     }()
    

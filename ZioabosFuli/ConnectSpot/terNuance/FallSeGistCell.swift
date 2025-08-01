@@ -17,12 +17,17 @@ class FallSeGistCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        edgeComputing.layer.cornerRadius = 37.5
-        edgeComputing.layer.masksToBounds = true
-        self.layer.cornerRadius = 20
-        self.layer.masksToBounds = true
+      
+        voiceClarity(iduhoe: 37.5, views: edgeComputing)
+        voiceClarity(iduhoe: 20, views: self)
     }
-    
+   
+   
+
+func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+    views.layer.cornerRadius = iduhoe
+    views.layer.masksToBounds = isufTruel ? true : false
+}
     var selelecter:Bool = false{
         didSet{
             if selelecter {

@@ -7,6 +7,10 @@
 import SnapKit
 import UIKit
 import SDCycleScrollView
+struct SceneUpdate {
+    let setting: SceneSetting
+    let activeNarrator: String
+}
 
 protocol ConnectSpotusedViewDelegate {
     func beginartisticCipher(indess:Int)
@@ -23,39 +27,38 @@ class ConnectSpotusedView: UICollectionReusableView, SDCycleScrollViewDelegate {
     
     
     @IBOutlet weak var buildAio: UIButton!
-    
+    func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+    views.layer.cornerRadius = iduhoe
+    views.layer.masksToBounds = isufTruel ? true : false
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         cycleViewFall.isUserInteractionEnabled = true
-        if let cycleScrollView = SDCycleScrollView(frame: frame, delegate: self, placeholderImage: UIImage(named: "placeholder")){
-            cycleScrollView.autoScroll = true
-            
-            cycleScrollView.layer.cornerRadius = 12
-            cycleScrollView.bannerImageViewContentMode = .scaleAspectFill
-            
-            cycleScrollView.clipsToBounds = true
-
-            // 注意：此方法会影响整个轮播视图的圆角，包括分页控件
-            // 4. 基础配置
-            cycleScrollView.autoScrollTimeInterval = 2
-            cycleScrollView.infiniteLoop = true
-            cycleScrollView.delegate = self
-            cycleScrollView.titlesGroup = RAaslertvbCell.themeCustomization.map { da in
+        if let realTimeFeedback = SDCycleScrollView(frame: frame, delegate: self, placeholderImage: UIImage(named: "placeholder")){
+            realTimeFeedback.autoScroll = true
+            voiceClarity(iduhoe: 12, views: realTimeFeedback)
+          
+            realTimeFeedback.bannerImageViewContentMode = .scaleAspectFill
+         
+            realTimeFeedback.autoScrollTimeInterval = 2
+            realTimeFeedback.infiniteLoop = true
+            realTimeFeedback.delegate = self
+            realTimeFeedback.titlesGroup = RAaslertvbCell.themeCustomization.map { da in
                 da["roleplayTheme"] ?? ""
             }
-            cycleScrollView.localizationImageNamesGroup = RAaslertvbCell.themeCustomization.map { da in
+            realTimeFeedback.localizationImageNamesGroup = RAaslertvbCell.themeCustomization.map { da in
                 da["audpico"] ?? ""
             }
-            cycleScrollView.isUserInteractionEnabled = false
-            cycleScrollView.titleLabelTextColor   = .white
-            cycleScrollView.titleLabelTextFont = UIFont.systemFont(ofSize: 10, weight: .medium)
-            cycleScrollView.showPageControl = true
+            realTimeFeedback.isUserInteractionEnabled = false
+            realTimeFeedback.titleLabelTextColor   = .white
+            realTimeFeedback.titleLabelTextFont = UIFont.systemFont(ofSize: 10, weight: .medium)
+            realTimeFeedback.showPageControl = true
             
-            cycleScrollView.pageControlBottomOffset = 20
-            cycleScrollView.pageControlAliment = .init(1)
-            cycleViewFall.addSubview(cycleScrollView)
-            cycleScrollView.snp.makeConstraints { make in
+            realTimeFeedback.pageControlBottomOffset = 20
+            realTimeFeedback.pageControlAliment = .init(1)
+            cycleViewFall.addSubview(realTimeFeedback)
+            realTimeFeedback.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview().inset(12)
                 make.top.equalToSuperview().offset(36)
                 make.bottom.equalToSuperview().offset(-10)

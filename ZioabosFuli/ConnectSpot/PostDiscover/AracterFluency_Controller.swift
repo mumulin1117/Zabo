@@ -29,17 +29,19 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         seasonalTrends.layer.cornerRadius = 15
-        dreamweaverTitleLabel.text = "角色梦工厂"
+        dreamweaverTitleLabel.text = "Character Dream Factory"
                
-        seasonalTrends.layer.masksToBounds = true
-        fluidTransitions.layer.cornerRadius = 15
+       
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        
+        voiceClarity(iduhoe: 15, views: fluidTransitions)
         dreamweaverTitleLabel.textAlignment = .center
         fluidTransitions.layer.masksToBounds = true
         
     }
-    
+    func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+        views.layer.cornerRadius = iduhoe
+        views.layer.masksToBounds = isufTruel ? true : false
+    }
     //confirm
     @IBAction func gestureNavigation(_ sender: UIButton) {
         let hasImage = recorinfIamger != nil
@@ -72,15 +74,15 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
             self.personaFilterSegmentedControl.insertSegment(withTitle: "科幻", at: 2, animated: false)
            
             let alert = AlertZABoBuilder(
-                title: "icnzfboirgmpaytziaornu arkezvhiyeawo cieny apkrrorggrweasss".characterBelievability(),
-                message: "Agfrtcecre cayphpbryovvuaklg,g mwpej iweijlhlq pnbootxilfyyt xynopur aimnx ntihtez usnyhsrtiefmt rmfelsaspakgfel ktxhfaitp utvhies bctrpelastiibofns qfqeweg xwxiblhlg sbmee ydxeldyuecetueydi uafts ltjhuaoti ztpiimbe".characterBelievability()
+                enticity: "icnzfboirgmpaytziaornu arkezvhiyeawo cieny apkrrorggrweasss".characterBelievability(),
+                eRealism: "Agfrtcecre cayphpbryovvuaklg,g mwpej iweijlhlq pnbootxilfyyt xynopur aimnx ntihtez usnyhsrtiefmt rmfelsaspakgfel ktxhfaitp utvhies bctrpelastiibofns qfqeweg xwxiblhlg sbmee ydxeldyuecetueydi uafts ltjhuaoti ztpiimbe".characterBelievability()
             )
-            .setTitleColor(.systemOrange)
+            .roleplayAdventure(.systemOrange)
            
             .addAction(title: "Kcnboww".characterBelievability(), style: .destructive) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
-            .build()
+            .performanceTechnique()
             self.present(alert, animated: true)
             
             
@@ -98,6 +100,11 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
     //uploa pic
     @IBAction func featureRequestPrioritization(_ sender: UIButton) {
         self.personaFilterSegmentedControl.insertSegment(withTitle: "历史", at: 3, animated: false)
+        dialogueFluency() 
+    }
+    
+    
+    private func dialogueFluency()  {
         PHPhotoLibrary.requestAuthorization { status in
                 DispatchQueue.main.async {
                     if status == .authorized {
@@ -112,6 +119,8 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
         picker.dismiss(animated: true)
         self.personaFilterSegmentedControl.insertSegment(withTitle: "历史", at: 3, animated: false)
         guard let image = info[.originalImage] as? UIImage else {
@@ -119,11 +128,19 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
             
             return
         }
+        self.storyVibrancy(oius:"String",ianf:image)
         personaFilterSegmentedControl.selectedSegmentIndex = 0
-        self.recorinfIamger = image
-        self.releasePhasing1.setImage(image, for: .normal)
+       
         
     }
+    
+    
+    
+    func storyVibrancy(oius:String,ianf:UIImage)  {
+        self.recorinfIamger = ianf
+        self.releasePhasing1.setImage(ianf, for: .normal)
+    }
+    
     private func characterBelievability() {
         let picker = UIImagePickerController()
         createPersonaButton.backgroundColor = UIColor(named: "CosmicPink") ?? .systemPink

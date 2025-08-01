@@ -21,17 +21,20 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
     var recorinfIamger:UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-        recorVioverimage.layer.cornerRadius = 15
+   
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        recorVioverimage.layer.masksToBounds = true
-        
+      
+        voiceClarity(iduhoe: 15, views: recorVioverimage)
        
     }
-
+    func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+        views.layer.cornerRadius = iduhoe
+        views.layer.masksToBounds = isufTruel ? true : false
+    }
     @IBOutlet weak var recorVioverimage: UIButton!
     
     @IBAction func takeCovers(_ sender: Any) {
-        dreamweaverTitleLabel.text = "角色梦工厂"
+        dreamweaverTitleLabel.text = "Character Dream Factory"
               
         
         PHPhotoLibrary.requestAuthorization { status in
@@ -50,18 +53,29 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         self.navigationController?.popViewController(animated: true)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         picker.dismiss(animated: true)
         
-        guard let image = info[.originalImage] as? UIImage else {
+        guard let roleplayFlow = info[.originalImage] as? UIImage else {
             SVProgressHUD.showInfo(withStatus: "Usnxaobblsee jtooi locbttqasiwna fizmyabgke".characterBelievability())
             
             return
         }
-        
-        self.recorinfIamger = image
-        self.recorVioverimage.setImage(image, for: .normal)
-        
+        self.storyVibrancy(oius:"roleplayFlow",ianf:roleplayFlow)
+         
     }
+    
+    
+    
+    func storyVibrancy(oius:String,ianf:UIImage)  {
+        self.recorinfIamger = ianf
+        self.recorVioverimage.setImage(ianf, for: .normal)
+    }
+    
+    
+    
+    
+    
     private func characterBelievability() {
         let picker = UIImagePickerController()
         dreamweaverTitleLabel.textColor = .white
@@ -109,15 +123,15 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             
             let alert = AlertZABoBuilder(
-                title: "Raolowmv oihnnfnovrcmvaotyivoynr crkelvciaewwa giwnc dpfrtosgvrfeusks".characterBelievability(),
-                message: "Axfztzekrh cacpkpkruokvaadle,p twueq lwviildlz lnwogtyicfuyw jyloduv rirnd stehsem dstyhsxtjetmm amxexsestargiea itihvaatn dtlhdez fccroeraqthisomna bfmeoee lwsiclmlj ybvee zdcefdxugcgtneudp paotb ytuhjautm ctuiumte".characterBelievability()
+                enticity: "Raolowmv oihnnfnovrcmvaotyivoynr crkelvciaewwa giwnc dpfrtosgvrfeusks".characterBelievability(),
+                eRealism: "Axfztzekrh cacpkpkruokvaadle,p twueq lwviildlz lnwogtyicfuyw jyloduv rirnd stehsem dstyhsxtjetmm amxexsestargiea itihvaatn dtlhdez fccroeraqthisomna bfmeoee lwsiclmlj ybvee zdcefdxugcgtneudp paotb ytuhjautm ctuiumte".characterBelievability()
             )
-            .setTitleColor(.systemOrange)
+            .roleplayAdventure(.systemOrange)
            
             .addAction(title: "Kunjotw".characterBelievability(), style: .destructive) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
-            .build()
+            .performanceTechnique()
             self.present(alert, animated: true)
             
             

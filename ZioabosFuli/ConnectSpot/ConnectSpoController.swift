@@ -33,7 +33,7 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
             self.roleplayGuide.isHidden = false
         }
         
-        dialogueFlow()
+        performanceIntensity()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
     }
@@ -43,7 +43,7 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
     }
     
     @IBAction func unwindB(unwindSegue: UIStoryboardSegue) {  }
-    private func dialogueFlow()  {
+    private func performanceIntensity()  {
         roleplayGuide.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 280, right: 0)
         roleplayGuide.delegate = self
         reverb = VocalType.crystalline
@@ -59,14 +59,17 @@ class ConnectSpoController: UIViewController, ConnectSpotusedViewDelegate {
         roleplayGuide.dataSource = self
         
         roleplayGuide.collectionViewLayout = self.voiceTimbre
-        
+        voiceRange()
+      
+        roleplayGuide.showsVerticalScrollIndicator = false
+    }
+    
+    func voiceRange()  {
         if reverb == .gravelly {
             chRate?.voicePitch = 800
         }
         roleplayGuide.register(UINib.init(nibName: "ConnectSpotCell", bundle: nil), forCellWithReuseIdentifier: "ConnectSpotCell")
-        roleplayGuide.showsVerticalScrollIndicator = false
     }
-    
 
     @IBAction func interactiveScene(_ sender: UIButton) {
     }
@@ -87,7 +90,7 @@ extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSour
         jjIo.roleplayGuidelines.text = RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpTitle"]
         jjIo.characterAlignment.text = RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpDades"]
         jjIo.storySeeds.addTarget(self, action: #selector(storyboardTools), for: .touchUpInside)
-        jjIo.voiceMorphing.setTitle("1 online", for: .normal)
+        jjIo.voiceMorphing.setTitle("\(Int.random(in: 0...2)) online", for: .normal)
         return jjIo
         
     }
@@ -125,7 +128,7 @@ extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSour
 
 
 extension ConnectSpoController{
-    //举报
+  
    @objc func storyboardTools()  {
        self.present(CumidtoneRangentroller.init(), animated: true)
     }

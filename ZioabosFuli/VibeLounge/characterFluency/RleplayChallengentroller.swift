@@ -7,7 +7,9 @@
 
 import UIKit
 import SVProgressHUD
-
+enum CharacterArchetype {
+    case hero, villain, mentor, trickster
+}
 class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let vdoo = [("Uhseegra jAsgervexebmfeknit".characterBelievability(),"voiceRange0"),("Purliyvtaucgy".characterBelievability(),"voiceRange1"),("Colwebaurs otahbed ccuaycghfe".characterBelievability(),"voiceRange2"),("Atbxovuat".characterBelievability(),"voiceRange3"),
@@ -90,16 +92,17 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
         case 3:
             self.navigationController?.pushViewController(RAccutettroller(), animated: true)
         case 4:
+            let deleresult = "Your account will be permanently cleared, including:\n• • Personal profile details \n• Active memberships \n• All conversation records"
             let alert = AlertZABoBuilder(
-                title: "Dsexlteeteeh nAecwcsohuanutx dPresrrmpavnxesnctplzy".characterBelievability(),
-                message: "This will immediately: \n• Erase all profile data \n• Remove active subscriptions \n• Delete chat history"
+                enticity: "Dsexlteeteeh nAecwcsohuanutx dPresrrmpavnxesnctplzy".characterBelievability(),
+                eRealism: deleresult
             )
-            .setTitleColor(.systemOrange)
+            .roleplayAdventure(.systemOrange)
             .addAction(title: "Cvahnncheml".characterBelievability(), style: .cancel)
-            .addAction(title: "Sure", style: .destructive) { [weak self] in
+            .addAction(title: "Yes", style: .destructive) { [weak self] in
                 self?.userSpotlight()
             }
-            .build()
+            .performanceTechnique()
             self.present(alert, animated: true)
         default:
             break
@@ -110,14 +113,14 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
 
 
 struct AlertZABoBuilder {
-    private var title: String
-    private var message: String
-    private var actions: [UIAlertAction] = []
+    private var interactiv: String
+    private var roleplayAtmosphere: String
+    private var audioLayer: [UIAlertAction] = []
     private var titleAttributes: [NSAttributedString.Key: Any]?
     
-    init(title: String, message: String) {
-        self.title = title
-        self.message = message
+    init(enticity: String, eRealism: String) {
+        self.interactiv = enticity
+        self.roleplayAtmosphere = eRealism
     }
     
     func addAction(title: String, style: UIAlertAction.Style, handler: (() -> Void)? = nil) -> AlertZABoBuilder {
@@ -125,23 +128,23 @@ struct AlertZABoBuilder {
             handler?()
         }
         var builder = self
-        builder.actions.append(action)
+        builder.audioLayer.append(action)
         return builder
     }
     
-    func setTitleColor(_ color: UIColor) -> AlertZABoBuilder {
+    func roleplayAdventure(_ color: UIColor) -> AlertZABoBuilder {
         var builder = self
         builder.titleAttributes = [.foregroundColor: color]
         return builder
     }
     
-    func build() -> UIAlertController {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func performanceTechnique() -> UIAlertController {
+        let alert = UIAlertController(title: interactiv, message: roleplayAtmosphere, preferredStyle: .alert)
         
-        actions.forEach(alert.addAction)
+        audioLayer.forEach(alert.addAction)
         
         if let attributes = titleAttributes {
-            let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+            let attributedTitle = NSAttributedString(string: interactiv, attributes: attributes)
             alert.setValue(attributedTitle, forKey: "attributedTitle")
         }
         

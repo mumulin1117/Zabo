@@ -32,18 +32,21 @@ class Enhancementller: UIViewController {
     
     func ScenemoodSetters()  {
         audioLatency.layer.cornerRadius = 24
+        audioLatency.layer.borderWidth = 0
         audioLatency.layer.masksToBounds = true
     }
 
     
     @IBAction func characterCustomization(_ sender: UIButton) {
         UserDefaults.standard.set(false, forKey: "isoAgteuganheart")
+        audioLatency.layer.borderWidth = 0
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func personaCreation(_ sender: UIButton) {
         
         UserDefaults.standard.set(true, forKey: "isoAgteuganheart")
+        audioLatency.layer.borderWidth = 0
         self.navigationController?.popViewController(animated: true)
     }
     

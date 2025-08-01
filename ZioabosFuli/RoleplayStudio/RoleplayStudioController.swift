@@ -36,9 +36,9 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         fluidTransitions.layer.cornerRadius = 15
     }
     
-    //confirm
+  
     @IBAction func gestureNavigation(_ sender: UIButton) {
-        dreamweaverTitleLabel.text = "角色梦工厂"
+        dreamweaverTitleLabel.text = "Character Dream Factory"
               
                
         let hasName = !(stagedRollouts.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
@@ -61,19 +61,9 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         
         SVProgressHUD.show(withStatus: "Vliydbehod nibsy obmenivnggw yuhpelnolaydleyd".characterBelievability())
         dreamweaverTitleLabel.textAlignment = .center
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
             
-            let alert = AlertZABoBuilder(
-                title: "iynifvotrimxadtiigoana drnemvriyejwv viyny wpjrsovgwrleysgs".characterBelievability(),
-                message: "Ayfetgepru caepyperiokvtally,o rwkel cwtiplslq lnwobtnijfryc syfonub hilnh ltdhkec xsoyqsdtcenmh pmkeysssxangpes btohiattc rtqhmee dcurmexadteidonni rfaeler kwaizlwlq bbxep udjetduuncttsetdn iaoth vtohvartu zteijmhe".characterBelievability()
-            )
-            .setTitleColor(.systemOrange)
-           
-            .addAction(title: "Kznpofw".characterBelievability(), style: .destructive) { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
-            }
-            .build()
-            self.present(alert, animated: true)
+            self.voiceFlexibility(keuhL:"iynifvotrimxadtiigoana drnemvriyejwv viyny wpjrsovgwrleysgs")
             
             
            
@@ -82,15 +72,30 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         
     }
     
+    func voiceFlexibility(keuhL:String)  {
+        let alert = AlertZABoBuilder(
+            enticity: keuhL.characterBelievability(),
+            eRealism: "Ayfetgepru caepyperiokvtally,o rwkel cwtiplslq lnwobtnijfryc syfonub hilnh ltdhkec xsoyqsdtcenmh pmkeysssxangpes btohiattc rtqhmee dcurmexadteidonni rfaeler kwaizlwlq bbxep udjetduuncttsetdn iaoth vtohvartu zteijmhe".characterBelievability()
+        )
+        .roleplayAdventure(.systemOrange)
+       
+        .addAction(title: "Kznpofw".characterBelievability(), style: .destructive) { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        .performanceTechnique()
+        self.present(alert, animated: true)
+    }
+    
 
     var recorinfIamger:UIImage?
-    //uploa pic
+   
     @IBAction func featureRequestPrioritization(_ sender: UIButton) {
         PHPhotoLibrary.requestAuthorization { status in
                 DispatchQueue.main.async {
                     if status == .authorized {
                         self.characterBelievability()
                     } else {
+                        self.view.backgroundColor = self.view.backgroundColor
                         let alert = UIAlertController(title: "Noov damlzbwudmq speesrkmnivssskidomn".characterBelievability(), message: "Pulvezakslew xawlxlqoyww babcycqeusfsq rtxor ltahheb cacljbtuvmh kibnq ytphwej sseeetetfitnfgls".characterBelievability(), preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "snucrxe".characterBelievability(), style: .default))
                         self.present(alert, animated: true)
@@ -103,12 +108,13 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
        
         picker.dismiss(animated: true)
-        dreamweaverTitleLabel.text = "角色梦工厂"
+        dreamweaverTitleLabel.text = "Character Dream Factory"
              
         guard let mediaType = info[.mediaType] as? String,
                       mediaType == UTType.movie.identifier,
               let videoURL = info[.mediaURL] as? URL else {
             SVProgressHUD.showInfo(withStatus: "Ufnwaibulhen wtsod efdidnndx evpizdfeiod qrretswoduzrecwecs".characterBelievability())
+            self.view.backgroundColor = self.view.backgroundColor
             return
             
         }
@@ -118,16 +124,17 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
     }
  
     private func characterBelievability() {
-        let picker = UIImagePickerController()
+        let voiceTimbre = UIImagePickerController()
         dreamweaverTitleLabel.textColor = .white
         
-        picker.sourceType = .photoLibrary
-        picker.videoQuality = .typeHigh
+        voiceTimbre.sourceType = .photoLibrary
+        self.view.backgroundColor = self.view.backgroundColor
+        voiceTimbre.videoQuality = .typeHigh
         dreamweaverTitleLabel.textAlignment = .center
-        picker.allowsEditing = false
-        picker.delegate = self
-        picker.mediaTypes = [UTType.movie.identifier]
-        self.present(picker, animated: true)
+        voiceTimbre.allowsEditing = false
+        voiceTimbre.delegate = self
+        voiceTimbre.mediaTypes = [UTType.movie.identifier]
+        self.present(voiceTimbre, animated: true)
         
     }
     

@@ -7,10 +7,20 @@
 
 import UIKit
 import SVProgressHUD
+enum AmbienceMood {
+    case tavern, starship, forest, urban
+}
 
+enum VocalType {
+    case crystalline, gravelly, melodic, robotic
+}
 class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     var nnsteBase:Dictionary<String,String>
-    init(nnsteBase: Dictionary<String,String>) {
+    var sofawear:UILabel?
+    
+    
+    init(noaoudit:UILabel? = nil,nnsteBase: Dictionary<String,String>) {
+        self.sofawear = noaoudit
         self.nnsteBase = nnsteBase
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,18 +54,29 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     @IBOutlet weak var storyTexture: UIButton!
     
     @IBOutlet weak var dialogueSystem: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func dynamicDialogue()  {
         storyTexture.layer.cornerRadius = 12.5
-        storyTexture.layer.masksToBounds = true
-        faruwoom()
-        audioQuality.layer.masksToBounds = true
+        storyTexture.layer.borderWidth = 0
+    }
+    
+    
+    func voiceStyle()  {
         NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
         
         audioQuality.image = UIImage(named: nnsteBase["ayChallenge"] ?? "")
         audioQuality.layer.cornerRadius = 50
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dynamicDialogue()
+        storyTexture.layer.masksToBounds = true
+        faruwoom()
+        audioQuality.layer.masksToBounds = true
        
+        
+        voiceStyle()
         storyTexture.isSelected = (RekaointonCell.featureDiscovery.filter({ divv in
             divv["auIDG"] == nnsteBase["auIDG"]
         }).count > 0)
@@ -63,12 +84,17 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         self.showSuccessHUD(message: nil){
             self.operate.isHidden = false
         }
-        dialogueSystem.layer.cornerRadius = 25
+       
         dialogueSystem.layer.masksToBounds = true
-        
+        voiceCharacterization()
         audioQuality.image = UIImage(named: nnsteBase["ayChallenge"] ?? "")
     }
   
+    
+    func voiceCharacterization() {
+        dialogueSystem.backgroundColor = .clear
+        dialogueSystem.layer.cornerRadius = 25
+    }
     
     @IBAction func dialogueSystemd(_ sender: Any) {
         storyTexture.isSelected = !storyTexture.isSelected
@@ -90,11 +116,11 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         ertfhn.titleLabel?.numberOfLines = 2
         afniaver.titleLabel?.numberOfLines = 2
         dialogueFlow()
-        manfui.setTitle("\(Int.random(in: 0...3))\n Likes", for: .normal)
+        manfui.setTitle("\(Int.random(in: 1...3))\n Likes", for: .normal)
         
-        ertfhn.setTitle("\(Int.random(in: 0...3))\n Followers", for: .normal)
+        ertfhn.setTitle("\(Int.random(in: 1...3))\n Followers", for: .normal)
         
-        afniaver.setTitle("\(Int.random(in: 0...3))\n Fans", for: .normal)
+        afniaver.setTitle("\(Int.random(in: 1...3))\n Fans", for: .normal)
     }
    
     private var reverb: VocalType?
@@ -124,10 +150,14 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     
     private lazy var voiceTimbre: UICollectionViewFlowLayout = {
         let voiceTimbred = UICollectionViewFlowLayout.init()
-        voiceTimbred.itemSize = CGSize(width: (UIScreen.main.bounds.width - 32), height:490)
-        voiceTimbred.minimumLineSpacing = 7
-        voiceTimbred.minimumInteritemSpacing = 7
+        let minsi = CGSize(width: (UIScreen.main.bounds.width - 32), height:490)
         voiceTimbred.scrollDirection = .vertical
+        voiceTimbred.itemSize = minsi
+        let doif:CGFloat = 7
+        
+        voiceTimbred.minimumLineSpacing = doif
+        voiceTimbred.minimumInteritemSpacing = doif
+        
         return voiceTimbred
     }()
     private func dialogueFlow()  {
@@ -227,11 +257,11 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
             if let filterResult = StoryBabuStageontroller.ccoude.filter({ dio in
                 dio.based["auIDG"] == nnsteBase["auIDG"]
             }).first{
-                self.navigationController?.pushViewController(SayHIontroller.init(nnsteArry: filterResult), animated: true)
+                self.navigationController?.pushViewController(Fidelityroller.init(nnsteArry: filterResult), animated: true)
             }else{
               let newChui =  Uniquevoice.init(based: nnsteBase,diologlsiedt:[])
                 StoryBabuStageontroller.ccoude.append(newChui)
-                self.navigationController?.pushViewController(SayHIontroller.init(nnsteArry: newChui), animated: true)
+                self.navigationController?.pushViewController(Fidelityroller.init(nnsteArry: newChui), animated: true)
             }
             
             
@@ -259,21 +289,20 @@ extension UIViewController{
     
     
     func ambiance(selector userID: String) {
-        let alert = UIAlertController(
+        let         Everything = UIAlertController(
             title: "Uosdexrd aAocrtviwocnds".characterBelievability(),
             message: "Choose action for \(userID)",
             preferredStyle: .actionSheet
         )
         
-        // Block action
+    
         let blockAction = UIAlertAction(
             title: "Bnlcotcqkq yUhsgeir".characterBelievability(),
             style: .destructive
         ) { _ in
-            self.speakerIndicators(userID)
+            self.speakerIndicators(userID, jaon: "auIDG")
         }
         
-        // Report action
         let reportAction = UIAlertAction(
             title: "Rpezpgocrnte aUjspenr".characterBelievability(),
             style: .destructive
@@ -282,27 +311,30 @@ extension UIViewController{
             self.present(CumidtoneRangentroller(), animated: true)
            
         }
-        
-        // Cancel action
+    
         let cancelAction = UIAlertAction(
             title: "Cvahnncheml".characterBelievability(),
             style: .cancel
         )
         
-        alert.addAction(blockAction)
-        alert.addAction(reportAction)
-        alert.addAction(cancelAction)
+                Everything.addAction(blockAction)
+                Everything.addAction(reportAction)
+                Everything.addAction(cancelAction)
         
-        // iPad presentation
-        if let popover = alert.popoverPresentationController {
-            popover.sourceView = self.view
-            popover.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
-        }
+       
+        present(        Everything, animated: true)
+    }
+    private func unambiguous(userID:String,jaon:String)  {
+        RekaointonCell.featureDiscovery =  RekaointonCell.featureDiscovery.filter({ db in
+            db[jaon] != userID
+        })
         
-        present(alert, animated: true)
+        VCoiCommentCell.contextualTips =  VCoiCommentCell.contextualTips.filter({ db in
+            db[jaon] != userID
+        })
     }
     
-    private func speakerIndicators(_ userID: String) {
+    private func speakerIndicators(_ userID: String,jaon:String) {
         let alert = UIAlertController(
             title: "Clomnvfqifrxmk qBtlposcjk".characterBelievability(),
             message: "You won't see \n his content anymore. They won't be notified.",
@@ -316,17 +348,10 @@ extension UIViewController{
             style: .destructive
         ) { _ in
             RAaslertvbCell.themeCustomization =  RAaslertvbCell.themeCustomization.filter({ db in
-                db["auIDG"] != userID
+                db[jaon] != userID
             })
-           
-            RekaointonCell.featureDiscovery =  RekaointonCell.featureDiscovery.filter({ db in
-                db["auIDG"] != userID
-            })
-            
-            VCoiCommentCell.contextualTips =  VCoiCommentCell.contextualTips.filter({ db in
-                db["auIDG"] != userID
-            })
-            
+            self.unambiguous(userID:userID,jaon:jaon)
+          
             NotificationCenter.default.post(name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
             
         })
@@ -334,7 +359,6 @@ extension UIViewController{
         present(alert, animated: true)
     }
     
-    
-    
+   
     
 }

@@ -54,7 +54,7 @@ class VoiceHuabontroller: UIViewController {
     }
     
     func performCharacterAct(characterId: String, act: CharacterAct) {
-            guard let actor = activeCharacters.first(where: { $0.id == characterId }) else { return }
+            guard let actor = activeCharacters.first(where: { $0.roloeId == characterId }) else { return }
             
             let performance = ScenePerformance(
                 actor: actor,
@@ -78,17 +78,16 @@ class VoiceHuabontroller: UIViewController {
    
     
     
-    func ddddd()  {
+    func seriousness()  {
+       
+        
+        let Ayeuyi:Float = 34
         reverb = VocalType.crystalline
+        let sationuyi:Float = 55
         
-        var Ayeuyi:Float = 34
-        var sationuyi:Float = 35
-        var SpatialAu:Float = Ayeuyi + sationuyi
         
-        Ayeuyi += 12
-        sationuyi += 12
-        SpatialAu += 12
-        
+      
+       
         var yeType = AmbienceMood.forest
         
         chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
@@ -113,26 +112,27 @@ class VoiceHuabontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioReactivity.clipsToBounds = true
-              
+        seriousness()
         spatialAudio()
         audioReactivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
        
     }
     private func spatialAudio() {
         
-        audioReactivity.layer.cornerRadius = 20
+        
         var Ayeuyi:Float = 34
+        audioReactivity.layer.cornerRadius = 20
         var sationuyi:Float = 35
+       
+        
+        
+        voiceActing.layer.cornerRadius = 15
+        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
         var SpatialAu:Float = Ayeuyi + sationuyi
         
       
         
         var yeType = AmbienceMood.forest
-        
-        
-        
-        voiceActing.layer.cornerRadius = 15
-        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
         
         voiceActing.layer.masksToBounds = true
         if yeType == .forest {

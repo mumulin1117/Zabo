@@ -33,12 +33,18 @@ class ConnectSpotCell: UICollectionViewCell {
     }
 
     private func voiceEnhancement()  {
-        backgroundAmbience.layer.cornerRadius = 20
-        audioLatency.layer.cornerRadius = 9.5
-        audioLatency.layer.masksToBounds = true
-        voiceMorphing.layer.cornerRadius = 10
-        voiceMorphing.layer.masksToBounds = true
+    
+     
+        voiceClarity(iduhoe: 20, views: backgroundAmbience)
         
-        backgroundAmbience.layer.masksToBounds = true
+        voiceClarity(iduhoe: 9.5, views: audioLatency)
+        
+        voiceClarity(iduhoe: 10, views: voiceMorphing)
+       
+    }
+    
+    func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+    views.layer.cornerRadius = iduhoe
+    views.layer.masksToBounds = isufTruel ? true : false
     }
 }

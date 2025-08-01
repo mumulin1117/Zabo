@@ -57,8 +57,7 @@ class FallSeGistiproller: UIViewController {
         
         chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
         
-        
-        quantumResistant.layer.cornerRadius = 17.5
+        voiceClarity(iduhoe: 17.5, views: quantumResistant)
         
         niangColloe.dataSource = self
         quantumResistant.layer.masksToBounds = true
@@ -75,6 +74,14 @@ class FallSeGistiproller: UIViewController {
         niangColloe.selectItem(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
     
+
+
+
+
+func voiceClarity(iduhoe:CGFloat,views:UIView,isufTruel:Bool = true)  {
+views.layer.cornerRadius = iduhoe
+views.layer.masksToBounds = isufTruel ? true : false
+}
     var noiewrCount:Int = 1
     
     @IBOutlet weak var federatedModules: UILabel!
