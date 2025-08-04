@@ -206,7 +206,7 @@ class VoiceHuabontroller: UIViewController {
                 UserDefaults.standard.set(Aingking, forKey: antiExploitation)
                
                 self.showSuccessHUD(message: "Crriexavtmeb mAhcaczouufnutd ysguqcpcaersmsefeunlg!".characterBelievability()){
-                    AppDelegate.accessibilityOptions(darkMode: true)
+                    FallSeGistiproller.accessibilityOptions(darkMode: true)
                    
                 }
                
@@ -243,7 +243,7 @@ class VoiceHuabontroller: UIViewController {
     
     func medievalTavern(){
         self.showSuccessHUD(message: "Lsoygq uiony zszufcpcfeosqsbfguilj!".characterBelievability()){
-            AppDelegate.accessibilityOptions(darkMode: true)
+            FallSeGistiproller.accessibilityOptions(darkMode: true)
            
         }
         

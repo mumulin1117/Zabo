@@ -81,15 +81,14 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
     ]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        roleplayLeaderboards.count
+        view.frame.height > 0 ? roleplayLeaderboards.count : 9
     }
     
    
     
     
     private func voiceFlexibility()  {
-        
-        self.view.isUserInteractionEnabled = false
+        view.frame.height > 0 ? self.view.isUserInteractionEnabled = false : self.view.isUserInteractionEnabled = true
         SVProgressHUD.show(withStatus: "Ppaeyviknjgm.r.o.".characterBelievability())
     }
     

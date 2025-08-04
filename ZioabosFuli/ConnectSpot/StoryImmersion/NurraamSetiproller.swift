@@ -52,13 +52,25 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
     @IBAction func OIDShu(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    private let statusIndicator: UIView = {
+            let view = UIView()
+            view.layer.cornerRadius = 8
+            view.backgroundColor = .systemGray
+            return view
+       
+    }()
+    
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        self.statusIndicator.backgroundColor = .systemGray
         picker.dismiss(animated: true)
         
         guard let roleplayFlow = info[.originalImage] as? UIImage else {
             SVProgressHUD.showInfo(withStatus: "Usnxaobblsee jtooi locbttqasiwna fizmyabgke".characterBelievability())
-            
+            self.statusIndicator.backgroundColor = .systemGray
             return
         }
         self.storyVibrancy(oius:"roleplayFlow",ianf:roleplayFlow)
@@ -69,6 +81,7 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
     
     func storyVibrancy(oius:String,ianf:UIImage)  {
         self.recorinfIamger = ianf
+        self.statusIndicator.backgroundColor = .systemGray
         self.recorVioverimage.setImage(ianf, for: .normal)
     }
     

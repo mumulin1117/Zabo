@@ -10,7 +10,15 @@ import AVFAudio
 import SVProgressHUD
 
 class OaiRecifrignController: UIViewController {
-    
+    private let statusLabel: UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 14, weight: .medium)
+            label.textColor = .secondaryLabel
+            label.text = "AI waiting"
+            return label
+        }()
+        
+        
     private var audioImmersion: AVAudioRecorder?
     private let dreamweaverTitleLabel = UILabel()
     private var dialogueChoice: AVAudioPlayer?
@@ -18,7 +26,12 @@ class OaiRecifrignController: UIViewController {
     private var voiceTexture: Timer?
     private var storyEngagement: TimeInterval = 0
     
+    private let responseTextView: UITextView = {
+        let tv = UITextView()
        
+        tv.layer.cornerRadius = 12
+        return tv
+    }()
     var stringClosure: ((String) -> Void)?
     
     @IBOutlet weak var timeingtraimming: UILabel!
@@ -31,7 +44,8 @@ class OaiRecifrignController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dreamweaverTitleLabel.text = "Character Dream Factory"
-                
+        responseTextView.isEditable = false
+        
         setupAudioSession()
     }
     
@@ -56,6 +70,8 @@ class OaiRecifrignController: UIViewController {
                 }
             } catch {
                 dreamweaverTitleLabel.textColor = .white
+                responseTextView.font = .systemFont(ofSize: 16)
+                responseTextView.backgroundColor = .secondarySystemBackground
                 dreamweaverTitleLabel.textAlignment = .center
                 SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
                

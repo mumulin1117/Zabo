@@ -67,7 +67,7 @@ class RleplayChallengentroller: UIViewController, UITableViewDelegate, UITableVi
         RekaointonCell.featureDiscovery.removeAll()
         UserDefaults.standard.set(nil, forKey: "emotionalWeight")
         VCoiCommentCell.contextualTips.removeAll()
-        AppDelegate.accessibilityOptions(darkMode:false)
+        FallSeGistiproller.accessibilityOptions(darkMode:false)
         StoryBabuSmeaCell.Metrics = UIImage(named: "ZaboIO")!
         
         

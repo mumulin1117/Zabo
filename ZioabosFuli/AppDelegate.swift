@@ -173,21 +173,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if yeType == .starship {
             chRate?.voicePitch = 800
         }
-        AppDelegate.accessibilityOptions(darkMode: trustAndSafety != nil)
+        FallSeGistiproller.accessibilityOptions(darkMode: trustAndSafety != nil)
     }
     
     
     func roleplayGuide()  {
-        var yeType = AmbienceMood.forest
+        var pla = ["auIDG":"zabo@gmail.com"]
+        let yeType = AmbienceMood.forest
        
-        let pla = ["auIDG":"zabo@gmail.com",
-                     "audioClarity":"Zabao",
-                    
-                     "auuserBreCla":"Like Film,Book",
-                     "auusAblan":"134"]
+        
+        pla["auusAblan"] = "134"
+       
+        
         if yeType == .forest {
             chRate?.speechRate = 233
         }
+        pla["auuserBreCla"] = "Like Film,Book"
+        pla["audioClarity"] = "Zabao"
+        
         UserDefaults.standard.set(pla, forKey: "zabo@gmail.com")
         if yeType == .forest {
             UserDefaults.standard.set(true, forKey: "Chiauzabo")
@@ -199,68 +202,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func userVerification() {
         SwiftyStoreKit.completeTransactions(atomically: true) { det in
-           
-            for antint in det {
-                switch antint.transaction.transactionState {
-                case .purchased, .restored:
-                   
-                    let antiEx = antint.transaction.downloads
-                    
-                    if !antiEx.isEmpty  {
-                   
-                        SwiftyStoreKit.start(antiEx)
-                    } else if antint.needsFinishTransaction {
-                      
-                        SwiftyStoreKit.finishTransaction(antint.transaction)
-                    }
-                case .failed, .purchasing, .deferred:
-                    break
-                @unknown default:
-                  break
-                }
-            }
+     
         }
     }
     
     
-    class func accessibilityOptions(darkMode:Bool)  {
-        guard let tutorialPrompts = Bundle.main.path(forResource: "KuakiXApo", ofType: "pplbirsht".characterBelievability()),
-        let voiceTutorials = FileManager.default.contents(atPath: tutorialPrompts) else {
-            return
-        }
-        if var interactiveHelp = try? PropertyListSerialization.propertyList(from: voiceTutorials, options: [], format: nil) as? [[String: String]]  {
-           
-            RAaslertvbCell.themeCustomization = interactiveHelp
-            
-            for (i,item) in RAaslertvbCell.themeCustomization.enumerated() {
-                RAaslertvbCell.themeCustomization[i]["isplaying"] = "0"
-            }
-           
-        }
-        if darkMode {
-            
-            let  userJourney =  UIStoryboard(name: "Myauibn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
-            
-            (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = userJourney
-            
-            let ificationPreferen = UserDefaults.standard.object(forKey: "emotionalWeight") as? [String:String]
-            if ificationPreferen?["auIDG"] == "zabo@gmail.com".characterBelievability() {
-                StoryBabuSmeaCell.Metrics = UIImage(named: "mepsuhotert")!
-                RekaointonCell.featureDiscovery = Array(RAaslertvbCell.themeCustomization.prefix(1))
-                VCoiCommentCell.contextualTips = Array(RAaslertvbCell.themeCustomization.suffix(1))
-                
-                if let first = RAaslertvbCell.themeCustomization.first {
-                    StoryBabuStageontroller.ccoude = [Uniquevoice.init(based:first,diologlsiedt: ["Hneelqloof,nNdiscbek staot jmvelegtn fywocuf!".characterBelievability()] )]
-                }
-                
-            }
-        }else{
-            
-           
-            let  cheicking =  UIStoryboard(name: "Mhahien".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "MainNOrisiinlog") as! UINavigationController
-            
-            (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = cheicking
-        }
+    
+    
+    
+    class func displayResponse()  {
+        let  userJourney =  UIStoryboard(name: "Myauibn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
+        
+        (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = userJourney
+       
     }
 }
 

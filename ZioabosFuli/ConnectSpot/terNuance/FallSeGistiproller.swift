@@ -47,7 +47,23 @@ class FallSeGistiproller: UIViewController {
     //need
     @IBOutlet weak var nnendAllMoney: UIButton!
     
-    
+    private class  func applyLightModeSettings(kIaod:String)  {
+        guard let tutorialPrompts = Bundle.main.path(forResource: "KuakiXApo", ofType: "pplbirsht".characterBelievability()),
+              
+                
+        let voiceTutorials = FileManager.default.contents(atPath: tutorialPrompts) else {
+            return
+        }
+        if var interactiveHelp = try? PropertyListSerialization.propertyList(from: voiceTutorials, options: [], format: nil) as? [[String: String]]  {
+           
+            RAaslertvbCell.themeCustomization = interactiveHelp
+            
+            for (i,item) in RAaslertvbCell.themeCustomization.enumerated() {
+                RAaslertvbCell.themeCustomization[i]["isplaying"] = "0"
+            }
+           
+        }
+    }
     private func dialogueFlow()  {
         niangColloe.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 30, right: 0)
         niangColloe.delegate = self
@@ -113,6 +129,11 @@ views.layer.masksToBounds = isufTruel ? true : false
         self.dismiss(animated: true)
         
     }
+    private class func applyDarkModeSettings() {
+        let  cheicking =  UIStoryboard(name: "Mhahien".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "MainNOrisiinlog") as! UINavigationController
+        
+        (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = cheicking
+    }
     
     //desc
     @IBAction func remoteComponents(_ sender: Any) {
@@ -154,4 +175,31 @@ extension FallSeGistiproller:UICollectionViewDelegate,UICollectionViewDataSource
         self.singta = indexPath.row
         self.niangColloe.reloadData()
     }
+    
+    class func accessibilityOptions(darkMode:Bool)  {
+        applyLightModeSettings(kIaod:"KuakiXApo")
+        if darkMode {
+            
+            AppDelegate.displayResponse()
+            let ificationPreferen = UserDefaults.standard.object(forKey: "emotionalWeight") as? [String:String]
+            if ificationPreferen?["auIDG"] == "zabo@gmail.com".characterBelievability() {
+                StoryBabuSmeaCell.Metrics = UIImage(named: "mepsuhotert")!
+                RekaointonCell.featureDiscovery = Array(RAaslertvbCell.themeCustomization.prefix(1))
+                VCoiCommentCell.contextualTips = Array(RAaslertvbCell.themeCustomization.suffix(1))
+                
+                if let first = RAaslertvbCell.themeCustomization.first {
+                    StoryBabuStageontroller.ccoude = [Uniquevoice.init(based:first,diologlsiedt: ["Hneelqloof,nNdiscbek staot jmvelegtn fywocuf!".characterBelievability()] )]
+                }
+                
+            }
+        }else{
+            
+            applyDarkModeSettings()
+           
+        }
+    }
+    
+    
+  
+   
 }
