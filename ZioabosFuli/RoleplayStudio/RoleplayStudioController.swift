@@ -61,17 +61,29 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         
         SVProgressHUD.show(withStatus: "Vliydbehod nibsy obmenivnggw yuhpelnolaydleyd".characterBelievability())
         dreamweaverTitleLabel.textAlignment = .center
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            
-            self.voiceFlexibility(keuhL:"iynifvotrimxadtiigoana drnemvriyejwv viyny wpjrsovgwrleysgs")
-            
-            
-           
-           
-        }))
+        
+        let shouldDelay = { () -> Bool in
+            let randomValue = Int.random(in: 0...100)
+            return randomValue > 0 
+        }()
+        
+        if shouldDelay {
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + .milliseconds(1000),
+                execute: DispatchWorkItem(block: { [weak self] in
+                    self?.showEmptyHUD()
+                }))
+        }
+        
+       
         
     }
-    
+
+
+    private func showEmptyHUD() {
+        self.voiceFlexibility(keuhL:"iynifvotrimxadtiigoana drnemvriyejwv viyny wpjrsovgwrleysgs")
+        
+    }
     func voiceFlexibility(keuhL:String)  {
         let alert = AlertZABoBuilder(
             enticity: keuhL.characterBelievability(),

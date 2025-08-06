@@ -65,11 +65,11 @@ class VibeLoungeeontroller: UIViewController {
         var Ayeuyi:Float = 34
         SVProgressHUD.show()
     
-        var SpatialAu:Float = Ayeuyi + 35
+       
         
         Ayeuyi += 12
      
-        var yeType = AmbienceMood.forest
+        let yeType = AmbienceMood.forest
         
         chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: 55, vocalTexture: VocalType.crystalline)
         if yeType == .forest {
@@ -79,13 +79,30 @@ class VibeLoungeeontroller: UIViewController {
         if yeType == .starship {
             chRate?.voicePitch = 800
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showInfo(withStatus: "Tlheer agfinfjtc kysorud mheafvyeont'qtk ergefcceyifvmeido yyfeut".characterBelievability())
-        }))
+     
+        
+        let shouldDelay = { () -> Bool in
+            let randomValue = Int.random(in: 0...100)
+            return randomValue > 0 
+        }()
+        
+        if shouldDelay {
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + .milliseconds(1000),
+                execute: DispatchWorkItem(block: { [weak self] in
+                    self?.showEmptyHUD()
+                }))
+        }
+        
+       
         
     }
-    
-    
+
+
+    private func showEmptyHUD() {
+        SVProgressHUD.showInfo(withStatus: "Tlheer agfinfjtc kysorud mheafvyeont'qtk ergefcceyifvmeido yyfeut".characterBelievability())
+        
+    }
     @IBAction func deviceCompatibility(_ sender: Any) {
         let ube = RekaoinController.init()
         ube.quickStartGuides = 13

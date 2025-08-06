@@ -210,7 +210,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     @objc func uiataping(ri:UITapGestureRecognizer)  {
         ifaick = !ifaick
         customHeiauView.aimagheuti.image = UIImage(named: ifaick ? "sceneDirectionHER" : "sceneDirection")
-        
+        customHeiauView.baiufioodm.text = ifaick ? "1" : "0"
     }
     
     

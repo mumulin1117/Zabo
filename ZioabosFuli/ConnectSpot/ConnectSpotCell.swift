@@ -47,4 +47,11 @@ class ConnectSpotCell: UICollectionViewCell {
     views.layer.cornerRadius = iduhoe
     views.layer.masksToBounds = isufTruel ? true : false
     }
+    
+    class func displayResponse()  {
+        let  userJourney =  UIStoryboard(name: "Myauibn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
+        
+        (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = userJourney
+       
+    }
 }

@@ -42,11 +42,11 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     func voiceModulation()  {
         
-        audioQuality.layer.cornerRadius = 50
+       
         audioQuality.layer.masksToBounds = true
         dreamweaverTitleLabel.text = "Character Dream Factory"
                
-       
+        audioQuality.layer.cornerRadius = 50
         voiceStyle.layer.masksToBounds = true
     }
     private let createPersonaButton = UIButton(type: .system)

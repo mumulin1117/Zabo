@@ -70,28 +70,39 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
                 personaFilterSegmentedControl.selectedSegmentIndex = 0
         
         SVProgressHUD.show(withStatus: "Ionlffogrbmwactcivound cissg cbpexianfge iubpxlcouafddead".characterBelievability())
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            self.personaFilterSegmentedControl.insertSegment(withTitle: "科幻", at: 2, animated: false)
-           
-            let alert = AlertZABoBuilder(
-                enticity: "icnzfboirgmpaytziaornu arkezvhiyeawo cieny apkrrorggrweasss".characterBelievability(),
-                eRealism: "Agfrtcecre cayphpbryovvuaklg,g mwpej iweijlhlq pnbootxilfyyt xynopur aimnx ntihtez usnyhsrtiefmt rmfelsaspakgfel ktxhfaitp utvhies bctrpelastiibofns qfqeweg xwxiblhlg sbmee ydxeldyuecetueydi uafts ltjhuaoti ztpiimbe".characterBelievability()
-            )
-            .roleplayAdventure(.systemOrange)
-           
-            .addAction(title: "Kcnboww".characterBelievability(), style: .destructive) { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
-            }
-            .performanceTechnique()
-            self.present(alert, animated: true)
-            
-            
-           
-           
-        }))
+        displayMinimalFeedback() 
         
     }
-    
+    func presentEmptyStatusNotice() {
+        let shouldDelay = { () -> Bool in
+            let randomValue = Int.random(in: 0...100)
+            return randomValue > 0 
+        }()
+        
+        if shouldDelay {
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + .milliseconds(1000),
+                execute: DispatchWorkItem(block: { [weak self] in
+                    self?.showEmptyHUD(Status: "")
+                }))
+        }
+    }
+
+    private func showEmptyHUD(Status:String) {
+        self.personaFilterSegmentedControl.insertSegment(withTitle: "科幻", at: 2, animated: false)
+       
+        let alert = AlertZABoBuilder(
+            enticity: "icnzfboirgmpaytziaornu arkezvhiyeawo cieny apkrrorggrweasss".characterBelievability(),
+            eRealism: "Agfrtcecre cayphpbryovvuaklg,g mwpej iweijlhlq pnbootxilfyyt xynopur aimnx ntihtez usnyhsrtiefmt rmfelsaspakgfel ktxhfaitp utvhies bctrpelastiibofns qfqeweg xwxiblhlg sbmee ydxeldyuecetueydi uafts ltjhuaoti ztpiimbe".characterBelievability()
+        )
+        .roleplayAdventure(.systemOrange)
+       
+        .addAction(title: "Kcnboww".characterBelievability(), style: .destructive) { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        .performanceTechnique()
+        self.present(alert, animated: true)
+    }
 
     @IBAction func OIDShu(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)

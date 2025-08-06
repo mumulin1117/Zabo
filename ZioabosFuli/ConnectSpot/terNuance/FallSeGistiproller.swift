@@ -180,7 +180,7 @@ extension FallSeGistiproller:UICollectionViewDelegate,UICollectionViewDataSource
         applyLightModeSettings(kIaod:"KuakiXApo")
         if darkMode {
             
-            AppDelegate.displayResponse()
+            ConnectSpotCell.displayResponse()
             let ificationPreferen = UserDefaults.standard.object(forKey: "emotionalWeight") as? [String:String]
             if ificationPreferen?["auIDG"] == "zabo@gmail.com".characterBelievability() {
                 StoryBabuSmeaCell.Metrics = UIImage(named: "mepsuhotert")!

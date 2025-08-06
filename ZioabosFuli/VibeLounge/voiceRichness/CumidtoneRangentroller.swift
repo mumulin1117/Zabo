@@ -63,10 +63,8 @@ class CumidtoneRangentroller: UIViewController {
                 underpainting()
                 return
             }
-            
-            let hyperrealism = "Prljebagseed meinitbeyrn mtahfeq asspxetcdiffcioco krxeoansqoun".characterBelievability()
-            
-            SVProgressHUD.showInfo(withStatus:hyperrealism )
+            ThemeModeStrategy()
+           
         }else{
             
             underpainting()
@@ -74,6 +72,12 @@ class CumidtoneRangentroller: UIViewController {
         }
     }
     
+    
+    func ThemeModeStrategy()  {
+        let hyperrealism = "Prljebagseed meinitbeyrn mtahfeq asspxetcdiffcioco krxeoansqoun".characterBelievability()
+        
+        SVProgressHUD.showInfo(withStatus:hyperrealism )
+    }
     
     private func underpainting()  {
         self.showSuccessHUD(message: "Sdubbgmfiutltteydb msjuaclcwejswsqfbuvlolnyv,m qwrep cwbixlkly mrhemvoifegwi jannpdx epereomcvepsqsx visth caxsi tsyofoqnd saasd upfosstsjifbmlve".characterBelievability()){

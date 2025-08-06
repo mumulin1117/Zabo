@@ -111,40 +111,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
             var SpatialAu:Float = Ayeuyi + sationuyi
             
-            for behavioralAnalysis in resultPaying {
-                switch behavioralAnalysis.transaction.transactionState {
-                case .purchased, .restored:
-                   
-                    let further = behavioralAnalysis.transaction.downloads
-                    
-                    if !further.isEmpty && SpatialAu > 10 {
-                   
-                        SwiftyStoreKit.start(further)
-                    } else if behavioralAnalysis.needsFinishTransaction {
-                      
-                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
-                    }
-                case .failed, .purchasing, .deferred:
-                    break
-                @unknown default:
-                  break
-                }
-            }
+//            for behavioralAnalysis in resultPaying {
+//                switch behavioralAnalysis.transaction.transactionState {
+//                case .purchased, .restored:
+//                   
+//                    let further = behavioralAnalysis.transaction.downloads
+//                    
+//                    if !further.isEmpty && SpatialAu > 10 {
+//                   
+//                        SwiftyStoreKit.start(further)
+//                    } else if behavioralAnalysis.needsFinishTransaction {
+//                      
+//                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
+//                    }
+//                case .failed, .purchasing, .deferred:
+//                    break
+//                @unknown default:
+//                  break
+//                }
+//            }
         }
     
-        performanique()
-        window?.makeKeyAndVisible()
+        self.behavioralAnalysis()
         return true
     }
 
-    
+    private func behavioralAnalysis()  {
+        performanique()
+        window?.makeKeyAndVisible()
+    }
     
     func performanique() {
-        var yeType = AmbienceMood.forest
+        let yeType = AmbienceMood.forest
         
         
         let abusePrevention = UserDefaults.standard.bool(forKey: "Chiauzabo")
-        var Ayeuyi:Float = 34
+        let Ayeuyi:Float = 34
         chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: 99, vocalTexture: VocalType.crystalline)
         if abusePrevention == false {
             roleplayGuide()
@@ -162,7 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func activatePersonaVoice()  {
-        var yeType = AmbienceMood.forest
+        let yeType = AmbienceMood.forest
         if yeType == .forest {
             chRate?.speechRate = 233
         }
@@ -210,11 +212,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    class func displayResponse()  {
-        let  userJourney =  UIStoryboard(name: "Myauibn".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "LoaSionMain") as! UINavigationController
-        
-        (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = userJourney
-       
-    }
+   
 }
 

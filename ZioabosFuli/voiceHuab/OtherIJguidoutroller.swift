@@ -108,14 +108,29 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
         
     }
     
-    private func faruwoom() {
-        manfui.titleLabel?.textAlignment = .center
-        ertfhn.titleLabel?.textAlignment = .center
+    
+    func ThemeModeStrategy()  {
         afniaver.titleLabel?.textAlignment = .center
         manfui.titleLabel?.numberOfLines = 2
+    }
+    private func faruwoom() {
+        manfui.titleLabel?.textAlignment = .center
+       
+        ThemeModeStrategy()
         ertfhn.titleLabel?.numberOfLines = 2
-        afniaver.titleLabel?.numberOfLines = 2
+        
         dialogueFlow()
+        displayResponse()
+        applyConfiguration()
+    }
+    
+    
+    private func displayResponse()  {
+        ertfhn.titleLabel?.textAlignment = .center
+        afniaver.titleLabel?.numberOfLines = 2
+    }
+    
+    private func applyConfiguration()  {
         manfui.setTitle("\(Int.random(in: 1...3))\n Likes", for: .normal)
         
         ertfhn.setTitle("\(Int.random(in: 1...3))\n Followers", for: .normal)
@@ -142,9 +157,21 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     
     @IBAction func voiceRichness(_ sender: UIButton) {
         SVProgressHUD.show()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showInfo(withStatus: "ngox cgniufnto j mrvescxeqiqvwetdp dyuest".characterBelievability())
-        }))
+        
+        let shouldDelay = { () -> Bool in
+               let randomValue = Int.random(in: 0...100)
+               return randomValue > 0 
+           }()
+           
+           if shouldDelay {
+               DispatchQueue.main.asyncAfter(
+                   deadline: .now() + .milliseconds(1000),
+                   execute: DispatchWorkItem(block: { [weak self] in
+                       SVProgressHUD.showInfo(withStatus: "ngox cgniufnto j mrvescxeqiqvwetdp dyuest".characterBelievability())
+                   }))
+           }
+                   
+       
     }
     
     
@@ -362,3 +389,5 @@ extension UIViewController{
    
     
 }
+
+

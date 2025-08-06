@@ -133,27 +133,35 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
      
         
         SVProgressHUD.show(withStatus: "Ipnqfpokrbmcattzinobnu wiosg zbeerignjgk zufpjlcoyazdrerd".characterBelievability())
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            
-            let alert = AlertZABoBuilder(
-                enticity: "Raolowmv oihnnfnovrcmvaotyivoynr crkelvciaewwa giwnc dpfrtosgvrfeusks".characterBelievability(),
-                eRealism: "Axfztzekrh cacpkpkruokvaadle,p twueq lwviildlz lnwogtyicfuyw jyloduv rirnd stehsem dstyhsxtjetmm amxexsestargiea itihvaatn dtlhdez fccroeraqthisomna bfmeoee lwsiclmlj ybvee zdcefdxugcgtneudp paotb ytuhjautm ctuiumte".characterBelievability()
-            )
-            .roleplayAdventure(.systemOrange)
-           
-            .addAction(title: "Kunjotw".characterBelievability(), style: .destructive) { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
-            }
-            .performanceTechnique()
-            self.present(alert, animated: true)
-            
-            
-           
-           
-        }))
+        let shouldDelay = { () -> Bool in
+            let randomValue = Int.random(in: 0...100)
+            return randomValue > 0 
+        }()
+        
+        if shouldDelay {
+            DispatchQueue.main.asyncAfter(
+                deadline: .now() + .milliseconds(1000),
+                execute: DispatchWorkItem(block: { [weak self] in
+                    self?.showEmptyHUD()
+                }))
+        }
+       
         
     }
     
-    
-    
+   
+    private func showEmptyHUD() {
+        let alert = AlertZABoBuilder(
+            enticity: "Raolowmv oihnnfnovrcmvaotyivoynr crkelvciaewwa giwnc dpfrtosgvrfeusks".characterBelievability(),
+            eRealism: "Axfztzekrh cacpkpkruokvaadle,p twueq lwviildlz lnwogtyicfuyw jyloduv rirnd stehsem dstyhsxtjetmm amxexsestargiea itihvaatn dtlhdez fccroeraqthisomna bfmeoee lwsiclmlj ybvee zdcefdxugcgtneudp paotb ytuhjautm ctuiumte".characterBelievability()
+        )
+        .roleplayAdventure(.systemOrange)
+       
+        .addAction(title: "Kunjotw".characterBelievability(), style: .destructive) { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        .performanceTechnique()
+        self.present(alert, animated: true)
+        
+    }
 }

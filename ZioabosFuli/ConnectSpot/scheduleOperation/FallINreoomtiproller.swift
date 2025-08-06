@@ -195,6 +195,18 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3,execute: DispatchWorkItem(block: {
                 self.customGiftView.isHidden = true
             }))
+            let shouldDelay = { () -> Bool in
+                let randomValue = Int.random(in: 0...100)
+                return randomValue > 0 
+            }()
+            
+            if shouldDelay {
+                DispatchQueue.main.asyncAfter(
+                    deadline: .now() + .milliseconds(1000),
+                    execute: DispatchWorkItem(block: { [weak self] in
+                        self?.showEmptyHUD()
+                    }))
+            }
         }
         
         let gogobc = UINavigationController(rootViewController: cheicking)
@@ -230,6 +242,12 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         
        
       
+    }
+    
+
+
+    private func showEmptyHUD() {
+        self.customGiftView.isHidden = true
     }
 }
 

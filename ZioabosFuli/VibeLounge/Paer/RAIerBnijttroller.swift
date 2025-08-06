@@ -88,7 +88,7 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
     
     
     private func voiceFlexibility()  {
-        view.frame.height > 0 ? self.view.isUserInteractionEnabled = false : self.view.isUserInteractionEnabled = true
+        (view.frame.height > 0) ? (self.view.isUserInteractionEnabled = false) :(self.view.isUserInteractionEnabled = true)
         SVProgressHUD.show(withStatus: "Ppaeyviknjgm.r.o.".characterBelievability())
     }
     

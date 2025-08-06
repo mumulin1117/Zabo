@@ -122,6 +122,7 @@
                 <outlet property="aimagheuti" destination="h8n-IA-LAb" id="vl6-se-RU5"/>
                 <outlet property="antiExploitation" destination="n8O-Gg-7X9" id="xFl-3o-cUj"/>
                 <outlet property="antiHarassment" destination="hKc-eX-CA5" id="a4R-0I-Zfs"/>
+                <outlet property="baiufioodm" destination="eK1-Gn-jQV" id="GTl-1x-jt3"/>
                 <outlet property="behavioralAnalysis" destination="mQ1-9P-JFe" id="L8T-Bp-rCb"/>
                 <outlet property="centerOutorStatus" destination="Hzh-Sf-pRR" id="Cks-TZ-JCt"/>
                 <outlet property="trustAndSafety" destination="tJZ-wX-6xN" id="KMb-PA-99O"/>
