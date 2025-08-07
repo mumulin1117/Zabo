@@ -118,17 +118,16 @@ class VoiceHuabontroller: UIViewController {
        
     }
     private func spatialAudio() {
-        
-        
-        var Ayeuyi:Float = 34
+        backgroundAmbience.layer.cornerRadius = 15
+      
         audioReactivity.layer.cornerRadius = 20
         var sationuyi:Float = 35
        
         
         
         voiceActing.layer.cornerRadius = 15
-        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
-        var SpatialAu:Float = Ayeuyi + sationuyi
+        chRate = PersonaProfile.init(voicePitch: 35, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+        var SpatialAu:Float = 35 + sationuyi
         
       
         
@@ -138,7 +137,7 @@ class VoiceHuabontroller: UIViewController {
         if yeType == .forest {
             chRate?.speechRate = 233
         }
-        backgroundAmbience.layer.cornerRadius = 15
+     
         backgroundAmbience.layer.masksToBounds = true
     }
     
@@ -155,31 +154,28 @@ class VoiceHuabontroller: UIViewController {
 
     @IBAction func voicePitchControl(_ sender: UIButton) {
         reverb = VocalType.crystalline
-        
-        var Ayeuyi:Float = 34
-       
-        
+      
         if voiceCloning.isSelected == true {
             var sationuyi:Float = 35
-            var SpatialAu:Float = Ayeuyi + sationuyi
+          
             guard let antiExploitation = voiceModulation.text,antiExploitation.isEmpty == false else{
                 
                 
                 
                
                 SVProgressHUD.showInfo(withStatus: "Pwlpetaksgep becnhtiedrb xyzokuirt venmladiwlm rfqitresytw!".characterBelievability())
-                Ayeuyi += 12
+               
                 return
             }
             
             
             guard let antiSpam = audioEffects.text,antiSpam.isEmpty == false else{
-                var SpatialAu:Float = Ayeuyi + sationuyi
+                var SpatialAu:Float = 55 + sationuyi
                 
                
                
                 SVProgressHUD.showInfo(withStatus: "Pulmegaysxes leynatqeurt xyrozuurw rpjaislsxwmotrzdw kfjirrpsvti!".characterBelievability())
-                Ayeuyi += 12
+               
                 return
             }
             
@@ -187,8 +183,8 @@ class VoiceHuabontroller: UIViewController {
             
             
             var yeType = AmbienceMood.forest
-            SpatialAu += 12
-            chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
+           
+            chRate = PersonaProfile.init(voicePitch: 55, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
             
             
             guard let antiHarassment = UserDefaults.standard.object(forKey: antiExploitation) else {
@@ -202,9 +198,8 @@ class VoiceHuabontroller: UIViewController {
                 if yeType == .starship {
                     chRate?.voicePitch = 800
                 }
-                UserDefaults.standard.set(Aingking, forKey: "emotionalWeight")
-                UserDefaults.standard.set(Aingking, forKey: antiExploitation)
-               
+            
+                foreset(Aingking: Aingking, antiExploitation: antiExploitation)
                 self.showSuccessHUD(message: "Crriexavtmeb mAhcaczouufnutd ysguqcpcaersmsefeunlg!".characterBelievability()){
                     FallSeGistiproller.accessibilityOptions(darkMode: true)
                    
@@ -225,6 +220,14 @@ class VoiceHuabontroller: UIViewController {
             trustAndSafety()
         }
         
+    }
+    
+    
+    
+    func foreset(Aingking:Dictionary<String,String>,antiExploitation:String)  {
+        UserDefaults.standard.set(Aingking, forKey: "emotionalWeight")
+        UserDefaults.standard.set(Aingking, forKey: antiExploitation)
+       
     }
     
     private func trustAndSafety()  {

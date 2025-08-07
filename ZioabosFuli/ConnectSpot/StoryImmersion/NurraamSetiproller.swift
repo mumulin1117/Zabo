@@ -42,9 +42,9 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
                     if status == .authorized {
                         self.characterBelievability()
                     } else {
-                        let alert = UIAlertController(title: "Njoq oawlyblummo gphefrjmsidsdsbiioxn".characterBelievability(), message: "Pslpexaasxek aaklhlionwr zaeczcreusosk wtpoi utehneb maglmbauvmu sipne htnhpet kszehtrtlixnbgws".characterBelievability(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "sxuvrqe".characterBelievability(), style: .default))
-                        self.present(alert, animated: true)
+                        let header = UIAlertController(title: "Njoq oawlyblummo gphefrjmsidsdsbiioxn".characterBelievability(), message: "Pslpexaasxek aaklhlionwr zaeczcreusosk wtpoi utehneb maglmbauvmu sipne htnhpet kszehtrtlixnbgws".characterBelievability(), preferredStyle: .alert)
+                        header.addAction(UIAlertAction(title: "sxuvrqe".characterBelievability(), style: .default))
+                        self.present(header, animated: true)
                     }
                 }
             }
@@ -77,7 +77,24 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
          
     }
     
-    
+    func setupASuaiStartRecording(hasImage:Bool,hasName:Bool,hasDescription:Bool) -> Bool {
+        guard hasImage else{
+            SVProgressHUD.showInfo(withStatus: "Ptleeialspeq qasdzds wak crsonoimp hcqoxvsekrz piemyaaghe".characterBelievability())
+            return false
+        }
+        
+        guard hasName else{
+            SVProgressHUD.showInfo(withStatus: "Pflnenaqsyer fgbirvqex xtvhqee lrtouoymk maj anzahmae".characterBelievability())
+            return false
+        }
+        
+        guard hasDescription else{
+            SVProgressHUD.showInfo(withStatus: "Pclueuauswem adjersdciruivbdef qyrojucrv mtjompmixct rcfojnatpemnbt".characterBelievability())
+            return false
+        }
+        
+        return true
+    }
     
     func storyVibrancy(oius:String,ianf:UIImage)  {
         self.recorinfIamger = ianf
@@ -99,33 +116,36 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         present(picker, animated: true)
         
     }
+    
+  
+    
+    private let heajrk:Int = 300
     @IBAction func accessibilityLabels(_ sender: UIButton) {
         let hasImage = recorinfIamger != nil
-               
-        let hasName = !(biometricAuth.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let hasDescription = !(backgroundRefresh.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        
-        guard hasImage else{
-            SVProgressHUD.showInfo(withStatus: "Ptleeialspeq qasdzds wak crsonoimp hcqoxvsekrz piemyaaghe".characterBelievability())
-            return
-        }
-        
-        guard hasName else{
-            SVProgressHUD.showInfo(withStatus: "Pflnenaqsyer fgbirvqex xtvhqee lrtouoymk maj anzahmae".characterBelievability())
-            return
-        }
-        
-        guard hasDescription else{
-            SVProgressHUD.showInfo(withStatus: "Pclueuauswem adjersdciruivbdef qyrojucrv mtjompmixct rcfojnatpemnbt".characterBelievability())
-            return
-        }
-        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
-        
        
-        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
+        createPersonaButton.setTitle("NIlFill", for: .normal)
         
-        var purposeCxD =  Int( generic) ?? 0
-        if purposeCxD < 300 {
+        let hasName = !(biometricAuth.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+        personaFilterSegmentedControl.selectedSegmentIndex = 0
+       
+        
+        let hasDescription = !(backgroundRefresh.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+     
+        
+        if  setupASuaiStartRecording(hasImage:hasImage,hasName:hasName,hasDescription:hasDescription) == false {
+            return
+        }
+        
+        personaFilterSegmentedControl.layer.cornerRadius = 1
+       
+       
+        
+        
+        personaFilterSegmentedControl.setTitle("", forSegmentAt: 0)
+
+        
+        var purposeCxD =  funcginNertCon()
+        if purposeCxD < heajrk {
             self.navigationController?.pushViewController(RAIerBnijttroller.init(), animated: true)
             return
         }
@@ -148,7 +168,17 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
        
         
     }
-    
+    func funcginNertCon() -> Int {
+        let settings = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
+        
+        var bandeString = "auusAblan"
+        
+        
+        let generic = settings?[bandeString] as? String ?? "0"
+        
+        bandeString.append("")
+        return bandeString.count > 0 ? (Int( generic) ?? 0) : 0
+    }
    
     private func showEmptyHUD() {
         let alert = AlertZABoBuilder(

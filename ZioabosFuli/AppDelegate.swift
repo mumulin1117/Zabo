@@ -191,6 +191,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             chRate?.speechRate = 233
         }
         pla["auuserBreCla"] = "Like Film,Book"
+        
         pla["audioClarity"] = "Zabao"
         
         UserDefaults.standard.set(pla, forKey: "zabo@gmail.com")
@@ -201,6 +202,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
        
     }
+    
+    
     
     func userVerification() {
         SwiftyStoreKit.completeTransactions(atomically: true) { det in

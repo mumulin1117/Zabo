@@ -42,13 +42,23 @@ class VibeLoungeeontroller: UIViewController {
     @IBOutlet weak var bavuCoinnne: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
-        
-       
-        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
-        bavuCoinnne.text = generic
+     
+        bavuCoinnne.text = funcginNertCon()
         self.view.backgroundColor = self.view.backgroundColor
         audioQuality.image = StoryBabuSmeaCell.Metrics
+    }
+    
+    func funcginNertCon() -> String {
+        let settings = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
+        
+        var bandeString = "auusAblan"
+        
+        
+        let generic = settings?[bandeString] as? String ?? "0"
+        
+        bandeString.append("")
+        return bandeString.count > 0 ? generic : "0"
+        
     }
     @IBOutlet weak var characterFluency: UIButton!
     

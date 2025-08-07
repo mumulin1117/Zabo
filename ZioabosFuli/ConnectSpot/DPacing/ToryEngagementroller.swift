@@ -8,6 +8,7 @@
 import UIKit
 
 class ToryEngagementroller: UIViewController {
+    private let heajrk:Int = 300
     
     static var aiGEtingTimes:Int = 0
 
@@ -28,24 +29,39 @@ class ToryEngagementroller: UIViewController {
     }
     @IBAction func accessibilityLabels(_ sender: UIButton) {
       
-        
-        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
-        
-       
-        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
-        
-        var purposeCxD =  Int( generic) ?? 0
-        if purposeCxD < 300 {
-          let navib =  UINavigationController.init(rootViewController: Enougthatroller())
-            navib.navigationBar.isHidden = true
-            self.present(navib, animated: true)
+        var purposeCxD =  funcginNertCon()
+        if purposeCxD < heajrk {
+            recordingSession()
         
             return
+        }else{
+            purposeCxD = purposeCxD - heajrk
+            ToryEngagementroller.aiGEtingTimes += 4
+            self.navigationController?.pushViewController(ToryEngagemCkatroller(), animated: true)
         }
         
-        purposeCxD = purposeCxD - 300
-        ToryEngagementroller.aiGEtingTimes += 4
-        self.navigationController?.pushViewController(ToryEngagemCkatroller(), animated: true)
+       
     }
     
+    
+    func recordingSession()  {
+        let navib =  UINavigationController.init(rootViewController: Enougthatroller())
+          navib.navigationBar.isHidden = true
+          self.present(navib, animated: true)
+    }
+}
+
+
+extension ToryEngagementroller{
+    func funcginNertCon() -> Int {
+        let settings = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
+        
+        var bandeString = "auusAblan"
+        
+        
+        let generic = settings?[bandeString] as? String ?? "0"
+        
+        bandeString.append("")
+        return bandeString.count > 0 ? (Int( generic) ?? 0) : 0
+    }
 }

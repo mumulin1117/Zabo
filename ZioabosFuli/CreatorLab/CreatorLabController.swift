@@ -130,8 +130,7 @@ extension CreatorLabController:UICollectionViewDelegate,UICollectionViewDataSour
         return jjIo
         
     }
-    
-    //举报
+
    @objc func storyboardTools()  {
        self.present(CumidtoneRangentroller.init(), animated: true)
     }

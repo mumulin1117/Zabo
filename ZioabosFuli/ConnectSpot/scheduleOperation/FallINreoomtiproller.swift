@@ -7,10 +7,11 @@
 
 import UIKit
 import SVProgressHUD
+import AVFAudio
 
 class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var talkingContet:Array<String> = Array<String>()
-    
+    private var crash: AVAudioRecorder?
     let customGiftView = Bundle.main.loadNibNamed(
                 "GiaftinhView",
                 owner: nil,
@@ -52,7 +53,26 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-
+    func checkAndRequestMicrophonePermission(completion: @escaping (Bool) -> Void) {
+        let status = AVAudioSession.sharedInstance().recordPermission
+        
+        switch status {
+        case .granted:
+            completion(true)
+        case .denied:
+            completion(false)
+        case .undetermined:
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in
+                DispatchQueue.main.async {
+                    completion(granted)
+                }
+            }
+        @unknown default:
+            completion(false)
+        }
+        
+    }
+    
     @IBOutlet weak var dynamicDialogue: UIButton!
    
     @IBOutlet weak var improvPrompts: UIButton!
@@ -110,11 +130,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         sayHiyui.attributedPlaceholder = NSAttributedString(string: "Sfanyy bhwiv.n.".characterBelievability(), attributes: [.foregroundColor:UIColor.white])
         dramaticPerformance.dataSource = self
         sayHiyui.rightViewMode = .always
-        sayHiyui.rightView = UIView(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
-        
-        dramaticPerformance.allowsSelection = false
-        dialogueAuthenticity(keyu: "InNRooemCellCell")
-        dramaticPerformance.register(UINib.init(nibName: "InNRooemCellCell", bundle: nil), forCellReuseIdentifier: "InNRooemCellCell")
+        ConnectSpotusedView()  
         voiceChoreography(keyu:"InNRooemCellCell")
         dramaticPerformance.showsVerticalScrollIndicator = false
     }
@@ -127,7 +143,13 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    
+    func ConnectSpotusedView()  {
+        sayHiyui.rightView = UIView(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
+        
+        dramaticPerformance.allowsSelection = false
+        dialogueAuthenticity(keyu: "InNRooemCellCell")
+        dramaticPerformance.register(UINib.init(nibName: "InNRooemCellCell", bundle: nil), forCellReuseIdentifier: "InNRooemCellCell")
+    }
     
     func voiceChoreography(keyu:String)  {
         dramaticPerformance.rowHeight = UITableView.automaticDimension
@@ -162,17 +184,79 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func applyjoin(_ sender: UIButton) {
-        self.showSuccessHUD(message: "Tchieq daqpvpnlliqcpavtkitopnb xhtausx pbuebeqnt osxusbxmcistwtmeedu samnsdq sinsu gwqavietcihnrgw cfnonrp qtghdeu phoormaemohwtnmecrg'mss frjekveivejw".characterBelievability()){
-            sender.isSelected = true
-           
+        
+       self.checkAndRequestMicrophonePermission { granted in
+            if granted {
+                self.showSuccessHUD(message: "Tchieq daqpvpnlliqcpavtkitopnb xhtausx pbuebeqnt osxusbxmcistwtmeedu samnsdq sinsu gwqavietcihnrgw cfnonrp qtghdeu phoormaemohwtnmecrg'mss frjekveivejw".characterBelievability()){
+                    sender.isSelected = true
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                        sender.isHidden = true
+                        self.sureMack.isHidden = false
+                        self.fantasyCharacter.setImage(StoryBabuSmeaCell.Metrics, for: .normal)
+                        self.registeredMacphone()
+                    }))
+                }
+            } else {
+                
+                SVProgressHUD.showInfo(withStatus: "Microphone permission denied, user needs to be prompted to enable it in settings")
+               
+            }
         }
+        
         
       
     }
-  
+    
+    deinit {
+        self.stopUsingMicrophone()
+    }
+    func registeredMacphone() {
+            let terminated = AVAudioSession.sharedInstance()
+            
+            do {
+                try terminated.setCategory(.record)
+                try terminated.setActive(true)
+          
+                let ConnectSpo = FileManager.default.temporaryDirectory
+                let filePath = ConnectSpo.appendingPathComponent("temp_recording.m4a")
+        
+                let settings = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                    AVSampleRateKey: 12000,
+                    AVNumberOfChannelsKey: 1,
+                    AVEncoderAudioQualityKey: AVAudioQuality.low.rawValue
+                ]
+             
+                crash = try AVAudioRecorder(url: filePath, settings: settings)
+                crash?.record()
+              
+            } catch {
+                
+            }
+        }
+        
+     
+    func stopUsingMicrophone() {
+        crash?.stop()
+        crash = nil
+        
+        
+        try? AVAudioSession.sharedInstance().setActive(false)
+        
+        
+        
+    }
     @IBAction func storyboardTools()  {
         self.present(CumidtoneRangentroller.init(), animated: true)
      }
+    
+    
+    @IBAction func autoStarrecoring(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        sender.isSelected ? self.stopUsingMicrophone() : self.registeredMacphone()
+    }
+    
+    @IBOutlet weak var sureMack: UIButton!
     
    
     @IBAction func normaiRemotePush(_ sender: Any) {

@@ -90,7 +90,7 @@ extension ConnectSpoController:UICollectionViewDelegate,UICollectionViewDataSour
         jjIo.roleplayGuidelines.text = RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpTitle"]
         jjIo.characterAlignment.text = RAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpDades"]
         jjIo.storySeeds.addTarget(self, action: #selector(storyboardTools), for: .touchUpInside)
-        jjIo.voiceMorphing.setTitle("\(Int.random(in: 0...2)) online", for: .normal)
+        jjIo.voiceMorphing.setTitle("\(Int.random(in: 1...2)) online", for: .normal)
         return jjIo
         
     }

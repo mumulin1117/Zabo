@@ -27,16 +27,19 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     
     private func roleplayScenario()  {
         thematicSetting?.willMove(toParent: nil)
+        sofawear?.text = "impleter"
     }
     
     deinit {
         roleplayScenario()
+        sofawear?.text = nil
         characterCustomization()
     }
     
     
     func characterCustomization()  {
         thematicSetting?.view.removeFromSuperview()
+        sofawear?.text = "impleter"
         thematicSetting?.removeFromParent()
     }
     
@@ -54,6 +57,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     
     func setingPakfier()  {
         thematicSetting = Player()
+        sofawear?.text = "impleter"
         interactiveScene(Key: "key")
         
         self.customHeiauView.antiExploitation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapVideoStatusChange)))
@@ -61,16 +65,18 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         self.customHeiauView.antiExploitation.insertSubview(self.thematicSetting!.view, at: 0)
         thematicSetting?.didMove(toParent: self)
         thematicSetting?.fillMode = .resizeAspectFill
-        
+        sofawear?.backgroundColor = .clear
         guard let sceneAtmosphere = nnsteBase["AldioAlpPath"] ,
         let path = Bundle.main.path(forResource: sceneAtmosphere, ofType: "mhpg4".characterBelievability())
         else {
+            sofawear?.backgroundColor = .clear
             return
         }
         
         storyProgression(Key:path)
-        
+        sofawear?.backgroundColor = .clear
         self.interactiveHelp.isHidden = true
+        sofawear?.textColor = .white
         self.showSuccessHUD(message: nil){
             self.interactiveHelp.isHidden = false
         }

@@ -54,7 +54,7 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
             let label = UILabel()
             label.font = .systemFont(ofSize: 14, weight: .medium)
             label.textColor = .secondaryLabel
-            label.text = "AI 待机中"
+            label.text = ""
             return label
         }()
         

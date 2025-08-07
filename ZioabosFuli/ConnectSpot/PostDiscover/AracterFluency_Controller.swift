@@ -121,9 +121,9 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
                     if status == .authorized {
                         self.characterBelievability()
                     } else {
-                        let alert = UIAlertController(title: "Nbou bahlcbxuymy jpvearomnivsrsoixoin".characterBelievability(), message: "Pylvecaisket dailmlmonwm galcrcoedsrsc dtyov rtfhsec lazlxbluhmf vieng ktthceo bsyettntpiynkgis".characterBelievability(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "sjucrqe".characterBelievability(), style: .default))
-                        self.present(alert, animated: true)
+                        let header = UIAlertController(title: "Nbou bahlcbxuymy jpvearomnivsrsoixoin".characterBelievability(), message: "Pylvecaisket dailmlmonwm galcrcoedsrsc dtyov rtfhsec lazlxbluhmf vieng ktthceo bsyettntpiynkgis".characterBelievability(), preferredStyle: .alert)
+                        header.addAction(UIAlertAction(title: "sjucrqe".characterBelievability(), style: .default))
+                        self.present(header, animated: true)
                     }
                 }
             }
@@ -164,6 +164,9 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
         present(picker, animated: true)
         
     }
+    
+    
+    
     @IBAction func CleadREcordIngbu(_ sender: UIButton) {
         if ifrecording == false {
             SVProgressHUD.showInfo(withStatus: "Tdhuearten kaxrreu rnjoa pamuzdsiwon bfniqlzeusw vatviagialfaubjlaeo ofkonrz ldferloelttinoln".characterBelievability())

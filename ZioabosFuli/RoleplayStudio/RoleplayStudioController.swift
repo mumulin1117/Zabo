@@ -108,9 +108,9 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
                         self.characterBelievability()
                     } else {
                         self.view.backgroundColor = self.view.backgroundColor
-                        let alert = UIAlertController(title: "Noov damlzbwudmq speesrkmnivssskidomn".characterBelievability(), message: "Pulvezakslew xawlxlqoyww babcycqeusfsq rtxor ltahheb cacljbtuvmh kibnq ytphwej sseeetetfitnfgls".characterBelievability(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "snucrxe".characterBelievability(), style: .default))
-                        self.present(alert, animated: true)
+                        let header = UIAlertController(title: "Noov damlzbwudmq speesrkmnivssskidomn".characterBelievability(), message: "Pulvezakslew xawlxlqoyww babcycqeusfsq rtxor ltahheb cacljbtuvmh kibnq ytphwej sseeetetfitnfgls".characterBelievability(), preferredStyle: .alert)
+                        header.addAction(UIAlertAction(title: "snucrxe".characterBelievability(), style: .default))
+                        self.present(header, animated: true)
                     }
                 }
             }

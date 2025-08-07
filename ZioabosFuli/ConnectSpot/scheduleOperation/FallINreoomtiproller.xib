@@ -20,6 +20,7 @@
                 <outlet property="quantumResistant" destination="zKD-Cd-JSM" id="aAO-Gv-2SO"/>
                 <outlet property="roleplayScenarios" destination="fFi-dk-6LQ" id="7b9-mW-hRC"/>
                 <outlet property="sayHiyui" destination="6L1-ll-VOI" id="ze9-yk-8NM"/>
+                <outlet property="sureMack" destination="IVm-qa-ipf" id="juC-to-hHU"/>
                 <outlet property="tensorFlowLite" destination="I0z-Ft-ePd" id="Wgs-LQ-a42"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -283,6 +284,19 @@
                         <constraint firstAttribute="height" constant="16" id="lvF-Pv-KUg"/>
                     </constraints>
                 </imageView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-qa-ipf">
+                    <rect key="frame" x="343" y="83" width="26" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="KDl-GE-Abx"/>
+                        <constraint firstAttribute="height" constant="16" id="eek-z3-CCh"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="fagtalking"/>
+                    <state key="selected" image="Bimic_off"/>
+                    <connections>
+                        <action selector="autoStarrecoring:" destination="-1" eventType="touchUpInside" id="IaL-10-gtR"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -346,6 +360,7 @@
                 <constraint firstItem="UKU-UJ-CS8" firstAttribute="height" secondItem="Y8g-tt-Psi" secondAttribute="height" id="n82-Op-DaY"/>
                 <constraint firstItem="67P-tM-ido" firstAttribute="top" secondItem="fFi-dk-6LQ" secondAttribute="bottom" constant="8" symbolic="YES" id="nEO-6t-UAO"/>
                 <constraint firstItem="fFi-dk-6LQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="nHw-SQ-5s7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IVm-qa-ipf" secondAttribute="trailing" constant="6" id="nZG-TB-jQF"/>
                 <constraint firstItem="sAB-h5-Kp4" firstAttribute="height" secondItem="eKU-hE-Nps" secondAttribute="height" id="npO-tF-8UP"/>
                 <constraint firstItem="4vH-49-RCf" firstAttribute="centerY" secondItem="RgG-zK-DeQ" secondAttribute="centerY" id="nt9-BA-Hst"/>
                 <constraint firstItem="ro6-2A-cmq" firstAttribute="centerX" secondItem="sAB-h5-Kp4" secondAttribute="centerX" id="p6X-wW-1JG"/>
@@ -356,6 +371,7 @@
                 <constraint firstItem="eKU-hE-Nps" firstAttribute="width" secondItem="Y8g-tt-Psi" secondAttribute="width" id="rrZ-BH-K9W"/>
                 <constraint firstItem="UKU-UJ-CS8" firstAttribute="centerY" secondItem="Y8g-tt-Psi" secondAttribute="centerY" id="snO-F2-9Ud"/>
                 <constraint firstItem="wX9-NC-v3S" firstAttribute="centerY" secondItem="6L1-ll-VOI" secondAttribute="centerY" id="tiM-rZ-xFU"/>
+                <constraint firstItem="IVm-qa-ipf" firstAttribute="centerY" secondItem="1C8-qU-CY8" secondAttribute="centerY" id="tqB-JT-m8K"/>
                 <constraint firstItem="m6B-3z-geP" firstAttribute="centerY" secondItem="Y8g-tt-Psi" secondAttribute="centerY" id="u5E-P3-nPe"/>
                 <constraint firstItem="m6B-3z-geP" firstAttribute="height" secondItem="Y8g-tt-Psi" secondAttribute="height" id="un8-bL-HxF"/>
                 <constraint firstItem="vqV-vB-a3d" firstAttribute="centerX" secondItem="m6B-3z-geP" secondAttribute="centerX" id="wQg-rd-C4J"/>
@@ -376,6 +392,7 @@
         <image name="dialogueDepth" width="36" height="36"/>
         <image name="emotionalExpression" width="33" height="27"/>
         <image name="emotionalExpression1" width="33" height="27"/>
+        <image name="fagtalking" width="15.5" height="15.5"/>
         <image name="groupRoleplay" width="36" height="36"/>
         <image name="ownerDepth" width="60" height="15"/>
         <image name="paoaiudcc" width="375" height="812"/>

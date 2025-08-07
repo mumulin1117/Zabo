@@ -113,11 +113,8 @@ views.layer.masksToBounds = isufTruel ? true : false
     
     
     @IBAction func sendGiftNoing(_ sender: Any) {
-        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
-        
-        let generic = ingCuAJ?["auusAblan"] as? String ?? "0"
-        
-        var purposeCxD =  Int( generic) ?? 0
+     
+        var purposeCxD =  funcginNertCon()
         if purposeCxD < noiewrCount*10 {
             self.navigationController?.pushViewController(RAIerBnijttroller.init(), animated: true)
             return
@@ -128,6 +125,18 @@ views.layer.masksToBounds = isufTruel ? true : false
         
         self.dismiss(animated: true)
         
+    }
+    
+    func funcginNertCon() -> Int {
+        let settings = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
+        
+        var bandeString = "auusAblan"
+        
+        
+        let generic = settings?[bandeString] as? String ?? "0"
+        
+        bandeString.append("")
+        return bandeString.count > 0 ? (Int( generic) ?? 0) : 0
     }
     private class func applyDarkModeSettings() {
         let  cheicking =  UIStoryboard(name: "Mhahien".characterBelievability(), bundle: nil).instantiateViewController(withIdentifier: "MainNOrisiinlog") as! UINavigationController

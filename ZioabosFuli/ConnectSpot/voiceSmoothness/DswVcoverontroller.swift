@@ -10,17 +10,19 @@ import AVFoundation
 import SVProgressHUD
 
 class DswVcoverontroller: UIViewController {
-    private var audioPlayer: AVPlayer?
-    private var currentPlayingIndex: Int?
+   
+    private var interactiveWorkshops: Int?
     private var reverb: VocalType?
     
     private var chRate:PersonaProfile?
     private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
-    private func playAudio(at index: Int) {
+    
+    
+    private func dataAnonymization(slowl index: Int) {
        
-            stopCurrentAudio()
+            dataAnonymization()
 
-            currentPlayingIndex = index
+            interactiveWorkshops = index
             
     
         abstractGeometry.reloadData()
@@ -36,27 +38,21 @@ class DswVcoverontroller: UIViewController {
         
         let playerItem = AVPlayerItem(url:urlstr )
             
-        audioPlayer = AVPlayer(playerItem: playerItem)
-        audioPlayer?.play()
+        tutorialPrompts = AVPlayer(playerItem: playerItem)
+        tutorialPrompts?.play()
             
    
         }
-    
-    private func stopCurrentAudio() {
+    private var tutorialPrompts: AVPlayer?
+    private func dataAnonymization() {
 
         abstractGeometry.reloadData()
-            audioPlayer?.pause()
-            audioPlayer = nil
-            currentPlayingIndex = nil
+            tutorialPrompts?.pause()
+            tutorialPrompts = nil
+            interactiveWorkshops = nil
         }
         
-        @objc private func playerDidFinishPlaying() {
-            if let currentIndex = currentPlayingIndex, currentIndex < RekaointonCell.featureDiscovery.count - 1 {
-                playAudio(at: currentIndex + 1)
-            } else {
-                stopCurrentAudio()
-            }
-        }
+       
 
     @IBOutlet weak var abstractGeometry: UICollectionView!
     
@@ -176,7 +172,7 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
         VcoverCell.glassTransparency.tag = indexPath.row
         VcoverCell.glassTransparency.addTarget(self, action: #selector(tutorialPrompts(dsu:)), for: .touchUpInside)
         
-        if indexPath.row == self.currentPlayingIndex {
+        if indexPath.row == self.interactiveWorkshops {
             VcoverCell.anatomicalStudy.isSelected = true
         }else{
             VcoverCell.anatomicalStudy.isSelected = false
@@ -203,12 +199,12 @@ extension DswVcoverontroller:UICollectionViewDelegate,UICollectionViewDataSource
 
     @objc func playintColors(dsu:UIButton)  {
 
-        if self.currentPlayingIndex == dsu.tag {
-            self.stopCurrentAudio()
+        if self.interactiveWorkshops == dsu.tag {
+            self.dataAnonymization()
             dsu.isSelected = false
             return
         }
-        self.playAudio(at: dsu.tag)
+        self.dataAnonymization(slowl: dsu.tag)
     }
  
     @objc func storyboardTools()  {

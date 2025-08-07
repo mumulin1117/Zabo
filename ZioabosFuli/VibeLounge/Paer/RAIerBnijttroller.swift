@@ -68,14 +68,12 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
   
     @IBOutlet weak var ownerwet: UILabel!
     
-    private let roleplayLeaderboards = [("4z0o0".characterBelievability(),"0g.c9b9".characterBelievability(),"ttmoscxcqfqjnzdy"),
+    private var roleplayLeaderboards = [("4z0o0".characterBelievability(),"0g.c9b9".characterBelievability(),"ttmoscxcqfqjnzdy"),
                                 ("8i0l0".characterBelievability(),"1a.j9p9".characterBelievability(),"yrkmvawpdypmljfs"),
                                 ("1z2h5e0".characterBelievability(),"2j.s9f9".characterBelievability(),"tolkidnbfhbjnzdy"),
                                 ("2y4t5y0".characterBelievability(),"4y.q9k9".characterBelievability(),"eeuthojwdskhvtpv"),
-                                ("4f9f0r0".characterBelievability(),"9z.n9x9".characterBelievability(),"kjotksttczkwslgd"),
-                                ("9b8b0b0".characterBelievability(),"1g9e.g9e9".characterBelievability(),"cynsnctqwdydftae"),
-                                ("2w4w5k0s0".characterBelievability(),"4n9d.q9z9".characterBelievability(),"nriftelzprlewcag"),
-                                ("4r9h0l0k0".characterBelievability(),"9q9d.b9q9".characterBelievability(),"pljymwqcrezvsedz")
+                                ("4f9f0r0".characterBelievability(),"9z.n9x9".characterBelievability(),"kjotksttczkwslgd")
+                               
                                 
     
     ]
@@ -115,7 +113,8 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
             // 使用defer确保某些操作总是执行
             defer {
                 self.view.isUserInteractionEnabled = true
-                SVProgressHUD.dismiss()
+                
+//                SVProgressHUD.dismiss()
                 state = .completed
             }
             
@@ -189,6 +188,10 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.roleplayLeaderboards.append( ("9b8b0b0".characterBelievability(),"1g9e.g9e9".characterBelievability(),"cynsnctqwdydftae"))
+        self.roleplayLeaderboards.append(("2w4w5k0s0".characterBelievability(),"4n9d.q9z9".characterBelievability(),"nriftelzprlewcag"))
+        self.roleplayLeaderboards.append(("4r9h0l0k0".characterBelievability(),"9q9d.b9q9".characterBelievability(),"pljymwqcrezvsedz"))
+       
         dialogueFlow()
         crossPlatformSync.layer.cornerRadius = 20
         
@@ -218,10 +221,10 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
         if reverb == .gravelly {
             chRate?.voicePitch = 800
         }
-        let ingCuAJ = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
+        let granted = UserDefaults.standard.object(forKey: "emotionalWeight") as? Dictionary<String,String>
         
        
-        ownerwet.text = ingCuAJ?["auusAblan"] as? String
+        ownerwet.text = granted?["auusAblan"] as? String
     }
 
     @IBAction func Higuas(_ sender: Any) {
