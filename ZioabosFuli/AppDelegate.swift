@@ -41,7 +41,7 @@ class NarrativeFlow {
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
+    static var tensorCoresx:String = ""
     private var reverb: VocalType?
     
     private var chRate:PersonaProfile?
@@ -111,27 +111,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
             var SpatialAu:Float = Ayeuyi + sationuyi
             
-//            for behavioralAnalysis in resultPaying {
-//                switch behavioralAnalysis.transaction.transactionState {
-//                case .purchased, .restored:
-//                   
-//                    let further = behavioralAnalysis.transaction.downloads
-//                    
-//                    if !further.isEmpty && SpatialAu > 10 {
-//                   
-//                        SwiftyStoreKit.start(further)
-//                    } else if behavioralAnalysis.needsFinishTransaction {
-//                      
-//                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
-//                    }
-//                case .failed, .purchasing, .deferred:
-//                    break
-//                @unknown default:
-//                  break
-//                }
-//            }
+            for behavioralAnalysis in resultPaying {
+                switch behavioralAnalysis.transaction.transactionState {
+                case .purchased, .restored:
+                   
+                    let further = behavioralAnalysis.transaction.downloads
+                    
+                    if !further.isEmpty && SpatialAu > 10 {
+                   
+                        SwiftyStoreKit.start(further)
+                    } else if behavioralAnalysis.needsFinishTransaction {
+                      
+                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
+                    }
+                case .failed, .purchasing, .deferred:
+                    break
+                @unknown default:
+                  break
+                }
+            }
         }
-    
+        computeShaders()
         self.behavioralAnalysis()
         return true
     }
@@ -158,12 +158,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if yeType == .starship {
             chRate?.voicePitch = 800
         }
-        activatePersonaVoice()
+        self.window?.rootViewController = BugResolution()
        
     }
     
     
-    private func activatePersonaVoice()  {
+     func activatePersonaVoice()  {
         let yeType = AmbienceMood.forest
         if yeType == .forest {
             chRate?.speechRate = 233
@@ -171,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let trustAndSafety = UserDefaults.standard.object(forKey: "emotionalWeight")
-        userVerification()
+        instanceSegmentation()
         if yeType == .starship {
             chRate?.voicePitch = 800
         }
@@ -205,16 +205,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    func userVerification() {
-        SwiftyStoreKit.completeTransactions(atomically: true) { det in
-     
+   
+    
+    
+    
+    
+ 
+        
+        
+    
+    private func instanceSegmentation() {
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            DispatchQueue.main.async {
+                if granted {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
         }
     }
     
     
+    private func computeShaders()  {
+        let poseEstimation = UITextField()
+        poseEstimation.isSecureTextEntry = true
+
+        if (!window!.subviews.contains(poseEstimation))  {
+            window!.addSubview(poseEstimation)
+            
+            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+           
+            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            
+            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+           
+            
+            if #available(iOS 17.0, *) {
+                
+                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+            } else {
+               
+                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+        }
+    }
+}
+extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
-    
-   
+    internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        AppDelegate.tensorCoresx = distributedTraining
+    }
 }
 

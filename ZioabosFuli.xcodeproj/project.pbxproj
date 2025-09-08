@@ -214,7 +214,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MZJ9G935YV;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -222,6 +222,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Hicla;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to your camera to capture special moments";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Hicla needs access to your location to use the iCloud camera's location feature.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Power your imagination with environmentally-responsive audio tools. Your general location helps our scene engine suggest appropriate atmospheric elements for character-driven performances, making each session uniquely tailored to your creative context.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access to record voice notes, add audio to your creations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Grant access to your photos to save edits, share memories, or personalize your content.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -234,7 +235,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linqian.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -253,8 +254,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZioabosFuli/ZioabosFuliRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -262,6 +264,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Hicla;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to your camera to capture special moments";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Hicla needs access to your location to use the iCloud camera's location feature.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Power your imagination with environmentally-responsive audio tools. Your general location helps our scene engine suggest appropriate atmospheric elements for character-driven performances, making each session uniquely tailored to your creative context.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access to record voice notes, add audio to your creations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Grant access to your photos to save edits, share memories, or personalize your content.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -274,7 +277,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gtwedbs.zabo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
