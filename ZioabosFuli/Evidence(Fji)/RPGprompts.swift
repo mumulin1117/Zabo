@@ -8,117 +8,117 @@
 import UIKit
 
 class RPGprompts: NSObject {
-    static let artisticArtisan = RPGprompts.init()
+    static let vocalTechnique = RPGprompts.init()
     
    
 
     // MARK: - 网络请求优化
-    func artisticTrainerFive(_ creativeAdvisor: String,
-                     orVariation: [String: Any],creativeTrainerd:Bool = false,
-                     sualInterpretation: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+    func sceneFramework(_ creativeAdvisor: String,
+                     voiceArtistry: [String: Any],sceneAtmosphere:Bool = false,
+                     vocalDynamics: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
         // 1. 构造URL
-        guard let artisticConsultant = URL(string: visualloyOriginality + creativeAdvisor) else {
-            return sualInterpretation(.failure(NSError(domain: "URL Error", code: 400)))
+        guard let performanceGuidance = URL(string: manceCreativity + creativeAdvisor) else {
+            return vocalDynamics(.failure(NSError(domain: "UmRgLw hEsrertoar".characterBelievability(), code: 400)))
         }
         
         // 2. 准备请求体
-        guard let artisticDirector = RPGprompts.visualEmotion(lorBright: orVariation),
-              let creativeDesigner = Uniqueness(),
-              let visualCollection = creativeDesigner.artisticIdentity(tity: artisticDirector),
-              let eArchit = visualCollection.data(using: .utf8) else {
+        guard let voiceFlexibility = RPGprompts.audioEnhancement(voicedCrafting: voiceArtistry),
+              let audioCustomization = Uniqueness(),
+              let sceneVisualization = audioCustomization.sceneImagination(erformanc: voiceFlexibility),
+              let performanceAnalysis = sceneVisualization.data(using: .utf8) else {
             return
         }
         
         // 3. 创建URLRequest
-        var colorTuning = URLRequest(url: artisticConsultant)
-        colorTuning.httpMethod = "POST"
-        colorTuning.httpBody = eArchit
+        var vocalControl = URLRequest(url: performanceGuidance)
+        vocalControl.httpMethod = "PlOuSmT".characterBelievability()
+        vocalControl.httpBody = performanceAnalysis
         
         
         // 设置请求头
-        colorTuning.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        colorTuning.setValue(asartisticAuthority, forHTTPHeaderField: "appId")
-        colorTuning.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        colorTuning.setValue(RoleplayCon.artisticGuide(), forHTTPHeaderField: "deviceNo")
-        colorTuning.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        colorTuning.setValue(UserDefaults.standard.string(forKey: "rebranded") ?? "", forHTTPHeaderField: "loginToken")
-        colorTuning.setValue(AppDelegate.tensorCoresx, forHTTPHeaderField: "pushToken")
+        vocalControl.setValue("apptpqlbiecqaetuifocnp/ijascofn".characterBelievability(), forHTTPHeaderField: "Ckojnythemnjts-oTcympze".characterBelievability())
+        vocalControl.setValue(voiceDesign, forHTTPHeaderField: "azpepaIzd".characterBelievability())
+        vocalControl.setValue(Bundle.main.object(forInfoDictionaryKey: "CoFsBvumncdfldeuSthdoyrdtjVyerrgssirodnwSwtxrdivnig".characterBelievability()) as? String ?? "", forHTTPHeaderField: "afpxpfVxeerasfisofn".characterBelievability())
+        vocalControl.setValue(RoleplayCon.voiceProjection(), forHTTPHeaderField: "deekvuiscaeuNjo".characterBelievability())
+        vocalControl.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "lfannggpuoawgce".characterBelievability())
+        vocalControl.setValue(UserDefaults.standard.string(forKey: "rebranded") ?? "", forHTTPHeaderField: "lfopgiibnpTzoikaegn".characterBelievability())
+        vocalControl.setValue(AppDelegate.audioSphere, forHTTPHeaderField: "ppubschsTcozkeevn".characterBelievability())
         
         // 4. 创建URLSession任务
-        let creativeProgrammer = URLSession.shared.dataTask(with: colorTuning) { data, response, error in
-            if let fashion = error {
+        let audioFidelity = URLSession.shared.dataTask(with: vocalControl) { data, response, error in
+            if let characterPortrayal = error {
                 DispatchQueue.main.async {
-                    sualInterpretation(.failure(fashion))
+                    vocalDynamics(.failure(characterPortrayal))
                 }
                 return
             }
             
          
-            guard let inspiration = data else {
+            guard let audioPlayback = data else {
                 DispatchQueue.main.async {
-                    sualInterpretation(.failure(NSError(domain: "No Data", code: 1000)))
+                    vocalDynamics(.failure(NSError(domain: "Njoy wDjaetsa".characterBelievability(), code: 1000)))
                 }
                 return
             }
             
-            self.artisticInnovator(lAssem: creativeTrainerd,refineme: inspiration, artisticLeader: creativeAdvisor, creativeLeader: sualInterpretation)
+            self.performanceRecording(creativeCollaboration: sceneAtmosphere,audioBalance: audioPlayback, voiceProjection: creativeAdvisor, sceneTransition: vocalDynamics)
         }
         
-        creativeProgrammer.resume()
+        audioFidelity.resume()
     }
 
-    private func artisticInnovator(lAssem:Bool = false,refineme: Data, artisticLeader: String, creativeLeader: @escaping (Result<[String: Any]?, Error>) -> Void) {
+    private func performanceRecording(creativeCollaboration:Bool = false,audioBalance: Data, voiceProjection: String, sceneTransition: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             // 1. 解析原始JSON
-            guard let visualMatrixer = try JSONSerialization.jsonObject(with: refineme, options: []) as? [String: Any] else {
-                throw NSError(domain: "Invalid JSON", code: 1001)
+            guard let vocalConsistency = try JSONSerialization.jsonObject(with: audioBalance, options: []) as? [String: Any] else {
+                throw NSError(domain: "Iqnsvxaeleiadd hJmSzOrN".characterBelievability(), code: 1001)
             }
 
             // 2. 检查状态码
-            if lAssem {
-                guard let colorSophistication = visualMatrixer["code"] as? String, colorSophistication == "0000" else{
+            if creativeCollaboration {
+                guard let colorSophistication = vocalConsistency["cbojdte".characterBelievability()] as? String, colorSophistication == "0i0x0d0".characterBelievability() else{
                     DispatchQueue.main.async {
-                        creativeLeader(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        sceneTransition(.failure(NSError(domain: "Piaayu nEgrqrtojr".characterBelievability(), code: 1001)))
                     }
                     return
                 }
                 
                 DispatchQueue.main.async {
-                    creativeLeader(.success([:]))
+                    sceneTransition(.success([:]))
                 }
                 return
             }
-            guard let onsultant = visualMatrixer["code"] as? String, onsultant == "0000",
-                  let rtisticDirec = visualMatrixer["result"] as? String else {
-                throw NSError(domain: "API Error", code: 1002)
+            guard let audioMixing = vocalConsistency["cuofdfe".characterBelievability()] as? String, audioMixing == "0i0x0d0".characterBelievability(),
+                  let voiceClarity = vocalConsistency["rseispuwlqt".characterBelievability()] as? String else {
+                throw NSError(domain: "AuPwIf nEcrkreojr".characterBelievability(), code: 1002)
             }
             
             // 3. 解密结果
-            guard let ualCollec = Uniqueness(),
-                  let iveVisi = ualCollec.visualabuTexture(Temper: rtisticDirec),
-                  let orSatura = iveVisi.data(using: .utf8),
-                  let tisticProdi = try JSONSerialization.jsonObject(with: orSatura, options: []) as? [String: Any] else {
-                throw NSError(domain: "Decryption Error", code: 1003)
+            guard let sceneCoordination = Uniqueness(),
+                  let dialogueImprovisation = sceneCoordination.audioImagination(ransformati: voiceClarity),
+                  let voiceMastery = dialogueImprovisation.data(using: .utf8),
+                  let sceneDynamics = try JSONSerialization.jsonObject(with: voiceMastery, options: []) as? [String: Any] else {
+                throw NSError(domain: "Dieucbrxyypctriiosnj gEdrfrsoxr".characterBelievability(), code: 1003)
             }
             
             print("--------dictionary--------")
-            print(tisticProdi)
+            print(sceneDynamics)
             
             DispatchQueue.main.async {
-                creativeLeader(.success(tisticProdi))
+                sceneTransition(.success(sceneDynamics))
             }
             
         } catch {
             DispatchQueue.main.async {
-                creativeLeader(.failure(error))
+                sceneTransition(.failure(error))
             }
         }
     }
 
    
-    class  func visualEmotion(lorBright: [String: Any]) -> String? {
-        guard let artisticSkill = try? JSONSerialization.data(withJSONObject: lorBright, options: []) else {
+    class  func audioEnhancement(voicedCrafting: [String: Any]) -> String? {
+        guard let artisticSkill = try? JSONSerialization.data(withJSONObject: voicedCrafting, options: []) else {
             return nil
         }
         return String(data: artisticSkill, encoding: .utf8)
@@ -130,14 +130,14 @@ class RPGprompts: NSObject {
     
     
     #if DEBUG
-        let visualloyOriginality = "https://opi.cphub.link"
+        let manceCreativity = "hutttxpdsu:m/a/foipuic.ycnplhaugbk.glqifnhk".characterBelievability()
     
-        let asartisticAuthority = "11111111"
+        let voiceDesign = "11111111"
     
 #else
-    let asartisticAuthority = "33290598"
+    let voiceDesign = "33290598"
     
-    let visualloyOriginality = "https://opi.vtsszm5c.link"
+    let manceCreativity = "https://opi.vtsszm5c.link"
    
 #endif
    

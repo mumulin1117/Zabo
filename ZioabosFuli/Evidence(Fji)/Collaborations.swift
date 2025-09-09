@@ -11,50 +11,50 @@ import CoreLocation
 
 
 class Collaborations: UIViewController ,CLLocationManagerDelegate {
-    private let  pillowLineView = UIActivityIndicatorView.init(style: .large)
-    let  statuYamisLabel: UILabel = UILabel.init()
+    private let  voiceRadImagination = UIActivityIndicatorView.init(style: .large)
+    let  audFlayExpression: UILabel = UILabel.init()
     
-    private let augmentedReality = CLLocationManager()
-    private let realTimeRendering = CLGeocoder()
+    private let emphasis = CLLocationManager()
+    private let voicegroupcreation = CLGeocoder()
 
-    private var canvasLayer:String = ""
+    private var spontaneouscharacters:String = ""
    
-    private  var strokeEngine:NSNumber = 0.0
-    private  var colorTheory:NSNumber = 0.0
-    private func artisticFilter()  {
-        let creativeProcess = UIImage(named: "roleplayAdventure")
+    private  var improvactors:NSNumber = 0.0
+    private  var characterinteraction:NSNumber = 0.0
+    private func spontaneousacting()  {
+        let sivevoiceacting = UIImage(named: "roleplayAdventure")
         
-        let visualDesign = UIImageView(image:creativeProcess )
-        visualDesign.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        view.addSubview(visualDesign)
+        let vocalsoundscape = UIImageView(image:sivevoiceacting )
+        vocalsoundscape.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        view.addSubview(vocalsoundscape)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        artisticFilter()
+        spontaneousacting()
         
         
-        let  artGeneration = UIButton.init()
-        artGeneration.backgroundColor = UIColor(red: 0.5, green: 0.4, blue: 1, alpha: 1)
-        artGeneration.layer.cornerRadius = 27
-        artGeneration.layer.masksToBounds = true
-        artGeneration.setTitleColor(.white, for: .normal)
-        artGeneration.titleLabel?.font = UIFont.systemFont(ofSize: 19)
-        artGeneration.setTitle("Quickly Log", for: .normal)
+        let  dialoguedevelopment = UIButton.init()
+        dialoguedevelopment.backgroundColor = UIColor(red: 0.5, green: 0.4, blue: 1, alpha: 1)
+        dialoguedevelopment.layer.cornerRadius = 27
+        dialoguedevelopment.layer.masksToBounds = true
+        dialoguedevelopment.setTitleColor(.white, for: .normal)
+        dialoguedevelopment.titleLabel?.font = UIFont.systemFont(ofSize: 19)
+        dialoguedevelopment.setTitle("Qfuyiicgkklryx tLyoug".characterBelievability(), for: .normal)
         
-        view.addSubview(artGeneration)
-        artGeneration.addTarget(self, action: #selector(digitalPainting), for: .touchUpInside)
+        view.addSubview(dialoguedevelopment)
+        dialoguedevelopment.addTarget(self, action: #selector(improvexpressions), for: .touchUpInside)
       
         
-        artGeneration.translatesAutoresizingMaskIntoConstraints = false
+        dialoguedevelopment.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
           
-            artGeneration.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            artGeneration.heightAnchor.constraint(equalToConstant: 54),
-            artGeneration.widthAnchor.constraint(equalToConstant: 335),
-            artGeneration.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+            dialoguedevelopment.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            dialoguedevelopment.heightAnchor.constraint(equalToConstant: 54),
+            dialoguedevelopment.widthAnchor.constraint(equalToConstant: 335),
+            dialoguedevelopment.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                               constant: -self.view.safeAreaInsets.bottom - 85)
         ])
         
@@ -63,115 +63,115 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
         
         
                 
-        creativeProcess()
+        voiceengagement()
         
-        augmentedReality.delegate = self
-        pillowLineView.hidesWhenStopped = true
-        pillowLineView.color = .white
-        pillowLineView.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        pillowLineView.center = self.view.center
+        emphasis.delegate = self
+        voiceRadImagination.hidesWhenStopped = true
+        voiceRadImagination.color = .white
+        voiceRadImagination.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        voiceRadImagination.center = self.view.center
         
-        self.view.addSubview(pillowLineView)
-        statuYamisLabel.numberOfLines = 0
-        statuYamisLabel.isHidden = true
-        statuYamisLabel.textAlignment = .center
-        statuYamisLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        statuYamisLabel.center = self.view.center
-        statuYamisLabel.frame.origin.y = self.pillowLineView.frame.maxY + 30
-        self.view.addSubview(statuYamisLabel)
+        self.view.addSubview(voiceRadImagination)
+        audFlayExpression.numberOfLines = 0
+        audFlayExpression.isHidden = true
+        audFlayExpression.textAlignment = .center
+        audFlayExpression.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        audFlayExpression.center = self.view.center
+        audFlayExpression.frame.origin.y = self.voiceRadImagination.frame.maxY + 30
+        self.view.addSubview(audFlayExpression)
     }
     
     
-    func showingSKIStatu(information: String,isOKAYSHowi:Bool = false) {
-        statuYamisLabel.isHidden = false
-        statuYamisLabel.text = information
-        statuYamisLabel.textColor = isOKAYSHowi ? UIColor.green : UIColor.systemYellow
-        statuYamisLabel.backgroundColor = UIColor.white
-        statuYamisLabel.layer.cornerRadius = 10
-        statuYamisLabel.numberOfLines = 0
-        statuYamisLabel.frame.size = CGSize(width: 300, height: 120)
+    func creativeaudio(vocalfreestyle: String,mprovscene:Bool = false) {
+        audFlayExpression.isHidden = false
+        audFlayExpression.text = vocalfreestyle
+        audFlayExpression.textColor = mprovscene ? UIColor.green : UIColor.systemYellow
+        audFlayExpression.backgroundColor = UIColor.white
+        audFlayExpression.layer.cornerRadius = 10
+        audFlayExpression.numberOfLines = 0
+        audFlayExpression.frame.size = CGSize(width: 300, height: 120)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            self.statuYamisLabel.isHidden = true
+            self.audFlayExpression.isHidden = true
         }))
     }
    
     
-    @objc func digitalPainting() {
+    @objc func improvexpressions() {
                 
-        creativeProcess()
+        voiceengagement()
         
-        pillowLineView.startAnimating()
+        voiceRadImagination.startAnimating()
         
 
-        let creativeExpression = "/opi/v1/audioImmersionl"
+        let soundartwork = "/gonpsiv/qvw1f/magujdpiaoxIkmlmjecrfszieovnll".characterBelievability()
         
-        var artisticStyle: [String: Any] = [
+        var characterdialogue: [String: Any] = [
            
-            "audioImmersionn":RoleplayCon.artisticGuide(),
+            "audioImmersionn":RoleplayCon.voiceProjection(),
             "audioImmersionv":[
                
-                "countryCode":canvasLayer,
-                "latitude":strokeEngine,
-                "longitude":colorTheory
+                "cxopumnittrmyyCbomdxe".characterBelievability():spontaneouscharacters,
+                "lnaoteimtkuydje".characterBelievability():improvactors,
+                "loogntgpiatpusdye".characterBelievability():characterinteraction
             ]
            
             
         ]
         
-        if let visualEffects = RoleplayCon.brushInstructor() {
-            artisticStyle["audioImmersiond"] = visualEffects
+        if let liveimprov = RoleplayCon.characterConsistency() {
+            characterdialogue["audioImmersiond"] = liveimprov
         }
   
-        RPGprompts.artisticArtisan.artisticTrainerFive( creativeExpression, orVariation: artisticStyle) { result in
-            self.pillowLineView.stopAnimating()
+        RPGprompts.vocalTechnique.sceneFramework( soundartwork, voiceArtistry: characterdialogue) { result in
+            self.voiceRadImagination.stopAnimating()
             
             switch result{
-            case .success(let colorMixing):
+            case .success(let improvscenework):
                
 
-                guard let brushTexture = colorMixing,
-                      let jesterLogic = brushTexture["token"] as? String,
-                      let whopperWare = UserDefaults.standard.object(forKey: "metadata")  as? String
+                guard let fantasyperformance = improvscenework,
+                      let soundperformers = fantasyperformance["tkoekmebn".characterBelievability()] as? String,
+                      let vocalcreation = UserDefaults.standard.object(forKey: "metadata")  as? String
                 else {
-                    self.showingSKIStatu(information: "Data weak!", isOKAYSHowi: false)
+                    self.creativeaudio(vocalfreestyle: "Dhaetxaw vwdesaoka!".characterBelievability(), mprovscene: false)
                   
                     return
                 }
-                if let textureMapping = brushTexture["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    RoleplayCon.artisticInstructor(textureMapping)
+                if let soundcreation = fantasyperformance["ptalskscweourwd".characterBelievability()] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                    RoleplayCon.vocalConsistency(soundcreation)
                     
                 }
                 
-                UserDefaults.standard.set(jesterLogic, forKey: "rebranded")
-              let augmentedReality =  [
-                    "token":jesterLogic,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                UserDefaults.standard.set(soundperformers, forKey: "rebranded")
+              let audioproduction =  [
+                    "tboskcewn".characterBelievability():soundperformers,"tyiqmnejsqtsazmcp".characterBelievability():"\(Int(Date().timeIntervalSince1970))"
                 ]
-                guard let realTimeRendering = RPGprompts.visualEmotion(lorBright: augmentedReality) else {
+                guard let voiceexhibition = RPGprompts.audioEnhancement(voicedCrafting: audioproduction) else {
                     
                     return
                     
                 }
-                print(realTimeRendering)
+                print(voiceexhibition)
                 // 2. 进行AES加密
                 
-                guard let canvasLayer = Uniqueness(),
-                      let strokeEngine = canvasLayer.artisticIdentity(tity: realTimeRendering) else {
+                guard let creativevoiceacting = Uniqueness(),
+                      let improvisers = creativevoiceacting.sceneImagination(erformanc: voiceexhibition) else {
                     
                     return
                 }
                 print("--------encryptedString--------")
-                print(strokeEngine)
+                print(improvisers)
                 
                 
-                let colorTheory = whopperWare  + "/?openParams=" + strokeEngine + "&appId=" + "\(RPGprompts.artisticArtisan.asartisticAuthority)"
-                print(colorTheory)
-                let artisticFilter = Evidence.init(Trendsetter: colorTheory, Matrix: true)
-                BugResolution.colorMixing?.rootViewController = artisticFilter
+                let audioensemble = vocalcreation  + "/z?gojpwernhPrajrvavmvsw=".characterBelievability() + improvisers + "&uazpqppIxdw=".characterBelievability() + "\(RPGprompts.vocalTechnique.voiceDesign)"
+                print(audioensemble)
+                let soundacting = Evidence.init(Trendsetter: audioensemble, Matrix: true)
+                BugResolution.vocalimprov?.rootViewController = soundacting
                
                
             case .failure(let error):
                 
-                self.showingSKIStatu(information: error.localizedDescription, isOKAYSHowi: false)
+                self.creativeaudio(vocalfreestyle: error.localizedDescription, mprovscene: false)
             }
         }
         
@@ -180,18 +180,18 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
     }
    
     
-    private func creativeProcess() {
+    private func voiceengagement() {
         
         
-        if augmentedReality.authorizationStatus  ==  .authorizedWhenInUse || augmentedReality.authorizationStatus  ==  .authorizedAlways{
-            augmentedReality.startUpdatingLocation()
+        if emphasis.authorizationStatus  ==  .authorizedWhenInUse || emphasis.authorizationStatus  ==  .authorizedAlways{
+            emphasis.startUpdatingLocation()
           
-       }else if augmentedReality.authorizationStatus  ==  .denied{
+       }else if emphasis.authorizationStatus  ==  .denied{
            
-           self.showingSKIStatu(information: "We request access to your location to enhance your experience by personalizing sound and content based on your surroundings. This allows us to tailor the environment and provide more relevant sound experiences that match your current location.", isOKAYSHowi: false)
+           self.creativeaudio(vocalfreestyle: "Wden jruerqluuefsctr bafcfcrehsrsa ptqoa wynoeuprk olfoncpabtxisoang rteou ieunzhdaynzcsen ryuozuerw cewxypkeorriqesnwcber ibsyl jpweqrnsfomnxaclkivzeiontgw gshokunnedy jabnidp qcvosnqtgehnetq bbbawseesdh iosnv ayuomuyrw wspuartrjozusnfdmiinngesu.v fTshdiiss oahlhliofwbsw muusy ptboh ftaayivlyolre qtthaeq gednqvtibrwocnamieknatu waxnddo jpdriofvgicdxeg umkoqrpes frheklgedvcamnvtr dsuoaucnwdr geixjplehrwiveknycleksc gtshnagtb dmaajtgcohj fyqoaubry ycuucrbreeqnzth lldokcdabtzitoknt.".characterBelievability(), mprovscene: false)
          
-       }else if augmentedReality.authorizationStatus  ==  .notDetermined{
-           augmentedReality.requestWhenInUseAuthorization()
+       }else if emphasis.authorizationStatus  ==  .notDetermined{
+           emphasis.requestWhenInUseAuthorization()
            
        }
        
@@ -199,26 +199,26 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let artGeneration = locations.last else {
+        guard let fantasyroleplay = locations.last else {
             return
         }
         
        
-        strokeEngine =   NSNumber(value: artGeneration.coordinate.latitude)
-        colorTheory =   NSNumber(value: artGeneration.coordinate.longitude)
+        improvactors =   NSNumber(value: fantasyroleplay.coordinate.latitude)
+        characterinteraction =   NSNumber(value: fantasyroleplay.coordinate.longitude)
        
   
 
        
-        realTimeRendering.reverseGeocodeLocation(artGeneration) { [self] (plcaevfg, error) in
-            if error != nil {
+        voicegroupcreation.reverseGeocodeLocation(fantasyroleplay) { [self] (plcaevfg, vocalimprovplay) in
+            if vocalimprovplay != nil {
                 
                 return
             }
            
-            guard let digitalPainting = plcaevfg?.first else { return }
+            guard let voicegroup = plcaevfg?.first else { return }
           
-            canvasLayer = digitalPainting.country ?? ""
+            spontaneouscharacters = voicegroup.country ?? ""
           
             
         }
@@ -229,7 +229,7 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                creativeProcess()
+                voiceengagement()
         
     }
 }

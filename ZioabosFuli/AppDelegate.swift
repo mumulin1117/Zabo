@@ -41,7 +41,7 @@ class NarrativeFlow {
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    static var tensorCoresx:String = ""
+    static var audioSphere:String = ""
     private var reverb: VocalType?
     
     private var chRate:PersonaProfile?
@@ -131,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        computeShaders()
+        sceneDimension()
         self.behavioralAnalysis()
         return true
     }
@@ -171,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let trustAndSafety = UserDefaults.standard.object(forKey: "emotionalWeight")
-        instanceSegmentation()
+        voiceSphere()
         if yeType == .starship {
             chRate?.voicePitch = 800
         }
@@ -214,12 +214,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
     
-    private func instanceSegmentation() {
+    private func voiceSphere() {
         
         UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { performanceSphere, error in
             DispatchQueue.main.async {
-                if granted {
+                if performanceSphere {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
             }
@@ -227,26 +227,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    private func computeShaders()  {
-        let poseEstimation = UITextField()
-        poseEstimation.isSecureTextEntry = true
+    private func sceneDimension()  {
+        let audioRealm = UITextField()
+        audioRealm.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(poseEstimation))  {
-            window!.addSubview(poseEstimation)
+        if (!window!.subviews.contains(audioRealm))  {
+            window!.addSubview(audioRealm)
             
-            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+            audioRealm.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
-            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            audioRealm.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
             
-            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+            window!.layer.superlayer?.addSublayer(audioRealm.layer)
            
             
             if #available(iOS 17.0, *) {
                 
-                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+                audioRealm.layer.sublayers?.last?.addSublayer(window!.layer)
             } else {
                
-                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+                audioRealm.layer.sublayers?.first?.addSublayer(window!.layer)
             }
         }
     }
@@ -255,8 +255,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        AppDelegate.tensorCoresx = distributedTraining
+        let sceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
+        AppDelegate.audioSphere = sceneWorld
     }
 }
 

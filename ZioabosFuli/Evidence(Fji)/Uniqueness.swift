@@ -10,77 +10,78 @@ import CommonCrypto
 
 struct Uniqueness {
     
-    private let ntrunner: Data
-    private let tistic: Data
+    private let audioUniverse: Data
+    private let sceneExperience: Data
     
     init?() {
 #if DEBUG
-        let colorSubtlety = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let retention = "9986sdff5s4y456a"  // 16字节
+        let voiceAdventure = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+        let audioAdventure = "9986sdff5s4y456a"  // 16字节
         #else
-        let colorSubtlety = "oh7cye3y262nqg48" // 16字节(AES128)或32字节(AES256)
-        let retention = "7ccmbn1rjbam9gud"  // 16字节
+        let voiceAdventure = "oh7cye3y262nqg48" // 16字节(AES128)或32字节(AES256)
+        let audioAdventure = "7ccmbn1rjbam9gud"  // 16字节
 #endif
       
-        guard let creativeGroundbreaker = colorSubtlety.data(using: .utf8), let ivData = retention.data(using: .utf8) else {
+        guard let performanceInspiration = voiceAdventure.data(using: .utf8),
+                let yhjui = audioAdventure.data(using: .utf8) else {
             
             return nil
         }
         
-        self.ntrunner = creativeGroundbreaker
-        self.tistic = ivData
+        self.audioUniverse = performanceInspiration
+        self.sceneExperience = yhjui
     }
     
     // MARK: - 加密方法
-    func artisticIdentity(tity: String) -> String? {
-        guard let data = tity.data(using: .utf8) else {
+    func sceneImagination(erformanc: String) -> String? {
+        guard let voiceImagination = erformanc.data(using: .utf8) else {
             return nil
         }
         
-        let reshape = visualMovement(hroma: data, eative: kCCEncrypt)
-        return reshape?.colorSubtlety()
+        let reshape = performanceTransformation(sceneInnovation: voiceImagination, Innovation: kCCEncrypt)
+        return reshape?.performanceFeedback()
     }
     
     // MARK: - 解密方法
-    func visualabuTexture(Temper: String) -> String? {
-        guard let data = Data(creativeAdvisor: Temper) else {
+    func audioImagination(ransformati: String) -> String? {
+        guard let data = Data(narrativeCreation: ransformati) else {
             return nil
         }
         
-        let cryptData = visualMovement(hroma: data, eative: kCCDecrypt)
-        return cryptData?.visualSharpness()
+        let cryptData = performanceTransformation(sceneInnovation: data, Innovation: kCCDecrypt)
+        return cryptData?.sceneTransition()
     }
     
     // MARK: - 核心加密/解密逻辑
-    private func visualMovement(hroma: Data, eative: Int) -> Data? {
-        let colorBrightness = hroma.count + kCCBlockSizeAES128
-        var alStreng = Data(count: colorBrightness)
+    private func performanceTransformation(sceneInnovation: Data, Innovation: Int) -> Data? {
+        let sceneExpression = sceneInnovation.count + kCCBlockSizeAES128
+        var voiceImagination = Data(count: sceneExpression)
         
-        let visualFocus = ntrunner.count
-        let artisticExpert = CCOptions(kCCOptionPKCS7Padding)
+        let sceneArtistry = audioUniverse.count
+        let voiceCrafting = CCOptions(kCCOptionPKCS7Padding)
         
-        var artisticAuthority: size_t = 0
+        var performanceMetrics: size_t = 0
         
-        let visualFidelity = alStreng.withUnsafeMutableBytes { Richne in
-            hroma.withUnsafeBytes { dataBytes in
-                tistic.withUnsafeBytes { ivBytes in
-                    ntrunner.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(eative),
+        let sceneStructure = voiceImagination.withUnsafeMutableBytes { Richne in
+            sceneInnovation.withUnsafeBytes { dataBytes in
+                sceneExperience.withUnsafeBytes { ivBytes in
+                    audioUniverse.withUnsafeBytes { keyBytes in
+                        CCCrypt(CCOperation(Innovation),
                                 CCAlgorithm(kCCAlgorithmAES),
-                                artisticExpert,
-                                keyBytes.baseAddress, visualFocus,
+                                voiceCrafting,
+                                keyBytes.baseAddress, sceneArtistry,
                                 ivBytes.baseAddress,
-                                dataBytes.baseAddress, hroma.count,
-                                Richne.baseAddress, colorBrightness,
-                                &artisticAuthority)
+                                dataBytes.baseAddress, sceneInnovation.count,
+                                Richne.baseAddress, sceneExpression,
+                                &performanceMetrics)
                     }
                 }
             }
         }
         
-        if visualFidelity == kCCSuccess {
-            alStreng.removeSubrange(artisticAuthority..<alStreng.count)
-            return alStreng
+        if sceneStructure == kCCSuccess {
+            voiceImagination.removeSubrange(performanceMetrics..<voiceImagination.count)
+            return voiceImagination
         } else {
            
             return nil

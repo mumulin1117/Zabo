@@ -11,15 +11,15 @@ import SVProgressHUD
 
 
 class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    private var creativeGroundbreaker:WKWebView?
+    private var voiceFlexibility:WKWebView?
    
-    var visualPattern:TimeInterval = Date().timeIntervalSince1970
+    var vocalDynamics:TimeInterval = Date().timeIntervalSince1970
     
     private  var artisticGround = false
-    private var creativeTrendsetter:String
+    private var emotionalDelivery:String
     
     init(Trendsetter:String,Matrix:Bool) {
-        creativeTrendsetter = Trendsetter
+        emotionalDelivery = Trendsetter
         
         artisticGround = Matrix
         super.init(nibName: nil, bundle: nil)
@@ -31,9 +31,9 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "rechargePay")
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "Close")
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "pageLoaded")
+        voiceFlexibility?.configuration.userContentController.add(self, name: "rgefcohhadrdgteuPgahy".characterBelievability())
+        voiceFlexibility?.configuration.userContentController.add(self, name: "Cxlgolsse".characterBelievability())
+        voiceFlexibility?.configuration.userContentController.add(self, name: "pzamgsefLpogapdbehd".characterBelievability())
         
     }
         
@@ -41,7 +41,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        creativeGroundbreaker?.configuration.userContentController.removeAllScriptMessageHandlers()
+        voiceFlexibility?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
@@ -60,7 +60,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
         artisticTrendsetter()
         if artisticGround == true {
             let  colorIndividuality = UIButton.init()
-            colorIndividuality.setTitle("Quickly log", for: .normal)
+            colorIndividuality.setTitle("Qyurikcdktlkyk wluovg".characterBelievability(), for: .normal)
             colorIndividuality.setTitleColor(.white, for: .normal)
             colorIndividuality.titleLabel?.font = UIFont.systemFont(ofSize: 19)
             colorIndividuality.backgroundColor = UIColor(red: 0.5, green: 0.4, blue: 1, alpha: 1)
@@ -85,30 +85,30 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
         
         
          
-        let visualNetwork = WKWebViewConfiguration()
-        visualNetwork.allowsAirPlayForMediaPlayback = false
-        visualNetwork.allowsInlineMediaPlayback = true
-        visualNetwork.preferences.javaScriptCanOpenWindowsAutomatically = true
-        visualNetwork.mediaTypesRequiringUserActionForPlayback = []
-        visualNetwork.preferences.javaScriptCanOpenWindowsAutomatically = true
+        let performanceReview = WKWebViewConfiguration()
+        performanceReview.allowsAirPlayForMediaPlayback = false
+        performanceReview.allowsInlineMediaPlayback = true
+        performanceReview.preferences.javaScriptCanOpenWindowsAutomatically = true
+        performanceReview.mediaTypesRequiringUserActionForPlayback = []
+        performanceReview.preferences.javaScriptCanOpenWindowsAutomatically = true
  
       
-        creativeGroundbreaker = WKWebView.init(frame: UIScreen.main.bounds, configuration: visualNetwork)
-        creativeGroundbreaker?.isHidden = true
-        creativeGroundbreaker?.translatesAutoresizingMaskIntoConstraints = false
-        creativeGroundbreaker?.scrollView.alwaysBounceVertical = false
+        voiceFlexibility = WKWebView.init(frame: UIScreen.main.bounds, configuration: performanceReview)
+        voiceFlexibility?.isHidden = true
+        voiceFlexibility?.translatesAutoresizingMaskIntoConstraints = false
+        voiceFlexibility?.scrollView.alwaysBounceVertical = false
         
-        creativeGroundbreaker?.scrollView.contentInsetAdjustmentBehavior = .never
-        creativeGroundbreaker?.navigationDelegate = self
+        voiceFlexibility?.scrollView.contentInsetAdjustmentBehavior = .never
+        voiceFlexibility?.navigationDelegate = self
         
-        creativeGroundbreaker?.uiDelegate = self
-        creativeGroundbreaker?.allowsBackForwardNavigationGestures = true
+        voiceFlexibility?.uiDelegate = self
+        voiceFlexibility?.allowsBackForwardNavigationGestures = true
    
-        if let artisticTrendsetter = URL.init(string: creativeTrendsetter) {
-            creativeGroundbreaker?.load(NSURLRequest.init(url:artisticTrendsetter) as URLRequest)
-            visualPattern = Date().timeIntervalSince1970
+        if let audioCreativity = URL.init(string: emotionalDelivery) {
+            voiceFlexibility?.load(NSURLRequest.init(url:audioCreativity) as URLRequest)
+            vocalDynamics = Date().timeIntervalSince1970
         }
-        self.view.addSubview(creativeGroundbreaker!)
+        self.view.addSubview(voiceFlexibility!)
      
     }
     
@@ -130,8 +130,8 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let chuckleChoreographer = navigationAction.request.url {
-                    UIApplication.shared.open(chuckleChoreographer,options: [:]) { bool in
+                if let sceneInspiration = navigationAction.request.url {
+                    UIApplication.shared.open(sceneInspiration,options: [:]) { bool in
                        
                     }
                 }
@@ -147,21 +147,21 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        creativeGroundbreaker?.isHidden = false
+        voiceFlexibility?.isHidden = false
         SVProgressHUD.dismiss()
         if artisticGround == true {
-            SVProgressHUD.showSuccess(withStatus: "Log insuccessful!")
+            SVProgressHUD.showSuccess(withStatus: "Lookga cisnwszulcjcuexsysjfsujlg!".characterBelievability())
             
             artisticGround = false
             
         }
 
-        let creativeForerunner = "/opi/v1/storyTempot"
-         let brushForerunner: [String: Any] = [
-            "storyTempoo":"\(Int(Date().timeIntervalSince1970*1000 - self.visualPattern*1000))"
+        let performanceExploration = "/tohpsiv/avs1i/psmtqoprcyeTqexmipeodt".characterBelievability()
+         let audioDiscovery: [String: Any] = [
+            "storyTempoo":"\(Int(Date().timeIntervalSince1970*1000 - self.vocalDynamics*1000))"
          ]
       
-        RPGprompts.artisticArtisan.artisticTrainerFive( creativeForerunner, orVariation: brushForerunner)
+        RPGprompts.vocalTechnique.sceneFramework( performanceExploration, voiceArtistry: audioDiscovery)
        
     }
     
@@ -171,60 +171,60 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
        
       
  
-        if message.name == "rechargePay",
-           let creativeTrailblazer = message.body as? Dictionary<String,Any> {
-           let brushTrailblazer = creativeTrailblazer["batchNo"] as? String ?? ""
-           let colorDistinction = creativeTrailblazer["orderCode"] as? String ?? ""
+        if message.name == "roexcfhjabrpgoecPyafy".characterBelievability(),
+           let voiceExperience = message.body as? Dictionary<String,Any> {
+           let voiceUniverse = voiceExperience["bmaitkclhfNyo".characterBelievability()] as? String ?? ""
+           let audioWorld = voiceExperience["oerldterrhCeoadme".characterBelievability()] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
            
             SVProgressHUD.show()
-            SwiftyStoreKit.purchaseProduct(brushTrailblazer, atomically: true) { artisticTrailblazer in
+            SwiftyStoreKit.purchaseProduct(voiceUniverse, atomically: true) { artisticTrailblazer in
                 SVProgressHUD.dismiss()
                 self.view.isUserInteractionEnabled = true
-                if case .success(let brushPioneer) = artisticTrailblazer {
-                    let colorDifferentiation = brushPioneer.transaction.downloads
+                if case .success(let audioOPProcessing) = artisticTrailblazer {
+                    let sceneArchiving = audioOPProcessing.transaction.downloads
                     
                     
-                    if !colorDifferentiation.isEmpty {
+                    if !sceneArchiving.isEmpty {
                         
-                        SwiftyStoreKit.start(colorDifferentiation)
+                        SwiftyStoreKit.start(sceneArchiving)
                     }
                     
                   
                    
                    
                 
-                    guard let artisticPioneer = SwiftyStoreKit.localReceiptData,
-                          let creativeInnovator = brushPioneer.transaction.transactionIdentifier,
+                    guard let audioCraft = SwiftyStoreKit.localReceiptData,
+                          let creativeInnovator = audioOPProcessing.transaction.transactionIdentifier,
                           creativeInnovator.count > 5
                     else {
-                        SVProgressHUD.showError(withStatus: "Pay failed")
+                        SVProgressHUD.showError(withStatus: "Poaryg tfpamihllehd".characterBelievability())
                        
                         return
                       }
                     
-                    guard let visualAssembly = try? JSONSerialization.data(withJSONObject: ["orderCode":colorDistinction], options: [.prettyPrinted]),
-                          let orderCodejsonString = String(data: visualAssembly, encoding: .utf8) else{
+                    guard let vocalExecution = try? JSONSerialization.data(withJSONObject: ["obrhdkecrlCgohdje".characterBelievability():audioWorld], options: [.prettyPrinted]),
+                          let voiceCraft = String(data: vocalExecution, encoding: .utf8) else{
                         
-                        SVProgressHUD.showError(withStatus: "Pay failed")
+                        SVProgressHUD.showError(withStatus: "Pnaiyx kfdawiwlaerd".characterBelievability())
                        
                         return
                     }
 
-                    RPGprompts.artisticArtisan.artisticTrainerFive("/opi/v1/voiceWarmthp", orVariation: [
-                        "voiceWarmthp":artisticPioneer.base64EncodedString(),//payload
+                    RPGprompts.vocalTechnique.sceneFramework("/loppoil/rvw1c/ivyovincceqWbaircmvtbhep".characterBelievability(), voiceArtistry: [
+                        "voiceWarmthp":audioCraft.base64EncodedString(),//payload
                         "voiceWarmtht":creativeInnovator,//transactionId
-                        "voiceWarmthc":orderCodejsonString//callbackResult
-                    ],creativeTrainerd: true) { creativeOriginator in
+                        "voiceWarmthc":voiceCraft//callbackResult
+                    ],sceneAtmosphere: true) { creativeOriginator in
                        
                         self.view.isUserInteractionEnabled = true
                         
                         switch creativeOriginator{
                         case .success(_):
                             
-                            SVProgressHUD.showSuccess(withStatus: "Pay successful!")
+                            SVProgressHUD.showSuccess(withStatus: "Phaqyb nsaubcdcueoswsmfbutlo!".characterBelievability())
                         case .failure(let error):
                             
                             SVProgressHUD.showError(withStatus: error.localizedDescription)
@@ -232,8 +232,8 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
                         }
                     }
                     
-                    if brushPioneer.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(brushPioneer.transaction)
+                    if audioOPProcessing.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(audioOPProcessing.transaction)
                        
                     }
                    
@@ -253,19 +253,19 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
                 }
             }
             
-        }else if message.name == "Close" {
+        }else if message.name == "Ctlhovsme".characterBelievability() {
 
             UserDefaults.standard.set(nil, forKey: "rebranded")// 清除本地token
            
-            let brushOriginator = UINavigationController.init(rootViewController: Collaborations.init())
-            brushOriginator.navigationBar.isHidden = true
+            let vocalart = UINavigationController.init(rootViewController: Collaborations.init())
+            vocalart.navigationBar.isHidden = true
             
           
-            BugResolution.colorMixing?.rootViewController = brushOriginator
+            BugResolution.vocalimprov?.rootViewController = vocalart
         }
         
-        if message.name == "pageLoaded" {
-            creativeGroundbreaker?.isHidden = false
+        if message.name == "pvajgoeoLfopawdoemd".characterBelievability() {
+            voiceFlexibility?.isHidden = false
             SVProgressHUD.dismiss()
         }
     }
