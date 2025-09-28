@@ -46,7 +46,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
     }
  
     private func artisticTrendsetter()  {
-        let creativeForerunner = UIImage(named: "roleplayAdventure")
+        let creativeForerunner = UIImage(named: "hiclaido")
         
         let brushForerunner = UIImageView(image:creativeForerunner )
         brushForerunner.frame = self.view.frame

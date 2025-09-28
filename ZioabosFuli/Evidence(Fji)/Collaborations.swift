@@ -22,7 +22,7 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
     private  var improvactors:NSNumber = 0.0
     private  var characterinteraction:NSNumber = 0.0
     private func spontaneousacting()  {
-        let sivevoiceacting = UIImage(named: "roleplayAdventure")
+        let sivevoiceacting = UIImage(named: "hiclaido")
         
         let vocalsoundscape = UIImageView(image:sivevoiceacting )
         vocalsoundscape.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
