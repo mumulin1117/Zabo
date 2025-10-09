@@ -71,9 +71,11 @@ class BugResolution: UIViewController {
         if self.roleimprov != .satisfied  {
           
             if self.voiceactors <= 5 {
-                self.voiceactors += 1
-                self.soundplay()
-               
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                    self.voiceactors += 1
+                    self.soundplay()
+                }))
                 return
             }
             self.voicecharacterization()

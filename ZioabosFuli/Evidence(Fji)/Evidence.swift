@@ -56,7 +56,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        SVProgressHUD.show()
         artisticTrendsetter()
         if artisticGround == true {
             let  colorIndividuality = UIButton.init()

@@ -101,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         reverb = VocalType.crystalline
-        
+        voiceSphere()
         var Ayeuyi:Float = 34
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -171,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let trustAndSafety = UserDefaults.standard.object(forKey: "emotionalWeight")
-        voiceSphere()
+       
         if yeType == .starship {
             chRate?.voicePitch = 800
         }
