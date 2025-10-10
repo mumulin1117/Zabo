@@ -99,7 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         reverb = VocalType.crystalline
         voiceSphere()
         var Ayeuyi:Float = 34
