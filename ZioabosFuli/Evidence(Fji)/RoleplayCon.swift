@@ -9,7 +9,7 @@ import UIKit
 
 class RoleplayCon: NSObject {
    
-       private static let colorSubtlety: String = "com.gtwedbs.zabo"
+       private static let colorSubtlety: String = "com.gtwedbs.zabotr"
    
        private static let voiceActing = "com.gtwedbs.zaboid"
        private static let creativeExpression = "com.gtwedbs.zaboword"

@@ -252,8 +252,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 extension AppDelegate:UNUserNotificationCenterDelegate{
     
-    
-    internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let sceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
         AppDelegate.audioSphere = sceneWorld
     }

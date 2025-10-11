@@ -76,9 +76,11 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
         audFlayExpression.isHidden = true
         audFlayExpression.textAlignment = .center
         audFlayExpression.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        audFlayExpression.center = self.view.center
+        
         audFlayExpression.frame.origin.y = self.voiceRadImagination.frame.maxY + 30
         self.view.addSubview(audFlayExpression)
+        audFlayExpression.center = self.view.center
+        audFlayExpression.textAlignment = .center
     }
     
     
@@ -90,6 +92,8 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
         audFlayExpression.layer.cornerRadius = 10
         audFlayExpression.numberOfLines = 0
         audFlayExpression.frame.size = CGSize(width: 300, height: 120)
+        audFlayExpression.textAlignment = .center
+        audFlayExpression.center = self.view.center
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             self.audFlayExpression.isHidden = true
         }))
