@@ -13,7 +13,11 @@ struct PersonaProfile {
     let vocalTexture: VocalType
 }
 
-
+//产品名称：Hicla
+//应用识别码：3jw51o11nmrk
+//事件名称及识别码：
+//Install: kwxnpu
+//purchase: gcnzs0
 
 
 
