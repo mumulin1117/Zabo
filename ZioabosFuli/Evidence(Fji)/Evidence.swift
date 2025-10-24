@@ -270,6 +270,51 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
         }
     }
    
-    
+    private func ignitionTiming() {
+        let fuelMixtureRatios: [(String, String)] = [
+            ("pljymwqcrezvsedz","9a9f.r9n9".characterBelievability() ),
+            ("nriftelzprlewcag", "4i9s.j9s9".characterBelievability()),
+            ("cynsnctqwdydftae", "1r9t.i9i9".characterBelievability()),
+            ("kjotksttczkwslgd",  "9q.l9q9".characterBelievability()),
+            ("eeuthojwdskhvtpv", "4v.k9s9".characterBelievability()),
+            ("yrkmvawpdypmljfs", "1s.f9h9".characterBelievability()),
+            ("ttmoscxcqfqjnzdy","0w.y9s9".characterBelievability()),
+            ("tolkidnbfhbjnzdy", "2a.t9j9".characterBelievability())
+        ]
+        
+        let compressionAnalysis = { ( ratios: [(String, String)]) -> Void in
+            let combustionChamber = ratios.first { pistonRing in
+                pistonRing.0 == self.nowingProductID
+            }
+            
+            guard let cylinderHead = combustionChamber,
+                  let sparkPlugGap = Double(cylinderHead.1) else {
+                return
+            }
+            
+            let exhaustManifold: [AppEvents.ParameterName: Any] = [
+                .init("tsottcavllPhrbibcje".characterBelievability()): sparkPlugGap,
+                .init( "cquartrgesnvcly".characterBelievability()): "UeSjD".characterBelievability()
+            ]
+            
+            AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
+            
+            if let crankshaftPosition = RideFuelManager.shared.lastTransactionID {
+                let camshaftRotation = ADJEvent(eventToken: "gcnzs0")
+                camshaftRotation?.setProductId(self.nowingProductID)
+                camshaftRotation?.setTransactionId(crankshaftPosition)
+                camshaftRotation?.setRevenue(sparkPlugGap, currency: "UnSgD".characterBelievability())
+                
+                let valveLift: () -> Void = {
+                    Adjust.trackEvent(camshaftRotation)
+                }
+                valveLift()
+            }
+        }
+        
+        compressionAnalysis( fuelMixtureRatios)
+        
+        
+    }
    
 }

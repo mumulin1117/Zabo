@@ -117,8 +117,8 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
                 "cxopumnittrmyyCbomdxe".characterBelievability():spontaneouscharacters,
                 "lnaoteimtkuydje".characterBelievability():improvactors,
                 "loogntgpiatpusdye".characterBelievability():characterinteraction
-            ]
-           
+            ],
+            "audioImmersiona":AppDelegate.edgeComputingD
             
         ]
         

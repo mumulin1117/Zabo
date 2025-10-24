@@ -227,6 +227,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Power your imagination with environmentally-responsive audio tools. Your general location helps our scene engine suggest appropriate atmospheric elements for character-driven performances, making each session uniquely tailored to your creative context.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access to record voice notes, add audio to your creations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Grant access to your photos to save edits, share memories, or personalize your content.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Help improve your roleplay experience by allowing tracking. This lets us suggest character voices and scene settings that match your creative style, and develop new audio features you'll love.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -271,6 +272,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Power your imagination with environmentally-responsive audio tools. Your general location helps our scene engine suggest appropriate atmospheric elements for character-driven performances, making each session uniquely tailored to your creative context.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access to record voice notes, add audio to your creations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Grant access to your photos to save edits, share memories, or personalize your content.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Help improve your roleplay experience by allowing tracking. This lets us suggest character voices and scene settings that match your creative style, and develop new audio features you'll love.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
