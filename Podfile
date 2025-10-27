@@ -6,13 +6,7 @@ target 'ZioabosFuli' do
   use_frameworks!
 
   # Pods for ZioabosFuli
-pod 'Alamofire'
-pod 'SwiftyStoreKit'
-pod 'SnapKit'
-pod "SVProgressHUD"
-pod 'SDCycleScrollView'
-pod "Player"
-pod "IQKeyboardManager"
+
 
 pod 'Adjust', '~> 5.1.1'
 pod 'FBSDKCoreKit'

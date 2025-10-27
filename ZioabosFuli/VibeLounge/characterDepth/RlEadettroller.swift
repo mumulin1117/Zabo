@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import Photos
 class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var audioQuality: UIImageView!
@@ -24,6 +24,8 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        realTimeFeedback.inputAccessory()
+        audioClarity.inputAccessory()
         storyTexture.layer.cornerRadius = 12.5
         audioQuality.image = StoryBabuSmeaCell.Metrics
         
@@ -105,7 +107,7 @@ class RlEadettroller: UIViewController, UIImagePickerControllerDelegate & UINavi
             picker.dismiss(animated: true)
         dreamweaverTitleLabel.textAlignment = .center
             guard let iyeu = info[.originalImage] as? UIImage else {
-                SVProgressHUD.showInfo(withStatus: "Uhnvaqbmlhey ftmoe uombrtsagixnz kihmoatgke".characterBelievability())
+                StageHUD.shared.whisper(message:  "Uhnvaqbmlhey ftmoe uombrtsagixnz kihmoatgke".characterBelievability())
                
                 return
             }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class CumidtoneRangentroller: UIViewController {
     
     @IBOutlet weak var voiceTutorials: UIView!
@@ -17,6 +17,7 @@ class CumidtoneRangentroller: UIViewController {
     @IBOutlet weak var sketchPad: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        midtoneRange.inputAccessory()
         canvasTexture()
         sketchPad.layer.masksToBounds = true
         interactiveHelp()
@@ -76,7 +77,7 @@ class CumidtoneRangentroller: UIViewController {
     func ThemeModeStrategy()  {
         let hyperrealism = "Prljebagseed meinitbeyrn mtahfeq asspxetcdiffcioco krxeoansqoun".characterBelievability()
         
-        SVProgressHUD.showInfo(withStatus:hyperrealism )
+        StageHUD.shared.whisper(message: hyperrealism )
     }
     
     private func underpainting()  {

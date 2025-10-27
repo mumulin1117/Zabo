@@ -4,7 +4,7 @@
 //
 //  Created by ZioabosFuli on 2025/7/5.
 //
-import SVProgressHUD
+
 import UIKit
 
 class VoiceHuabontroller: UIViewController {
@@ -75,8 +75,38 @@ class VoiceHuabontroller: UIViewController {
     }
     
     
+    @objc func castPerforman(_ keinfo: Notification) {
+        let Ayeuyi:Float = 34
+        reverb = VocalType.crystalline
+        
+        guard let yeio = keinfo.userInfo,
+              let koapj = yeio[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        
+        let boouds = koapj.height
+        let sationuyi:Float = 55
+        
+        
+      
+       
+        var yeType = AmbienceMood.forest
+        let paoinh = boouds - view.safeAreaInsets.bottom
+        if yeType == .forest {
+            chRate?.speechRate = 233
+            self.view.frame.origin.y = -boouds / 2
+        }
+        
+        
+    }
+
+       
+    @objc func keyboardWillHide(_ notification: Notification) {
+        reverb = VocalType.crystalline
+        self.view.frame.origin.y = 0
+      
+        let sationuyi:Float = 55
+    }
+
    
-    
     
     func seriousness()  {
        
@@ -111,6 +141,10 @@ class VoiceHuabontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(castPerforman(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        voiceModulation.inputAccessory()
+        audioEffects.inputAccessory()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         audioReactivity.clipsToBounds = true
         seriousness()
         spatialAudio()
@@ -149,6 +183,9 @@ class VoiceHuabontroller: UIViewController {
         
         chRate?.voicePitch = 800
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     @IBAction func unwindB(unwindSegue: UIStoryboardSegue) {  }
 
@@ -163,7 +200,7 @@ class VoiceHuabontroller: UIViewController {
                 
                 
                
-                SVProgressHUD.showInfo(withStatus: "Pwlpetaksgep becnhtiedrb xyzokuirt venmladiwlm rfqitresytw!".characterBelievability())
+                StageHUD.shared.whisper(message:  "Pwlpetaksgep becnhtiedrb xyzokuirt venmladiwlm rfqitresytw!".characterBelievability())
                
                 return
             }
@@ -174,7 +211,7 @@ class VoiceHuabontroller: UIViewController {
                 
                
                
-                SVProgressHUD.showInfo(withStatus: "Pulmegaysxes leynatqeurt xyrozuurw rpjaislsxwmotrzdw kfjirrpsvti!".characterBelievability())
+                StageHUD.shared.whisper(message:  "Pulmegaysxes leynatqeurt xyrozuurw rpjaislsxwmotrzdw kfjirrpsvti!".characterBelievability())
                
                 return
             }
@@ -231,7 +268,7 @@ class VoiceHuabontroller: UIViewController {
     }
     
     private func trustAndSafety()  {
-        SVProgressHUD.showInfo(withStatus: "Pllzebaxsaet nrmemasdu yojugra wpzrfiyvxaxcuyu ipkoileidcayf hainkdw fuoszeprw sfzivrasit".characterBelievability())
+        StageHUD.shared.whisper(message:  "Pllzebaxsaet nrmemasdu yojugra wpzrfiyvxaxcuyu ipkoileidcayf hainkdw fuoszeprw sfzivrasit".characterBelievability())
     }
     
     

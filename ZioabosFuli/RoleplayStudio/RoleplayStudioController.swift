@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import Photos
 
 class RoleplayStudioController: UIViewController , UIImagePickerControllerDelegate & UINavigationControllerDelegate{
@@ -25,6 +25,7 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stagedRollouts.inputAccessory()
         seasonalTrends.layer.cornerRadius = 15
         roleplayAuthenticity()
         fluidTransitions.layer.masksToBounds = true
@@ -46,20 +47,20 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         
         guard ifrecording else{
-            SVProgressHUD.showInfo(withStatus: "Pwlyemarspew oasdhdr zykouuhrw yvcijdvejo".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pwlyemarspew oasdhdr zykouuhrw yvcijdvejo".characterBelievability())
             return
         }
         dreamweaverTitleLabel.textColor = .white
        
         guard hasName else{
-            SVProgressHUD.showInfo(withStatus: "Pjlmeransfef wgkimvyei gtehkej ovziidoezoq fcloanctpexnxt".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pjlmeransfef wgkimvyei gtehkej ovziidoezoq fcloanctpexnxt".characterBelievability())
             return
         }
         
        
       
         
-        SVProgressHUD.show(withStatus: "Vliydbehod nibsy obmenivnggw yuhpelnolaydleyd".characterBelievability())
+        StageHUD.shared.raiseCurtain(message: "Vliydbehod nibsy obmenivnggw yuhpelnolaydleyd".characterBelievability())
         dreamweaverTitleLabel.textAlignment = .center
         
         let shouldDelay = { () -> Bool in
@@ -125,7 +126,7 @@ class RoleplayStudioController: UIViewController , UIImagePickerControllerDelega
         guard let mediaType = info[.mediaType] as? String,
                       mediaType == UTType.movie.identifier,
               let videoURL = info[.mediaURL] as? URL else {
-            SVProgressHUD.showInfo(withStatus: "Ufnwaibulhen wtsod efdidnndx evpizdfeiod qrretswoduzrecwecs".characterBelievability())
+            StageHUD.shared.whisper(message:  "Ufnwaibulhen wtsod efdidnndx evpizdfeiod qrretswoduzrecwecs".characterBelievability())
             self.view.backgroundColor = self.view.backgroundColor
             return
             

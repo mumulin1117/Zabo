@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 struct RoleplayPersona {
     let roloeId: String
     let personaName: String
@@ -65,7 +65,7 @@ class Fidelityroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        roleplayTheme.inputAccessory()
         storyCollaboration()
     }
 
@@ -90,7 +90,7 @@ class Fidelityroller: UIViewController {
     
     @IBAction func sceneRealism(_ sender: UIButton) {
         guard let enterquest = roleplayTheme.text,!enterquest.isEmpty else {
-            SVProgressHUD.showInfo(withStatus: "Pgloezajsqej lesndtnekrr jyootutri ccrohnhtfeynftf xfkiirisntk!".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pgloezajsqej lesndtnekrr jyootutri ccrohnhtfeynftf xfkiirisntk!".characterBelievability())
             return
         }
         self.storySeed(enterquest:enterquest)

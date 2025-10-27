@@ -4,68 +4,32 @@ PODS:
   - Adjust/Adjust (5.1.1):
     - AdjustSignature (= 3.35.2)
   - AdjustSignature (3.35.2)
-  - Alamofire (5.10.2)
   - FBAEMKit (18.0.1):
     - FBSDKCoreKit_Basics (= 18.0.1)
   - FBSDKCoreKit (18.0.1):
     - FBAEMKit (= 18.0.1)
     - FBSDKCoreKit_Basics (= 18.0.1)
   - FBSDKCoreKit_Basics (18.0.1)
-  - IQKeyboardManager (6.5.19)
-  - Player (0.14.0)
-  - SDCycleScrollView (1.82):
-    - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.21.0):
-    - SDWebImage/Core (= 5.21.0)
-  - SDWebImage/Core (5.21.0)
-  - SnapKit (5.7.1)
-  - SVProgressHUD (2.3.1):
-    - SVProgressHUD/Core (= 2.3.1)
-  - SVProgressHUD/Core (2.3.1)
-  - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
   - Adjust (~> 5.1.1)
-  - Alamofire
   - FBSDKCoreKit
-  - IQKeyboardManager
-  - Player
-  - SDCycleScrollView
-  - SnapKit
-  - SVProgressHUD
-  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
     - Adjust
     - AdjustSignature
-    - Alamofire
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
-    - IQKeyboardManager
-    - Player
-    - SDCycleScrollView
-    - SDWebImage
-    - SnapKit
-    - SVProgressHUD
-    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Adjust: 5f5e998cf1446d44d93f91ec8b7b7dd40eaa922d
   AdjustSignature: 23b9e5d4adcadffc303bb6b410fde617dd88504f
-  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   FBAEMKit: b2ed182002dbcb65d5a60059c9693d322186cd00
   FBSDKCoreKit: 7f96852f2539bdb88ba8d47e5ab4ae70a6f8d691
   FBSDKCoreKit_Basics: 22d4c1a509ded4e45116f3bb167a14907550f62e
-  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
-  Player: 37e0acc16ea1495fc241df88fe9f089367513331
-  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
-  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
-  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
-  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 70655d06fec31e986f8dbadca6d1800cec9c2780
+PODFILE CHECKSUM: d630d296636fc32e72c4e72d5f5b87530be16d3b
 
 COCOAPODS: 1.16.2

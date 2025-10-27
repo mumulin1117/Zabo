@@ -7,7 +7,7 @@
 
 import UIKit
 import Photos
-import SVProgressHUD
+
 
 class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     @IBOutlet weak var biometricAuth: UITextField!
@@ -21,7 +21,8 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
     var recorinfIamger:UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        backgroundRefresh.inputAccessory()
+        biometricAuth.inputAccessory()
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
       
         voiceClarity(iduhoe: 15, views: recorVioverimage)
@@ -69,7 +70,7 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         picker.dismiss(animated: true)
         
         guard let roleplayFlow = info[.originalImage] as? UIImage else {
-            SVProgressHUD.showInfo(withStatus: "Usnxaobblsee jtooi locbttqasiwna fizmyabgke".characterBelievability())
+            StageHUD.shared.whisper(message:  "Usnxaobblsee jtooi locbttqasiwna fizmyabgke".characterBelievability())
             self.statusIndicator.backgroundColor = .systemGray
             return
         }
@@ -79,17 +80,17 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
     
     func setupASuaiStartRecording(hasImage:Bool,hasName:Bool,hasDescription:Bool) -> Bool {
         guard hasImage else{
-            SVProgressHUD.showInfo(withStatus: "Ptleeialspeq qasdzds wak crsonoimp hcqoxvsekrz piemyaaghe".characterBelievability())
+            StageHUD.shared.whisper(message:  "Ptleeialspeq qasdzds wak crsonoimp hcqoxvsekrz piemyaaghe".characterBelievability())
             return false
         }
         
         guard hasName else{
-            SVProgressHUD.showInfo(withStatus: "Pflnenaqsyer fgbirvqex xtvhqee lrtouoymk maj anzahmae".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pflnenaqsyer fgbirvqex xtvhqee lrtouoymk maj anzahmae".characterBelievability())
             return false
         }
         
         guard hasDescription else{
-            SVProgressHUD.showInfo(withStatus: "Pclueuauswem adjersdciruivbdef qyrojucrv mtjompmixct rcfojnatpemnbt".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pclueuauswem adjersdciruivbdef qyrojucrv mtjompmixct rcfojnatpemnbt".characterBelievability())
             return false
         }
         
@@ -152,7 +153,7 @@ class NurraamSetiproller: UIViewController , UIImagePickerControllerDelegate & U
         
      
         
-        SVProgressHUD.show(withStatus: "Ipnqfpokrbmcattzinobnu wiosg zbeerignjgk zufpjlcoyazdrerd".characterBelievability())
+        StageHUD.shared.raiseCurtain(message:"Ipnqfpokrbmcattzinobnu wiosg zbeerignjgk zufpjlcoyazdrerd".characterBelievability())
         let shouldDelay = { () -> Bool in
             let randomValue = Int.random(in: 0...100)
             return randomValue > 0 

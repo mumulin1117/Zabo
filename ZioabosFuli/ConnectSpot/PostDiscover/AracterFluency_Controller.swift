@@ -7,7 +7,7 @@
 
 import UIKit
 import Photos
-import SVProgressHUD
+
 class AracterFluency_Controller: UIViewController , UIImagePickerControllerDelegate & UINavigationControllerDelegate{
 
     private  var ifrecording:Bool = false
@@ -31,7 +31,7 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
         seasonalTrends.layer.cornerRadius = 15
         dreamweaverTitleLabel.text = "Character Dream Factory"
                
-       
+        stagedRollouts.inputAccessory()
         dreamweaverTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         voiceClarity(iduhoe: 15, views: fluidTransitions)
         dreamweaverTitleLabel.textAlignment = .center
@@ -51,26 +51,26 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
         dreamweaverTitleLabel.textColor = .white
         
         guard hasImage else{
-            SVProgressHUD.showInfo(withStatus: "Prlbegawswer oasdhdg tam mrroaoqmz cccobvtefrm bizmfafgee".characterBelievability())
+            StageHUD.shared.whisper(message:  "Prlbegawswer oasdhdg tam mrroaoqmz cccobvtefrm bizmfafgee".characterBelievability())
             return
         }
         dreamweaverTitleLabel.textColor = .white
         guard hasName else{
-            SVProgressHUD.showInfo(withStatus: "Puljelatsaet pgqijvneq ptchlef prpoeoemg raj xniaymxe".characterBelievability())
+            StageHUD.shared.whisper(message:  "Puljelatsaet pgqijvneq ptchlef prpoeoemg raj xniaymxe".characterBelievability())
             return
         }
         personaFilterSegmentedControl.insertSegment(withTitle: "幻想", at: 1, animated: false)
       
         guard ifrecording else{
-            SVProgressHUD.showInfo(withStatus: "Pgltelauscee crsekcuosrudt ayaofuorv bacuqdgisou ofqilrlsvt".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pgltelauscee crsekcuosrudt ayaofuorv bacuqdgisou ofqilrlsvt".characterBelievability())
             return
         }
         personaFilterSegmentedControl.insertSegment(withTitle: "全部", at: 0, animated: false)
                
                 personaFilterSegmentedControl.selectedSegmentIndex = 0
         
-        SVProgressHUD.show(withStatus: "Ionlffogrbmwactcivound cissg cbpexianfge iubpxlcouafddead".characterBelievability())
-        displayMinimalFeedback() 
+        StageHUD.shared.raiseCurtain(message: "Ionlffogrbmwactcivound cissg cbpexianfge iubpxlcouafddead".characterBelievability())
+        displayMinimalFeedback()
         
     }
     func presentEmptyStatusNotice() {
@@ -135,7 +135,7 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
         picker.dismiss(animated: true)
         self.personaFilterSegmentedControl.insertSegment(withTitle: "历史", at: 3, animated: false)
         guard let image = info[.originalImage] as? UIImage else {
-            SVProgressHUD.showInfo(withStatus: "Ugnravbpluey ttmop wocbztcamiznd zirmpahgfe".characterBelievability())
+            StageHUD.shared.whisper(message:  "Ugnravbpluey ttmop wocbztcamiznd zirmpahgfe".characterBelievability())
             
             return
         }
@@ -169,12 +169,12 @@ class AracterFluency_Controller: UIViewController , UIImagePickerControllerDeleg
     
     @IBAction func CleadREcordIngbu(_ sender: UIButton) {
         if ifrecording == false {
-            SVProgressHUD.showInfo(withStatus: "Tdhuearten kaxrreu rnjoa pamuzdsiwon bfniqlzeusw vatviagialfaubjlaeo ofkonrz ldferloelttinoln".characterBelievability())
+            StageHUD.shared.whisper(message:  "Tdhuearten kaxrreu rnjoa pamuzdsiwon bfniqlzeusw vatviagialfaubjlaeo ofkonrz ldferloelttinoln".characterBelievability())
             return
         }
         ifrecording = false
         self.seasonalTrends.setTitle("Rbemcfolrrdhimnwg".characterBelievability(), for: .normal)
-        SVProgressHUD.showSuccess(withStatus: "Dqeslbextbea rszufcocheysasufhuflkljy".characterBelievability())
+        StageHUD.shared.applause(message: "Dqeslbextbea rszufcocheysasufhuflkljy".characterBelievability())
     }
     
     @IBAction func seasonalTrendsTakeing(_ sender: Any) {

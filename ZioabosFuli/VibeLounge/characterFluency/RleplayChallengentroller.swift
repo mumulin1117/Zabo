@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 enum CharacterArchetype {
     case hero, villain, mentor, trickster
 }

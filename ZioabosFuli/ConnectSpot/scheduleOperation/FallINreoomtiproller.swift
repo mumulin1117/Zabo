@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import AVFAudio
 
 class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -94,6 +94,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        sayHiyui.inputAccessory()
         voiceClarity(iduhoe: 19, views: roleplayScenarios)
        
         storyCollaboration()
@@ -112,12 +113,15 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
 //        self.fantasyCharacter.setBackgroundImage(StoryBabuSmeaCell.Metrics, for: .normal)
         
         self.view.addSubview(customGiftView)
-        customGiftView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.width.equalTo(290)
-            make.height.equalTo(40)
-            make.top.equalTo(improvPrompts.snp.bottom).offset(30)
-        }
+        customGiftView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            customGiftView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            customGiftView.widthAnchor.constraint(equalToConstant: 290),
+            customGiftView.heightAnchor.constraint(equalToConstant: 40),
+            customGiftView.topAnchor.constraint(equalTo: improvPrompts.bottomAnchor, constant: 30)
+        ])
+
         customGiftView.isHidden = true
        
        
@@ -198,7 +202,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             } else {
                 
-                SVProgressHUD.showInfo(withStatus: "Microphone permission denied, user needs to be prompted to enable it in settings")
+                StageHUD.shared.whisper(message:  "Microphone permission denied, user needs to be prompted to enable it in settings")
                
             }
         }
@@ -310,7 +314,7 @@ class FallINreoomtiproller: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func senfroorrmeInfog(_ sender: UIButton) {
       
         guard let enterquest = sayHiyui.text,!enterquest.isEmpty else {
-            SVProgressHUD.showInfo(withStatus: "Pllkefaqsfet decnotyetrl uyqowudrx rclocnstuexnxtd ufhihrosktt!".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pllkefaqsfet decnotyetrl uyqowudrx rclocnstuexnxtd ufhihrosktt!".characterBelievability())
             return
         }
         roleplaySession(keyu:enterquest)

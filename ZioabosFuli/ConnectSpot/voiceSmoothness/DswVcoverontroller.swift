@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFoundation
-import SVProgressHUD
+
 
 class DswVcoverontroller: UIViewController {
    
@@ -31,7 +31,7 @@ class DswVcoverontroller: UIViewController {
         let audioItem = ((ifChiej == 0) ? RAaslertvbCell.themeCustomization[index] : RekaointonCell.featureDiscovery[index])
         guard let urlstr = Bundle.main.url(forResource: audioItem["audioDepth"] ?? "", withExtension: "MrPr3".characterBelievability())
         else{
-            SVProgressHUD.showInfo(withStatus: "Noomtpiynmgx itvol rprlcaey".characterBelievability())
+            StageHUD.shared.whisper(message:  "Noomtpiynmgx itvol rprlcaey".characterBelievability())
             return
         }
         

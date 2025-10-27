@@ -4,10 +4,11 @@
 //
 //  Created by ZioabosFuli on 2025/7/7.
 //
-import SVProgressHUD
-import Player
+
+//import Player
 import UIKit
-//video detail
+import AVKit
+import AVFoundation
 class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var nnsteBase:Dictionary<String,String>
@@ -23,112 +24,156 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         fatalError("init(coder:) has not been implemented")
     }
     
-    var thematicSetting: Player?
+//    var thematicSetting: Player?
+    var avPlayer: AVPlayer?
+        var avPlayerLayer: AVPlayerLayer?
+        var avPlayerLooper: AVPlayerLooper?
+        var avQueuePlayer: AVQueuePlayer?
     
-    private func roleplayScenario()  {
-        thematicSetting?.willMove(toParent: nil)
-        sofawear?.text = "impleter"
-    }
+    func setingPakfier() {
+            sofawear?.text = "impleter"
+            
+            self.customHeiauView.antiExploitation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapVideoStatusChange)))
+            
+            guard let sceneAtmosphere = nnsteBase["AldioAlpPath"],
+                  let path = Bundle.main.path(forResource: sceneAtmosphere, ofType: "mhpg4".characterBelievability()) else {
+                sofawear?.backgroundColor = .clear
+                return
+            }
+            
+            // 创建 AVPlayer
+            let url = URL(fileURLWithPath: path)
+            avQueuePlayer = AVQueuePlayer()
+            let item = AVPlayerItem(url: url)
+            avPlayerLooper = AVPlayerLooper(player: avQueuePlayer!, templateItem: item) // 循环播放
+            
+            avPlayerLayer = AVPlayerLayer(player: avQueuePlayer)
+            avPlayerLayer?.videoGravity = .resizeAspectFill
+            avPlayerLayer?.frame = customHeiauView.antiExploitation.bounds
+            customHeiauView.antiExploitation.layer.insertSublayer(avPlayerLayer!, at: 0)
+            
+            avQueuePlayer?.play()
+            sofawear?.backgroundColor = .clear
+            self.interactiveHelp.isHidden = true
+            
+            self.showSuccessHUD(message: nil) {
+                self.interactiveHelp.isHidden = false
+            }
+        }
+    
+//    private func roleplayScenario()  {
+//        thematicSetting?.willMove(toParent: nil)
+//        sofawear?.text = "impleter"
+//    }
     
     deinit {
-        roleplayScenario()
-        sofawear?.text = nil
-        characterCustomization()
-    }
-    
-    
-    func characterCustomization()  {
-        thematicSetting?.view.removeFromSuperview()
-        sofawear?.text = "impleter"
-        thematicSetting?.removeFromParent()
-    }
-    
-    
-    func interactiveScene(Key:String)  {
-        if Key.contains("key") {
-            self.thematicSetting?.playerView.playerBackgroundColor = .clear
-            
-            
-            self.addChild(self.thematicSetting!)
+            avQueuePlayer?.pause()
+            avPlayerLayer?.removeFromSuperlayer()
+            NotificationCenter.default.removeObserver(self)
         }
-    }
+    
+    
+//    func characterCustomization()  {
+//        thematicSetting?.view.removeFromSuperview()
+//        sofawear?.text = "impleter"
+//        thematicSetting?.removeFromParent()
+//    }
+    
+    
+//    func interactiveScene(Key:String)  {
+//        if Key.contains("key") {
+//            self.thematicSetting?.playerView.playerBackgroundColor = .clear
+//            
+//            
+//            self.addChild(self.thematicSetting!)
+//        }
+//    }
     
     
     
-    func setingPakfier()  {
-        thematicSetting = Player()
-        sofawear?.text = "impleter"
-        interactiveScene(Key: "key")
-        
-        self.customHeiauView.antiExploitation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapVideoStatusChange)))
-        
-        self.customHeiauView.antiExploitation.insertSubview(self.thematicSetting!.view, at: 0)
-        thematicSetting?.didMove(toParent: self)
-        thematicSetting?.fillMode = .resizeAspectFill
-        sofawear?.backgroundColor = .clear
-        guard let sceneAtmosphere = nnsteBase["AldioAlpPath"] ,
-        let path = Bundle.main.path(forResource: sceneAtmosphere, ofType: "mhpg4".characterBelievability())
-        else {
-            sofawear?.backgroundColor = .clear
-            return
-        }
-        
-        storyProgression(Key:path)
-        sofawear?.backgroundColor = .clear
-        self.interactiveHelp.isHidden = true
-        sofawear?.textColor = .white
-        self.showSuccessHUD(message: nil){
-            self.interactiveHelp.isHidden = false
-        }
-    }
+//    func setingPakfier()  {
+//        thematicSetting = Player()
+//        sofawear?.text = "impleter"
+//        interactiveScene(Key: "key")
+//        
+//        self.customHeiauView.antiExploitation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapVideoStatusChange)))
+//        
+//        self.customHeiauView.antiExploitation.insertSubview(self.thematicSetting!.view, at: 0)
+//        thematicSetting?.didMove(toParent: self)
+//        thematicSetting?.fillMode = .resizeAspectFill
+//        sofawear?.backgroundColor = .clear
+//        guard let sceneAtmosphere = nnsteBase["AldioAlpPath"] ,
+//        let path = Bundle.main.path(forResource: sceneAtmosphere, ofType: "mhpg4".characterBelievability())
+//        else {
+//            sofawear?.backgroundColor = .clear
+//            return
+//        }
+//        
+//        storyProgression(Key:path)
+//        sofawear?.backgroundColor = .clear
+//        self.interactiveHelp.isHidden = true
+//        sofawear?.textColor = .white
+//        self.showSuccessHUD(message: nil){
+//            self.interactiveHelp.isHidden = false
+//        }
+//    }
     
     
-    func storyProgression(Key:String)  {
-        let urlPathname = URL(fileURLWithPath: Key)
-        
-        
-        self.thematicSetting?.url = urlPathname
-        if Key.count > 1 {
-            self.thematicSetting?.playbackLoops = true
-            
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(OIDShu), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
-        }
+    // MARK: - 视频 URL 设置
+       func storyProgression(Key: String) {
+           let urlPathname = URL(fileURLWithPath: Key)
+           let item = AVPlayerItem(url: urlPathname)
+           if avQueuePlayer == nil {
+               avQueuePlayer = AVQueuePlayer(items: [item])
+               avPlayerLooper = AVPlayerLooper(player: avQueuePlayer!, templateItem: item)
+               
+               avPlayerLayer = AVPlayerLayer(player: avQueuePlayer)
+               avPlayerLayer?.frame = customHeiauView.antiExploitation.bounds
+               avPlayerLayer?.videoGravity = .resizeAspectFill
+               customHeiauView.antiExploitation.layer.insertSublayer(avPlayerLayer!, at: 0)
+               
+               avQueuePlayer?.play()
+           } else {
+               avQueuePlayer?.removeAllItems()
+               avQueuePlayer?.insert(item, after: nil)
+           }
+           
+           // 添加通知替代原来通知
+           NotificationCenter.default.addObserver(self, selector: #selector(OIDShu), name: .AVPlayerItemDidPlayToEndTime, object: item)
+       }
        
-    }
-    @objc func tapVideoStatusChange()  {
-        let oriauif = self.view.backgroundColor
-        
-        self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
-        
-        switch self.thematicSetting?.playbackState {
-        case .stopped:
-            thematicSetting?.playFromBeginning()
-            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
-            customHeiauView.centerOutorStatus.isHidden = true
-        case .paused:
-            thematicSetting?.playFromCurrentTime()
-            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
-            customHeiauView.centerOutorStatus.isHidden = true
-            
-        case .playing, .failed:
-            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
-            characterRelationship(keuiop:"String")
-       
-            
-        case .none:
-            self.view.backgroundColor = self.view.frame.width > 3  ? oriauif : UIColor.black
-        }
-    }
+    @objc func tapVideoStatusChange() {
+           guard let player = avQueuePlayer else { return }
+           let oriauif = self.view.backgroundColor
+           
+           switch player.timeControlStatus {
+           case .paused:
+               player.play()
+               self.view.backgroundColor = self.view.frame.width > 3 ? oriauif : .black
+               customHeiauView.centerOutorStatus.isHidden = true
+               
+           case .waitingToPlayAtSpecifiedRate:
+               // 等待播放中
+               break
+               
+           case .playing:
+               player.pause()
+               customHeiauView.centerOutorStatus.isHidden = false
+               self.view.backgroundColor = self.view.frame.width > 3 ? oriauif : .black
+               
+           @unknown default:
+               break
+           }
+       }
     
    
-    func characterRelationship(keuiop:String)  {
-        thematicSetting?.pause()
-        if keuiop.contains("ing") {
-            customHeiauView.centerOutorStatus.isHidden = false
-        }
-        
-    }
+    // MARK: - 暂停
+       func characterRelationship(keuiop: String) {
+           avQueuePlayer?.pause()
+           if keuiop.contains("ing") {
+               customHeiauView.centerOutorStatus.isHidden = false
+           }
+       }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         0
@@ -168,6 +213,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         storyCollaboration()
         setingPakfier()
+        darkMode.inputAccessory()
     }
     
     var ifaick:Bool = false
@@ -240,7 +286,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     
     func audioVibrancy(keuiop:String)  {
         if keuiop.contains("lo") {
-            SVProgressHUD.show()
+            StageHUD.shared.raiseCurtain()
         }
        
         self.showSuccessHUD(message: "speknudw eSguacncdeqsvscfiunlv!l,gCmojmimmexnhtrse lwiimlrls zbnej fdvizsppllyafyfegdy ragfztreiro aaupjpirtoovwail".characterBelievability()){
@@ -253,7 +299,7 @@ class CreatelaDetioController: UIViewController, UITableViewDataSource, UITableV
     }
     @IBAction func accessibilityOptions(_ sender: UIButton) {
         guard let commentff = darkMode.text ,!commentff.isEmpty  else {
-            SVProgressHUD.showInfo(withStatus: "Pzleecansyee eevnktuelry fcropmwmdecnfto bfjihrlsgth!".characterBelievability())
+            StageHUD.shared.whisper(message:  "Pzleecansyee eevnktuelry fcropmwmdecnfto bfjihrlsgth!".characterBelievability())
             return
         }
        

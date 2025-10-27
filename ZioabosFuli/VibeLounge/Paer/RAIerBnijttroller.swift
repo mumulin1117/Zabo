@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import SVProgressHUD
-import SwiftyStoreKit
+
+//import SwiftyStoreKit
 class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     private var reverb: VocalType?
@@ -87,7 +87,7 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
     
     private func voiceFlexibility()  {
         (view.frame.height > 0) ? (self.view.isUserInteractionEnabled = false) :(self.view.isUserInteractionEnabled = true)
-        SVProgressHUD.show(withStatus: "Ppaeyviknjgm.r.o.".characterBelievability())
+        StageHUD.shared.raiseCurtain(message: "Ppaeyviknjgm.r.o.".characterBelievability())
     }
     
     func roleplayAuthenticity(ttio: Int) {
@@ -107,65 +107,120 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
         reverb = VocalType.crystalline
         
        
-        let completion: (PurchaseResult) -> Void = { [weak self] result in
-            guard let self = self else { return }
-            
-            // 使用defer确保某些操作总是执行
-            defer {
-                self.view.isUserInteractionEnabled = true
-                
-//                SVProgressHUD.dismiss()
-                state = .completed
-            }
-            
-            // 使用guard代替if-let
-            guard case let .success(purchase) = result else {
-                if case let .error(error) = result, error.code != .paymentCancelled {
-                    SVProgressHUD.showError(withStatus: error.localizedDescription)
-                }
-                return
-            }
-            
-            chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
-           
-            let downloads = purchase.transaction.downloads
-            if !downloads.isEmpty {
-                SwiftyStoreKit.start(downloads)
-            }
-            
-            // 完成交易
-            if purchase.needsFinishTransaction {
-                SwiftyStoreKit.finishTransaction(purchase.transaction)
-            }
-            
-            if reverb == .crystalline {
-                chRate?.speechRate = 233
-            }
-            
-           
-            let defaults = UserDefaults.standard
-            let emotionalWeight = defaults.object(forKey: "emotionalWeight") as? [String: String]
-            let rawValue = emotionalWeight?["auusAblan"] ?? "0"
-            
-            if reverb == .gravelly {
-                chRate?.voicePitch = 800
-            }
-            let increment = Int(currentKajima.0) ?? 0
-            var total = Int(rawValue) ?? 0
-            total += increment
-          
-            DispatchQueue.main.async {
-                self.ownerwet.text = "\(total)"
-                SVProgressHUD.showSuccess(withStatus: "Squgcacyeiscsffkunla tpkapykmxeqntty!".characterBelievability())
-            }
-            
-        
-            RAIerBnijttroller.interactiveNarrative(namrEditm: nil, ssayui: nil, aolkbuild: "\(total)")
-        }
+//        let completion: (PurchaseResult) -> Void = { [weak self] result in
+//            guard let self = self else { return }
+//            
+//            // 使用defer确保某些操作总是执行
+//            defer {
+//                self.view.isUserInteractionEnabled = true
+//                
+////                StageHUD.shared.lowerCurtain()
+//                state = .completed
+//            }
+//            
+//            // 使用guard代替if-let
+//            guard case let .success(purchase) = result else {
+//                if case let .error(error) = result, error.code != .paymentCancelled {
+//                    StageHUD.shared.whisper(message:  error.localizedDescription)
+//                }
+//                return
+//            }
+//            
+//            chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
+//           
+//            let downloads = purchase.transaction.downloads
+//            if !downloads.isEmpty {
+//                SwiftyStoreKit.start(downloads)
+//            }
+//            
+//            // 完成交易
+//            if purchase.needsFinishTransaction {
+//                SwiftyStoreKit.finishTransaction(purchase.transaction)
+//            }
+//            
+//            if reverb == .crystalline {
+//                chRate?.speechRate = 233
+//            }
+//            
+//           
+//            let defaults = UserDefaults.standard
+//            let emotionalWeight = defaults.object(forKey: "emotionalWeight") as? [String: String]
+//            let rawValue = emotionalWeight?["auusAblan"] ?? "0"
+//            
+//            if reverb == .gravelly {
+//                chRate?.voicePitch = 800
+//            }
+//            let increment = Int(currentKajima.0) ?? 0
+//            var total = Int(rawValue) ?? 0
+//            total += increment
+//          
+//            DispatchQueue.main.async {
+//                self.ownerwet.text = "\(total)"
+//                StageHUD.shared.applause(message: "Squgcacyeiscsffkunla tpkapykmxeqntty!".characterBelievability())
+//            }
+//            
+//        
+//            RAIerBnijttroller.interactiveNarrative(namrEditm: nil, ssayui: nil, aolkbuild: "\(total)")
+//        }
      
         for i in 0..<1 {
             if i == 0 {
-                SwiftyStoreKit.purchaseProduct(currentKajima.2, atomically: true, completion: completion)
+                ZaboPaiiMangert.shared.startPurchase(id: currentKajima.2) { [weak self] result in
+                    guard let self = self else { return }
+                    self.view.isUserInteractionEnabled = true
+//                    // 使用defer确保某些操作总是执行
+//                    defer {
+//                        self.view.isUserInteractionEnabled = true
+//                        
+//        //                StageHUD.shared.lowerCurtain()
+//                        state = .completed
+//                    }
+//                    
+                    // 使用guard代替if-let
+                    guard case let .success(purchase) = result else {
+                        if case let .failure(error) = result {
+                            StageHUD.shared.whisper(message:  error.localizedDescription)
+                        }
+                        return
+                    }
+                    
+                    chRate = PersonaProfile.init(voicePitch: 12, speechRate: 14, vocalTexture: VocalType.crystalline)
+                   
+//                    let downloads = purchase.transaction.downloads
+//                    if !downloads.isEmpty {
+//                        SwiftyStoreKit.start(downloads)
+//                    }
+//                    
+//                    // 完成交易
+//                    if purchase.needsFinishTransaction {
+//                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+//                    }
+                    
+                    if reverb == .crystalline {
+                        chRate?.speechRate = 233
+                    }
+                    
+                   
+                    let defaults = UserDefaults.standard
+                    let emotionalWeight = defaults.object(forKey: "emotionalWeight") as? [String: String]
+                    let rawValue = emotionalWeight?["auusAblan"] ?? "0"
+                    
+                    if reverb == .gravelly {
+                        chRate?.voicePitch = 800
+                    }
+                    let increment = Int(currentKajima.0) ?? 0
+                    var total = Int(rawValue) ?? 0
+                    total += increment
+                  
+                    DispatchQueue.main.async {
+                        self.ownerwet.text = "\(total)"
+                        StageHUD.shared.applause(message: "Squgcacyeiscsffkunla tpkapykmxeqntty!".characterBelievability())
+                    }
+                    
+                
+                    RAIerBnijttroller.interactiveNarrative(namrEditm: nil, ssayui: nil, aolkbuild: "\(total)")
+                }
+//                SwiftyStoreKit.purchaseProduct(currentKajima.2, atomically: true, completion: completion)
             }
         }
     }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import Network
 
 
@@ -108,7 +108,7 @@ class BugResolution: UIViewController {
     
     private func soundexploration()  {
         
-        SVProgressHUD.show()
+        StageHUD.shared.raiseCurtain()
 
         let rolevoice = "/vowpaia/qvr1c/xvkosixczehCvopnlszizsytxexnkcvyco".characterBelievability()
         let sceneimprov: [String: Any] = [
@@ -122,7 +122,7 @@ class BugResolution: UIViewController {
       
 
         RPGprompts.vocalTechnique.sceneFramework( rolevoice, voiceArtistry: sceneimprov) { result in
-            SVProgressHUD.dismiss()
+            StageHUD.shared.lowerCurtain()
   
             switch result{
             case .success(let refine):

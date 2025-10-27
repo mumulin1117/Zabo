@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class VCoiceFilter_ntroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        darkMode.inputAccessory()
         self.showSuccessHUD(message: nil)
     }
     @IBOutlet weak var darkMode: UITextField!
@@ -23,7 +23,7 @@ class VCoiceFilter_ntroller: UIViewController {
     @IBAction func sendComamentFore(_ sender: Any) {
         
         guard let commentff = darkMode.text ,!commentff.isEmpty  else {
-            SVProgressHUD.showInfo(withStatus: "Ppljeoasspeg nennztrenrq wcqoxmxmoetnctb xfoihrqsitv!".characterBelievability())
+            StageHUD.shared.whisper(message:  "Ppljeoasspeg nennztrenrq wcqoxmxmoetnctb xfoihrqsitv!".characterBelievability())
             return
         }
        
@@ -52,15 +52,15 @@ class VCoiceFilter_ntroller: UIViewController {
 
 extension UIViewController {
     func showSuccessHUD(after delay: TimeInterval = 1.2, message: String?, completion: (() -> Void)? = nil) {
-        SVProgressHUD.show()
+        StageHUD.shared.raiseCurtain()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             completion?()
             if message == nil{
-                SVProgressHUD.dismiss()
+                StageHUD.shared.lowerCurtain()
                 return
             }
-            SVProgressHUD.showSuccess(withStatus: message)
+            StageHUD.shared.applause(message: message ?? "")
         }
     }
     
@@ -80,7 +80,7 @@ extension UIViewController {
     }
 
     private func showEmptyHUD() {
-        SVProgressHUD.showInfo(withStatus: "")
+        StageHUD.shared.whisper(message:  "")
     }
 }
 

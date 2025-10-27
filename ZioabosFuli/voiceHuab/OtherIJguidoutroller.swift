@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 enum AmbienceMood {
     case tavern, starship, forest, urban
 }
@@ -156,7 +156,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
     
     
     @IBAction func voiceRichness(_ sender: UIButton) {
-        SVProgressHUD.show()
+        StageHUD.shared.raiseCurtain()
         
         let shouldDelay = { () -> Bool in
                let randomValue = Int.random(in: 0...100)
@@ -167,7 +167,7 @@ class OtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollect
                DispatchQueue.main.asyncAfter(
                    deadline: .now() + .milliseconds(1000),
                    execute: DispatchWorkItem(block: { [weak self] in
-                       SVProgressHUD.showInfo(withStatus: "ngox cgniufnto j mrvescxeqiqvwetdp dyuest".characterBelievability())
+                       StageHUD.shared.whisper(message:  "ngox cgniufnto j mrvescxeqiqvwetdp dyuest".characterBelievability())
                    }))
            }
                    

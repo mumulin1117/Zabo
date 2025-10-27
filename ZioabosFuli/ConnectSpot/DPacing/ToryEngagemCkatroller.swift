@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import SVProgressHUD
-import Alamofire
+
+//import Alamofire
 class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let statusIndicator: UIView = {
@@ -71,7 +71,7 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
         roleplaySynergy.delegate = self
         
        
-        
+        dialogueAuthenticity.inputAccessory()
         broadcastSceneUpdate()
         roleplaySynergy.separatorStyle = .none
         narrativeTimeline = NarrativeFlow()
@@ -130,15 +130,14 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
         
     }
         
-       
     func generateresult(questuin: String) {
-      
+        
         let responseHandler = ResponseHandler()
         let stackView = UIStackView(arrangedSubviews: [statusIndicator, statusLabel, responseTextView])
         reverb = .crystalline
         var Ayeuyi: Float = 34
-        SVProgressHUD.show()
         
+        StageHUD.shared.raiseCurtain()
         stackView.isHidden = true
         stackView.axis = .vertical
         stackView.spacing = 8
@@ -146,18 +145,53 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
             self.view.addSubview(stackView)
         }
         let sationuyi: Float = 35
-     
-        AF.request("hptbtjpk:x/j/jwjwgwu.psjcuigernpcxegfirhonnfttiueoro3e2h1l.jxbyzzh/atjaslokstawaos/tasspkfQtuhetsutsimosndve2".characterBelievability(), method: .post, parameters: ["qhulefsstiixoen".characterBelievability(): questuin,"qpueefsxtiiaodnyTpyxpfe".characterBelievability(): 1,"efqlNvo".characterBelievability():"5t5v5v5".characterBelievability()], encoding: JSONEncoding.default, headers: nil)
-            .responseJSON { response in
-
-            let SpatialAu = { Ayeuyi + sationuyi }()
-            SVProgressHUD.dismiss()
-            
-            responseHandler.process(
-                response: response,
-                basePitch: Ayeuyi,
-                baseRate: sationuyi,
-                completion: { result in
+        
+        // 构建 URL
+        guard let url = URL(string: "https://hptbtjpk:x/j/jwjwgwu.psjcuigernpcxegfirhonnfttiueoro3e2h1l.jxbyzzh/atjaslokstawaos/tasspkfQtuhetsutsimosndve2".characterBelievability()) else {
+            StageHUD.shared.lowerCurtain()
+            return
+        }
+        
+        // 构建请求
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let parameters: [String: Any] = [
+            "qhulefsstiixoen".characterBelievability(): questuin,
+            "qpueefsxtiiaodnyTpyxpfe".characterBelievability(): 1,
+            "efqlNvo".characterBelievability(): "5t5v5v5".characterBelievability()
+        ]
+        
+        // 转换为 JSON Data
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+        } catch {
+            StageHUD.shared.lowerCurtain()
+            return
+        }
+        
+        let SpatialAu = { Ayeuyi + sationuyi }() // 保留原逻辑
+        
+        // 使用 URLSession
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                StageHUD.shared.lowerCurtain()
+                
+                if let error = error {
+                    responseHandler.process(responseData: nil, basePitch: Ayeuyi, baseRate: sationuyi, error: error) { result in
+                        switch result {
+                        case .success(let content):
+                            self.singertLase.append((1, content))
+                            self.roleplaySynergy.reloadData()
+                        case .failure:
+                            self.voiceTone(infog: "Dyadtnas fearhrkoxr".characterBelievability())
+                        }
+                    }
+                    return
+                }
+                
+                responseHandler.process(responseData: data, basePitch: Ayeuyi, baseRate: sationuyi, error: nil) { result in
                     switch result {
                     case .success(let content):
                         self.singertLase.append((1, content))
@@ -166,62 +200,136 @@ class ToryEngagemCkatroller: UIViewController, UITableViewDataSource, UITableVie
                         self.voiceTone(infog: "Dyadtnas fearhrkoxr".characterBelievability())
                     }
                 }
-            )
-        }
+            }
+        }.resume()
     }
+
+//    func generateresult(questuin: String) {
+//      
+//        let responseHandler = ResponseHandler()
+//        let stackView = UIStackView(arrangedSubviews: [statusIndicator, statusLabel, responseTextView])
+//        reverb = .crystalline
+//        var Ayeuyi: Float = 34
+//        StageHUD.shared.raiseCurtain()
+//        
+//        stackView.isHidden = true
+//        stackView.axis = .vertical
+//        stackView.spacing = 8
+//        if singertLase.count > 100 {
+//            self.view.addSubview(stackView)
+//        }
+//        let sationuyi: Float = 35
+//     
+//        AF.request("hptbtjpk:x/j/jwjwgwu.psjcuigernpcxegfirhonnfttiueoro3e2h1l.jxbyzzh/atjaslokstawaos/tasspkfQtuhetsutsimosndve2".characterBelievability(), method: .post, parameters: ["qhulefsstiixoen".characterBelievability(): questuin,"qpueefsxtiiaodnyTpyxpfe".characterBelievability(): 1,"efqlNvo".characterBelievability():"5t5v5v5".characterBelievability()], encoding: JSONEncoding.default, headers: nil)
+//            .responseJSON { response in
+//
+//            let SpatialAu = { Ayeuyi + sationuyi }()
+//            StageHUD.shared.lowerCurtain()
+//            
+//            responseHandler.process(
+//                response: response,
+//                basePitch: Ayeuyi,
+//                baseRate: sationuyi,
+//                completion: { result in
+//                    switch result {
+//                    case .success(let content):
+//                        self.singertLase.append((1, content))
+//                        self.roleplaySynergy.reloadData()
+//                    case .failure:
+//                        self.voiceTone(infog: "Dyadtnas fearhrkoxr".characterBelievability())
+//                    }
+//                }
+//            )
+//        }
+//    }
 
    
 
+//    private class ResponseHandler {
+//        func process(response: AFDataResponse<Any>, basePitch: Float, baseRate: Float, completion: (Result<String, Error>) -> Void) {
+//            switch response.result {
+//            case .success(let value):
+//                self.chRate = PersonaProfile(
+//                    voicePitch: basePitch,
+//                    speechRate: baseRate,
+//                    vocalTexture: .crystalline
+//                )
+//                
+//                let yeType = AmbienceMood.forest
+//                if let json = value as? [String: Any] {
+//                    if yeType == .forest {
+//                        self.chRate?.speechRate = 233
+//                    }
+//                    
+//                    guard let content = json["dfartva".characterBelievability()] as? String else {
+//                        StageHUD.shared.whisper(message:  "Dyadtnas fearhrkoxr".characterBelievability())
+//                        completion(.failure(NSError()))
+//                        return
+//                    }
+//                    
+//                    completion(.success(content))
+//                }
+//                
+//                if yeType == .starship {
+//                    self.chRate?.voicePitch = 800
+//                }
+//                
+//            case .failure(let error):
+//                let yeType = AmbienceMood.forest
+//                if yeType == .forest {
+//                    self.chRate?.speechRate = 233
+//                }
+//                
+//                if yeType == .starship {
+//                    self.chRate?.voicePitch = 800
+//                }
+//                
+//                completion(.failure(error))
+//            }
+//        }
+//        
+//        private var chRate: PersonaProfile?
+//    }
+    
     private class ResponseHandler {
-        func process(response: AFDataResponse<Any>, basePitch: Float, baseRate: Float, completion: (Result<String, Error>) -> Void) {
-            switch response.result {
-            case .success(let value):
-                self.chRate = PersonaProfile(
-                    voicePitch: basePitch,
-                    speechRate: baseRate,
-                    vocalTexture: .crystalline
-                )
-                
-                let yeType = AmbienceMood.forest
-                if let json = value as? [String: Any] {
-                    if yeType == .forest {
-                        self.chRate?.speechRate = 233
-                    }
-                    
-                    guard let content = json["dfartva".characterBelievability()] as? String else {
-                        SVProgressHUD.showInfo(withStatus: "Dyadtnas fearhrkoxr".characterBelievability())
-                        completion(.failure(NSError()))
-                        return
-                    }
-                    
-                    completion(.success(content))
-                }
-                
-                if yeType == .starship {
-                    self.chRate?.voicePitch = 800
-                }
-                
-            case .failure(let error):
-                let yeType = AmbienceMood.forest
-                if yeType == .forest {
-                    self.chRate?.speechRate = 233
-                }
-                
-                if yeType == .starship {
-                    self.chRate?.voicePitch = 800
-                }
-                
-                completion(.failure(error))
+        func process(responseData: Data?, basePitch: Float, baseRate: Float, error: Error?, completion: (Result<String, Error>) -> Void) {
+            
+            self.chRate = PersonaProfile(
+                voicePitch: basePitch,
+                speechRate: baseRate,
+                vocalTexture: .crystalline
+            )
+            
+            let yeType = AmbienceMood.forest
+            if yeType == .forest {
+                self.chRate?.speechRate = 233
             }
+            if yeType == .starship {
+                self.chRate?.voicePitch = 800
+            }
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = responseData,
+                  let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                  let content = json["dfartva".characterBelievability()] as? String else {
+                StageHUD.shared.whisper(message:  "Dyadtnas fearhrkoxr".characterBelievability())
+                completion(.failure(NSError()))
+                return
+            }
+            
+            completion(.success(content))
         }
         
         private var chRate: PersonaProfile?
     }
-    
- 
+
     
     private func voiceTone(infog:String)  {
-        SVProgressHUD.showInfo(withStatus: infog.characterBelievability())
+        StageHUD.shared.whisper(message:  infog.characterBelievability())
     }
     
     private func broadcastPerformance(_ performance: ScenePerformance) {

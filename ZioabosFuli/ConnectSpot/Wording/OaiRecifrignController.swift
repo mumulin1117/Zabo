@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFAudio
-import SVProgressHUD
+
 
 class OaiRecifrignController: UIViewController {
     private let statusLabel: UILabel = {
@@ -64,7 +64,7 @@ class OaiRecifrignController: UIViewController {
                 recordingSession.requestRecordPermission { [weak self] allowed in
                     DispatchQueue.main.async {
                         if !allowed {
-                            SVProgressHUD.showInfo(withStatus: "Accwcgeesosa otyoz ptrhmez tmaiqcorooppkhiosnxec ziish kreedqrupicrhekdk jfioqry urqehcbosrmdsivnygm.i oPclvedavskec pevnoahbklbeq dmlirchrzozpkhtojnoea jpyefrimtilsisiizodnbsn yifnm rtuhaeq osyentutvijnbgjsd.".characterBelievability())
+                            StageHUD.shared.whisper(message:  "Accwcgeesosa otyoz ptrhmez tmaiqcorooppkhiosnxec ziish kreedqrupicrhekdk jfioqry urqehcbosrmdsivnygm.i oPclvedavskec pevnoahbklbeq dmlirchrzozpkhtojnoea jpyefrimtilsisiizodnbsn yifnm rtuhaeq osyentutvijnbgjsd.".characterBelievability())
                         }
                     }
                 }
@@ -73,7 +73,7 @@ class OaiRecifrignController: UIViewController {
                 responseTextView.font = .systemFont(ofSize: 16)
                 responseTextView.backgroundColor = .secondarySystemBackground
                 dreamweaverTitleLabel.textAlignment = .center
-                SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
+                StageHUD.shared.whisper(message:  "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
                
             }
        
@@ -97,7 +97,7 @@ class OaiRecifrignController: UIViewController {
                owcaseViewContro()
            } catch {
                stopRecording()
-               SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
+               StageHUD.shared.whisper(message:  "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
            }
        }
     
@@ -122,7 +122,7 @@ class OaiRecifrignController: UIViewController {
                dialogueChoice?.play()
                playActueButton.isSelected = true
            } catch {
-               SVProgressHUD.showError(withStatus: "Pnliafyj gevrormocr".characterBelievability())
+               StageHUD.shared.whisper(message:  "Pnliafyj gevrormocr".characterBelievability())
                
            }
        }
@@ -211,7 +211,7 @@ class OaiRecifrignController: UIViewController {
 extension OaiRecifrignController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
-            SVProgressHUD.showError(withStatus: "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
+            StageHUD.shared.whisper(message:  "Rnelcwohrqdzimnbgz belrdrootr".characterBelievability())
         }
     }
 }

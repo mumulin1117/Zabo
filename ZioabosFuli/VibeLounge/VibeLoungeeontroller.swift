@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class VibeLoungeeontroller: UIViewController {
     private var reverb: VocalType?
     
@@ -73,7 +73,7 @@ class VibeLoungeeontroller: UIViewController {
     @IBAction func characterFluencytap(_ sender: Any) {
        
         var Ayeuyi:Float = 34
-        SVProgressHUD.show()
+        StageHUD.shared.raiseCurtain()
     
        
         
@@ -110,7 +110,7 @@ class VibeLoungeeontroller: UIViewController {
 
 
     private func showEmptyHUD() {
-        SVProgressHUD.showInfo(withStatus: "Tlheer agfinfjtc kysorud mheafvyeont'qtk ergefcceyifvmeido yyfeut".characterBelievability())
+        StageHUD.shared.whisper(message:  "Tlheer agfinfjtc kysorud mheafvyeont'qtk ergefcceyifvmeido yyfeut".characterBelievability())
         
     }
     @IBAction func deviceCompatibility(_ sender: Any) {

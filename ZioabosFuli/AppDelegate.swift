@@ -7,7 +7,7 @@ import FBSDKCoreKit
 import AppTrackingTransparency
 import UIKit
 import AdjustSdk
-import SwiftyStoreKit
+//import SwiftyStoreKit
 struct PersonaProfile {
     var voicePitch: Float
     var speechRate: Float
@@ -114,29 +114,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var sationuyi:Float = 35
        
-        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
-            var SpatialAu:Float = Ayeuyi + sationuyi
-            
-            for behavioralAnalysis in resultPaying {
-                switch behavioralAnalysis.transaction.transactionState {
-                case .purchased, .restored:
-                   
-                    let further = behavioralAnalysis.transaction.downloads
-                    
-                    if !further.isEmpty && SpatialAu > 10 {
-                   
-                        SwiftyStoreKit.start(further)
-                    } else if behavioralAnalysis.needsFinishTransaction {
-                      
-                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
-                    }
-                case .failed, .purchasing, .deferred:
-                    break
-                @unknown default:
-                  break
-                }
-            }
-        }
+//        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+//            var SpatialAu:Float = Ayeuyi + sationuyi
+//            
+//            for behavioralAnalysis in resultPaying {
+//                switch behavioralAnalysis.transaction.transactionState {
+//                case .purchased, .restored:
+//                   
+//                    let further = behavioralAnalysis.transaction.downloads
+//                    
+//                    if !further.isEmpty && SpatialAu > 10 {
+//                   
+//                        SwiftyStoreKit.start(further)
+//                    } else if behavioralAnalysis.needsFinishTransaction {
+//                      
+//                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
+//                    }
+//                case .failed, .purchasing, .deferred:
+//                    break
+//                @unknown default:
+//                  break
+//                }
+//            }
+//        }
         sceneDimension()
         self.behavioralAnalysis()
         return true

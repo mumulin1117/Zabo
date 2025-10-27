@@ -21,3 +21,21 @@ class Enougthatroller: UIViewController {
     }
    
 }
+extension UITextField {
+    
+    func inputAccessory() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+   
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        
+        toolbar.items = [flexSpace, doneButton]
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc private func doneButtonAction() {
+        self.resignFirstResponder()
+    }
+}
