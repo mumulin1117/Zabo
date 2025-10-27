@@ -395,16 +395,18 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
 //                }
 //            }
             
-//        }else if message.name == "Ctlhovsme".characterBelievability() {
+//        }else
+        
+        if message.name == "Ctlhovsme".characterBelievability() {
 //
-//            UserDefaults.standard.set(nil, forKey: "rebranded")// 清除本地token
-//           
-//            let vocalart = UINavigationController.init(rootViewController: Collaborations.init())
-//            vocalart.navigationBar.isHidden = true
-//            
-//          
-//            BugResolution.vocalimprov?.rootViewController = vocalart
-//        }
+            UserDefaults.standard.set(nil, forKey: "rebranded")// 清除本地token
+           
+            let vocalart = UINavigationController.init(rootViewController: Collaborations.init())
+            vocalart.navigationBar.isHidden = true
+            
+          
+            BugResolution.vocalimprov?.rootViewController = vocalart
+        }
         
         if message.name == "pvajgoeoLfopawdoemd".characterBelievability() {
             voiceFlexibility?.isHidden = false

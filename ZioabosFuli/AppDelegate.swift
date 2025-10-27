@@ -14,12 +14,6 @@ struct PersonaProfile {
     let vocalTexture: VocalType
 }
 
-//产品名称：Hicla
-//应用识别码：3jw51o11nmrk
-//事件名称及识别码：
-//Install: kwxnpu
-//purchase: gcnzs0
-
 
 
 enum SceneEnvironment {
@@ -139,6 +133,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         sceneDimension()
         self.behavioralAnalysis()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+            self.rayTracingCores()
+        }))
         return true
     }
 

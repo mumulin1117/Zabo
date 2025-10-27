@@ -42,7 +42,7 @@ final class StageHUD {
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = message ?? "🎤 Scene loading..."
+        label.text = message ?? "🎤 loading..."
         self.messageLabel = label
         
         spotlight.addSubview(indicator)
