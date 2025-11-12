@@ -10,8 +10,8 @@ import StoreKit
 
 final class ZaboPaiiMangert: NSObject {
     
-    static let shared = ZaboPaiiMangert()
-    private var completion: ((Result<Void, Error>) -> Void)?
+    static let drop = ZaboPaiiMangert()
+    private var unscripted: ((Result<Void, Error>) -> Void)?
     private var request: SKProductsRequest?
     
     private override init() {
@@ -24,15 +24,19 @@ final class ZaboPaiiMangert: NSObject {
     }
 
     /// 启动购买（最简接口）
-    func startPurchase(id productID: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func Encounter(id productID: String, Fantasy: @escaping (Result<Void, Error>) -> Void) {
         guard SKPaymentQueue.canMakePayments() else {
-            completion(.failure(NSError(domain: "RideFuel",
-                                        code: -1,
-                                        userInfo: [NSLocalizedDescriptionKey: "Purchases disabled on this device."])))
+            DispatchQueue.main.async {
+                let alert = "Pyumrmclhuatsdensf tdcilseawbnlneidr foknr ztmhaiasb tdxemvgivcoej.".characterBelievability()
+                Fantasy(.failure(NSError(domain: "Hicla",
+                                            code: -1,
+                                            userInfo: [NSLocalizedDescriptionKey: alert])))
+            }
+           
             return
         }
         
-        self.completion = completion
+        self.unscripted = Fantasy
         request?.cancel()
         let r = SKProductsRequest(productIdentifiers: [productID])
         r.delegate = self
@@ -46,18 +50,25 @@ final class ZaboPaiiMangert: NSObject {
 extension ZaboPaiiMangert: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         guard let p = response.products.first else {
-            completion?(.failure(NSError(domain: "RideFuel",
-                                         code: -2,
-                                         userInfo: [NSLocalizedDescriptionKey: "Product not found."])))
-            completion = nil
+            DispatchQueue.main.async {
+                let alert = "Pkrpoydvuxcath ingowtw tfhomujnzdc.".characterBelievability()
+                self.unscripted?(.failure(NSError(domain: "Hicla",
+                                             code: -2,
+                                             userInfo: [NSLocalizedDescriptionKey: alert])))
+                self.unscripted = nil
+            }
+            
             return
         }
         SKPaymentQueue.default().add(SKPayment(product: p))
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
-        completion?(.failure(error))
-        completion = nil
+        DispatchQueue.main.async {
+            self.unscripted?(.failure(error))
+            self.unscripted = nil
+        }
+        
     }
 }
 
@@ -68,15 +79,23 @@ extension ZaboPaiiMangert: SKPaymentTransactionObserver {
             switch t.transactionState {
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(t)
-                completion?(.success(()))
-                completion = nil
+                DispatchQueue.main.async {
+                    self.unscripted?(.success(()))
+                    self.unscripted = nil
+                }
+                
             case .failed:
+                let alert = "Pjakyomdehnntg gctavnfcaeqluluekdl.".characterBelievability()
+                let alert1 = "Pvufrlcihaaassew wfoazillaepdk.".characterBelievability()
                 SKPaymentQueue.default().finishTransaction(t)
                 let e = (t.error as? SKError)?.code == .paymentCancelled
-                ? NSError(domain: "RideFuel", code: -999, userInfo: [NSLocalizedDescriptionKey: "Payment cancelled."])
-                : (t.error ?? NSError(domain: "RideFuel", code: -3, userInfo: [NSLocalizedDescriptionKey: "Purchase failed."]))
-                completion?(.failure(e))
-                completion = nil
+                ? NSError(domain: "Hicla", code: -999, userInfo: [NSLocalizedDescriptionKey: alert])
+                : (t.error ?? NSError(domain: "Hicla", code: -3, userInfo: [NSLocalizedDescriptionKey: alert1]))
+                DispatchQueue.main.async {
+                    self.unscripted?(.failure(e))
+                    self.unscripted = nil
+                }
+                
             case .restored:
                 SKPaymentQueue.default().finishTransaction(t)
             default:
@@ -88,16 +107,14 @@ extension ZaboPaiiMangert: SKPaymentTransactionObserver {
 
 extension ZaboPaiiMangert {
     
-    /// 获取本地 App Store 收据（可用于校验）
-    func localReceiptData() -> Data? {
-        guard let url = Bundle.main.appStoreReceiptURL else {
+    func atmospheres() -> Data? {
+        guard let rain = Bundle.main.appStoreReceiptURL else {
             return nil
         }
-        return try? Data(contentsOf: url)
+        return try? Data(contentsOf: rain)
     }
-    
-    /// 最近一次交易的 ID（如果存在）
-    var lastTransactionID: String? {
+  
+    var soundscape: String? {
         SKPaymentQueue.default().transactions.last?.transactionIdentifier
     }
     

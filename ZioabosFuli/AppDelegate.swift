@@ -7,14 +7,20 @@ import FBSDKCoreKit
 import AppTrackingTransparency
 import UIKit
 import AdjustSdk
-//import SwiftyStoreKit
+
 struct PersonaProfile {
     var voicePitch: Float
     var speechRate: Float
     let vocalTexture: VocalType
 }
 
-
+enum HiclaSceneState {
+    case gathering      // 收集表演者
+    case warmUp         // 热身准备
+    case performing     // 表演中
+    case coolDown       // 冷却回顾
+    case empty          // 空闲状态
+}
 
 enum SceneEnvironment {
     case medievalTavern, cyberpunkAlley, spaceStation, fantasyForest
@@ -39,10 +45,10 @@ class NarrativeFlow {
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var edgeComputingD:String = ""
+//    static var edgeComputingD:String = ""
     
     var window: UIWindow?
-    static var audioSphere:String = ""
+//    static var audioSphere:String = ""
     private var reverb: VocalType?
     
     private var chRate:PersonaProfile?
@@ -100,39 +106,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        volumetricRendering()
+        UNUserNotificationCenter.current().delegate = self
         reverb = VocalType.crystalline
-        voiceSphere()
+       
+      
         var Ayeuyi:Float = 34
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
         var sationuyi:Float = 35
-       
-//        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
-//            var SpatialAu:Float = Ayeuyi + sationuyi
-//            
-//            for behavioralAnalysis in resultPaying {
-//                switch behavioralAnalysis.transaction.transactionState {
-//                case .purchased, .restored:
-//                   
-//                    let further = behavioralAnalysis.transaction.downloads
-//                    
-//                    if !further.isEmpty && SpatialAu > 10 {
-//                   
-//                        SwiftyStoreKit.start(further)
-//                    } else if behavioralAnalysis.needsFinishTransaction {
-//                      
-//                        SwiftyStoreKit.finishTransaction(behavioralAnalysis.transaction)
-//                    }
-//                case .failed, .purchasing, .deferred:
-//                    break
-//                @unknown default:
-//                  break
-//                }
-//            }
-//        }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { performanceSphere, error in
+            DispatchQueue.main.async {
+                if performanceSphere {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
         sceneDimension()
         self.behavioralAnalysis()
+        
+        Adjust.adid { adId in
+            DispatchQueue.main.async {
+//                edgeComputingD
+               
+                if let updates = adId {
+                    UserDefaults.standard.set(updates, forKey: "edgeComputingD")
+                   
+                }
+            }
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             self.rayTracingCores()
         }))
@@ -208,28 +212,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-   
-    
-    
-    
-    
- 
-        
-        
-    
-    private func voiceSphere() {
-        
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { performanceSphere, error in
-            DispatchQueue.main.async {
-                if performanceSphere {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            }
-        }
-    }
-    
-    
     private func sceneDimension()  {
         let audioRealm = UITextField()
         audioRealm.isSecureTextEntry = true
@@ -258,7 +240,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let sceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
-        AppDelegate.audioSphere = sceneWorld
+        UserDefaults.standard.set(sceneWorld, forKey: "audioSphere")
+       
     }
 }
 
@@ -277,25 +260,13 @@ extension AppDelegate{
                 switch status {
                 case .authorized:
                    
-                    Adjust.adid { adId in
-                        DispatchQueue.main.async {
-                            if let updates = adId {
-                                AppDelegate.edgeComputingD = updates
-                            }
-                        }
-                    }
+                   break
                 default:
                    break
                 }
             }
         } else {
-            Adjust.adid { adId in
-                DispatchQueue.main.async {
-                    if let location = adId {
-                        AppDelegate.edgeComputingD = location
-                    }
-                }
-            }
+           
         }
     }
 }

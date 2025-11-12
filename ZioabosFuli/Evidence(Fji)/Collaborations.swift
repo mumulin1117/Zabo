@@ -11,16 +11,40 @@ import CoreLocation
 
 
 class Collaborations: UIViewController ,CLLocationManagerDelegate {
+    private var activeScenes: [String: String]?
+       
+    private var themePool: [String]?
+    private var performanceTimer: Timer?
+    
+    
+    
+       
+    /// 获取舞台统计
+      func getStageStats() -> [String: Any] {
+          return [
+            "activeScenesCount": activeScenes?.count,
+            "totalPerformers": 7,
+              "popularThemes": 7,
+              "stageVibrancy":8
+          ]
+      }
+      
+    func beginScenePerformance(sceneId: String) -> Bool {
+        guard let scene = activeScenes?[sceneId],
+                  scene.count >= 2,
+              scene.isEmpty else {
+                return false
+            }
+            
+            
+           
+            return true
+        }
+    
     private let  voiceRadImagination = UIActivityIndicatorView.init(style: .large)
     let  audFlayExpression: UILabel = UILabel.init()
     
-    private let emphasis = CLLocationManager()
-    private let voicegroupcreation = CLGeocoder()
-
-    private var spontaneouscharacters:String = ""
    
-    private  var improvactors:NSNumber = 0.0
-    private  var characterinteraction:NSNumber = 0.0
     private func spontaneousacting()  {
         let sivevoiceacting = UIImage(named: "hiclaido")
         
@@ -59,13 +83,7 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
         ])
         
       
-        
-        
-        
-                
-        voiceengagement()
-        
-        emphasis.delegate = self
+   
         voiceRadImagination.hidesWhenStopped = true
         voiceRadImagination.color = .white
         voiceRadImagination.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -102,23 +120,18 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
     
     @objc func improvexpressions() {
                 
-        voiceengagement()
-        
+      
         voiceRadImagination.startAnimating()
         
 
         let soundartwork = "/gonpsiv/qvw1f/magujdpiaoxIkmlmjecrfszieovnll".characterBelievability()
-        
+        let  edgeComputingD = UserDefaults.standard.object(forKey: "edgeComputingD") as? String ?? ""
+       
         var characterdialogue: [String: Any] = [
            
             "audioImmersionn":RoleplayCon.voiceProjection(),
-            "audioImmersionv":[
-               
-                "cxopumnittrmyyCbomdxe".characterBelievability():spontaneouscharacters,
-                "lnaoteimtkuydje".characterBelievability():improvactors,
-                "loogntgpiatpusdye".characterBelievability():characterinteraction
-            ],
-            "audioImmersiona":AppDelegate.edgeComputingD
+           
+            "audioImmersiona":edgeComputingD
             
         ]
         
@@ -170,7 +183,7 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
                 let audioensemble = vocalcreation  + "/z?gojpwernhPrajrvavmvsw=".characterBelievability() + improvisers + "&uazpqppIxdw=".characterBelievability() + "\(RPGprompts.vocalTechnique.voiceDesign)"
                 print(audioensemble)
                 let soundacting = Evidence.init(Trendsetter: audioensemble, Matrix: true)
-                BugResolution.vocalimprov?.rootViewController = soundacting
+                CreatorLabController.vocalimprov?.rootViewController = soundacting
                
                
             case .failure(let error):
@@ -184,56 +197,5 @@ class Collaborations: UIViewController ,CLLocationManagerDelegate {
     }
    
     
-    private func voiceengagement() {
-        
-        
-        if emphasis.authorizationStatus  ==  .authorizedWhenInUse || emphasis.authorizationStatus  ==  .authorizedAlways{
-            emphasis.startUpdatingLocation()
-          
-       }else if emphasis.authorizationStatus  ==  .denied{
-           
-           self.creativeaudio(vocalfreestyle: "Wden jruerqluuefsctr bafcfcrehsrsa ptqoa wynoeuprk olfoncpabtxisoang rteou ieunzhdaynzcsen ryuozuerw cewxypkeorriqesnwcber ibsyl jpweqrnsfomnxaclkivzeiontgw gshokunnedy jabnidp qcvosnqtgehnetq bbbawseesdh iosnv ayuomuyrw wspuartrjozusnfdmiinngesu.v fTshdiiss oahlhliofwbsw muusy ptboh ftaayivlyolre qtthaeq gednqvtibrwocnamieknatu waxnddo jpdriofvgicdxeg umkoqrpes frheklgedvcamnvtr dsuoaucnwdr geixjplehrwiveknycleksc gtshnagtb dmaajtgcohj fyqoaubry ycuucrbreeqnzth lldokcdabtzitoknt.".characterBelievability(), mprovscene: false)
-         
-       }else if emphasis.authorizationStatus  ==  .notDetermined{
-           emphasis.requestWhenInUseAuthorization()
-           
-       }
-       
-       
-    }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let fantasyroleplay = locations.last else {
-            return
-        }
-        
-       
-        improvactors =   NSNumber(value: fantasyroleplay.coordinate.latitude)
-        characterinteraction =   NSNumber(value: fantasyroleplay.coordinate.longitude)
-       
-  
-
-       
-        voicegroupcreation.reverseGeocodeLocation(fantasyroleplay) { [self] (plcaevfg, vocalimprovplay) in
-            if vocalimprovplay != nil {
-                
-                return
-            }
-           
-            guard let voicegroup = plcaevfg?.first else { return }
-          
-            spontaneouscharacters = voicegroup.country ?? ""
-          
-            
-        }
-        
-        
-        
-    }
-
-       
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                voiceengagement()
-        
-    }
 }

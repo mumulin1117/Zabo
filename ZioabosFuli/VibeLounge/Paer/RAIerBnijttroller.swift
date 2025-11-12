@@ -165,7 +165,7 @@ class RAIerBnijttroller: UIViewController, UICollectionViewDataSource, UICollect
      
         for i in 0..<1 {
             if i == 0 {
-                ZaboPaiiMangert.shared.startPurchase(id: currentKajima.2) { [weak self] result in
+                ZaboPaiiMangert.drop.Encounter(id: currentKajima.2) { [weak self] result in
                     guard let self = self else { return }
                     self.view.isUserInteractionEnabled = true
 //                    // 使用defer确保某些操作总是执行

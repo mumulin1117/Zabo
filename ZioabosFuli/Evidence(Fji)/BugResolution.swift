@@ -11,13 +11,39 @@ import Network
 
 
 class BugResolution: UIViewController {
-   
+    struct VoicePerformer {
+        let sessionId: String
+        var vocalStyle: String
+        var isReady: Bool
+        var performanceEnergy: Int
+        let joinTime: Date
+    }
+    let sceneId: String = ""
+        
+    var theme: String?
+    var currentPrompt: String?
+    var performers: [VoicePerformer]?
+    var sceneState: HiclaSceneState?
+    var ambientSoundscape: String = ""
+    private static func generateAmbientSoundscape(for theme: String) -> String {
+            let soundscapes = [
+                "fantasy": "medieval_tavern",
+                "sci-fi": "spaceship_bridge",
+                "noir": "rainy_city_streets",
+                "anime": "school_campus",
+                "horror": "haunted_mansion"
+            ]
+            return soundscapes[theme.lowercased()] ?? "creative_void"
+       
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
  
         soundplay()
     
     }
+    
     private func unpreparedperformance()  {
         let voiceartform = UIImage(named: "roleplayAdventure")
         
@@ -48,16 +74,7 @@ class BugResolution: UIViewController {
     
   
 
-    static  var vocalimprov:UIWindow?{
-        if #available(iOS 15.0, *) {
-                return UIApplication.shared.connectedScenes
-                    .compactMap { $0 as? UIWindowScene }
-                    .flatMap(\.windows)
-                    .first(where: \.isKeyWindow)
-            } else {
-                return UIApplication.shared.windows.first(where: \.isKeyWindow)
-            }
-    }
+    
     
   
     
@@ -150,7 +167,7 @@ class BugResolution: UIViewController {
                     guard let vocalensemble = UserDefaults.standard.object(forKey: "rebranded") as? String,
                           let voiceinteraction = vocaltheater else{
                     //没有登录
-                        BugResolution.vocalimprov?.rootViewController = Collaborations.init()
+                        CreatorLabController.vocalimprov?.rootViewController = Collaborations.init()
                         return
                     }
                     
@@ -178,12 +195,12 @@ class BugResolution: UIViewController {
                    
                   
                     let vocalrange = Evidence.init(Trendsetter: audioimprov, Matrix: false)
-                    BugResolution.vocalimprov?.rootViewController = vocalrange
+                    CreatorLabController.vocalimprov?.rootViewController = vocalrange
                     return
                 }
                 
                 if spontaneousaudio == 0 {
-                    BugResolution.vocalimprov?.rootViewController = Collaborations.init()
+                    CreatorLabController.vocalimprov?.rootViewController = Collaborations.init()
                 }
                 
                 

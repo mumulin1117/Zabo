@@ -12,6 +12,17 @@ import AdjustSdk
 import FBSDKCoreKit
 
 class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
+    func getRecommendedTemplates() -> [String: [String]] {
+            return [
+                "Atmospheric": ["RainyNight", "CoastalRetreat"],
+                "Fantasy": ["EnchantedWoods", "HauntedManor"],
+                "Futuristic": ["SpaceStation", "CyberCity"]
+            ]
+       
+    }
+    
+    
+    
     private var voiceFlexibility:WKWebView?
    
     var vocalDynamics:TimeInterval = Date().timeIntervalSince1970
@@ -29,6 +40,8 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -57,7 +70,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        StageHUD.shared.raiseCurtain()
+        
         artisticTrendsetter()
         if artisticGround == true {
             let  colorIndividuality = UIButton.init()
@@ -104,7 +117,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
         
         voiceFlexibility?.uiDelegate = self
         voiceFlexibility?.allowsBackForwardNavigationGestures = true
-   
+        StageHUD.shared.raiseCurtain()
         if let audioCreativity = URL.init(string: emotionalDelivery) {
             voiceFlexibility?.load(NSURLRequest.init(url:audioCreativity) as URLRequest)
             vocalDynamics = Date().timeIntervalSince1970
@@ -149,7 +162,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         voiceFlexibility?.isHidden = false
-        StageHUD.shared.lowerCurtain()
+        
         if artisticGround == true {
             StageHUD.shared.applause(message: "Lookga cisnwszulcjcuexsysjfsujlg!".characterBelievability())
             
@@ -161,7 +174,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
          let audioDiscovery: [String: Any] = [
             "storyTempoo":"\(Int(Date().timeIntervalSince1970*1000 - self.vocalDynamics*1000))"
          ]
-      
+        StageHUD.shared.lowerCurtain()
         RPGprompts.vocalTechnique.sceneFramework( performanceExploration, voiceArtistry: audioDiscovery)
        
     }
@@ -181,26 +194,16 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
             view.isUserInteractionEnabled = false
             
             StageHUD.shared.raiseCurtain()
-            ZaboPaiiMangert.shared.startPurchase(id: voiceUniverse) { [unowned self] result in
+            ZaboPaiiMangert.drop.Encounter(id: voiceUniverse) { [unowned self] result in
                 StageHUD.shared.lowerCurtain()
                 self.view.isUserInteractionEnabled = true
                 
                 switch result {
                 case .success(let audioOPProcessing):
-//                    let sceneArchiving = audioOPProcessing.transaction.downloads
-//                    
-//                    
-//                    if !sceneArchiving.isEmpty {
-//                        
-//                        SwiftyStoreKit.start(sceneArchiving)
-//                    }
-//                    
-//                    
+
                     
-                    
-                    
-                    guard let audioCraft = ZaboPaiiMangert.shared.localReceiptData(),
-                          let creativeInnovator = ZaboPaiiMangert.shared.lastTransactionID,
+                    guard let audioCraft = ZaboPaiiMangert.drop.atmospheres(),
+                          let creativeInnovator = ZaboPaiiMangert.drop.soundscape,
                           creativeInnovator.count > 5
                     else {
                         StageHUD.shared.whisper(message:  "Poaryg tfpamihllehd".characterBelievability())
@@ -253,150 +256,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
                 }
             }
         }
-//                if result == .success(let audioOPProcessing) {
-//                    let sceneArchiving = audioOPProcessing.transaction.downloads
-//                    
-//                    
-//                    if !sceneArchiving.isEmpty {
-//                        
-//                        SwiftyStoreKit.start(sceneArchiving)
-//                    }
-//                    
-//                  
-//                   
-//                   
-//                
-//                    guard let audioCraft = SwiftyStoreKit.localReceiptData,
-//                          let creativeInnovator = audioOPProcessing.transaction.transactionIdentifier,
-//                          creativeInnovator.count > 5
-//                    else {
-//                        StageHUD.shared.whisper(message:  "Poaryg tfpamihllehd".characterBelievability())
-//                       
-//                        return
-//                      }
-//                    
-//                    guard let vocalExecution = try? JSONSerialization.data(withJSONObject: ["obrhdkecrlCgohdje".characterBelievability():audioWorld], options: [.prettyPrinted]),
-//                          let voiceCraft = String(data: vocalExecution, encoding: .utf8) else{
-//                        
-//                        StageHUD.shared.whisper(message:  "Pnaiyx kfdawiwlaerd".characterBelievability())
-//                       
-//                        return
-//                    }
-//
-//                    RPGprompts.vocalTechnique.sceneFramework("/loppoil/rvw1c/ivyovincceqWbaircmvtbhep".characterBelievability(), voiceArtistry: [
-//                        "voiceWarmthp":audioCraft.base64EncodedString(),//payload
-//                        "voiceWarmtht":creativeInnovator,//transactionId
-//                        "voiceWarmthc":voiceCraft//callbackResult
-//                    ],sceneAtmosphere: true) { creativeOriginator in
-//                       
-//                        self.view.isUserInteractionEnabled = true
-//                        
-//                        switch creativeOriginator{
-//                        case .success(_):
-//                            self.ignitionTiming(nowingProductID: voiceUniverse)
-//                            StageHUD.shared.applause(message: "Phaqyb nsaubcdcueoswsmfbutlo!".characterBelievability())
-//                        case .failure(let error):
-//                            
-//                            StageHUD.shared.whisper(message:  error.localizedDescription)
-//                           
-//                        }
-//                    }
-//                    
-//                    if audioOPProcessing.needsFinishTransaction {
-//                        SwiftyStoreKit.finishTransaction(audioOPProcessing.transaction)
-//                       
-//                    }
-//                   
-//                    
-//                    
-//                }else if case .failed(let error)  {
-                    
-//                    self.view.isUserInteractionEnabled = true
-//                    
-//                    if error.code != .paymentCancelled {
-//                        
-//                        StageHUD.shared.whisper(message:  error.localizedDescription)
-//                       
-//                    }
-//                    
-//                 
-//                }
-//            }
-//            SwiftyStoreKit.purchaseProduct(voiceUniverse, atomically: true) { artisticTrailblazer in
-//                StageHUD.shared.lowerCurtain()
-//                self.view.isUserInteractionEnabled = true
-//                if case .success(let audioOPProcessing) = artisticTrailblazer {
-//                    let sceneArchiving = audioOPProcessing.transaction.downloads
-//                    
-//                    
-//                    if !sceneArchiving.isEmpty {
-//                        
-//                        SwiftyStoreKit.start(sceneArchiving)
-//                    }
-//                    
-//                  
-//                   
-//                   
-//                
-//                    guard let audioCraft = SwiftyStoreKit.localReceiptData,
-//                          let creativeInnovator = audioOPProcessing.transaction.transactionIdentifier,
-//                          creativeInnovator.count > 5
-//                    else {
-//                        StageHUD.shared.whisper(message:  "Poaryg tfpamihllehd".characterBelievability())
-//                       
-//                        return
-//                      }
-//                    
-//                    guard let vocalExecution = try? JSONSerialization.data(withJSONObject: ["obrhdkecrlCgohdje".characterBelievability():audioWorld], options: [.prettyPrinted]),
-//                          let voiceCraft = String(data: vocalExecution, encoding: .utf8) else{
-//                        
-//                        StageHUD.shared.whisper(message:  "Pnaiyx kfdawiwlaerd".characterBelievability())
-//                       
-//                        return
-//                    }
-//
-//                    RPGprompts.vocalTechnique.sceneFramework("/loppoil/rvw1c/ivyovincceqWbaircmvtbhep".characterBelievability(), voiceArtistry: [
-//                        "voiceWarmthp":audioCraft.base64EncodedString(),//payload
-//                        "voiceWarmtht":creativeInnovator,//transactionId
-//                        "voiceWarmthc":voiceCraft//callbackResult
-//                    ],sceneAtmosphere: true) { creativeOriginator in
-//                       
-//                        self.view.isUserInteractionEnabled = true
-//                        
-//                        switch creativeOriginator{
-//                        case .success(_):
-//                            self.ignitionTiming(nowingProductID: voiceUniverse)
-//                            StageHUD.shared.applause(message: "Phaqyb nsaubcdcueoswsmfbutlo!".characterBelievability())
-//                        case .failure(let error):
-//                            
-//                            StageHUD.shared.whisper(message:  error.localizedDescription)
-//                           
-//                        }
-//                    }
-//                    
-//                    if audioOPProcessing.needsFinishTransaction {
-//                        SwiftyStoreKit.finishTransaction(audioOPProcessing.transaction)
-//                       
-//                    }
-//                   
-//                    
-//                    
-//                }else if case .error(let error) = artisticTrailblazer {
-//                    
-//                    self.view.isUserInteractionEnabled = true
-//                    
-//                    if error.code != .paymentCancelled {
-//                        
-//                        StageHUD.shared.whisper(message:  error.localizedDescription)
-//                       
-//                    }
-//                    
-//                 
-//                }
-//            }
-            
-//        }else
-        
+
         if message.name == "Ctlhovsme".characterBelievability() {
 //
             UserDefaults.standard.set(nil, forKey: "rebranded")// 清除本地token
@@ -405,7 +265,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
             vocalart.navigationBar.isHidden = true
             
           
-            BugResolution.vocalimprov?.rootViewController = vocalart
+            CreatorLabController.vocalimprov?.rootViewController = vocalart
         }
         
         if message.name == "pvajgoeoLfopawdoemd".characterBelievability() {
@@ -443,7 +303,7 @@ class Evidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMes
             
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
             
-            if let crankshaftPosition = ZaboPaiiMangert.shared.lastTransactionID {
+            if let crankshaftPosition = ZaboPaiiMangert.drop.soundscape {
                 let camshaftRotation = ADJEvent(eventToken: "gcnzs0")
                 camshaftRotation?.setProductId(nowingProductID)
                 camshaftRotation?.setTransactionId(crankshaftPosition)

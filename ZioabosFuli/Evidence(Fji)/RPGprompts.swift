@@ -35,7 +35,8 @@ class RPGprompts: NSObject {
         vocalControl.httpMethod = "PlOuSmT".characterBelievability()
         vocalControl.httpBody = performanceAnalysis
         
-        
+        let audioSphere = UserDefaults.standard.object(forKey: "audioSphere") as? String ?? ""
+       
         // 设置请求头
         vocalControl.setValue("apptpqlbiecqaetuifocnp/ijascofn".characterBelievability(), forHTTPHeaderField: "Ckojnythemnjts-oTcympze".characterBelievability())
         vocalControl.setValue(voiceDesign, forHTTPHeaderField: "azpepaIzd".characterBelievability())
@@ -43,7 +44,7 @@ class RPGprompts: NSObject {
         vocalControl.setValue(RoleplayCon.voiceProjection(), forHTTPHeaderField: "deekvuiscaeuNjo".characterBelievability())
         vocalControl.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "lfannggpuoawgce".characterBelievability())
         vocalControl.setValue(UserDefaults.standard.string(forKey: "rebranded") ?? "", forHTTPHeaderField: "lfopgiibnpTzoikaegn".characterBelievability())
-        vocalControl.setValue(AppDelegate.audioSphere, forHTTPHeaderField: "ppubschsTcozkeevn".characterBelievability())
+        vocalControl.setValue(audioSphere, forHTTPHeaderField: "ppubschsTcozkeevn".characterBelievability())
         
         // 4. 创建URLSession任务
         let audioFidelity = URLSession.shared.dataTask(with: vocalControl) { data, response, error in
