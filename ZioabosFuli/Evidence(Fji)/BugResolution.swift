@@ -102,14 +102,15 @@ class BugResolution: UIViewController {
         }
         
 
-                if (Date().timeIntervalSince1970 > 1234 ) == true {
+               
+        if (Date().timeIntervalSince1970 > 1234 ) == true {
 
-                    self.soundexploration()
+            self.soundexploration()
 
-                }else{
+        }else{
 
-                    self.sounddesign()
-                }
+            self.sounddesign()
+        }
 
     }
     
