@@ -9,7 +9,7 @@ import UIKit
 import StoreKit
 
 final class ZaboPaiiMangert: NSObject {
-    
+    var soundscape: String?
     static let drop = ZaboPaiiMangert()
     private var unscripted: ((Result<Void, Error>) -> Void)?
     private var request: SKProductsRequest?
@@ -78,6 +78,7 @@ extension ZaboPaiiMangert: SKPaymentTransactionObserver {
         for t in transactions {
             switch t.transactionState {
             case .purchased:
+                self.soundscape = t.transactionIdentifier
                 SKPaymentQueue.default().finishTransaction(t)
                 DispatchQueue.main.async {
                     self.unscripted?(.success(()))
@@ -114,9 +115,6 @@ extension ZaboPaiiMangert {
         return try? Data(contentsOf: rain)
     }
   
-    var soundscape: String? {
-        SKPaymentQueue.default().transactions.last?.transactionIdentifier
-    }
-    
+   
     
 }
