@@ -6,15 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		273894B8C1A124EEF1296952 /* Pods_ZioabosFuli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DFFCEEF5731A8E14D37D1E /* Pods_ZioabosFuli.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		040233382E18B96500D43B3E /* ZioabosFuli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZioabosFuli.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		32DFFCEEF5731A8E14D37D1E /* Pods_ZioabosFuli.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZioabosFuli.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E323851D57092E8037AFA4E /* Pods-ZioabosFuli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZioabosFuli.release.xcconfig"; path = "Target Support Files/Pods-ZioabosFuli/Pods-ZioabosFuli.release.xcconfig"; sourceTree = "<group>"; };
-		7AF45C52AA4C558C2EDF7435 /* Pods-ZioabosFuli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZioabosFuli.debug.xcconfig"; path = "Target Support Files/Pods-ZioabosFuli/Pods-ZioabosFuli.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				273894B8C1A124EEF1296952 /* Pods_ZioabosFuli.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +47,6 @@
 			children = (
 				0402333A2E18B96500D43B3E /* ZioabosFuli */,
 				040233392E18B96500D43B3E /* Products */,
-				6F05EC02AF30B96D06906CE0 /* Pods */,
 				64DEB044C811E85EA5828164 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -71,18 +62,8 @@
 		64DEB044C811E85EA5828164 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				32DFFCEEF5731A8E14D37D1E /* Pods_ZioabosFuli.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6F05EC02AF30B96D06906CE0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7AF45C52AA4C558C2EDF7435 /* Pods-ZioabosFuli.debug.xcconfig */,
-				3E323851D57092E8037AFA4E /* Pods-ZioabosFuli.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,11 +73,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0402334B2E18B96700D43B3E /* Build configuration list for PBXNativeTarget "ZioabosFuli" */;
 			buildPhases = (
-				E7A3529DE48E4A59F1698982 /* [CP] Check Pods Manifest.lock */,
 				040233342E18B96500D43B3E /* Sources */,
 				040233352E18B96500D43B3E /* Frameworks */,
 				040233362E18B96500D43B3E /* Resources */,
-				D64690F2B6F6B00478B29197 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,48 +133,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		D64690F2B6F6B00478B29197 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ZioabosFuli/Pods-ZioabosFuli-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ZioabosFuli/Pods-ZioabosFuli-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZioabosFuli/Pods-ZioabosFuli-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7A3529DE48E4A59F1698982 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZioabosFuli-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		040233342E18B96500D43B3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -209,7 +146,6 @@
 /* Begin XCBuildConfiguration section */
 		0402334C2E18B96700D43B3E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AF45C52AA4C558C2EDF7435 /* Pods-ZioabosFuli.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -223,10 +159,8 @@
 				INFOPLIST_FILE = ZioabosFuli/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hicla;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to your camera to capture special moments";
-				INFOPLIST_KEY_NSLocationUsageDescription = "Hicla needs access to your location to use the iCloud camera's location feature.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access to record voice notes, add audio to your creations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Grant access to your photos to save edits, share memories, or personalize your content.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Help improve your roleplay experience by allowing tracking. This lets us suggest character voices and scene settings that match your creative style, and develop new audio features you'll love.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -253,7 +187,6 @@
 		};
 		0402334D2E18B96700D43B3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E323851D57092E8037AFA4E /* Pods-ZioabosFuli.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -267,10 +200,8 @@
 				INFOPLIST_FILE = ZioabosFuli/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hicla;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to your camera to capture special moments";
-				INFOPLIST_KEY_NSLocationUsageDescription = "Hicla needs access to your location to use the iCloud camera's location feature.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access to record voice notes, add audio to your creations";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Grant access to your photos to save edits, share memories, or personalize your content.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Help improve your roleplay experience by allowing tracking. This lets us suggest character voices and scene settings that match your creative style, and develop new audio features you'll love.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

@@ -3,18 +3,17 @@
 //  ZioabosFuli
 //
 //  Created by ZioabosFuli on 2025/7/5.
-import FBSDKCoreKit
-import AppTrackingTransparency
-import UIKit
-import AdjustSdk
 
-struct PersonaProfile {
+import UIKit
+
+
+struct EMOCLEARPersonaProfile {
     var voicePitch: Float
     var speechRate: Float
     let vocalTexture: VocalType
 }
 
-enum HiclaSceneState {
+enum EMOCLEARHiclaSceneState {
     case gathering      // 收集表演者
     case warmUp         // 热身准备
     case performing     // 表演中
@@ -22,21 +21,21 @@ enum HiclaSceneState {
     case empty          // 空闲状态
 }
 
-enum SceneEnvironment {
+enum EMOCLEARSceneEnvironment {
     case medievalTavern, cyberpunkAlley, spaceStation, fantasyForest
 }
 
-struct ScenePerformance {
+struct EMOCLEARScenePerformance {
     let actor: RoleplayPersona
-    let act: CharacterAct
+    let act: EMOCLEARCharacterAct
     let emotionalWeight: Float
 }
 
 class NarrativeFlow {
-    private(set) var performances = [ScenePerformance]()
+    private(set) var performances = [EMOCLEARScenePerformance]()
     var currentNarrator: String = "System"
     
-    func recordPerformance(_ performance: ScenePerformance) {
+    func recordPerformance(_ performance: EMOCLEARScenePerformance) {
         performances.append(performance)
     }
 }
@@ -49,53 +48,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 //    static var audioSphere:String = ""
-    private var reverb: VocalType?
+    private var EMOCLEARreverb: VocalType?
     
-    private var chRate:PersonaProfile?
-    private var currentScene = SceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
+    private var EMOCLEARchRate:EMOCLEARPersonaProfile?
+    private var EMOCLEARcurrentScene = EMOCLEARsceneSetting(environment: .cyberpunkAlley, mood: .jovial, participants: [])
         
-    private var activeCharacters = [RoleplayPersona]()
-    private var narrativeTimeline = NarrativeFlow()
-    func weaveNewScene(setting: SceneEnvironment, participants: [RoleplayPersona]) {
-        currentScene = SceneSetting(
-            environment: setting,
+    private var EMOCLEARactiveCharacters = [RoleplayPersona]()
+    private var EMOCLEARnarrativeTimeline = NarrativeFlow()
+    func EMOCLEARweaveNewScene(EMOCLEARsetting: EMOCLEARSceneEnvironment, EMOCLEARparticipants: [RoleplayPersona]) {
+        EMOCLEARcurrentScene = EMOCLEARsceneSetting(
+            environment: EMOCLEARsetting,
             mood: .neutral,
-            participants: participants
+            participants: EMOCLEARparticipants
         )
-        activeCharacters = participants
-        narrativeTimeline = NarrativeFlow()
+        EMOCLEARactiveCharacters = EMOCLEARparticipants
+        EMOCLEARnarrativeTimeline = NarrativeFlow()
         
     }
     
-    func shiftSceneMood(_ mood: SceneMood) {
-            currentScene.mood = mood
-            broadcastSceneUpdate()
+    func EMOCLEARshiftSceneMood(_ mood: EMOCLEARSceneMood) {
+            EMOCLEARcurrentScene.mood = mood
+            EMOCLEARbroadcastSceneUpdate()
         }
         
         
-    private func broadcastSceneUpdate() {
-        let update = SceneUpdate(
-            setting: currentScene,
-            activeNarrator: narrativeTimeline.currentNarrator
+    private func EMOCLEARbroadcastSceneUpdate() {
+        let updateEMOCLEAR = SceneUpdate(
+            setting: EMOCLEARcurrentScene,
+            activeNarrator: EMOCLEARnarrativeTimeline.currentNarrator
         )
-        NotificationCenter.default.post(name: .sceneDidUpdate, object: update)
+        NotificationCenter.default.post(name: .sceneDidUpdate, object: updateEMOCLEAR)
     }
     
-    func performCharacterAct(characterId: String, act: CharacterAct) {
-            guard let actor = activeCharacters.first(where: { $0.roloeId == characterId }) else { return }
+    func EMOCLEARperformCharacterAct(EMOCLEARcharacterId: String, EMOCLEARact: EMOCLEARCharacterAct) {
+            guard let actor = EMOCLEARactiveCharacters.first(where: { $0.roloeId == EMOCLEARcharacterId }) else { return }
             
-            let performance = ScenePerformance(
+            let EMOCLEARperformance = EMOCLEARScenePerformance(
                 actor: actor,
-                act: act,
-                emotionalWeight: currentScene.mood.weight
+                act: EMOCLEARact,
+                emotionalWeight: EMOCLEARcurrentScene.mood.weight
             )
             
-            narrativeTimeline.recordPerformance(performance)
-            broadcastPerformance(performance)
+            EMOCLEARnarrativeTimeline.recordPerformance(EMOCLEARperformance)
+            EMOCLEARbroadcastPerformance(EMOCLEARperformance)
         }
         
        
-    private func broadcastPerformance(_ performance: ScenePerformance) {
+    private func EMOCLEARbroadcastPerformance(_ performance: EMOCLEARScenePerformance) {
         NotificationCenter.default.post(
             name: .characterDidPerform,
             object: performance
@@ -106,12 +105,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        volumetricRendering()
+       
         UNUserNotificationCenter.current().delegate = self
-        reverb = VocalType.crystalline
+        EMOCLEARreverb = VocalType.crystalline
        
       
-        var Ayeuyi:Float = 34
+        var EMOCLEARAyeuyi:Float = 34
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -123,70 +122,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        sceneDimension()
-        self.behavioralAnalysis()
+        EMOCLEARsceneDimension()
+        self.EMOCLEARbehavioralAnalysis()
         
-        Adjust.adid { adId in
-            DispatchQueue.main.async {
-//                edgeComputingD
-               
-                if let updates = adId {
-                    UserDefaults.standard.set(updates, forKey: "edgeComputingD")
-                   
-                }
-            }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            self.rayTracingCores()
-        }))
+     
         return true
     }
 
-    private func behavioralAnalysis()  {
-        performanique()
+    private func EMOCLEARbehavioralAnalysis()  {
+        EMOCLEARperformanique()
         window?.makeKeyAndVisible()
     }
     
-    func performanique() {
-        let yeType = AmbienceMood.forest
+    func EMOCLEARperformanique() {
+        let EMOCLEARyeType = AmbienceMood.forest
         
         
         let abusePrevention = UserDefaults.standard.bool(forKey: "Chiauzabo")
-        let Ayeuyi:Float = 34
-        chRate = PersonaProfile.init(voicePitch: Ayeuyi, speechRate: 99, vocalTexture: VocalType.crystalline)
+        let EMOCLEARAyeuyi:Float = 34
+        EMOCLEARchRate = EMOCLEARPersonaProfile.init(voicePitch: EMOCLEARAyeuyi, speechRate: 99, vocalTexture: VocalType.crystalline)
         if abusePrevention == false {
-            roleplayGuide()
+            EMOCLEARroleplayGuide()
         }
-        if yeType == .forest {
-            chRate?.speechRate = 233
+        if EMOCLEARyeType == .forest {
+            EMOCLEARchRate?.speechRate = 233
         }
         
-        if yeType == .starship {
-            chRate?.voicePitch = 800
+        if EMOCLEARyeType == .starship {
+            EMOCLEARchRate?.voicePitch = 800
         }
-        self.window?.rootViewController = BugResolution()
+        self.window?.rootViewController = EMOCLEARBugResolution()
        
     }
     
     
-     func activatePersonaVoice()  {
+     func EMOCLEARactivatePersonaVoice()  {
         let yeType = AmbienceMood.forest
         if yeType == .forest {
-            chRate?.speechRate = 233
+            EMOCLEARchRate?.speechRate = 233
         }
         
         
         let trustAndSafety = UserDefaults.standard.object(forKey: "emotionalWeight")
        
         if yeType == .starship {
-            chRate?.voicePitch = 800
+            EMOCLEARchRate?.voicePitch = 800
         }
-        FallSeGistiproller.accessibilityOptions(darkMode: trustAndSafety != nil)
+        EMOCLEARFallSeGistiproller.accessibilityOptions(darkMode: trustAndSafety != nil)
     }
     
     
-    func roleplayGuide()  {
+    func EMOCLEARroleplayGuide()  {
         var pla = ["auIDG":"zabo@gmail.com"]
         let yeType = AmbienceMood.forest
        
@@ -195,7 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
         if yeType == .forest {
-            chRate?.speechRate = 233
+            EMOCLEARchRate?.speechRate = 233
         }
         pla["auuserBreCla"] = "Like Film,Book"
         
@@ -212,26 +198,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    private func sceneDimension()  {
-        let audioRealm = UITextField()
-        audioRealm.isSecureTextEntry = true
+    private func EMOCLEARsceneDimension()  {
+        let EMOCLEARaudioRealm = UITextField()
+        EMOCLEARaudioRealm.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(audioRealm))  {
-            window!.addSubview(audioRealm)
+        if (!window!.subviews.contains(EMOCLEARaudioRealm))  {
+            window!.addSubview(EMOCLEARaudioRealm)
             
-            audioRealm.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+            EMOCLEARaudioRealm.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
-            audioRealm.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            EMOCLEARaudioRealm.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
             
-            window!.layer.superlayer?.addSublayer(audioRealm.layer)
+            window!.layer.superlayer?.addSublayer(EMOCLEARaudioRealm.layer)
            
             
             if #available(iOS 17.0, *) {
                 
-                audioRealm.layer.sublayers?.last?.addSublayer(window!.layer)
+                EMOCLEARaudioRealm.layer.sublayers?.last?.addSublayer(window!.layer)
             } else {
                
-                audioRealm.layer.sublayers?.first?.addSublayer(window!.layer)
+                EMOCLEARaudioRealm.layer.sublayers?.first?.addSublayer(window!.layer)
             }
         }
     }
@@ -239,56 +225,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate:UNUserNotificationCenterDelegate{
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let sceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
-        UserDefaults.standard.set(sceneWorld, forKey: "audioSphere")
+        let EMOCLEARsceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
+        UserDefaults.standard.set(EMOCLEARsceneWorld, forKey: "audioSphere")
        
     }
 }
 
 
 
-extension AppDelegate{
-    
-   
-    
-    
+
   
-    func rayTracingCores() {
-        
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                case .authorized:
-                   
-                   break
-                default:
-                   break
-                }
-            }
-        } else {
-           
-        }
-    }
-}
-extension AppDelegate{
-    
    
-    private func volumetricRendering() {
-        let federatedLearning = ADJConfig(
-               appToken: "3jw51o11nmrk",
-               environment: ADJEnvironmentProduction
-           )
-        federatedLearning?.logLevel = .verbose
-        federatedLearning?.enableSendingInBackground()
-        Adjust.initSdk(federatedLearning)
-        Adjust.attribution() { attribution in
-            let initVD = ADJEvent.init(eventToken: "kwxnpu")
-            Adjust.trackEvent(initVD)
-            
-            
-        }
-    }
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return ApplicationDelegate.shared.application(app, open: url, options: options)
-    }
-}
+

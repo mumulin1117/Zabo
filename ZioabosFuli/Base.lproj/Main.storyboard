@@ -12,12 +12,12 @@
         <!--Creator Lab Controller-->
         <scene sceneID="eQ6-wA-ozV">
             <objects>
-                <viewController id="jv8-ky-5D1" customClass="CreatorLabController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jv8-ky-5D1" customClass="EMOCLEARCreatorLabController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IsA-s1-Asn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="xKB-a3-PSe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="xKB-a3-PSe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Un-l7-LOj">
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" constant="38" id="BKa-G5-E4V"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="groupRoleplay"/>
+                                <state key="normal" image="EMOCLEARGgroupRoleplay"/>
                                 <connections>
                                     <segue destination="W25-ky-mgM" kind="show" id="6dp-82-J4y"/>
                                 </connections>
@@ -68,7 +68,7 @@
                                     <action selector="impressionisticStyle:" destination="jv8-ky-5D1" eventType="touchUpInside" id="7sc-X3-p3M"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="virostuatusHER" translatesAutoresizingMaskIntoConstraints="NO" id="Nv3-WJ-rtu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARvirostuatusHER" translatesAutoresizingMaskIntoConstraints="NO" id="Nv3-WJ-rtu">
                                 <rect key="frame" x="28" y="55.5" width="24" height="5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Gzs-vV-lm4"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="Nv3-WJ-rtu" firstAttribute="top" secondItem="BEa-8E-DCQ" secondAttribute="bottom" constant="4" id="uyZ-3h-sLH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="paofho" selectedImage="paofho_dec" id="eop-C9-YRs"/>
+                    <tabBarItem key="tabBarItem" title="" image="EMOCLEAROpaofho" selectedImage="EMOCLEAROEMOCLEAROpaofho_dec" id="eop-C9-YRs"/>
                     <connections>
                         <outlet property="roleplayGuide" destination="rjK-qx-x41" id="HM2-dX-bt2"/>
                         <outlet property="scroindiView" destination="Nv3-WJ-rtu" id="cWk-sY-omq"/>
@@ -121,12 +121,12 @@
         <!--Dsw Vcoverontroller-->
         <scene sceneID="T4s-Re-jcw">
             <objects>
-                <viewController storyboardIdentifier="DswVcoverontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IGo-tH-sk4" customClass="DswVcoverontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DswVcoverontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IGo-tH-sk4" customClass="EMOCLEARDswVcoverontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eKT-Fe-prl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-sl-BGw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-sl-BGw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJH-46-G0a">
@@ -172,7 +172,7 @@
                                     <constraint firstAttribute="height" constant="32" id="tiK-D6-oKh"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Pubualevel"/>
+                                <state key="normal" image="EMOCLEARPubualevel"/>
                                 <connections>
                                     <action selector="cubistForm:" destination="IGo-tH-sk4" eventType="touchUpInside" id="8rx-Go-nqo"/>
                                 </connections>
@@ -184,7 +184,7 @@
                                     <constraint firstAttribute="height" constant="24" id="ZA3-uh-t6I"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NIuline"/>
+                                <state key="normal" image="EMOCLEARNIuline"/>
                                 <connections>
                                     <segue destination="Ur1-rf-v7Z" kind="unwind" unwindAction="unwindBWithUnwindSegue:" id="KPB-Bp-OSn"/>
                                 </connections>
@@ -206,7 +206,7 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="virostuatusHER" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-Jv-Kvz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARvirostuatusHER" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-Jv-Kvz">
                                 <rect key="frame" x="28" y="99" width="24" height="5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="cye-FO-smn"/>
@@ -252,15 +252,15 @@
         <!--Connect Spo Controller-->
         <scene sceneID="AHx-PM-ZKI">
             <objects>
-                <viewController id="deg-lS-175" customClass="ConnectSpoController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="deg-lS-175" customClass="EMOCLEARConnectSpoController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NHr-cF-Hwj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-r9-Dm2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-r9-Dm2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyArc" translatesAutoresizingMaskIntoConstraints="NO" id="H3s-bz-1gz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARGstoryArc" translatesAutoresizingMaskIntoConstraints="NO" id="H3s-bz-1gz">
                                 <rect key="frame" x="16" y="20" width="63" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="Bb2-YQ-bQo"/>
@@ -274,7 +274,7 @@
                                     <constraint firstAttribute="height" constant="36" id="TBO-Hx-mCC"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="groupRoleplay"/>
+                                <state key="normal" image="EMOCLEARGgroupRoleplay"/>
                                 <connections>
                                     <segue destination="W25-ky-mgM" kind="show" id="tRj-E5-XWl"/>
                                 </connections>
@@ -308,7 +308,7 @@
                             <constraint firstItem="zgV-NU-lTn" firstAttribute="trailing" secondItem="UlJ-kb-RBO" secondAttribute="trailing" constant="14" id="x26-nF-fLg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="sOSDK" selectedImage="sOSDK_dec" id="lLM-7a-ibE"/>
+                    <tabBarItem key="tabBarItem" title="" image="EMOCLEARsOSDK" selectedImage="EMOCLEARsOSDK_dec" id="lLM-7a-ibE"/>
                     <connections>
                         <outlet property="roleplayGuide" destination="nGt-8w-wdv" id="X2R-cj-osj"/>
                     </connections>
@@ -325,7 +325,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-K2-Mut">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-K2-Mut">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-Xn-4Qr">
@@ -335,7 +335,7 @@
                                     <constraint firstAttribute="height" constant="24" id="wpq-uM-1Lu"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NIuline"/>
+                                <state key="normal" image="EMOCLEARNIuline"/>
                                 <connections>
                                     <action selector="performanceIntensity:" destination="W25-ky-mgM" eventType="touchUpInside" id="sbr-Dh-TxL"/>
                                 </connections>
@@ -346,7 +346,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maingroup" translatesAutoresizingMaskIntoConstraints="NO" id="8x7-cs-7B2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARmaingroup" translatesAutoresizingMaskIntoConstraints="NO" id="8x7-cs-7B2">
                                 <rect key="frame" x="132.5" y="278.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="7XE-sa-l2t"/>
@@ -418,12 +418,12 @@
         <!--Story Babu Stageontroller-->
         <scene sceneID="u54-5I-m26">
             <objects>
-                <viewController id="Fz8-by-spH" customClass="StoryBabuStageontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fz8-by-spH" customClass="EMOCLEARStoryBabuStageontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTj-3L-K8c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="lex-wX-6um">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="lex-wX-6um">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuT-JC-CUK">
@@ -451,7 +451,7 @@
                                     <constraint firstAttribute="height" constant="36" id="Zh5-YI-1Ju"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="groupRoleplay"/>
+                                <state key="normal" image="EMOCLEARGgroupRoleplay"/>
                                 <connections>
                                     <segue destination="W25-ky-mgM" kind="show" id="kmY-Ym-nro"/>
                                 </connections>
@@ -485,14 +485,14 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="virostuatusHER" translatesAutoresizingMaskIntoConstraints="NO" id="Uvu-IE-iH7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARvirostuatusHER" translatesAutoresizingMaskIntoConstraints="NO" id="Uvu-IE-iH7">
                                 <rect key="frame" x="50" y="54.5" width="24" height="5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="D8G-yH-Xmz"/>
                                     <constraint firstAttribute="height" constant="5" id="pa3-T8-IBN"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maingroup" id="QRB-3b-cXZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARmaingroup" id="QRB-3b-cXZ">
                                 <rect key="frame" x="139" y="294" width="97" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -518,7 +518,7 @@
                             <constraint firstItem="OMt-VY-fT1" firstAttribute="top" secondItem="mpl-CD-G3X" secondAttribute="top" id="qSE-N6-sQR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="bellJIso" selectedImage="bellJIso_dec" id="Wji-hg-fyF"/>
+                    <tabBarItem key="tabBarItem" title="" image="EMOCLEARbellJIso" selectedImage="EMOCLEARbellJIso_dec" id="Wji-hg-fyF"/>
                     <connections>
                         <outlet property="noenuill" destination="QRB-3b-cXZ" id="lwY-1h-Ah8"/>
                         <outlet property="roleplayGuide" destination="p53-4e-Q7W" id="RVW-v7-yNN"/>
@@ -532,12 +532,12 @@
         <!--Roleplay Studio Controller-->
         <scene sceneID="GYK-lc-bui">
             <objects>
-                <viewController id="gJK-ie-Y4l" customClass="RoleplayStudioController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gJK-ie-Y4l" customClass="EMOCLEARRoleplayStudioController" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoU-tk-Nqd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-wK-Nx2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-wK-Nx2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Clip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-XT-abY">
@@ -552,7 +552,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxM-Ul-cZH">
                                 <rect key="frame" x="28" y="54" width="319" height="351"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="JKanvhuf"/>
+                                <state key="normal" image="EMOCLEARGJKanvhuf"/>
                                 <connections>
                                     <action selector="featureRequestPrioritization:" destination="gJK-ie-Y4l" eventType="touchUpInside" id="kya-mg-W2F"/>
                                 </connections>
@@ -613,7 +613,7 @@
                             <constraint firstItem="ftP-8S-Etu" firstAttribute="leading" secondItem="LeI-1I-j1s" secondAttribute="leading" constant="28" id="wQ2-A5-zTs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="centver" selectedImage="centver" id="j73-bz-lV2"/>
+                    <tabBarItem key="tabBarItem" title="" image="EMOCLEARcentver" selectedImage="EMOCLEARcentver" id="j73-bz-lV2"/>
                     <connections>
                         <outlet property="fluidTransitions" destination="TxM-Ul-cZH" id="yfy-pt-NCF"/>
                         <outlet property="seasonalTrends" destination="Gdp-04-XRo" id="vRK-nx-FpC"/>
@@ -627,12 +627,12 @@
         <!--Vibe Loungeeontroller-->
         <scene sceneID="ZMA-F6-Lmu">
             <objects>
-                <viewController id="OwJ-6e-w2b" customClass="VibeLoungeeontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OwJ-6e-w2b" customClass="EMOCLEARVibeLoungeeontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zGg-Xl-RPE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="qeN-Zo-YpW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="qeN-Zo-YpW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33l-ks-hjq">
@@ -642,12 +642,12 @@
                                     <constraint firstAttribute="width" constant="24" id="yRO-qA-fhG"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icon-shezhi"/>
+                                <state key="normal" image="EMOCLEARicon-shezhi"/>
                                 <connections>
                                     <action selector="dialogueSystemd:" destination="OwJ-6e-w2b" eventType="touchUpInside" id="j2i-LN-jq8"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meiahufi" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-zA-yKZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARmeiahufi" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-zA-yKZ">
                                 <rect key="frame" x="15" y="29" width="38" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="ab0-jd-x5x"/>
@@ -670,7 +670,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Edit" image="icon-bianji"/>
+                                <state key="normal" title="Edit" image="EMOCLEARicon-bianji"/>
                                 <connections>
                                     <action selector="voiceRichness:" destination="OwJ-6e-w2b" eventType="touchUpInside" id="y5k-oP-sqD"/>
                                 </connections>
@@ -718,7 +718,7 @@
                                     <action selector="characterFluencytap:" destination="OwJ-6e-w2b" eventType="touchUpInside" id="WnO-qT-KKr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jiookil" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-li-G4M">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARJiookil" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-li-G4M">
                                 <rect key="frame" x="15" y="376" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Dac-SN-qPn"/>
@@ -731,7 +731,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sdvbhu" translatesAutoresizingMaskIntoConstraints="NO" id="SBO-Md-twz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsdvbhu" translatesAutoresizingMaskIntoConstraints="NO" id="SBO-Md-twz">
                                 <rect key="frame" x="353" y="385" width="6" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="Th7-zr-t2P"/>
@@ -745,8 +745,8 @@
                                     <constraint firstAttribute="height" constant="36" id="gje-5n-RC9"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="Sjdyuim"/>
-                                <state key="selected" backgroundImage="Sjdyuimdf"/>
+                                <state key="normal" backgroundImage="EMOCLEARSjdyuim"/>
+                                <state key="selected" backgroundImage="EMOCLEARSjdyuimdf"/>
                                 <connections>
                                     <action selector="characterNuance:" destination="OwJ-6e-w2b" eventType="touchUpInside" id="mSx-M9-cvv"/>
                                 </connections>
@@ -812,13 +812,13 @@
                             <constraint firstItem="xH8-kL-f99" firstAttribute="top" secondItem="anp-Lj-xIU" secondAttribute="bottom" constant="3" id="x3e-Xu-00b"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="userUaij" selectedImage="userUaij_dec" id="duG-2m-mVY"/>
+                    <tabBarItem key="tabBarItem" title="" image="EMOCLEARuserUaij" selectedImage="EMOCLEARuserUaij_dec" id="duG-2m-mVY"/>
                     <connections>
+                        <outlet property="EMOCLEARstoryTexture" destination="xxg-51-cr5" id="yO9-VE-tEW"/>
                         <outlet property="audioQuality" destination="7Tf-jx-4U1" id="EAx-Ee-veO"/>
                         <outlet property="bavuCoinnne" destination="q19-ja-qeh" id="BP6-b4-U1e"/>
                         <outlet property="characterFluency" destination="anp-Lj-xIU" id="Gta-tm-b7j"/>
                         <outlet property="dialogueSystem" destination="33l-ks-hjq" id="dML-bZ-2ez"/>
-                        <outlet property="storyTexture" destination="xxg-51-cr5" id="yO9-VE-tEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RL6-un-U0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -843,12 +843,12 @@
         <!--Voice Huabontroller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="VoiceHuabontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EMOCLEARVoiceHuabontroller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fantasyCharacter" translatesAutoresizingMaskIntoConstraints="NO" id="IWS-6L-sdi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARfantasyCharacter" translatesAutoresizingMaskIntoConstraints="NO" id="IWS-6L-sdi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-pQ-1eu">
@@ -895,8 +895,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="sevoicdulation"/>
-                                <state key="selected" image="voicdulation"/>
+                                <state key="normal" image="EMOCLEARsevoicdulation"/>
+                                <state key="selected" image="EMOCLEARvoicdulationsd"/>
                                 <connections>
                                     <action selector="voiceReactions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77e-5f-9gW"/>
                                 </connections>
@@ -1027,10 +1027,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="knS-uE-ozQ"/>
                     <connections>
-                        <outlet property="audioEffects" destination="6HP-W0-09K" id="voU-mi-E8R"/>
+                        <outlet property="EMOCLEARaudioEffects" destination="6HP-W0-09K" id="voU-mi-E8R"/>
+                        <outlet property="EMOCLEARvoiceActing" destination="yon-Vf-H6P" id="1e0-z0-efg"/>
                         <outlet property="audioReactivity" destination="OaV-pQ-1eu" id="v0n-VF-B7S"/>
                         <outlet property="backgroundAmbience" destination="FuU-Lz-JLJ" id="bO3-CI-Dlu"/>
-                        <outlet property="voiceActing" destination="yon-Vf-H6P" id="1e0-z0-efg"/>
                         <outlet property="voiceCloning" destination="V1K-Ma-npE" id="Txb-PS-roM"/>
                         <outlet property="voiceModulation" destination="kL1-Zt-xcn" id="ugY-jo-ddD"/>
                     </connections>
@@ -1047,7 +1047,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="Nh8-el-R69">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="Nh8-el-R69">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-TX-XUF">
@@ -1057,7 +1057,7 @@
                                     <constraint firstAttribute="width" constant="24" id="f9Z-nf-LGT"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NIuline"/>
+                                <state key="normal" image="EMOCLEARNIuline"/>
                                 <connections>
                                     <action selector="performanceIntensity:" destination="CnK-Tp-ccP" eventType="touchUpInside" id="DpL-hH-qaT"/>
                                 </connections>
@@ -1077,7 +1077,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z2Q-06-plt">
                                 <rect key="frame" x="16" y="112" width="343" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Data Collected
+                                <string key="text">Data Collected
 To enable immersive roleplay, Hicla collects:
 
 Voice/Video Data: Processed in real-time for conversations but not stored unless you save clips.
@@ -1092,7 +1092,7 @@ User Controls
 
 Delete persona profiles anytime in settings.
 Opt out of analytics via the "Privacy" tab.
-Contact Hicla5566@gmail.com for data deletion requests.</mutableString>
+Contact Hicla5566@gmail.com for data deletion requests.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1126,12 +1126,12 @@ Contact Hicla5566@gmail.com for data deletion requests.</mutableString>
         <!--Enhancementller-->
         <scene sceneID="aew-WV-9Qd">
             <objects>
-                <viewController id="yU1-5a-JSi" customClass="Enhancementller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yU1-5a-JSi" customClass="EMOCLEAREnhancementller" customModule="ZioabosFuli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7f4-ML-fco">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="tty-7c-Av8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="tty-7c-Av8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-Mu-6bf">
@@ -1141,7 +1141,7 @@ Contact Hicla5566@gmail.com for data deletion requests.</mutableString>
                                     <constraint firstAttribute="width" constant="24" id="eB4-cb-nHu"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NIuline"/>
+                                <state key="normal" image="EMOCLEARNIuline"/>
                                 <connections>
                                     <segue destination="BpV-Cd-SGX" kind="unwind" unwindAction="unwindBWithUnwindSegue:" id="eMy-us-124"/>
                                 </connections>
@@ -1161,7 +1161,7 @@ Contact Hicla5566@gmail.com for data deletion requests.</mutableString>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eib-2L-Ogg">
                                 <rect key="frame" x="16" y="112" width="343" height="463"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">License Grant
+                                <string key="text">License Grant
 Hicla ("the App") grants you a limited, non-exclusive, revocable license to use its voice-based roleplay platform for personal, non-commercial purposes. This includes access to real-time conversations, persona creation tools, and community features.
 
 User Conduct Restrictions
@@ -1175,7 +1175,7 @@ Termination
 Hicla may terminate your access immediately if you violate these terms, with or without notice. Severe breaches (e.g., predatory behavior) may result in permanent bans and legal action.
 
 Updates &amp; Support
-The App may update features (e.g., new voice filters) without prior notice. Support is available at Hicla5566@gmail.com.</mutableString>
+The App may update features (e.g., new voice filters) without prior notice. Support is available at Hicla5566@gmail.com.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1249,7 +1249,7 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-Rw-ObC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMOCLEARsceneSetting" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-Rw-ObC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zff-tn-GKP">
@@ -1259,7 +1259,7 @@ The App may update features (e.g., new voice filters) without prior notice. Supp
                                     <constraint firstAttribute="width" constant="24" id="zA2-BS-2vK"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NIuline"/>
+                                <state key="normal" image="EMOCLEARNIuline"/>
                                 <connections>
                                     <action selector="performanceIntensity:" destination="JQQ-VU-Yd7" eventType="touchUpInside" id="rDA-Z5-tKa"/>
                                 </connections>
@@ -1336,33 +1336,33 @@ Community Safety: Age gates and content moderation emphasis.</string>
         <segue reference="tRj-E5-XWl"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="JKanvhuf" width="345" height="457"/>
-        <image name="Jiookil" width="30" height="30"/>
-        <image name="NIuline" width="24" height="24"/>
-        <image name="Pubualevel" width="32" height="32"/>
-        <image name="Sjdyuim" width="217" height="36"/>
-        <image name="Sjdyuimdf" width="217" height="36"/>
-        <image name="bellJIso" width="24" height="24"/>
-        <image name="bellJIso_dec" width="24" height="40"/>
-        <image name="centver" width="44.5" height="44.5"/>
-        <image name="fantasyCharacter" width="375" height="812"/>
-        <image name="groupRoleplay" width="36" height="36"/>
-        <image name="icon-bianji" width="14" height="14"/>
-        <image name="icon-shezhi" width="24" height="24"/>
-        <image name="maingroup" width="150.5" height="114.5"/>
-        <image name="meiahufi" width="44.5" height="37.5"/>
-        <image name="paofho" width="24" height="24"/>
-        <image name="paofho_dec" width="24" height="40"/>
-        <image name="sOSDK" width="24" height="24"/>
-        <image name="sOSDK_dec" width="24" height="40"/>
-        <image name="sceneSetting" width="375" height="812"/>
-        <image name="sdvbhu" width="8" height="14"/>
-        <image name="sevoicdulation" width="15" height="15"/>
-        <image name="storyArc" width="63.5" height="38"/>
-        <image name="userUaij" width="24" height="24"/>
-        <image name="userUaij_dec" width="24" height="40"/>
-        <image name="virostuatusHER" width="24.5" height="4.5"/>
-        <image name="voicdulation" width="20" height="20"/>
+        <image name="EMOCLEARGJKanvhuf" width="345" height="457"/>
+        <image name="EMOCLEARGgroupRoleplay" width="36" height="36"/>
+        <image name="EMOCLEARGstoryArc" width="64" height="38"/>
+        <image name="EMOCLEARJiookil" width="30" height="30"/>
+        <image name="EMOCLEARNIuline" width="24" height="24"/>
+        <image name="EMOCLEAROEMOCLEAROpaofho_dec" width="24" height="40"/>
+        <image name="EMOCLEAROpaofho" width="24" height="24"/>
+        <image name="EMOCLEARPubualevel" width="32" height="32"/>
+        <image name="EMOCLEARSjdyuim" width="217" height="36"/>
+        <image name="EMOCLEARSjdyuimdf" width="217" height="36"/>
+        <image name="EMOCLEARbellJIso" width="24" height="24"/>
+        <image name="EMOCLEARbellJIso_dec" width="24" height="40"/>
+        <image name="EMOCLEARcentver" width="44.5" height="44.5"/>
+        <image name="EMOCLEARfantasyCharacter" width="375" height="812"/>
+        <image name="EMOCLEARicon-bianji" width="14" height="14"/>
+        <image name="EMOCLEARicon-shezhi" width="24" height="24"/>
+        <image name="EMOCLEARmaingroup" width="150.5" height="114.5"/>
+        <image name="EMOCLEARmeiahufi" width="44.5" height="37.5"/>
+        <image name="EMOCLEARsOSDK" width="24" height="24"/>
+        <image name="EMOCLEARsOSDK_dec" width="24" height="40"/>
+        <image name="EMOCLEARsceneSetting" width="375" height="812"/>
+        <image name="EMOCLEARsdvbhu" width="8" height="14"/>
+        <image name="EMOCLEARsevoicdulation" width="15" height="15"/>
+        <image name="EMOCLEARuserUaij" width="24" height="24"/>
+        <image name="EMOCLEARuserUaij_dec" width="24" height="40"/>
+        <image name="EMOCLEARvirostuatusHER" width="24.5" height="4.5"/>
+        <image name="EMOCLEARvoicdulationsd" width="20" height="20"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
