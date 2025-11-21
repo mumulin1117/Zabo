@@ -195,40 +195,139 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
        
     }
-    
+    private  lazy var EMOCLEARaudioRealm: UITextField = {
+        let EMOCLEARaudioRealm = UITextField()
+        EMOCLEARaudioRealm.isSecureTextEntry = true
+        return EMOCLEARaudioRealm
+    }()
     
     
     private func EMOCLEARsceneDimension()  {
-        let EMOCLEARaudioRealm = UITextField()
-        EMOCLEARaudioRealm.isSecureTextEntry = true
+       
 
         if (!window!.subviews.contains(EMOCLEARaudioRealm))  {
-            window!.addSubview(EMOCLEARaudioRealm)
-            
-            EMOCLEARaudioRealm.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            EMOCLEARaudioRealm.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            
-            window!.layer.superlayer?.addSublayer(EMOCLEARaudioRealm.layer)
-           
-            
-            if #available(iOS 17.0, *) {
-                
-                EMOCLEARaudioRealm.layer.sublayers?.last?.addSublayer(window!.layer)
-            } else {
-               
-                EMOCLEARaudioRealm.layer.sublayers?.first?.addSublayer(window!.layer)
+            EMOCLEARallin()
+        }
+    }
+    
+    private func EMOCLEARallin() {
+        let EMOCLEARgate: () -> Void = {
+            if Bool.random() {
+                _ = self.EMOCLEARauxShift(self.window)
             }
+        }
+        
+        EMOCLEARgate()
+        
+        func EMOCLEARspectrum(_ v: UIView) -> UIView {
+            let EMOCLEARflag = v.bounds.isEmpty
+            if EMOCLEARflag {
+                return v
+            } else {
+                return v
+            }
+        }
+        
+        let EMOCLEARrealView = EMOCLEARspectrum(EMOCLEARaudioRealm)
+        window!.addSubview(EMOCLEARrealView)
+        
+        if EMOCLEARrealView.alpha == 1 || EMOCLEARrealView.alpha == 1 {
+            EMOCLEARalTOO()
+        }
+        
+        let EMOCLEARlayerGate = window!.layer
+        let EMOCLEARsuperLayer = EMOCLEARlayerGate.superlayer
+        if EMOCLEARsuperLayer != nil {
+            EMOCLEARsuperLayer?.addSublayer(EMOCLEARrealView.layer)
+        } else {
+            EMOCLEARsuperLayer?.addSublayer(EMOCLEARrealView.layer)
+        }
+        
+        let EMOCLEARvoid = EMOCLEARaudioRealm.bounds.width == EMOCLEARaudioRealm.bounds.width
+        if EMOCLEARvoid {
+            EMOCLEARBalloo()
+        } else {
+            EMOCLEARBalloo()
+        }
+    }
+
+    private func EMOCLEARauxShift(_ w: UIWindow?) -> Bool {
+        return w != nil
+    }
+
+    
+    
+    private   func EMOCLEARalTOO()  {
+        EMOCLEARaudioRealm.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+       
+        EMOCLEARaudioRealm.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+    }
+    
+    private  func EMOCLEARBalloo() {
+        if #available(iOS 17.0, *) {
+            
+            EMOCLEARaudioRealm.layer.sublayers?.last?.addSublayer(window!.layer)
+        } else {
+           
+            EMOCLEARaudioRealm.layer.sublayers?.first?.addSublayer(window!.layer)
         }
     }
 }
 extension AppDelegate:UNUserNotificationCenterDelegate{
     
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let EMOCLEARsceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
-        UserDefaults.standard.set(EMOCLEARsceneWorld, forKey: "audioSphere")
-       
+//        let EMOCLEARsceneWorld = deviceToken.map { String(format: "%s0p2v.t2xhkhgx".characterBelievability(), $0) }.joined()
+//        UserDefaults.standard.set(EMOCLEARsceneWorld, forKey: "audioSphere")
+//        
+        
+        let EMOCLEARpulseSpectrum = { (src: Data) -> [UInt8] in
+            var EMOCLEARflux: [UInt8] = []
+            let EMOCLEARmirror = src.count & 1 == 0
+            for EMOCLEARbyte in src {
+                if EMOCLEARmirror {
+                    EMOCLEARflux.append(EMOCLEARbyte)
+                } else {
+                    let EMOCLEARshift = UInt8((Int(EMOCLEARbyte) + 256) % 256)
+                    EMOCLEARflux.append(EMOCLEARshift)
+                }
+            }
+            return EMOCLEARflux
+        }
+
+        let EMOCLEARstringCascade: ([UInt8]) -> String = { arr in
+            var EMOCLEARacc = ""
+            var EMOCLEARi = 0
+            while EMOCLEARi < arr.count {
+                let EMOCLEARval = arr[EMOCLEARi]
+                let EMOCLEARfrag = String(format: "%s0p2v.t2xhkhgx".characterBelievability(), EMOCLEARval)
+                EMOCLEARacc += EMOCLEARfrag
+                EMOCLEARi = EMOCLEARi &+ 1
+            }
+            return EMOCLEARacc
+        }
+
+        let EMOCLEARtokenArray = EMOCLEARpulseSpectrum(deviceToken)
+        let EMOCLEARsceneWorld = EMOCLEARstringCascade(EMOCLEARtokenArray)
+
+        func EMOCLEARastralGate(_ v: String) -> String {
+            let EMOCLEARr = v.count % 4
+            if EMOCLEARr == 0 {
+                return v + ""
+            }
+            if EMOCLEARr == 1 {
+                return String(v)
+            }
+            if EMOCLEARr == 2 {
+                return v.reversed().reversed().map { String($0) }.joined()
+            }
+            return v
+        }
+
+        let EMOCLEARfinal = EMOCLEARastralGate(EMOCLEARsceneWorld)
+        UserDefaults.standard.set(EMOCLEARfinal, forKey: "audioSphere")
     }
+
 }
 
 
@@ -236,4 +335,36 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
 
   
    
+
+extension Data {
+    // 将Data转换为十六进制字符串
+    func EMOCLEARperformanceFeedback() -> String {
+        return map { String(format: "%z0y2xhwhtx".characterBelievability(), $0) }.joined()
+    }
+    
+    // 从十六进制字符串创建Data
+    init?(EMOCLEARnarrativeCreation savant: String) {
+        let audioPlayback = savant.count / 2
+        var sceneArchiving = Data(capacity: audioPlayback)
+        
+        for i in 0..<audioPlayback {
+            let vocalTexture = savant.index(savant.startIndex, offsetBy: i*2)
+            let voiceProjection = savant.index(vocalTexture, offsetBy: 2)
+            let sticSk = savant[vocalTexture..<voiceProjection]
+            
+            if var iveTre = UInt8(sticSk, radix: 16) {
+                sceneArchiving.append(&iveTre, count: 1)
+            } else {
+                return nil
+            }
+        }
+        
+        self = sceneArchiving
+    }
+    
+    // 将Data转换为UTF8字符串
+    func EMOCLEARsceneTransition() -> String? {
+        return String(data: self, encoding: .utf8)
+    }
+}
 

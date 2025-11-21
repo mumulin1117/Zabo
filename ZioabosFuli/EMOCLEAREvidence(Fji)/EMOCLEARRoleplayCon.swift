@@ -9,10 +9,10 @@ import UIKit
 
 class EMOCLEARRoleplayCon: NSObject {
    
-       private static let EMOCLEARcolorSubtlety: String = "com.gtwedbs.aaziiabba"
+       private static let EMOCLEARcolorSubtlety: String = "com.gtwedbs.aaziiabbaasd"
    
-       private static let EMOCLEARvoiceActing = "com.gtwedbs.zaboid"
-       private static let EMOCLEARcreativeExpression = "com.gtwedbs.zaboword"
+       private static let EMOCLEARvoiceActing = "com.gtwedbs.zaboidasd"
+       private static let EMOCLEARcreativeExpression = "com.gtwedbs.zabowordasd"
        
        // MARK: - 设备ID管理
        
@@ -97,37 +97,5 @@ class EMOCLEARRoleplayCon: NSObject {
 
 }
 
-
-extension Data {
-    // 将Data转换为十六进制字符串
-    func EMOCLEARperformanceFeedback() -> String {
-        return map { String(format: "%z0y2xhwhtx".characterBelievability(), $0) }.joined()
-    }
-    
-    // 从十六进制字符串创建Data
-    init?(EMOCLEARnarrativeCreation savant: String) {
-        let audioPlayback = savant.count / 2
-        var sceneArchiving = Data(capacity: audioPlayback)
-        
-        for i in 0..<audioPlayback {
-            let vocalTexture = savant.index(savant.startIndex, offsetBy: i*2)
-            let voiceProjection = savant.index(vocalTexture, offsetBy: 2)
-            let sticSk = savant[vocalTexture..<voiceProjection]
-            
-            if var iveTre = UInt8(sticSk, radix: 16) {
-                sceneArchiving.append(&iveTre, count: 1)
-            } else {
-                return nil
-            }
-        }
-        
-        self = sceneArchiving
-    }
-    
-    // 将Data转换为UTF8字符串
-    func EMOCLEARsceneTransition() -> String? {
-        return String(data: self, encoding: .utf8)
-    }
-}
 
 
