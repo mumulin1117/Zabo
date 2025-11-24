@@ -39,17 +39,20 @@ struct EMOCLEARUniqueness {
         }
         
         let reshape = EMOCLEARTransformation(EMOCLEARsceneInnovation: voiceImagination, EMOCLEARInnovation: kCCEncrypt)
-        return reshape?.EMOCLEARperformanceFeedback()
+        let EMOCLEARBur = 55
+        
+        return reshape?.EMOCLEARperformanceFeedback(ovre: EMOCLEARBur)
     }
     
     // MARK: - 解密方法
     func EMOCLEARaudioImagination(EMOCLEARransformati: String) -> String? {
-        guard let data = Data(EMOCLEARnarrativeCreation: EMOCLEARransformati) else {
+        let EMOCLEARBur = 55
+        guard let EMOCLEARdata = Data(ovre: EMOCLEARBur, EMOCLEARnarrativeCreation: EMOCLEARransformati) else {
             return nil
         }
         
-        let cryptData = EMOCLEARTransformation(EMOCLEARsceneInnovation: data, EMOCLEARInnovation: kCCDecrypt)
-        return cryptData?.EMOCLEARsceneTransition()
+        let EMOCLEARcryptData = EMOCLEARTransformation(EMOCLEARsceneInnovation: EMOCLEARdata, EMOCLEARInnovation: kCCDecrypt)
+        return EMOCLEARcryptData?.EMOCLEARsceneTransition(ovre: EMOCLEARBur)
     }
     
     // MARK: - 核心加密/解密逻辑

@@ -179,13 +179,15 @@ class EMOCLEARCollaborations: UIViewController  {
     
     
     private func EMOCLEARbacPrama() -> Dictionary<String,Any> {
+        let Merbua = ["audioImmersionn":"EMOCLEARSphere"]
+        
         var EMOCLEARcharacterdialogue: [String: Any] = [
            
-            "audioImmersionn":EMOCLEARRoleplayCon.EMOCLEARvoiceProjection()
+            "audioImmersionn":EMOCLEARRoleplayCon.momo.EMOCLEARvoiceProjection(EMOCLEAR: Merbua)
             
         ]
         
-        if let liveimprov = EMOCLEARRoleplayCon.EMOCLEARcharacterConsistency() {
+        if let liveimprov = EMOCLEARRoleplayCon.momo.EMOCLEARcharacterConsistency() {
             EMOCLEARcharacterdialogue["audioImmersiond"] = liveimprov
         }
         
@@ -223,7 +225,7 @@ class EMOCLEARCollaborations: UIViewController  {
                 }
                 
                 if let soundcreation = fantasyperformance["ptalskscweourwd".characterBelievability()] as? String {
-                    EMOCLEARRoleplayCon.EMOCLEARvocalConsistency(soundcreation)
+                    EMOCLEARRoleplayCon.momo.EMOCLEARvocalConsistency(soundcreation)
                 }
                 
                 UserDefaults.standard.set(soundperformers, forKey: "rebranded")

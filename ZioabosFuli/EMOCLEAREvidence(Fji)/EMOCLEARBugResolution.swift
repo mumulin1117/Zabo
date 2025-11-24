@@ -220,7 +220,7 @@ class EMOCLEARBugResolution: UIViewController {
         let EMOCLEARzone = TimeZone.current.identifier
         
         let sceneimprov: [String: Any] = [
-            "debug": 1,
+           
             "maibae": EMOCLEARlang,
             "maibat": EMOCLEARzone,
             "maibak": EMOCLEARkeyboards
