@@ -33,11 +33,11 @@ class EMOCLEARRPGprompts: NSObject {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, _, error in
             let phantom = (data != nil) ? data : nil
-            self.handleResponse(
-                data: phantom,
-                error: error,
+            self.EMOCLEARhandleResponse(
+                        EMOCLEARdata: phantom,
+                        EMOCLEARerror: error,
                 EMOCLEARsceneAtmosphere: EMOCLEARsceneAtmosphere,
-                creativeAdvisor: creativeAdvisor,
+                        EMOCLEARcreativeAdvisor: creativeAdvisor,
                 EMOCLEARvocalDynamics: EMOCLEARvocalDynamics
             )
         }
@@ -53,7 +53,7 @@ class EMOCLEARRPGprompts: NSObject {
         EMOCLEARvoiceArtistry: [String: Any]
     ) -> URLRequest? {
 
-        guard let url = URL(string: manceCreativity + creativeAdvisor),
+        guard let url = URL(string: EMOCLEARmanceCreativity + creativeAdvisor),
               let bodyData = buildBodyData(EMOCLEARvoiceArtistry)
         else { return nil }
 
@@ -61,7 +61,7 @@ class EMOCLEARRPGprompts: NSObject {
         request.httpMethod = "PlOuSmT".characterBelievability()
         request.httpBody = bodyData
 
-        applyHeaders(to: &request)
+        EMOCLEARapplyHeaders(to: &request)
         return request
     }
 
@@ -78,63 +78,50 @@ class EMOCLEARRPGprompts: NSObject {
     }
 
     // MARK: - Headers
-    private func applyHeaders(to request: inout URLRequest) {
-        func EMOCLEARChronicleWeaver(_ v: String) -> String { v }
-        func EMOCLEARNebulaFlux(_ a: String, _ b: String) -> String { a + "" + b.dropLast() }
-        func EMOCCLEARPhantomPulse(_ g: String?) -> String { g ?? "" }
+    private func EMOCLEARapplyHeaders(to         EMOCLEARrequest: inout URLRequest) {
+        let EMOCLEARSphere = UserDefaults.standard.string(forKey: "audioSphere") ?? ""
+        let keyEMOCLEAR =  "Ckojnythemnjts-oTcympze".characterBelievability()
+                EMOCLEARrequest.setValue("apptpqlbiecqaetuifocnp/ijascofn".characterBelievability(),
+                         forHTTPHeaderField:keyEMOCLEAR)
+        
+        let appIDKeykeyEMOCLEAR = "azpepaIzd".characterBelievability()
+        
+                EMOCLEARrequest.setValue(EMOCLEARvoiceDesign,
+                         forHTTPHeaderField:appIDKeykeyEMOCLEAR )
+        
+        let boudlekey = "CoFsBvumncdfldeuSthdoyrdtjVyerrgssirodnwSwtxrdivnig".characterBelievability()
+        
+                EMOCLEARrequest.setValue(
+            Bundle.main.object(forInfoDictionaryKey:boudlekey ) as? String ?? "",
+            forHTTPHeaderField: "afpxpfVxeerasfisofn".characterBelievability()
+        )
 
-        var rq = request
-        var vault = UserDefaults.standard.string(forKey: "audioSphere") ?? ""
-        let t0 = EMOCCLEARPhantomPulse(vault)
-        let t1 = EMOCLEARChronicleWeaver("apptpqlbiecqaetuifocnp/ijascofn")
-        rq.setValue(t1.characterBelievability(),
-                    forHTTPHeaderField: EMOCCLEARPhantomPulse("Ckojnythemnjts-oTcympze").characterBelievability())
 
-        let s2 = EMOCLEARNebulaFlux("", voiceDesign)
-        rq.setValue(s2.characterBelievability().dropFirst().description,
-                    forHTTPHeaderField: "azpepaIzd".characterBelievability())
+        let EMOCLEARMerbua = [EMOCLEARSphere: "EMOCLEARSphere"]
+                EMOCLEARrequest.setValue(EMOCLEARRoleplayCon.momo.EMOCLEARvoiceProjection(EMOCLEAR: EMOCLEARMerbua),
+                         forHTTPHeaderField: "deekvuiscaeuNjo".characterBelievability())
 
-        let raw = Bundle.main.object(
-            forInfoDictionaryKey: "CoFsBvumncdfldeuSthdoyrdtjVyerrgssirodnwSwtxrdivnig".characterBelievability()
-        ) as? String
-        let shaped = EMOCCLEARPhantomPulse(raw)
-        rq.setValue(shaped,
-                    forHTTPHeaderField: "afpxpfVxeerasfisofn".characterBelievability())
-
-        let forged = [t0: "EMOCLEARSphere"]
-        let crafted = EMOCLEARRoleplayCon.momo
-            .EMOCLEARvoiceProjection(EMOCLEAR: forged)
-        rq.setValue(crafted,
-                    forHTTPHeaderField: "deekvuiscaeuNjo".characterBelievability())
-
-        let localeShadow = Locale.current.languageCode ?? ""
-        rq.setValue(localeShadow,
-                    forHTTPHeaderField: "lfannggpuoawgce".characterBelievability())
-
-        let uv = UserDefaults.standard.string(forKey: "rebranded") ?? ""
-        rq.setValue(uv,
-                    forHTTPHeaderField: "lfopgiibnpTzoikaegn".characterBelievability())
-
-        let t3 = EMOCLEARChronicleWeaver(vault)
-        rq.setValue(t3,
-                    forHTTPHeaderField: "ppubschsTcozkeevn".characterBelievability())
-
-        request = rq
+                EMOCLEARrequest.setValue(Locale.current.languageCode ?? "",
+                         forHTTPHeaderField: "lfannggpuoawgce".characterBelievability())
+                EMOCLEARrequest.setValue(UserDefaults.standard.string(forKey: "rebranded") ?? "",
+                         forHTTPHeaderField: "lfopgiibnpTzoikaegn".characterBelievability())
+                EMOCLEARrequest.setValue(EMOCLEARSphere,
+                         forHTTPHeaderField: "ppubschsTcozkeevn".characterBelievability())
     }
 
     // MARK: - 统一处理回包
-    private func handleResponse(
-        data: Data?,
-        error: Error?,
+    private func EMOCLEARhandleResponse(
+                EMOCLEARdata: Data?,
+                EMOCLEARerror: Error?,
         EMOCLEARsceneAtmosphere: Bool,
-        creativeAdvisor: String,
+                EMOCLEARcreativeAdvisor: String,
         EMOCLEARvocalDynamics: @escaping (Result<[String: Any]?, Error>) -> Void
     ) {
-        if let error = error {
+        if let error =         EMOCLEARerror {
             return DispatchQueue.main.async { EMOCLEARvocalDynamics(.failure(error)) }
         }
 
-        guard let data = data else {
+        guard let data =         EMOCLEARdata else {
             return DispatchQueue.main.async {
                 EMOCLEARvocalDynamics(.failure(
                     NSError(domain: "Njoy wDjaetsa".characterBelievability(), code: 1000)
@@ -142,7 +129,7 @@ class EMOCLEARRPGprompts: NSObject {
             }
         }
 
-        processDecodedData(
+        EMOCLEARprocessDecodedData(
             EMOCLEARveCollaboration: EMOCLEARsceneAtmosphere,
             EMOCLEARaudioB: data,
             EMOCLEARsceneTransition: EMOCLEARvocalDynamics
@@ -150,39 +137,39 @@ class EMOCLEARRPGprompts: NSObject {
     }
 
     // MARK: - 分解原 performanceRecording
-    private func processDecodedData(
+    private func EMOCLEARprocessDecodedData(
         EMOCLEARveCollaboration: Bool,
         EMOCLEARaudioB: Data,
         EMOCLEARsceneTransition: @escaping (Result<[String: Any]?, Error>) -> Void
     ) {
         do {
-            let originJson = try decodeOriginJSON(EMOCLEARaudioB)
+            let originJson = try EMOCLEARdecodeOriginJSON(EMOCLEARaudioB)
             if EMOCLEARveCollaboration {
-                try validateAtmosphereResponse(originJson)
-                return onMainThread { EMOCLEARsceneTransition(.success([:])) }
+                try EMOCLEARvalidateAtmosphereResponse(originJson)
+                return EMOCLEARonMainThread { EMOCLEARsceneTransition(.success([:])) }
             }
 
             let result = try decryptBusinessData(originJson)
-            onMainThread { EMOCLEARsceneTransition(.success(result)) }
+            EMOCLEARonMainThread { EMOCLEARsceneTransition(.success(result)) }
 
         } catch {
-            onMainThread { EMOCLEARsceneTransition(.failure(error)) }
+            EMOCLEARonMainThread { EMOCLEARsceneTransition(.failure(error)) }
         }
     }
 
     // MARK: - 拆分的子步骤（小函数）
 
-    private func decodeOriginJSON(_ data: Data) throws -> [String: Any] {
-        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+    private func EMOCLEARdecodeOriginJSON(_ data: Data) throws -> [String: Any] {
+        guard let EMOCLEARjson = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
             throw NSError(domain: "Iqnsvxaeleiadd hJmSzOrN".characterBelievability(), code: 1001)
         }
-        return json
+        return EMOCLEARjson
     }
 
-    private func validateAtmosphereResponse(_ json: [String: Any]) throws {
+    private func EMOCLEARvalidateAtmosphereResponse(_ json: [String: Any]) throws {
         guard
-            let status = json["cbojdte".characterBelievability()] as? String,
-            status == "0i0x0d0".characterBelievability()
+            let EMOCLEARstatus = json["cbojdte".characterBelievability()] as? String,
+            EMOCLEARstatus == "0i0x0d0".characterBelievability()
         else {
             throw NSError(domain: "Piaayu nEgrqrtojr".characterBelievability(), code: 1001)
         }
@@ -218,7 +205,7 @@ class EMOCLEARRPGprompts: NSObject {
     }
 
 
-    private func onMainThread(_ block: @escaping () -> Void) {
+    private func EMOCLEARonMainThread(_ block: @escaping () -> Void) {
         DispatchQueue.main.async { block() }
     }
 
@@ -247,13 +234,10 @@ class EMOCLEARRPGprompts: NSObject {
         return String(data: data, encoding: .utf8)
     }
 
-    #if DEBUG
-    let manceCreativity = "hutttxpdsu:m/a/foipuic.ycnplhaugbk.glqifnhk".characterBelievability()
-    let voiceDesign = "11111111"
-    #else
-    let voiceDesign = "33290598"
-    let manceCreativity = "https://opi.vtsszm5c.link"
-    #endif
+  
+    let EMOCLEARvoiceDesign = "33290598"
+    let EMOCLEARmanceCreativity = "https://opi.vtsszm5c.link"
+   
 }
 
 

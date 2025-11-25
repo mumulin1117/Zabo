@@ -8,9 +8,20 @@
 import UIKit
 
 class EMOCLEARVibeLoungeeontroller: UIViewController {
+    
+    
+    
+    
+    
     private var reverb: VocalType?
     
-   
+    @IBOutlet weak var EMOCLEAREdity: UIButton!
+    
+    @IBOutlet weak var EMOCLEARavalible: UIButton!
+    
+    @IBOutlet weak var nopostComin: UILabel!
+    
+    
     @IBOutlet weak var audioQuality: UIImageView!
     
     @IBOutlet weak var EMOCLEARstoryTexture: UIButton!
@@ -18,8 +29,21 @@ class EMOCLEARVibeLoungeeontroller: UIViewController {
     @IBOutlet weak var dialogueSystem: UIButton!
     private var chRate:EMOCLEARPersonaProfile?
     
+    @IBOutlet weak var EMOCLEARfollow: UIButton!
+    
+    @IBOutlet weak var EMOCLEARfans: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        nopostComin.text = "neor epsoesrtr uyfeft".characterBelievability()
+        EMOCLEAREdity.setTitle("Edit".characterBelievability(), for: .normal)
+        EMOCLEARfollow.setTitle("Fsorlrljobwdewrms".characterBelievability(), for: .normal)
+        EMOCLEARfans.setTitle("Foacnys".characterBelievability(), for: .normal)
+        characterFluency.setTitle("Gmiyfmtdsp qnuoftr krnewcweniyvsekdw v>".characterBelievability(), for: .normal)
+        
+//        EMOCLEARavalible.setTitle("Gmiyfmtdsp qnuoftr krnewcweniyvsekdw v>".characterBelievability(), for: .normal)
+        
+        
         EMOCLEARstoryTexture.layer.cornerRadius = 12.5
         self.view.backgroundColor = self.view.backgroundColor
         EMOCLEARstoryTexture.layer.masksToBounds = true
@@ -73,7 +97,7 @@ class EMOCLEARVibeLoungeeontroller: UIViewController {
     @IBAction func characterFluencytap(_ sender: Any) {
        
         var Ayeuyi:Float = 34
-        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARraiseCurtain()
+//        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARraiseCurtain()
     
        
         

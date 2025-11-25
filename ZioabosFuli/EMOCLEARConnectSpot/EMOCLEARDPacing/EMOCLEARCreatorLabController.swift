@@ -10,6 +10,14 @@ import UIKit
 class EMOCLEARCreatorLabController: UIViewController {
     var ifChiej:Int = 0
     
+    
+    
+    @IBOutlet weak var EMOCLEARmead: UIButton!
+    
+    
+    @IBOutlet weak var EMOCLEARcall: UIButton!
+    
+    
     static  var vocalimprov:UIWindow?{
         if #available(iOS 15.0, *) {
                 return UIApplication.shared.connectedScenes
@@ -79,6 +87,8 @@ class EMOCLEARCreatorLabController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogueFlow()
+        EMOCLEARmead.setTitle("Cclfibp".characterBelievability(), for: .normal)
+        EMOCLEARcall.setTitle("Fnoolwlyopwginnkg".characterBelievability(), for: .normal)
         self.roleplayGuide.isHidden = true
         self.showSuccessHUD(message: nil){
             self.roleplayGuide.isHidden = false

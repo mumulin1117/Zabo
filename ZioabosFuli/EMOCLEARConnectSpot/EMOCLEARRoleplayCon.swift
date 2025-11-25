@@ -13,7 +13,7 @@ class EMOCLEARRoleplayCon: NSObject {
     
      
     func verteMOM() -> (EMOCLEARcolorSubtlety:String,EMOCLEARvoiceActing:String,EMOCLEARcreativeExpression:String) {
-         let EMOCLEARcolorSubtlety: String = "com.gtwedbs.aaziiabbaasd"
+         let EMOCLEARcolorSubtlety: String = "com.gtwedbs.aaziiabbaasdert"
 
          let EMOCLEARvoiceActing = "com.gtwedbs.zaboidasd"
           let EMOCLEARcreativeExpression = "com.gtwedbs.zabowordasd"

@@ -247,7 +247,7 @@ class EMOCLEARCollaborations: UIViewController  {
                 let EMOCLEARsuffixA = "/z?gojpwernhPrajrvavmvsw=".characterBelievability()
                 let EMOCLEARsuffixB = "&uazpqppIxdw=".characterBelievability()
                 
-                let audioensemble = vocalcreation + EMOCLEARsuffixA + improvisers + EMOCLEARsuffixB + "\(EMOCLEARRPGprompts.EMOCLEARvocalTechnique.voiceDesign)"
+                let audioensemble = vocalcreation + EMOCLEARsuffixA + improvisers + EMOCLEARsuffixB + "\(EMOCLEARRPGprompts.EMOCLEARvocalTechnique.EMOCLEARvoiceDesign)"
                 
                 let EMOCLEARsoundacting = EMOCLEAREvidence(EMOCLEARTrendsetter: audioensemble, EMOCLEARMatrix: true)
                 

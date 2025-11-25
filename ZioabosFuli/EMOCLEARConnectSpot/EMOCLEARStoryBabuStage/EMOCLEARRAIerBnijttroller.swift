@@ -184,6 +184,7 @@ class EMOCLEARRAIerBnijttroller: UIViewController, UICollectionViewDataSource, U
                     // 使用guard代替if-let
                     guard case let .success(purchase) = result else {
                         if case let .failure(error) = result {
+                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                             EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage:  error.localizedDescription)
                         }
                         return

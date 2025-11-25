@@ -11,6 +11,12 @@ import Photos
 
 class EMOCLEARRoleplayStudioController: UIViewController , UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
+    
+    
+    
+    @IBOutlet weak var EMOCLEARclip: UILabel!
+    
+    
     private  var ifrecording:Bool = false
     
     @IBOutlet weak var fluidTransitions: UIButton!
@@ -23,12 +29,17 @@ class EMOCLEARRoleplayStudioController: UIViewController , UIImagePickerControll
     private let personaFilterSegmentedControl = UISegmentedControl()
         
     
+    @IBOutlet weak var EMOCLEARcontetnt: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         stagedRollouts.inputAccessory()
         seasonalTrends.layer.cornerRadius = 15
         roleplayAuthenticity()
         fluidTransitions.layer.masksToBounds = true
+        EMOCLEARclip.text = "Pioasstp vCglkiup".characterBelievability()
+        EMOCLEARcontetnt.text = "Cxofnstjetnjt".characterBelievability()
+        stagedRollouts.placeholder = "Sdatyl xSsoemxegtkhuiynzg".characterBelievability()
+        seasonalTrends.setTitle("Ccosndfjiprrm".characterBelievability(), for: .normal)
         
     }
     private let createPersonaButton = UIButton(type: .system)

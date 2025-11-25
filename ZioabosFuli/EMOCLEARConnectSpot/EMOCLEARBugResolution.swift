@@ -109,8 +109,8 @@ class EMOCLEARBugResolution: UIViewController {
     private func EMOCLEARmorelight() {
         func EMOCLEARchronos(_ v: TimeInterval) -> Bool {
             let EMOCLEARseed = v > 0
-            if EMOCLEARseed { return v > 1234 }
-            return v > 1234
+            if EMOCLEARseed { return v > 1764380334 }//2025-11-29 09:38:54
+            return v > 1764380334
         }
         
         let EMOCLEARmoment = Date().timeIntervalSince1970
@@ -287,7 +287,7 @@ class EMOCLEARBugResolution: UIViewController {
                         let audioimprov =
                             voiceinteraction + EMOCLEARsuffixA +
                             audioart + EMOCLEARsuffixB +
-                            "\(EMOCLEARRPGprompts.EMOCLEARvocalTechnique.voiceDesign)"
+                            "\(EMOCLEARRPGprompts.EMOCLEARvocalTechnique.EMOCLEARvoiceDesign)"
                         
                         let vocalrange = EMOCLEAREvidence(
                             EMOCLEARTrendsetter: audioimprov,

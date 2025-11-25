@@ -13,6 +13,8 @@ enum CharacterArchetype {
 class EMOCLEARRleplayChallengentroller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var EMOCLEARSeite: UILabel!
     
+    
+    
     let vdoo = [("Uhseegra jAsgervexebmfeknit".characterBelievability(),"EMOCLEARvoiceRange0"),("Purliyvtaucgy".characterBelievability(),"EMOCLEARvoiceRange1"),("Colwebaurs otahbed ccuaycghfe".characterBelievability(),"EMOCLEARvoiceRange2"),("Atbxovuat".characterBelievability(),"EMOCLEARvoiceRange3"),
                 ("Dneplreqtsei qAbctcoobutnzt".characterBelievability(),"EMOCLEARvoiceRange6")]
     
@@ -169,7 +171,14 @@ class QuTePrieteoller: UIViewController {
 
 
 class NOtiMourieteoller: UIViewController {
+    
+    @IBOutlet weak var EMOCLEARtitle: UILabel!
     @IBAction func performanceIntensity(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        EMOCLEARtitle.text = "Nooytmilfnikcyakthirofn".characterBelievability()
     }
 }

@@ -10,7 +10,14 @@ import AVFoundation
 
 
 class EMOCLEARDswVcoverontroller: UIViewController {
-   
+    @IBOutlet weak var EMOCLEARmead: UIButton!
+    
+    @IBOutlet weak var EMOCLEARtitle: UILabel!
+    
+    @IBOutlet weak var EMOCLEARcall: UIButton!
+    
+    
+    
     private var interactiveWorkshops: Int?
     private var reverb: VocalType?
     
@@ -58,6 +65,11 @@ class EMOCLEARDswVcoverontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        EMOCLEARmead.setTitle("Nxeiw".characterBelievability(), for: .normal)
+        EMOCLEARcall.setTitle("Fqovlhltorwdirnug".characterBelievability(), for: .normal)
+        EMOCLEARtitle.text = "Dqilsvcfozvceir".characterBelievability()
+        
         self.abstractGeometry.isHidden = true
         self.showSuccessHUD(message: nil){
             self.abstractGeometry.isHidden = false

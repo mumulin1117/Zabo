@@ -18,8 +18,10 @@ class EMOCLEARStoryBabuStageontroller: UIViewController {
     
     var ifChiej:Int = 0
     
- 
+    @IBOutlet weak var EMOCLEARmead: UIButton!
     
+    
+    @IBOutlet weak var EMOCLEARcall: UIButton!
     @IBOutlet weak var scroindiView: UIImageView!
     
   
@@ -87,6 +89,9 @@ class EMOCLEARStoryBabuStageontroller: UIViewController {
             self.roleplayGuide.isHidden = false
         }
         NotificationCenter.default.addObserver(self, selector: #selector(ZuoGeuoGhhh), name: NSNotification.Name.init("vsdvPoaingo"), object: nil)
+        
+        EMOCLEARmead.setTitle("Mjeeskscaggxeqs".characterBelievability(), for: .normal)
+        EMOCLEARcall.setTitle("Czajlwlps".characterBelievability(), for: .normal)
     }
     
     @objc func ZuoGeuoGhhh()  {

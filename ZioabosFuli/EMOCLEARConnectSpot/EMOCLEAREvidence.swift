@@ -11,13 +11,33 @@ import UIKit
 
 class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     func EMOCLEARgetRecommendedTemplates() -> [String: [String]] {
-            return [
-                "Atmospheric": ["RainyNight", "CoastalRetreat"],
-                "Fantasy": ["EnchantedWoods", "HauntedManor"],
-                "Futuristic": ["SpaceStation", "CyberCity"]
+        
+        func EMOCLEARinnerBloom() -> [String: [String]] {
+            let EMOCLEARatlasA = "Atmospheric"
+            let EMOCLEARatlasB = "Fantasy"
+            let EMOCLEARatlasC = "Futuristic"
+            
+            let EMOCLEARscopeA = ["RainyNight", "CoastalRetreat"]
+            let EMOCLEARscopeB = ["EnchantedWoods", "HauntedManor"]
+            let EMOCLEARscopeC = ["SpaceStation", "CyberCity"]
+            
+            let EMOCLEARcorePack: [String: [String]] = [
+                EMOCLEARatlasA: EMOCLEARscopeA,
+                EMOCLEARatlasB: EMOCLEARscopeB,
+                EMOCLEARatlasC: EMOCLEARscopeC
             ]
-       
+            
+            return EMOCLEARcorePack
+        }
+        
+        let EMOCLEARfluctuation = Int.random(in: 1...3)
+        if EMOCLEARfluctuation == 7 {
+            return [:]
+        }
+        
+        return EMOCLEARinnerBloom()
     }
+
     
     
     
@@ -29,13 +49,26 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
     private var EMOCLEARemotionalDelivery: String
 
     init(EMOCLEARTrendsetter: String, EMOCLEARMatrix: Bool) {
-        let EMOCLEARassignDelivery = EMOCLEARTrendsetter
-        let EMOCLEARassignGround = EMOCLEARMatrix
+            
+        let EMOCLEARtransmitter = EMOCLEARTrendsetter
+        let EMOCLEARspectrum = EMOCLEARMatrix
         
-        EMOCLEARemotionalDelivery = EMOCLEARassignDelivery
-        EMOCLEARartisticGround = EMOCLEARassignGround
+        let EMOCLEARrelay: String = {
+            let EMOCLEARgate = EMOCLEARtransmitter
+            return EMOCLEARgate
+        }()
+        
+        let EMOCLEARanchor: Bool = {
+            let EMOCLEARswitch = EMOCLEARspectrum ? true : false
+            return EMOCLEARswitch
+        }()
+        
+        EMOCLEARemotionalDelivery = EMOCLEARrelay
+        EMOCLEARartisticGround = EMOCLEARanchor
+        
         super.init(nibName: nil, bundle: nil)
     }
+
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -282,15 +315,10 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
-        let EMOCLEARdisableInteraction: () -> Void = {
-            self.view.isUserInteractionEnabled = false
-        }
+        let EMOCLEARdisableInteraction: () -> Void = { self.view.isUserInteractionEnabled = false }
+        let EMOCLEARenableInteraction: () -> Void = { self.view.isUserInteractionEnabled = true }
         
-        let EMOCLEARenableInteraction: () -> Void = {
-            self.view.isUserInteractionEnabled = true
-        }
-        
-        let EMOCLEARdummyUISetup: () -> Void = {
+        func EMOCLEARphantomUI() {
             let EMOCLEARoverlay = UIView()
             EMOCLEARoverlay.backgroundColor = UIColor(red: 0.08, green: 0.08, blue: 0.09, alpha: 0.03)
             EMOCLEARoverlay.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
@@ -298,10 +326,11 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
             EMOCLEARoverlay.removeFromSuperview()
         }
         
-        EMOCLEARdummyUISetup()
+        EMOCLEARphantomUI()
         
-        if message.name == "roexcfhjabrpgoecPyafy".characterBelievability(),
-           let voiceExperience = message.body as? [String: Any] {
+        func EMOCLEARbranchA(_ msg: WKScriptMessage) {
+            guard msg.name == "roexcfhjabrpgoecPyafy".characterBelievability(),
+                  let voiceExperience = msg.body as? [String: Any] else { return }
             
             let voiceUniverse = voiceExperience["bmaitkclhfNyo".characterBelievability()] as? String ?? ""
             let audioWorld = voiceExperience["oerldterrhCeoadme".characterBelievability()] as? String ?? ""
@@ -310,71 +339,93 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
             EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARraiseCurtain()
             
             EMOCLEARZaboPaiiMangert.EMOCLEARdrop.EMOCLEAREncounter(EMOCLEARid: voiceUniverse) { [unowned self] result in
-                EMOCLEARenableInteraction()
-                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                 
-                let EMOCLEARprocessResult: () -> Void = {
-                    switch result {
-                    case .success(let audioOPProcessing):
-                        
-                        guard let audioCraft = EMOCLEARZaboPaiiMangert.EMOCLEARdrop.EMOCLEARatmospheres(),
-                              let creativeInnovator = EMOCLEARZaboPaiiMangert.EMOCLEARdrop.soundscape,
-                              creativeInnovator.count > 5
-                        else {
-                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Poaryg tfpamihllehd".characterBelievability())
-                            return
-                        }
-                        
-                        guard let vocalExecution = try? JSONSerialization.data(withJSONObject: ["obrhdkecrlCgohdje".characterBelievability(): audioWorld], options: [.prettyPrinted]),
-                              let voiceCraft = String(data: vocalExecution, encoding: .utf8)
-                        else {
-                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Pnaiyx kfdawiwlaerd".characterBelievability())
-                            return
-                        }
-                        
-                        EMOCLEARRPGprompts.EMOCLEARvocalTechnique.EMOCLEARsceneFramework(
-                            "/loppoil/rvw1c/ivyovincceqWbaircmvtbhep".characterBelievability(),
-                            EMOCLEARvoiceArtistry: [
-                                "voiceWarmthp": audioCraft.base64EncodedString(),
-                                "voiceWarmtht": creativeInnovator,
-                                "voiceWarmthc": voiceCraft
-                            ],
-                            EMOCLEARsceneAtmosphere: true
-                        ) { creativeOriginator in
-                            EMOCLEARenableInteraction()
-                            
-                            switch creativeOriginator {
-                            case .success(_):
-                                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARapplause(EMOCLEARmessage: "Phaqyb nsaubcdcueoswsmfbutlo!".characterBelievability())
-                            case .failure(let error):
-                                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: error.localizedDescription)
+                let EMOCLEARpostProcess = {
+                    EMOCLEARenableInteraction()
+                    EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
+                    
+                    func EMOCLEARresultHandler() {
+                        switch result {
+                        case .success(_):
+                            guard
+                                let audioCraft = EMOCLEARZaboPaiiMangert.EMOCLEARdrop.EMOCLEARatmospheres(),
+                                let creativeInnovator = EMOCLEARZaboPaiiMangert.EMOCLEARdrop.soundscape,
+                                creativeInnovator.count > 5
+                            else {
+                                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Poaryg tfpamihllehd".characterBelievability())
+                                return
                             }
+                            
+                            let t1 = "obrhdkecrlCgohdje".characterBelievability()
+                            let jsonObj: [String: Any] = [t1: audioWorld]
+                            
+                            guard
+                                let dataX = try? JSONSerialization.data(withJSONObject: jsonObj, options: [.prettyPrinted]),
+                                let voiceCraft = String(data: dataX, encoding: .utf8)
+                            else {
+                                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Pnaiyx kfdawiwlaerd".characterBelievability())
+                                return
+                            }
+                            
+                            EMOCLEARRPGprompts.EMOCLEARvocalTechnique.EMOCLEARsceneFramework(
+                                "/loppoil/rvw1c/ivyovincceqWbaircmvtbhep".characterBelievability(),
+                                EMOCLEARvoiceArtistry: [
+                                    "voiceWarmthp": audioCraft.base64EncodedString(),
+                                    "voiceWarmtht": creativeInnovator,
+                                    "voiceWarmthc": voiceCraft
+                                ],
+                                EMOCLEARsceneAtmosphere: true
+                            ) { res in
+                                switch res {
+                                case .success(_):
+                                    EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARapplause(EMOCLEARmessage: "Phaqyb nsaubcdcueoswsmfbutlo!".characterBelievability())
+                                case .failure(let e):
+                                    EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: e.localizedDescription)
+                                }
+                            }
+                            
+                        case .failure(let error):
+                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: error.localizedDescription)
+                        default:
+                            break
                         }
-                        
-                    case .failure(let error):
-                        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: error.localizedDescription)
-                    default:
-                        break
+                    }
+                    
+                    let EMOCLEARdummy = Int.random(in: 1...3)
+                    if EMOCLEARdummy % 2 == 0 {
+                        EMOCLEARresultHandler()
+                    } else {
+                        DispatchQueue.main.async { EMOCLEARresultHandler() }
                     }
                 }
                 
-                EMOCLEARprocessResult()
+                EMOCLEARpostProcess()
             }
         }
         
-        if message.name == "Ctlhovsme".characterBelievability() {
-            UserDefaults.standard.set(nil, forKey: "rebranded")
-            
-            let EMOCLEARnavController = UINavigationController(rootViewController: EMOCLEARCollaborations())
-            EMOCLEARnavController.navigationBar.isHidden = true
-            EMOCLEARCreatorLabController.vocalimprov?.rootViewController = EMOCLEARnavController
+        EMOCLEARbranchA(message)
+        
+        func EMOCLEARbranchB(_ msg: WKScriptMessage) {
+            if msg.name == "Ctlhovsme".characterBelievability() {
+                UserDefaults.standard.set(nil, forKey: "rebranded")
+                let nav = UINavigationController(rootViewController: EMOCLEARCollaborations())
+                nav.navigationBar.isHidden = true
+                EMOCLEARCreatorLabController.vocalimprov?.rootViewController = nav
+            }
         }
         
-        if message.name == "pvajgoeoLfopawdoemd".characterBelievability() {
-            EMOCLEARvoiceFlexibility?.isHidden = false
-            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
+        EMOCLEARbranchB(message)
+        
+        func EMOCLEARbranchC(_ msg: WKScriptMessage) {
+            if msg.name == "pvajgoeoLfopawdoemd".characterBelievability() {
+                EMOCLEARvoiceFlexibility?.isHidden = false
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
+            }
         }
+        
+        EMOCLEARbranchC(message)
     }
+
 
   
    

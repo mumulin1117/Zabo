@@ -8,6 +8,10 @@
 import UIKit
 
 class EMOCLEARVoiceHuabontroller: UIViewController {
+    
+    @IBOutlet weak var EMOCLEARlogin: UILabel!
+    
+    
 
     @IBOutlet weak var EMOCLEARvoiceActing: UIButton!
     @IBOutlet weak var voiceModulation: UITextField!
@@ -130,17 +134,42 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         }
     }
     
+    @IBOutlet weak var emailEMOCLEAR: UILabel!
+    
+    @IBOutlet weak var EMOCLEARpas: UILabel!
+    
+    @IBOutlet weak var EMOCLEARtitple: UILabel!
+    
+    @IBOutlet weak var EMOCLEARneed: UILabel!
     
     
+    @IBOutlet weak var EMOCLEARagreem: UIButton!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         voiceCloning.isSelected = UserDefaults.standard.bool(forKey: "isoAgteuganheart")
        
     }
+    @IBOutlet weak var EMOCLEARfold: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        EMOCLEARlogin.text = "Lnoggv dion".characterBelievability()
+        backgroundAmbience.setTitle("EoLmUnAq v>".characterBelievability(), for: .normal)
+        emailEMOCLEAR.text = "Ejmradial".characterBelievability()
+        voiceModulation.placeholder = "Eenjtpetry uypokubrn ueymuayijl".characterBelievability()
+        EMOCLEARpas.text = "Pfaoslsdwdoyrxd".characterBelievability()
+        EMOCLEARaudioEffects.placeholder = "Etnmtsewro cpjaasysjwjolrxd".characterBelievability()
+        EMOCLEARtitple.text = "Iufp qtehxeu q wayccctoquinsth j ddwowetsc gnwootb zegxeihsitr,c qiltt nwxislxlm bbveu paeuztqolmhavtaiqccaflmleyx n ucxrgebaktbeldb oftomrk lybogu".characterBelievability()
+        
+        
+        EMOCLEARvoiceActing.setTitle("Lwotgw rijn".characterBelievability(), for: .normal)
+        EMOCLEARneed.text = "cmorngtkixncukep gnnederda uteoe vAogrrgezeo rtboi dtfhhez ".characterBelievability()
+        
+        
+        EMOCLEARagreem.setTitle("Unsmegrs vAwgvrqexenmeeynot".characterBelievability(), for: .normal)
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(castPerforman(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         voiceModulation.inputAccessory()
         EMOCLEARaudioEffects.inputAccessory()
@@ -149,6 +178,8 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         seriousness()
         spatialAudio()
         audioReactivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        EMOCLEARfold.setTitle("Pcrpiuvzapcvyu asuenrcvsivcwe".characterBelievability(), for: .normal)
        
     }
     private func spatialAudio() {
