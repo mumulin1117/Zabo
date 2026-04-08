@@ -17,10 +17,7 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
     @IBOutlet weak var voiceModulation: UITextField!
     
     @IBOutlet weak var EMOCLEARaudioEffects: UITextField!
-    
-    @IBOutlet weak var backgroundAmbience: UIButton!
-    
-    @IBOutlet weak var voiceCloning: UIButton!
+  
     
     
     @IBOutlet weak var audioReactivity: UIView!
@@ -142,20 +139,12 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
     
     @IBOutlet weak var EMOCLEARneed: UILabel!
     
-    
-    @IBOutlet weak var EMOCLEARagreem: UIButton!
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        voiceCloning.isSelected = UserDefaults.standard.bool(forKey: "isoAgteuganheart")
-       
-    }
-    @IBOutlet weak var EMOCLEARfold: UIButton!
-    
+  
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         EMOCLEARlogin.text = "Lnoggv dion".characterBelievability()
-        backgroundAmbience.setTitle("EoLmUnAq v>".characterBelievability(), for: .normal)
+      
         emailEMOCLEAR.text = "Ejmradial".characterBelievability()
         voiceModulation.placeholder = "Eenjtpetry uypokubrn ueymuayijl".characterBelievability()
         EMOCLEARpas.text = "Pfaoslsdwdoyrxd".characterBelievability()
@@ -167,8 +156,6 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         EMOCLEARneed.text = "cmorngtkixncukep gnnederda uteoe vAogrrgezeo rtboi dtfhhez ".characterBelievability()
         
         
-        EMOCLEARagreem.setTitle("Unsmegrs vAwgvrqexenmeeynot".characterBelievability(), for: .normal)
-        
         
         NotificationCenter.default.addObserver(self, selector: #selector(castPerforman(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         voiceModulation.inputAccessory()
@@ -179,11 +166,10 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         spatialAudio()
         audioReactivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        EMOCLEARfold.setTitle("Pcrpiuvzapcvyu asuenrcvsivcwe".characterBelievability(), for: .normal)
        
     }
     private func spatialAudio() {
-        backgroundAmbience.layer.cornerRadius = 15
+     
       
         audioReactivity.layer.cornerRadius = 20
         var sationuyi:Float = 35
@@ -203,7 +189,7 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
             chRate?.speechRate = 233
         }
      
-        backgroundAmbience.layer.masksToBounds = true
+        
     }
     
     @IBAction func voiceReactions(_ sender: UIButton) {
@@ -218,19 +204,19 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @IBAction func unwindB(unwindSegue: UIStoryboardSegue) {  }
-
+    @IBAction func dismissNowing(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+   
     @IBAction func voicePitchControl(_ sender: UIButton) {
+        
         reverb = VocalType.crystalline
       
-        if voiceCloning.isSelected == true {
             var sationuyi:Float = 35
           
             guard let antiExploitation = voiceModulation.text,antiExploitation.isEmpty == false else{
                 
-                
-                
-               
                 EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage:  "Pwlpetaksgep becnhtiedrb xyzokuirt venmladiwlm rfqitresytw!".characterBelievability())
                
                 return
@@ -284,10 +270,7 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
             
             
             
-        }else{
-            trustAndSafety()
-        }
-        
+      
     }
     
     
@@ -298,9 +281,7 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
        
     }
     
-    private func trustAndSafety()  {
-        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage:  "Pllzebaxsaet nrmemasdu yojugra wpzrfiyvxaxcuyu ipkoileidcayf hainkdw fuoszeprw sfzivrasit".characterBelievability())
-    }
+    
     
     
     private func broadcastSurePerformance(antiExploitation:String)->Dictionary<String,String>  {
@@ -315,10 +296,12 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
     func medievalTavern(){
         self.showSuccessHUD(message: "Lsoygq uiony zszufcpcfeosqsbfguilj!".characterBelievability()){
             EMOCLEARFallSeGistiproller.accessibilityOptions(darkMode: true)
-           
+            
+            
         }
         
-       
+        
+        
         
         
         

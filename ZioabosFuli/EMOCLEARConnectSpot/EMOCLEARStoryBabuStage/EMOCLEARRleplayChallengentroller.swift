@@ -159,6 +159,7 @@ struct AlertZABoBuilder {
 class QuTeConteoller: UIViewController {
     @IBAction func performanceIntensity(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 
@@ -166,6 +167,7 @@ class QuTeConteoller: UIViewController {
 class QuTePrieteoller: UIViewController {
     @IBAction func performanceIntensity(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 
@@ -174,6 +176,7 @@ class NOtiMourieteoller: UIViewController {
     
     @IBOutlet weak var EMOCLEARtitle: UILabel!
     @IBAction func performanceIntensity(_ sender: UIButton) {
+        self.dismiss(animated: true)
         self.navigationController?.popViewController(animated: true)
     }
     

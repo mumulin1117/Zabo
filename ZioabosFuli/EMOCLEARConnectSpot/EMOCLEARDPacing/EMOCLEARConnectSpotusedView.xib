@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -57,10 +57,20 @@
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="she-DL-r8x">
+                    <rect key="frame" x="390" y="216" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="N8H-pC-U7A"/>
+                        <constraint firstAttribute="height" constant="24" id="VUo-iQ-Kgi"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="searchingjkjjjjj"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="she-DL-r8x" secondAttribute="trailing" constant="35" id="5B3-kc-9Jb"/>
                 <constraint firstItem="5rz-V3-fr8" firstAttribute="top" secondItem="Kt0-96-SXb" secondAttribute="bottom" constant="20" id="9zj-GV-qeW"/>
                 <constraint firstItem="Qqw-fp-KXE" firstAttribute="width" secondItem="TED-oc-uOf" secondAttribute="width" id="Lr2-oU-fST"/>
                 <constraint firstItem="TED-oc-uOf" firstAttribute="leading" secondItem="X3x-un-ztR" secondAttribute="trailing" constant="12" id="NsN-T7-qzv"/>
@@ -71,6 +81,7 @@
                 <constraint firstItem="Kt0-96-SXb" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="Xl0-ZG-whX"/>
                 <constraint firstItem="TgJ-af-eS8" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="12" id="ZYq-aS-5Df"/>
                 <constraint firstItem="TgJ-af-eS8" firstAttribute="centerY" secondItem="X3x-un-ztR" secondAttribute="centerY" id="eNJ-dW-Gk2"/>
+                <constraint firstItem="she-DL-r8x" firstAttribute="centerY" secondItem="5rz-V3-fr8" secondAttribute="centerY" id="gc6-rR-Msx"/>
                 <constraint firstItem="TED-oc-uOf" firstAttribute="top" secondItem="Kt0-96-SXb" secondAttribute="top" id="j4B-Pi-Sa0"/>
                 <constraint firstItem="TED-oc-uOf" firstAttribute="leading" secondItem="Kt0-96-SXb" secondAttribute="trailing" constant="12" id="jmi-rm-Dqe"/>
                 <constraint firstItem="Qqw-fp-KXE" firstAttribute="bottom" secondItem="Kt0-96-SXb" secondAttribute="bottom" id="oCU-P1-d8N"/>
@@ -81,6 +92,7 @@
             <connections>
                 <outlet property="EMOCLEARdiscover" destination="TgJ-af-eS8" id="BLO-4M-qOu"/>
                 <outlet property="EMOCLEARroom" destination="5rz-V3-fr8" id="hDL-oF-AyO"/>
+                <outlet property="EmocserchBUtton" destination="she-DL-r8x" id="vUc-92-cH7"/>
                 <outlet property="buildAio" destination="Qqw-fp-KXE" id="HAZ-8p-4pK"/>
                 <outlet property="creeatertoem" destination="TED-oc-uOf" id="3kN-9z-aH4"/>
                 <outlet property="cycleViewFall" destination="Kt0-96-SXb" id="bZs-vb-Ypc"/>
@@ -94,5 +106,6 @@
         <image name="EMOCLEARGimprovPerformance" width="169" height="100"/>
         <image name="EMOCLEARGthematicSetting" width="169" height="100"/>
         <image name="EMOCLEARaudioEffects" width="14" height="14.333333015441895"/>
+        <image name="searchingjkjjjjj" width="24" height="24"/>
     </resources>
 </document>

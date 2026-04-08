@@ -17,6 +17,7 @@ protocol ConnectSpotusedViewDelegate {
 }
 class EMOCLEARConnectSpotusedView: UICollectionReusableView, UICollectionViewDelegate,UICollectionViewDataSource {
 
+    @IBOutlet weak var EmocserchBUtton: UIButton!
     
     @IBOutlet weak var EMOCLEARdiscover: UILabel!
     

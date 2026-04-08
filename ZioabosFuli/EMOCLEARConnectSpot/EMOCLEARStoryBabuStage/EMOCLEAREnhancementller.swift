@@ -41,6 +41,7 @@ class EMOCLEAREnhancementller: UIViewController {
         UserDefaults.standard.set(false, forKey: "isoAgteuganheart")
         audioLatency.layer.borderWidth = 0
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @IBAction func personaCreation(_ sender: UIButton) {
@@ -48,6 +49,7 @@ class EMOCLEAREnhancementller: UIViewController {
         UserDefaults.standard.set(true, forKey: "isoAgteuganheart")
         audioLatency.layer.borderWidth = 0
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     

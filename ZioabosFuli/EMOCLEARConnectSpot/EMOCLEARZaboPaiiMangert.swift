@@ -2,7 +2,7 @@
 //  EMOCLEARZaboPaiiMangert.swift
 //  ZioabosFuli
 //
-//  Created by mumu on 2025/10/27.
+//  Created by  on 2025/10/27.
 //
 
 import UIKit

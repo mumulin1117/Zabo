@@ -46,7 +46,7 @@ class EMOCLEARFallINreoomtiproller: UIViewController, UITableViewDelegate, UITab
         EMOCLEARwantingForiue3.text = "Wwazigtjinnigm gtkoj ujsoqiqn".characterBelievability()
         EMOCLEARwantingForiue4.text = "Wwazigtjinnigm gtkoj ujsoqiqn".characterBelievability()
         roleplayScenarios.text = "Piilcfkk cycozufrt arooxlgee raqngdr rscpqexavkk ayeoxuern mpdayrotn.m pEwvfemrhym hvwoiifckek xsrhcadpfeisq mtvhaeu usktuoxrgyh.h nWaeilocwogmres uttos qonufrr mvjohirceeh dtzhbekaltlezra.".characterBelievability()
-        applayTaogin.setTitle(" iAvpopjlqyy wjsohijn", for: .normal)
+        applayTaogin.setTitle(" iAvpopjlqyy wjsohijn".characterBelievability(), for: .normal)
         
         sayHiyui.placeholder =  "Svazyc ihtig~".characterBelievability()
     }

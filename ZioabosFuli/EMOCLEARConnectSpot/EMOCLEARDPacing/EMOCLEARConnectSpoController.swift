@@ -82,7 +82,9 @@ extension EMOCLEARConnectSpoController:UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         EMOCLEARRAaslertvbCell.themeCustomization.count
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 30, height: 256 + 12)
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let jjIo = collectionView.dequeueReusableCell(withReuseIdentifier: "EMOCLEARConnectSpotCell", for: indexPath) as! EMOCLEARConnectSpotCell
         jjIo.backgroundAmbience.image = UIImage(named: EMOCLEARRAaslertvbCell.themeCustomization[indexPath.row]["RoomAlpDCOver"] ?? "")
@@ -95,9 +97,7 @@ extension EMOCLEARConnectSpoController:UICollectionViewDelegate,UICollectionView
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 30, height: 256 + 12) 
-    }
+   
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == UICollectionView.elementKindSectionHeader else {
                 return UICollectionReusableView()
@@ -111,6 +111,7 @@ extension EMOCLEARConnectSpoController:UICollectionViewDelegate,UICollectionView
             }
         header.delegater = self
         header.disvoverpage.addTarget(self, action: #selector(monochromeArt), for: .touchUpInside)
+        header.EmocserchBUtton.addTarget(self, action: #selector(beginToserching), for: .touchDown)
         header.creeatertoem.addTarget(self, action: #selector(warmTones), for: .touchUpInside)
         header.buildAio.addTarget(self, action: #selector(vibrantColors), for: .touchUpInside)
         header.cycleViewFall.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(monochromeArt)))
@@ -118,6 +119,10 @@ extension EMOCLEARConnectSpoController:UICollectionViewDelegate,UICollectionView
         
     }
     
+  //search
+   @objc func beginToserching()  {
+       self.navigationController?.pushViewController(EMOCLEARSearchXioController(), animated: true)
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let roromedetail = EMOCLEARFallINreoomtiproller.init(nnsteBase: EMOCLEARRAaslertvbCell.themeCustomization[indexPath.row])
         self.navigationController?.pushViewController(roromedetail, animated: true)
