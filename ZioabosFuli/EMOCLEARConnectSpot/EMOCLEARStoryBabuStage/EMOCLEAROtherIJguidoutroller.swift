@@ -14,6 +14,8 @@ enum AmbienceMood {
 enum VocalType {
     case crystalline, gravelly, melodic, robotic
 }
+
+//user center
 class EMOCLEAROtherIJguidoutroller: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     var nnsteBase:Dictionary<String,String>
     var sofawear:UILabel?
@@ -288,34 +290,58 @@ class EMOCLEAROtherIJguidoutroller: UIViewController, UICollectionViewDelegate,U
     }
     
     @IBAction func divreVascr(_ sender: UIButton) {
-        if sender.tag == 35 {
-            if let filterResult = EMOCLEARStoryBabuStageontroller.ccoude.filter({ dio in
-                dio.based["auIDG"] == nnsteBase["auIDG"]
-            }).first{
-                self.navigationController?.pushViewController(EMOCLEARFidelityroller.init(nnsteArry: filterResult), animated: true)
-            }else{
-              let newChui =  Uniquevoice.init(based: nnsteBase,diologlsiedt:[])
-                EMOCLEARStoryBabuStageontroller.ccoude.append(newChui)
-                self.navigationController?.pushViewController(EMOCLEARFidelityroller.init(nnsteArry: newChui), animated: true)
-            }
-            
-            
-        }
         
-        if sender.tag == 45 {
-            if let filterResult = EMOCLEARStoryBabuStageontroller.ccoude.filter({ dio in
-                dio.based["auIDG"] == nnsteBase["auIDG"]
-            }).first{
-                self.navigationController?.pushViewController(EMOCLEARSaConnexatmalVontroller.init(nnsteArry: filterResult), animated: true)
-            }else{
-              let newChui =  Uniquevoice.init(based: nnsteBase,diologlsiedt:[])
-                EMOCLEARStoryBabuStageontroller.ccoude.append(newChui)
-                self.navigationController?.pushViewController(EMOCLEARSaConnexatmalVontroller.init(nnsteArry: newChui), animated: true)
+            let accessGuardEMOCLE = EMOCLEAccessRestrictionJwelView(frame: UIScreen.main.bounds)
+            
+           
+            accessGuardEMOCLE.flowActionEMOCLE = { [weak self] isConfirmedEMOCLE in
+                guard let self = self, isConfirmedEMOCLE else { return }
+                
+               
+                self.executeProtocolTransmissionEMOCLE(withTag: sender.tag)
             }
             
-        }
+         
+            if let hostWindowEMOCLE = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+                accessGuardEMOCLE.presentWithinCanvasEMOCLE(hostWindowEMOCLE)
+            }
     }
     
+    
+    private func executeProtocolTransmissionEMOCLE(withTag tagEMOCLE: Int) {
+        
+        let registryEMOCLE = EMOCLEARStoryBabuStageontroller.ccoude
+        let identityKeyEMOCLE = nnsteBase["auIDG"]
+        
+        // 通用过滤逻辑
+        let existingNodeEMOCLE = registryEMOCLE.filter({ $0.based["auIDG"] == identityKeyEMOCLE }).first
+        
+        if tagEMOCLE == 35 {
+            if let filterResultEMOCLE = existingNodeEMOCLE {
+                self.navigationController?.pushViewController(EMOCLEARFidelityroller.init(nnsteArry: filterResultEMOCLE), animated: true)
+            } else {
+                let freshEntryEMOCLE = Uniquevoice.init(based: nnsteBase, diologlsiedt: ["I am requesting to be your applicant"])
+                EMOCLEARStoryBabuStageontroller.ccoude.append(freshEntryEMOCLE)
+                self.navigationController?.pushViewController(EMOCLEARFidelityroller.init(nnsteArry: freshEntryEMOCLE), animated: true)
+            }
+        }
+        
+        if tagEMOCLE == 45 {
+            if let filterResultEMOCLE = existingNodeEMOCLE {
+                
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Please wait for the other party's response...")
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+//                    self.navigationController?.pushViewController(EMOCLEARSaConnexatmalVontroller.init(nnsteArry: filterResultEMOCLE), animated: true)
+//                }))
+                
+            } else {
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Please wait for the other party's response...")
+                let freshEntryEMOCLE = Uniquevoice.init(based: nnsteBase, diologlsiedt: ["I am requesting to be your applicant"])
+                EMOCLEARStoryBabuStageontroller.ccoude.append(freshEntryEMOCLE)
+//                self.navigationController?.pushViewController(EMOCLEARSaConnexatmalVontroller.init(nnsteArry: freshEntryEMOCLE), animated: true)
+            }
+        }
+    }
     
 }
 

@@ -14,11 +14,11 @@ struct EMOCLEARPersonaProfile {
 }
 
 enum EMOCLEARHiclaSceneState {
-    case gathering      // 收集表演者
-    case warmUp         // 热身准备
-    case performing     // 表演中
-    case coolDown       // 冷却回顾
-    case empty          // 空闲状态
+    case gathering
+    case warmUp
+    case performing
+    case coolDown
+    case empty         
 }
 
 enum EMOCLEARSceneEnvironment {

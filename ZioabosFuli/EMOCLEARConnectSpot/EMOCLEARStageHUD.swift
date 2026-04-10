@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Hicla 舞台 HUD 管理器
+
 final class EMOCLEARStageHUD {
 
     static let EMOCLEARshared = EMOCLEARStageHUD()

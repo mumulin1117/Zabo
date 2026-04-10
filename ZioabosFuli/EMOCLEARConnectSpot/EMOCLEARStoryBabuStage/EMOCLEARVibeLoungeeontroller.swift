@@ -36,7 +36,7 @@ class EMOCLEARVibeLoungeeontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nopostComin.text = "neor epsoesrtr uyfeft".characterBelievability()
-        EMOCLEAREdity.setTitle("Edit".characterBelievability(), for: .normal)
+        EMOCLEAREdity.setTitle("Edit", for: .normal)
         EMOCLEARfollow.setTitle("Fsorlrljobwdewrms".characterBelievability(), for: .normal)
         EMOCLEARfans.setTitle("Foacnys".characterBelievability(), for: .normal)
         characterFluency.setTitle("Gmiyfmtdsp qnuoftr krnewcweniyvsekdw v>".characterBelievability(), for: .normal)

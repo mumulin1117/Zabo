@@ -124,8 +124,28 @@ extension EMOCLEARConnectSpoController:UICollectionViewDelegate,UICollectionView
        self.navigationController?.pushViewController(EMOCLEARSearchXioController(), animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let roromedetail = EMOCLEARFallINreoomtiproller.init(nnsteBase: EMOCLEARRAaslertvbCell.themeCustomization[indexPath.row])
-        self.navigationController?.pushViewController(roromedetail, animated: true)
+        let vaultOverlayJwel = EMOCLEARVaultProtocolJwelView(frame: UIScreen.main.bounds)
+       
+        vaultOverlayJwel.sessionGateClosureJwel = { [weak self] isAuthorizedJwel in
+            guard let self = self else { return }
+            
+            if isAuthorizedJwel {
+                let roromedetail = EMOCLEARFallINreoomtiproller.init(nnsteBase: EMOCLEARRAaslertvbCell.themeCustomization[indexPath.row])
+                self.navigationController?.pushViewController(roromedetail, animated: true)
+            } else {
+               
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage:  "Access Denied for Node")
+            }
+            
+        }
+                
+               
+        if let currentWindowJwel = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+            vaultOverlayJwel.deployToCanvasJwel(currentWindowJwel)
+            
+        }
+        
+       
         
     }
     

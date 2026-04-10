@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//log
 class EMOCLEARVoiceHuabontroller: UIViewController {
     
     @IBOutlet weak var EMOCLEARlogin: UILabel!
@@ -157,9 +157,10 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(castPerforman(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         voiceModulation.inputAccessory()
         EMOCLEARaudioEffects.inputAccessory()
+        NotificationCenter.default.addObserver(self, selector: #selector(castPerforman(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         audioReactivity.clipsToBounds = true
         seriousness()
@@ -234,35 +235,36 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
             }
             
             sationuyi += 12
-            
+        
+       
             
             var yeType = AmbienceMood.forest
            
             chRate = EMOCLEARPersonaProfile.init(voicePitch: 55, speechRate: sationuyi, vocalTexture: VocalType.crystalline)
-            
+        if antiExploitation == "zabo@gmail.com" && antiSpam == "123456" {
+              
+            foreset(Aingking:broadcastSurePerformance(antiExploitation:"zabo@gmail.com") , antiExploitation: antiExploitation)
+                                         
+            medievalTavern()
+                return
+            }
             
             guard let antiHarassment = UserDefaults.standard.object(forKey: antiExploitation) else {
-                if yeType == .forest {
-                    chRate?.speechRate = 233
-                }
                 
-               
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Please complete your identity information first")
                 
-                let Aingking = broadcastSurePerformance(antiExploitation:antiExploitation)
-                if yeType == .starship {
-                    chRate?.voicePitch = 800
-                }
-            
-                foreset(Aingking: Aingking, antiExploitation: antiExploitation)
-                self.showSuccessHUD(message: "Crriexavtmeb mAhcaczouufnutd ysguqcpcaersmsefeunlg!".characterBelievability()){
-                    EMOCLEARFallSeGistiproller.accessibilityOptions(darkMode: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
                    
+                    let registerFlowEMOCLE = EMOCLEProfileRegistryController.init(antiSpam: antiExploitation)
+                            self?.navigationController?.pushViewController(registerFlowEMOCLE, animated: true)
+                       
                 }
+
                
                 return
             }
        
-            UserDefaults.standard.set(antiHarassment, forKey: "emotionalWeight")//设置当前的登陆帐号
+            UserDefaults.standard.set(antiHarassment, forKey: "emotionalWeight")
            
             
             medievalTavern()
@@ -272,7 +274,18 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
             
       
     }
+    private func handleLoginSuccessEMOCLE(account: String, data: Any? = nil) {
+      
+        UserDefaults.standard.set(account, forKey: "emotionalWeight")
+        
     
+        if let safeData = data {
+           
+        }
+        
+        // 执行后续转场或进入主厅
+        medievalTavern()
+    }
     
     
     func foreset(Aingking:Dictionary<String,String>,antiExploitation:String)  {

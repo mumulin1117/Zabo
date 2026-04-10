@@ -120,18 +120,25 @@ extension ZiouLoginForeController: ASAuthorizationControllerPresentationContextP
     
             let antiSpam = appleIDCredentialSuzy.email ?? "User Applle"
                
+        
             
             guard let antiHarassment = UserDefaults.standard.object(forKey: antiSpam) else {
-               
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Please complete your identity information first")
                 
-                let Aingking = broadcastSurePerformance(antiExploitation:antiSpam)
-              
-            
-                foreset(Aingking: Aingking, antiExploitation: antiSpam)
-                self.showSuccessHUD(message: "Crriexavtmeb mAhcaczouufnutd ysguqcpcaersmsefeunlg!".characterBelievability()){
-                    EMOCLEARFallSeGistiproller.accessibilityOptions(darkMode: true)
-                   
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                    let registerFlowEMOCLE = EMOCLEProfileRegistryController(antiSpam: antiSpam)
+                            self?.navigationController?.pushViewController(registerFlowEMOCLE, animated: true)
+                       
                 }
+                
+//                let Aingking = broadcastSurePerformance(antiExploitation:antiSpam)
+//              
+//            
+//                foreset(Aingking: Aingking, antiExploitation: antiSpam)
+//                self.showSuccessHUD(message: "Crriexavtmeb mAhcaczouufnutd ysguqcpcaersmsefeunlg!".characterBelievability()){
+//                    EMOCLEARFallSeGistiproller.accessibilityOptions(darkMode: true)
+//                   
+//                }
                
                 return
             }
@@ -144,11 +151,11 @@ extension ZiouLoginForeController: ASAuthorizationControllerPresentationContextP
         }
     }
     
-    func foreset(Aingking:Dictionary<String,String>,antiExploitation:String)  {
-        UserDefaults.standard.set(Aingking, forKey: "emotionalWeight")
-        UserDefaults.standard.set(Aingking, forKey: antiExploitation)
-       
-    }
+//    func foreset(Aingking:Dictionary<String,String>,antiExploitation:String)  {
+//        UserDefaults.standard.set(Aingking, forKey: "emotionalWeight")
+//        UserDefaults.standard.set(Aingking, forKey: antiExploitation)
+//       
+//    }
     
     
     

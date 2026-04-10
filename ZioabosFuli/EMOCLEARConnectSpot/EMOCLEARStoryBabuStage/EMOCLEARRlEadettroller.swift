@@ -29,7 +29,7 @@ class EMOCLEARRlEadettroller: UIViewController, UIImagePickerControllerDelegate 
        
     override func viewDidLoad() {
         super.viewDidLoad()
-        EMOCLEARstoryTexture.setTitle("Emdvigtu ppprjomfliplne".characterBelievability(), for: .normal)
+        EMOCLEARstoryTexture.setTitle("Edit", for: .normal)
         EMOCLEARedittitle.text = "Emdmiut".characterBelievability()
         realTimeFeedback.placeholder = "Erndtzetra pybouufrz tnfigclkjniawmke".characterBelievability()
         

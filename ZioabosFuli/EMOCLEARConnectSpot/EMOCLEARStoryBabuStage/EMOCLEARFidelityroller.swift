@@ -90,9 +90,26 @@ class EMOCLEARFidelityroller: UIViewController {
     
   
     @IBAction func interactiveRoleplay(_ sender: UIButton) {
+        let accessGuardEMOCLE = EMOCLEAccessRestrictionJwelView(frame: UIScreen.main.bounds)
         
-        let interact = EMOCLEARSaConnexatmalVontroller.init(nnsteArry: nnsteArry)
-        self.navigationController?.pushViewController(interact, animated: true)
+       
+        accessGuardEMOCLE.flowActionEMOCLE = { [weak self] isConfirmedEMOCLE in
+            guard let self = self, isConfirmedEMOCLE else { return }
+            
+            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Please wait for the other party's response...")
+            let freshEntryEMOCLE = Uniquevoice.init(based: nnsteArry.based, diologlsiedt: ["I am requesting to be your applicant"])
+//            EMOCLEARStoryBabuStageontroller.ccoude.append(freshEntryEMOCLE)
+//            self.navigationController?.pushViewController(EMOCLEARFidelityroller.init(nnsteArry: freshEntryEMOCLE), animated: true)
+        }
+        
+     
+        if let hostWindowEMOCLE = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+            accessGuardEMOCLE.presentWithinCanvasEMOCLE(hostWindowEMOCLE)
+        }
+        
+        
+//        let interact = EMOCLEARSaConnexatmalVontroller.init(nnsteArry: nnsteArry)
+//        self.navigationController?.pushViewController(interact, animated: true)
         
     }
     
@@ -101,8 +118,10 @@ class EMOCLEARFidelityroller: UIViewController {
             EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage:  "Pgloezajsqej lesndtnekrr jyootutri ccrohnhtfeynftf xfkiirisntk!".characterBelievability())
             return
         }
-        self.storySeed(enterquest:enterquest)
-        roleplayTheme.resignFirstResponder()
+        
+        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Please wait for the other party's response...")
+//        self.storySeed(enterquest:enterquest)
+//        roleplayTheme.resignFirstResponder()
         
     }
     
@@ -115,7 +134,7 @@ class EMOCLEARFidelityroller: UIViewController {
         sceneHarmony.text = nnsteArry.based["audioClarity"]
         storyRhythm.dataSource = self
         
-        dialogueTiming(timeing:"SayHIontrollerNOemalCell")
+        dialogueTiming(timeing:"EMOCLEARSayHIontrollerNOemalCell")
         storyRhythm.showsVerticalScrollIndicator = false
     }
     
@@ -142,7 +161,7 @@ extension EMOCLEARFidelityroller:UITableViewDelegate, UITableViewDataSource {
         storyRhythm.estimatedRowHeight = 70
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let bgoki = tableView.dequeueReusableCell(withIdentifier: "SayHIontrollerNOemalCell", for: indexPath) as!  EMOCLEARSayHIontrollerNOemalCell
+        let bgoki = tableView.dequeueReusableCell(withIdentifier: "EMOCLEARSayHIontrollerNOemalCell", for: indexPath) as!  EMOCLEARSayHIontrollerNOemalCell
         
         bgoki.revocable.image  = EMOCLEARStoryBabuSmeaCell.Metrics
         bgoki.characterPortrayal.text = nnsteArry.diologlsiedt[indexPath.row]

@@ -16,7 +16,7 @@ struct EMOCLEARUniqueness {
         
         func EMOCLEARderiveData(_ str: String) -> Data? {
             let dummy = str.unicodeScalars.reduce(0, { $0 + Int($1.value) })
-            _ = dummy // 无害虚变量
+            _ = dummy
             return str.data(using: .utf8)
         }
         
