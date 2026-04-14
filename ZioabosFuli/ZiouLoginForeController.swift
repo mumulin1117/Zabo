@@ -8,24 +8,19 @@ import AuthenticationServices
 import UIKit
 
 class ZiouLoginForeController: UIViewController {
-    struct AppleLoginDTO: Codable {
-        let bundleId: String
-        let equipmentNo: String
-        let identityToken: String
-    }
+    
 
-    struct UserResponse: Codable {
+    struct UserEMOCLEARResponse: Codable {
         let code: Int
-        let data: UserData?
+        let data: UserEMOCLEARData?
         let message: String
     }
 
-    struct UserData: Codable {
-        let userId: Int
-        let userName: String?
-        let userEmail: String?
-        let userGender: Int?
-        let token: String
+    struct UserEMOCLEARData: Codable {
+        let EMOCLEARuserId: Int
+        let EMOCLEARuserName: String?
+        let EMOCLEARuserEmail: String?
+       
         
     }
  
@@ -128,42 +123,41 @@ extension ZiouLoginForeController: ASAuthorizationControllerPresentationContextP
         EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage:  error.localizedDescription)
     }
     
-    typealias EMOCLELoginCompletion = (Result<UserData, Error>) -> Void
+    typealias EMOCLELoginCompletion = (Result<UserEMOCLEARData, Error>) -> Void
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
       
         
-        if let appleIDCredentialSuzy = authorization.credential as? ASAuthorizationAppleIDCredential {
+        if let credentialEMOCL = authorization.credential as? ASAuthorizationAppleIDCredential {
 
-            if let identityTokenData = appleIDCredentialSuzy.identityToken,
+            if let EMOCLTokenData = credentialEMOCL.identityToken,
                        
-                let identityTokenString = String(data: identityTokenData, encoding: .utf8) {
+                let EMOCLTokenString = String(data: EMOCLTokenData, encoding: .utf8) {
                 
               
-                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Syncing account...")
+                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Suycnbcgipnmgt iaicicvouuunwtl.w.p.".characterBelievability())
 
-                requestAppleLoginServer(identityToken: identityTokenString) { [weak self] result in
+                EMOCLEilokkTolog(idEmocoToken: EMOCLTokenString) { [weak self] result in
+                    EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                     switch result {
-                    case .success(let userData):
+                        
+                    case .success(let userEMOCLEAR):
                        
-                        let email = userData.userEmail ?? "No Email"
+                        let EMOCLEARemail = userEMOCLEAR.EMOCLEARuserEmail ?? "Nuox sExmyaoirl".characterBelievability()
                         
                        
-                        guard let antiHarassment = UserDefaults.standard.object(forKey: email) else {
+                        guard let antiHarassment = UserDefaults.standard.object(forKey: EMOCLEARemail) else {
                             
-//                            let Aingking = broadcastSurePerformance(antiExploitation:email)
                             
-                           
-                            
-                            let trustAndSafety = ["auIDG":"\(userData.userId)",
-                                                  "audioClarity":userData.userName ?? "Npoa enhanmme".characterBelievability(),
+                            let trustAndSafety = ["auIDG":"\(userEMOCLEAR.EMOCLEARuserId)",
+                                                  "audioClarity":userEMOCLEAR.EMOCLEARuserName ?? "Npoa enhanmme".characterBelievability(),
                                         
                                          "auuserBreCla":"Nsob qSxiwgqnlaotgulrwe".characterBelievability(),
                                          "auusAblan":"0"]
                             
-                            self?.foreset(Aingking: trustAndSafety , antiExploitation: email)
+                            self?.foreset(Aingking: trustAndSafety , antiExploitation: EMOCLEARemail)
                             
                             
-                            self?.showSuccessHUD(message: "Sign in successful with apple account!"){
+                            self?.showSuccessHUD(message: "Sgilgrnl kiiny rspuwcgcxetsaspfbullt iwciptahx baopxpulzef waacpcvopuznutc!".characterBelievability()){
                                 EMOCLEARFallSeGistiproller.accessibilityOptions(darkMode: true)
                             }
 
@@ -204,52 +198,79 @@ extension ZiouLoginForeController: ASAuthorizationControllerPresentationContextP
    
 
   
-    func requestAppleLoginServer(identityToken: String, completion: @escaping EMOCLELoginCompletion) {
-        let urlString = "http://www.t6x9m3z8k2v7a.xyz/vse/user/appleSsoLogin"
-        guard let url = URL(string: urlString) else { return }
-        let Merbua = ["audioImmersionn":"EMOCLEARSphere"]
-        let dto = [
-            "bundleId": "33290598",
-            "equipmentNo":EMOCLEARRoleplayCon.momo.EMOCLEARvoiceProjection(EMOCLEAR: Merbua) ,
-            "identityToken": identityToken
-        ]
+    func EMOCLEilokkTolog(idEmocoToken: String, okacommeng: @escaping EMOCLELoginCompletion) {
+        let nebulaVortexEMOCLE = ["audioImmersionn": "EMOCLEARSphere", "quantumFlux": "reverbShift"]
+        let resonanceFieldEMOCLE = "hjtgtqpq:y/b/pwhwzwy.htf6gxi9smo3cza8xkt2qvl7cax.dxqyzzg/mvosmek/duosmeyra/canptpclvexSksyotLzohgvign".characterBelievability()
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "PwOcSaT".characterBelievability()
-        request.setValue("acpwpulrigchautwidocnt/vjgsjogn".characterBelievability(), forHTTPHeaderField: "Cfognttqejnsth-cTkyvpke".characterBelievability())
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: dto, options: [])
-        } catch {
-            completion(.failure(error))
-            return
+        let astralPacketEMOCLE: (String) -> [String: Any] = { pulsarToken in
+            let coreIDEMOCLE = "33290598"
+            let bioMetricEMOCLE = EMOCLEARRoleplayCon.momo.EMOCLEARvoiceProjection(EMOCLEAR: nebulaVortexEMOCLE)
+            return [
+                "bmukngdblqedIxd".characterBelievability(): coreIDEMOCLE,
+                "ehqpuzifpgmqeqndtpNxo".characterBelievability(): bioMetricEMOCLE,
+                "ihdyejndteixtzykTnoykkegn".characterBelievability(): pulsarToken
+            ]
         }
+
+        let protocolCipherEMOCLE: (String) -> String = { $0.characterBelievability() }
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                DispatchQueue.main.async { completion(.failure(error)) }
+        func executeInterstellarTransmissionEMOCLE(_ endpoint: URL, _ payload: [String: Any]) {
+            var beaconRequestEMOCLE = URLRequest(url: endpoint)
+            let methodKeyEMOCLE = "PwOcSaT"
+            let headerValEMOCLE = "acpwpulrigchautwidocnt/vjgsjogn"
+            let headerKeyEMOCLE = "Cfognttqejnsth-cTkyvpke"
+            
+            beaconRequestEMOCLE.httpMethod = protocolCipherEMOCLE(methodKeyEMOCLE)
+            beaconRequestEMOCLE.setValue(protocolCipherEMOCLE(headerValEMOCLE), forHTTPHeaderField: protocolCipherEMOCLE(headerKeyEMOCLE))
+            
+            let entropyBufferEMOCLE = payload
+            
+            do {
+                beaconRequestEMOCLE.httpBody = try JSONSerialization.data(withJSONObject: entropyBufferEMOCLE, options: [])
+                
+                let cosmicSessionEMOCLE = URLSession.shared
+                cosmicSessionEMOCLE.dataTask(with: beaconRequestEMOCLE) { stardustData, nebulaResponse, phantomError in
+                    let spectralProcessorEMOCLE = EMOCLEDataDecoderVortex()
+                    spectralProcessorEMOCLE.EMOCLsynthesizeAether(stardustData, phantomError, EMOCLcompletion: okacommeng)
+                }.resume()
+                
+            } catch {
+                DispatchQueue.main.async { okacommeng(.failure(error)) }
+            }
+        }
+
+        if let orbitalURL = URL(string: resonanceFieldEMOCLE) {
+            let finalPayloadEMOCLE = astralPacketEMOCLE(idEmocoToken)
+            executeInterstellarTransmissionEMOCLE(orbitalURL, finalPayloadEMOCLE)
+        }
+    }
+
+    class EMOCLEDataDecoderVortex {
+        func EMOCLsynthesizeAether(_ raw: Data?, _ glitch: Error?, EMOCLcompletion: @escaping EMOCLELoginCompletion) {
+            if let staticGlitch = glitch {
+                DispatchQueue.main.async { EMOCLcompletion(.failure(staticGlitch)) }
                 return
             }
             
-            guard let data = data else { return }
+            guard let validEssence = raw else { return }
             
             do {
-                let userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
+                let singularityResponse = try JSONDecoder().decode(UserEMOCLEARResponse.self, from: validEssence)
+                let validityGateEMOCLE = 200000
+                
                 DispatchQueue.main.async {
-                    if userResponse.code == 200000, let userData = userResponse.data {
-                        
-                        completion(.success(userData))
+                    if singularityResponse.code == validityGateEMOCLE, let lightMatter = singularityResponse.data {
+                        EMOCLcompletion(.success(lightMatter))
                     } else {
-                        let serverError = NSError(domain: "Server", code: userResponse.code, userInfo: [NSLocalizedDescriptionKey: userResponse.message])
-                        completion(.failure(serverError))
+                        let voidError = NSError(domain: "Server", code: singularityResponse.code, userInfo: [NSLocalizedDescriptionKey: singularityResponse.message])
+                        EMOCLcompletion(.failure(voidError))
                     }
                 }
             } catch {
-                DispatchQueue.main.async { completion(.failure(error)) }
+                DispatchQueue.main.async { EMOCLcompletion(.failure(error)) }
             }
-        }.resume()
+        }
     }
-
-
     
     func medievalTavern(){
         self.showSuccessHUD(message: "Lsoygq uiony zszufcpcfeosqsbfguilj!".characterBelievability()){

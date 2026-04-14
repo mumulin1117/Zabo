@@ -23,7 +23,7 @@ final class EMOCLEARStageHUD {
     func EMOCLEARraiseCurtain(EMOCLEARmessage: String? = nil) {
         guard let EMOCLEARkeyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
         
-        // 创建舞台容器
+       
         let EMOCLEARcontainer = UIView(frame: EMOCLEARkeyWindow.bounds)
         EMOCLEARcontainer.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         
@@ -49,8 +49,7 @@ final class EMOCLEARStageHUD {
         EMOCLEARspotlight.addSubview(EMOCLEARlabel)
         EMOCLEARcontainer.addSubview(EMOCLEARspotlight)
         EMOCLEARkeyWindow.addSubview(EMOCLEARcontainer)
-        
-        // 自动布局
+       
         EMOCLEARspotlight.translatesAutoresizingMaskIntoConstraints = false
         EMOCLEARindicator.translatesAutoresizingMaskIntoConstraints = false
         EMOCLEARlabel.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +73,7 @@ final class EMOCLEARStageHUD {
         self.EMOCLEARspotlightView = EMOCLEARspotlight
     }
     
-    // MARK: - 降下舞台（替代 StageHUD.shared.lowerCurtain()）
+   
     func EMOCLEARlowerCurtain() {
         DispatchQueue.main.async {
             self.EMOCLEARspinner?.stopAnimating()

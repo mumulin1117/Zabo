@@ -1,6 +1,6 @@
 import UIKit
 import AVFoundation
-import Vision // 必须导入
+import Vision 
 
 class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -11,8 +11,7 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
     private let scanningLineEMOCLE = UIView()
     private let alertToastEMOCLE = UILabel()
     private let shutterEMOCLE = UIButton()
-    
-    // 新增：实时追踪是否检测到人脸
+ 
     private var isFaceDetectedEMOCLE = false
     
     override func viewDidLoad() {
@@ -106,7 +105,6 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
     func takePhoto() {
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         
-        // 停止采集，模拟“咔嚓”定格
         captureSessionEMOCLE?.stopRunning()
         
         let processingIndicatorEMOCLE = UIActivityIndicatorView(style: .large)
@@ -115,7 +113,6 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
         view.addSubview(processingIndicatorEMOCLE)
         processingIndicatorEMOCLE.startAnimating()
         
-        // 模拟真实的人脸比对后台耗时
         EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Vmexreicfyviinng fvaucmel sfcraunm...".characterBelievability())
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -125,7 +122,7 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
         }
     }
 
-    // MARK: - UI 保持不变
+ 
     private func setupOverlayUIEMOCLE() {
         let overlayPathEMOCLE = UIBezierPath(rect: view.bounds)
         let faceRectEMOCLE = CGRect(x: view.center.x - 110, y: view.center.y - 180, width: 220, height: 300)
