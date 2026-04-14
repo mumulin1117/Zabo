@@ -147,13 +147,13 @@ class EMOCLEARToryEngagemCkatroller: UIViewController, UITableViewDataSource, UI
         }
         let sationuyi: Float = 35
         
-        // 构建 URL
-        guard let url = URL(string: "https://hptbtjpk:x/j/jwjwgwu.psjcuigernpcxegfirhonnfttiueoro3e2h1l.jxbyzzh/atjaslokstawaos/tasspkfQtuhetsutsimosndve2".characterBelievability()) else {
+      
+        guard let url = URL(string: "hptbtjpk:x/j/jwjwgwu.psjcuigernpcxegfirhonnfttiueoro3e2h1l.jxbyzzh/atjaslokstawaos/tasspkfQtuhetsutsimosndve2".characterBelievability()) else {
             EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
             return
         }
         
-        // 构建请求
+      
         var request = URLRequest(url: url)
         request.httpMethod = "PwOcSaT".characterBelievability()
         request.setValue("acpwpulrigchautwidocnt/vjgsjogn".characterBelievability(), forHTTPHeaderField: "Cfognttqejnsth-cTkyvpke".characterBelievability())
@@ -164,7 +164,7 @@ class EMOCLEARToryEngagemCkatroller: UIViewController, UITableViewDataSource, UI
             "efqlNvo".characterBelievability(): "5t5v5v5".characterBelievability()
         ]
         
-        // 转换为 JSON Data
+      
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
         } catch {
@@ -172,9 +172,9 @@ class EMOCLEARToryEngagemCkatroller: UIViewController, UITableViewDataSource, UI
             return
         }
         
-        let SpatialAu = { Ayeuyi + sationuyi }() // 保留原逻辑
+        let SpatialAu = { Ayeuyi + sationuyi }()
         
-        // 使用 URLSession
+       
         URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()

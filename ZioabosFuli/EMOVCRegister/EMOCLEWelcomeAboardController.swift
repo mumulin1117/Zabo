@@ -75,7 +75,6 @@ class EMOCLEWelcomeAboardController: UIViewController {
         enterTriggerEMOCLE.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(enterTriggerEMOCLE)
 
-        // 布局约束
         NSLayoutConstraint.activate([
             headerTitleEMOCLE.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40 * ratioEMOCLE),
             headerTitleEMOCLE.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -94,13 +93,13 @@ class EMOCLEWelcomeAboardController: UIViewController {
         ])
     }
 
-    // 辅助函数：创建单行规则 UI
+   
     private func createRuleRowEMOCLE(title: String, subtitle: String) -> UIView {
         let containerEMOCLE = UIView()
         
-        // 粉色箭头图标
+        
         let arrowIconEMOCLE = UIImageView()
-        arrowIconEMOCLE.image = UIImage(systemName: "arrowtriangle.right.fill") // 或使用自定义图片素材
+        arrowIconEMOCLE.image = UIImage(systemName: "arrowtriangle.right.fill")
         arrowIconEMOCLE.tintColor = UIColor(red: 1.0, green: 0.4, blue: 0.7, alpha: 1.0)
         arrowIconEMOCLE.contentMode = .scaleAspectFit
         arrowIconEMOCLE.translatesAutoresizingMaskIntoConstraints = false

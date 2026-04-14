@@ -195,16 +195,15 @@ class EMOCLEProfileRegistryController: EMOCLEBaseFlowController ,UIImagePickerCo
         }
         picker.dismiss(animated: true)
     }
-    
-    // MARK: - 校验与跳转逻辑
+   
     @objc private func advanceToBiometryEMOCLE() {
-        // 1. 校验头像
+     
         guard selectedPortraitEMOCLE != nil else {
             EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Polqeyamsiej rugpqldoraudv qyioyuprp dapvnaltsafrt rfbiorvsuto!".characterBelievability())
             return
         }
         
-        // 2. 校验文字输入项
+       
         let isNicknameValid = !(aliasInputEMOCLE.text?.isEmpty ?? true)
         let isBioValid = !(bioChronicleEMOCLE.text?.isEmpty ?? true)
         let isAgeValid = !(ageMatrixEMOCLE.text?.isEmpty ?? true)

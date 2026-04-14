@@ -1,9 +1,9 @@
 import UIKit
 import AVFoundation
+import Vision // 必须导入
 
-class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController {
+class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
-  
     private var captureSessionEMOCLE: AVCaptureSession?
     private let previewLayerEMOCLE = AVCaptureVideoPreviewLayer()
     
@@ -12,6 +12,9 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController {
     private let alertToastEMOCLE = UILabel()
     private let shutterEMOCLE = UIButton()
     
+    // 新增：实时追踪是否检测到人脸
+    private var isFaceDetectedEMOCLE = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         regdsiterTitle.text = "Vdexryibfmyn xYqoougrb tIwdkevnyttiptsy".characterBelievability()
@@ -19,31 +22,22 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController {
         setupOverlayUIEMOCLE()
     }
 
-   
     private func setupCameraPreviewEMOCLE() {
-       
         let statusEMOCLE = AVCaptureDevice.authorizationStatus(for: .video)
-        
         switch statusEMOCLE {
         case .notDetermined:
-          
             AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
                 if granted {
-                    DispatchQueue.main.async {
-                        self?.initiateCaptureSessionEMOCLE()
-                    }
+                    DispatchQueue.main.async { self?.initiateCaptureSessionEMOCLE() }
                 } else {
                     self?.handleCameraDeniedEMOCLE()
                 }
             }
         case .authorized:
-           
             initiateCaptureSessionEMOCLE()
         case .denied, .restricted:
-         
             handleCameraDeniedEMOCLE()
-        @unknown default:
-            break
+        @unknown default: break
         }
     }
 
@@ -52,56 +46,87 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController {
         guard let session = captureSessionEMOCLE else { return }
         
         guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
-              let input = try? AVCaptureDeviceInput(device: frontCamera) else {
-            return
-        }
+              let input = try? AVCaptureDeviceInput(device: frontCamera) else { return }
         
-        if session.canAddInput(input) {
-            session.addInput(input)
+        if session.canAddInput(input) { session.addInput(input) }
+        
+        // --- 新增：添加视频数据输出用于人脸识别 ---
+        let videoOutput = AVCaptureVideoDataOutput()
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueueEMOCLE"))
+        if session.canAddOutput(videoOutput) {
+            session.addOutput(videoOutput)
         }
+        // ------------------------------------
         
         previewLayerEMOCLE.session = session
         previewLayerEMOCLE.videoGravity = .resizeAspectFill
         previewLayerEMOCLE.frame = view.bounds
         view.layer.insertSublayer(previewLayerEMOCLE, at: 0)
         
-        
         DispatchQueue.global(qos: .userInitiated).async {
             session.startRunning()
         }
     }
 
-    private func handleCameraDeniedEMOCLE() {
-        DispatchQueue.main.async {
-           
-            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Pulneyalsiew rexnraubjlgef gcjacmiemriab upveqrfmeipsesiiaodnjsk eijne ySmegtwtfivnaggsz.".characterBelievability())
+    // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
+    // 这个方法会实时跑，频率很高，用于真实检测
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        
+        let request = VNDetectFaceRectanglesRequest { [weak self] request, error in
+            guard let results = request.results as? [VNFaceObservation] else { return }
+            
+            DispatchQueue.main.async {
+                // 如果检测到的 FaceObservation 数量 > 0，则认为有人脸
+                self?.isFaceDetectedEMOCLE = !results.isEmpty
+                
+                // 动态更新提示语颜色，增强交互感
+                if self?.isFaceDetectedEMOCLE == true {
+                    self?.alertToastEMOCLE.textColor = .green
+                } else {
+                    self?.alertToastEMOCLE.textColor = UIColor(red: 1, green: 0.34, blue: 0.61, alpha: 1)
+                }
+            }
+        }
+        
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .leftMirrored, options: [:])
+        try? handler.perform([request])
+    }
+
+    @objc private func simulateCaptureSequenceEMOCLE() {
+        // 增加真实逻辑：如果没有检测到人脸，不响应拍照
+        guard isFaceDetectedEMOCLE else {
+            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Nfoi fwaqcmel dpextlebcstlevdp".characterBelievability())
+            return
+        }
+        
+        takePhoto()
+    }
+    
+    func takePhoto() {
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        
+        // 停止采集，模拟“咔嚓”定格
+        captureSessionEMOCLE?.stopRunning()
+        
+        let processingIndicatorEMOCLE = UIActivityIndicatorView(style: .large)
+        processingIndicatorEMOCLE.color = .white
+        processingIndicatorEMOCLE.center = view.center
+        view.addSubview(processingIndicatorEMOCLE)
+        processingIndicatorEMOCLE.startAnimating()
+        
+        // 模拟真实的人脸比对后台耗时
+        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Vmexreicfyviinng fvaucmel sfcraunm...".characterBelievability())
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            processingIndicatorEMOCLE.stopAnimating()
+            let welcomeAboardEMOCLE = EMOCLEWelcomeAboardController()
+            self.navigationController?.pushViewController(welcomeAboardEMOCLE, animated: true)
         }
     }
-//    private func setupCameraPreviewEMOCLE() {
-//        captureSessionEMOCLE = AVCaptureSession()
-//        guard let session = captureSessionEMOCLE else { return }
-//        
-//        guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
-//              let input = try? AVCaptureDeviceInput(device: frontCamera) else {
-//            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Camera access denied")
-//            return
-//        }
-//        
-//        if session.canAddInput(input) { session.addInput(input) }
-//        
-//        previewLayerEMOCLE.session = session
-//        previewLayerEMOCLE.videoGravity = .resizeAspectFill
-//        previewLayerEMOCLE.frame = view.bounds
-//        view.layer.insertSublayer(previewLayerEMOCLE, at: 0)
-//        
-//        // 在后台启动相机
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            session.startRunning()
-//        }
-//    }
 
+    // MARK: - UI 保持不变
     private func setupOverlayUIEMOCLE() {
-        // 中间的人脸镂空路径
         let overlayPathEMOCLE = UIBezierPath(rect: view.bounds)
         let faceRectEMOCLE = CGRect(x: view.center.x - 110, y: view.center.y - 180, width: 220, height: 300)
         let facePathEMOCLE = UIBezierPath(ovalIn: faceRectEMOCLE)
@@ -122,22 +147,16 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController {
         alertToastEMOCLE.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(alertToastEMOCLE)
 
-      
-        shutterEMOCLE.setBackgroundImage(UIImage.init(named: "innerDotEMOCLE"), for: .normal)
-        shutterEMOCLE.isUserInteractionEnabled = true
+        shutterEMOCLE.setBackgroundImage(UIImage(named: "innerDotEMOCLE"), for: .normal)
         shutterEMOCLE.addTarget(self, action: #selector(simulateCaptureSequenceEMOCLE), for: .touchUpInside)
         shutterEMOCLE.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(shutterEMOCLE)
-        
-      
 
         NSLayoutConstraint.activate([
             shutterEMOCLE.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             shutterEMOCLE.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             shutterEMOCLE.widthAnchor.constraint(equalToConstant: 80),
             shutterEMOCLE.heightAnchor.constraint(equalToConstant: 80),
-            
-           
             alertToastEMOCLE.bottomAnchor.constraint(equalTo: shutterEMOCLE.topAnchor, constant: -30),
             alertToastEMOCLE.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             alertToastEMOCLE.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
@@ -158,56 +177,10 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController {
             self.scanningLineEMOCLE.frame.origin.y = rect.origin.y + rect.height
         }, completion: nil)
     }
-
-
-    @objc private func simulateCaptureSequenceEMOCLE() {
-       
-        let statusEMOCLE = AVCaptureDevice.authorizationStatus(for: .video)
-        
-        switch statusEMOCLE {
-        case .notDetermined:
-          
-            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-                if granted {
-                    DispatchQueue.main.async {
-                        self?.takePhoto()
-                    }
-                } else {
-                    self?.handleCameraDeniedEMOCLE()
-                }
-            }
-        case .authorized:
-            takePhoto()
-        case .denied, .restricted:
-         
-            handleCameraDeniedEMOCLE()
-        @unknown default:
-            break
-        }
-        
-       
-    }
     
-    func takePhoto(){
-        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-        
-      
-        captureSessionEMOCLE?.stopRunning()
-        
-      
-        let processingIndicatorEMOCLE = UIActivityIndicatorView(style: .large)
-        processingIndicatorEMOCLE.color = .white
-        processingIndicatorEMOCLE.center = view.center
-        view.addSubview(processingIndicatorEMOCLE)
-        processingIndicatorEMOCLE.startAnimating()
-        
-        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Cgoimgpiaurgiinngy iIgdrelnxtriatmyy.i.x.".characterBelievability())
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            processingIndicatorEMOCLE.stopAnimating()
-            
-            let welcomeAboardEMOCLE = EMOCLEWelcomeAboardController()
-            self.navigationController?.pushViewController(welcomeAboardEMOCLE, animated: true)
+    private func handleCameraDeniedEMOCLE() {
+        DispatchQueue.main.async {
+            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Pulneyalsiew rexnraubjlgef gcjacmiemriab upveqrfmeipsesiiaodnjsk eijne ySmegtwtfivnaggsz.".characterBelievability())
         }
     }
 }
