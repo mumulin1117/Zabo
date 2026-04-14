@@ -95,7 +95,7 @@ class EMOCLEProfileRegistryController: EMOCLEBaseFlowController ,UIImagePickerCo
         NotificationCenter.default.addObserver(self, selector: #selector(castPerforman(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Input Fields (Example for Nickname)
-        configureFieldEMOCLE(aliasInputEMOCLE, hint: "Esnstuexry gyioqugrc knuarmve".characterBelievability(), label: "Nickname".characterBelievability())
+        configureFieldEMOCLE(aliasInputEMOCLE, hint: "Esnstuexry gyioqugrc knuarmve".characterBelievability(), label: "Nnircaklnaanmpe".characterBelievability())
         configureFieldEMOCLE(bioChronicleEMOCLE, hint: "Ssakyq xsnofmfectqhaivnxg".characterBelievability(), label: "Cyhcavrcatcrtweurd tBuino".characterBelievability())
         configureFieldEMOCLE(ageMatrixEMOCLE, hint: "Ahgee".characterBelievability(), label: "Hxoywv fonljdr naarweq qyvoxux?".characterBelievability())
         

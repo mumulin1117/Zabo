@@ -149,7 +149,7 @@ class EMOCLEARVoiceHuabontroller: UIViewController {
         voiceModulation.placeholder = "Eenjtpetry uypokubrn ueymuayijl".characterBelievability()
         EMOCLEARpas.text = "Pfaoslsdwdoyrxd".characterBelievability()
         EMOCLEARaudioEffects.placeholder = "Etnmtsewro cpjaasysjwjolrxd".characterBelievability()
-        EMOCLEARtitple.text = "Iufp qtehxeu q wayccctoquinsth j ddwowetsc gnwootb zegxeihsitr,c qiltt nwxislxlm bbveu paeuztqolmhavtaiqccaflmleyx n ucxrgebaktbeldb oftomrk lybogu".characterBelievability()
+        EMOCLEARtitple.text = "If the account does not exist, we will initiate the account registration process for you"
         
         
         EMOCLEARvoiceActing.setTitle("Lwotgw rijn".characterBelievability(), for: .normal)
