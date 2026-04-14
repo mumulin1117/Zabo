@@ -17,14 +17,15 @@ class EMOCLEBaseFlowController: UIViewController {
         signin.frame.size = CGSize(width: 200, height: 30)
         return signin
     }()
+    let bgalayer  = UIImageView(image: UIImage.init(named: "EMOCLEARfantasyCharacter"))
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let layer  = UIImageView(image: UIImage.init(named: "EMOCLEARfantasyCharacter"))
-        view.addSubview(layer)
-        layer.contentMode = .scaleAspectFill
-        layer.frame = UIScreen.main.bounds
-        self.view.addSubview(layer)
+        
+        
+        bgalayer.contentMode = .scaleAspectFill
+        bgalayer.frame = UIScreen.main.bounds
+        view.addSubview(bgalayer)
        
         self.navigationController?.navigationBar.isHidden = true
        

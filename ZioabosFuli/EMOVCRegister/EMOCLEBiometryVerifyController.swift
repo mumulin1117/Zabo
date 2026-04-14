@@ -16,11 +16,16 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bgalayer.isHidden = true
         regdsiterTitle.text = "Vdexryibfmyn xYqoougrb tIwdkevnyttiptsy".characterBelievability()
         setupCameraPreviewEMOCLE()
         setupOverlayUIEMOCLE()
     }
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+       
+        previewLayerEMOCLE.frame = view.bounds
+    }
     private func setupCameraPreviewEMOCLE() {
         let statusEMOCLE = AVCaptureDevice.authorizationStatus(for: .video)
         switch statusEMOCLE {
@@ -43,13 +48,14 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
     private func initiateCaptureSessionEMOCLE() {
         captureSessionEMOCLE = AVCaptureSession()
         guard let session = captureSessionEMOCLE else { return }
+        view.backgroundColor = .black
+        
         
         guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
               let input = try? AVCaptureDeviceInput(device: frontCamera) else { return }
         
         if session.canAddInput(input) { session.addInput(input) }
-        
-        // --- 新增：添加视频数据输出用于人脸识别 ---
+   
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueueEMOCLE"))
         if session.canAddOutput(videoOutput) {
@@ -67,8 +73,7 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
         }
     }
 
-    // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
-    // 这个方法会实时跑，频率很高，用于真实检测
+
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
@@ -76,10 +81,9 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
             guard let results = request.results as? [VNFaceObservation] else { return }
             
             DispatchQueue.main.async {
-                // 如果检测到的 FaceObservation 数量 > 0，则认为有人脸
+               
                 self?.isFaceDetectedEMOCLE = !results.isEmpty
                 
-                // 动态更新提示语颜色，增强交互感
                 if self?.isFaceDetectedEMOCLE == true {
                     self?.alertToastEMOCLE.textColor = .green
                 } else {
@@ -93,7 +97,7 @@ class EMOCLEBiometryVerifyController: EMOCLEBaseFlowController, AVCaptureVideoDa
     }
 
     @objc private func simulateCaptureSequenceEMOCLE() {
-        // 增加真实逻辑：如果没有检测到人脸，不响应拍照
+        
         guard isFaceDetectedEMOCLE else {
             EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARwhisper(EMOCLEARmessage: "Nfoi fwaqcmel dpextlebcstlevdp".characterBelievability())
             return
