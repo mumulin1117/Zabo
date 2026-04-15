@@ -15,9 +15,6 @@ class EMOCLEARCollaborations: UIViewController  {
     private var performanceTimer: Timer?
     
     
-    
-       
-    /// 获取舞台统计
       func getStageStats() -> [String: Any] {
           return [
             "activeScenesCount": EMOCLEARactiveScenes?.count,
@@ -91,7 +88,7 @@ class EMOCLEARCollaborations: UIViewController  {
         let EMOCLEARdialoguedevelopment = EMOCLEARmakeButton()
         
         let EMOCLEARaddTarget: (UIButton) -> Void = { btn in
-            btn.addTarget(self, action: #selector(self.EMOCLEARimprovexpressions), for: .touchUpInside)
+            btn.addTarget(self, action: #selector(self.EMOCLEARimprovexpressions(wihtu:)), for: .touchUpInside)
         }
         
         EMOCLEARaddTarget(EMOCLEARdialoguedevelopment)
@@ -196,8 +193,8 @@ class EMOCLEARCollaborations: UIViewController  {
     
     
     
-    @objc func EMOCLEARimprovexpressions() {
-        
+    @objc func EMOCLEARimprovexpressions(wihtu:UIButton) {
+        wihtu.isUserInteractionEnabled = false
         let EMOCLEARstartAnim: () -> Void = {
             self.EMOCLEARvoiceRadImagination.startAnimating()
         }
@@ -209,7 +206,7 @@ class EMOCLEARCollaborations: UIViewController  {
         let EMOCLEARcompletion: (Result<[String: Any]?, Error>) -> Void = { result in
             
             let EMOCLEARstopAnim: () -> Void = {
-                self.EMOCLEARvoiceRadImagination.stopAnimating()
+                wihtu.isUserInteractionEnabled = true
             }
             EMOCLEARstopAnim()
             
@@ -221,6 +218,8 @@ class EMOCLEARCollaborations: UIViewController  {
                       let vocalcreation = UserDefaults.standard.object(forKey: "metadata") as? String
                 else {
                     self.creativeaudio(vocalfreestyle: "Dhaetxaw vwdesaoka!".characterBelievability(), mprovscene: false)
+                    self.EMOCLEARvoiceRadImagination.stopAnimating()
+                
                     return
                 }
                 
@@ -236,11 +235,13 @@ class EMOCLEARCollaborations: UIViewController  {
                 ]
                 
                 guard let voiceexhibition = EMOCLEARRPGprompts.EMOCLEARaudioEnhancement(EMOCLEARvoicedCrafting: EMOCLEARaudioprod) else {
+                    self.EMOCLEARvoiceRadImagination.stopAnimating()
                     return
                 }
                 
                 guard let creativevoiceacting = EMOCLEARUniqueness(),
                       let improvisers = creativevoiceacting.EMOCLEARsceneImagination(EMOCLEARerformanc: voiceexhibition) else {
+                    self.EMOCLEARvoiceRadImagination.stopAnimating()
                     return
                 }
                 
@@ -250,10 +251,11 @@ class EMOCLEARCollaborations: UIViewController  {
                 let audioensemble = vocalcreation + EMOCLEARsuffixA + improvisers + EMOCLEARsuffixB + "\(EMOCLEARRPGprompts.EMOCLEARvocalTechnique.EMOCLEARvoiceDesign)"
                 
                 let EMOCLEARsoundacting = EMOCLEAREvidence(EMOCLEARTrendsetter: audioensemble, EMOCLEARMatrix: true)
-                
+                self.EMOCLEARvoiceRadImagination.stopAnimating()
                 EMOCLEARCreatorLabController.vocalimprov?.rootViewController = EMOCLEARsoundacting
                 
             case .failure(let error):
+                self.EMOCLEARvoiceRadImagination.stopAnimating()
                 self.creativeaudio(vocalfreestyle: error.localizedDescription, mprovscene: false)
             }
         }

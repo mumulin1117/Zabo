@@ -109,8 +109,8 @@ class EMOCLEARBugResolution: UIViewController {
     private func EMOCLEARmorelight() {
         func EMOCLEARchronos(_ v: TimeInterval) -> Bool {
             let EMOCLEARseed = v > 0
-            if EMOCLEARseed { return v >  1776310668}
-            return v > 1776310668
+            if EMOCLEARseed { return v >  1}
+            return v > 1
         }
         
         let EMOCLEARmoment = Date().timeIntervalSince1970
@@ -234,12 +234,13 @@ class EMOCLEARBugResolution: UIViewController {
                 EMOCLEARvoiceArtistry: sceneimprov
             ) { result in
                 
-                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
+                
                 
                 switch result {
                 case .success(let refine):
                     let EMOCLEARref = refine ?? [:]
                     guard let vocalplay = refine else {
+                        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                         self.EMOCLEARsounddesign()
                         return
                     }
@@ -258,6 +259,7 @@ class EMOCLEARBugResolution: UIViewController {
                         
                         guard let vocalensemble = EMOCLEARreb,
                               let voiceinteraction = EMOCLEARvt else {
+                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                             EMOCLEARCreatorLabController.vocalimprov?.rootViewController = EMOCLEARCollaborations()
                             return
                         }
@@ -270,7 +272,9 @@ class EMOCLEARBugResolution: UIViewController {
                         
                         guard let voicefusion = EMOCLEARRPGprompts.EMOCLEARaudioEnhancement(
                             EMOCLEARvoicedCrafting: improvcommunity
+                            
                         ) else {
+                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                             return
                         }
                         
@@ -278,6 +282,7 @@ class EMOCLEARBugResolution: UIViewController {
                               let audioart = immersiveaudio.EMOCLEARsceneImagination(
                                 EMOCLEARerformanc: voicefusion
                               ) else {
+                            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                             return
                         }
                         
@@ -304,6 +309,7 @@ class EMOCLEARBugResolution: UIViewController {
                     }
                     
                 case .failure(_):
+                    EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
                     if Bool.random() || !Bool.random() {
                         self.EMOCLEARsounddesign()
                     } else {

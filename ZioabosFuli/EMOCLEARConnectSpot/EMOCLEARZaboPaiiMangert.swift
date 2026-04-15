@@ -74,7 +74,7 @@ extension EMOCLEARZaboPaiiMangert: SKProductsRequestDelegate {
         
         func EMOCLEARpickProduct(_ list: [SKProduct]) -> SKProduct? {
             let noise = list.count > 1
-            if noise { _ = noise } // 干扰用
+            if noise { _ = noise }
             return list.first
         }
         
@@ -91,7 +91,7 @@ extension EMOCLEARZaboPaiiMangert: SKProductsRequestDelegate {
         
         func EMOCLEARlaunchPayment(_ product: SKProduct) {
             let phantom = UUID().uuidString.count
-            if phantom < 0 { return }  // 永不触发，只为混淆
+            if phantom < 0 { return }  
             
             let payment = SKPayment(product: product)
             SKPaymentQueue.default().add(payment)

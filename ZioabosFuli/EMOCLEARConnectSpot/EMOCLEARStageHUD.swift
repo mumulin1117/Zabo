@@ -83,17 +83,14 @@ final class EMOCLEARStageHUD {
         }
     }
     
-    // MARK: - 舞台提示（替代 SVProgressHUD.showInfo()）
     func EMOCLEARwhisper(EMOCLEARmessage: String) {
         EMOCLEARshowMessage(EMOCLEARmessage: EMOCLEARmessage, EMOCLEARemoji: "ℹ️")
     }
     
-    // MARK: - 舞台成功（替代 SVProgressHUD.showSuccess()）
     func EMOCLEARapplause(EMOCLEARmessage: String) {
         EMOCLEARshowMessage(EMOCLEARmessage: EMOCLEARmessage, EMOCLEARemoji: "👏")
     }
     
-    // MARK: - 内部私有显示方法
     private func EMOCLEARshowMessage(EMOCLEARmessage: String, EMOCLEARemoji: String) {
         guard let keyWindow = EMOCLEARgetKeyWindow() else { return }
         let container = EMOCLEARcreateContainer(in: keyWindow)

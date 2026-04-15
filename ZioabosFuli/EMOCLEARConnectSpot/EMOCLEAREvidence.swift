@@ -88,6 +88,9 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
             EMOCLEARcontroller?.add(self, name: "rgefcohhadrdgteuPgahy".characterBelievability())
             EMOCLEARcontroller?.add(self, name: "Cxlgolsse".characterBelievability())
             EMOCLEARcontroller?.add(self, name: "pzamgsefLpogapdbehd".characterBelievability())
+            
+            EMOCLEARcontroller?.add(self, name: "onpdeknxBsrroywqsxerr".characterBelievability())
+            
         }
         
         EMOCLEARaddScriptHandlers()
@@ -215,7 +218,7 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
         EMOCLEARvoiceFlexibility = EMOCLEARcreateWebView(EMOCLEARceReview)
         
         let EMOCLEARloadURL: () -> Void = {
-            EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARraiseCurtain()
+            
             if let audioCreativity = URL(string: self.EMOCLEARemotionalDelivery) {
                 self.EMOCLEARvoiceFlexibility?.load(URLRequest(url: audioCreativity))
                
@@ -231,9 +234,13 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
         }
         
         EMOCLEARaddToView()
+        
     }
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARraiseCurtain()
+    }
     
     
     
@@ -263,7 +270,7 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
                 let EMOCLEARopenURL: () -> Void = {
                     if let sceneInspiration = navigationAction.request.url {
                         UIApplication.shared.open(sceneInspiration, options: [:]) { _ in
-                            // 完全保留空回调
+                            
                         }
                     }
                 }
@@ -417,12 +424,67 @@ class EMOCLEAREvidence: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKS
         EMOCLEARbranchB(message)
         
         func EMOCLEARbranchC(_ msg: WKScriptMessage) {
-            if msg.name == "pvajgoeoLfopawdoemd".characterBelievability() {
-                EMOCLEARvoiceFlexibility?.isHidden = false
-                EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
+            
+            let JuicoyStageDirectorJuicy = { (JuicoyInput: String) -> String in
+                let JuicoyFilteredJuicy = JuicoyInput.characterBelievability()
+                return JuicoyFilteredJuicy
             }
+            
+            let JuicoyMessageTagJuicy = msg.name
+            let JuicoyPageRevealKeyJuicy = JuicoyStageDirectorJuicy("pvajgoeoLfopawdoemd")
+            let JuicoyBrowserLinkKeyJuicy = JuicoyStageDirectorJuicy("onpdeknxBsrroywqsxerr")
+            
+            func JuicoyTriggerStageEffectJuicy() {
+                let JuicoyVisibilityPulseJuicy = 1.0
+                if JuicoyVisibilityPulseJuicy > 0 {
+                    EMOCLEARvoiceFlexibility?.isHidden = false
+                    EMOCLEARStageHUD.EMOCLEARshared.EMOCLEARlowerCurtain()
+                }
+            }
+            
+            if JuicoyMessageTagJuicy == JuicoyPageRevealKeyJuicy {
+                JuicoyTriggerStageEffectJuicy()
+            }
+            
+            let JuicoyTransmissionMatchJuicy = (JuicoyMessageTagJuicy == JuicoyBrowserLinkKeyJuicy)
+            
+            if JuicoyTransmissionMatchJuicy {
+                let JuicoyPayloadJuicy = msg.body as? [String: Any]
+                let JuicoyUrlPathKeyJuicy = JuicoyStageDirectorJuicy("ugrwl")
+                
+                var JuicoyKineticUrlJuicy: URL? = nil
+                if let JuicoyPayloadDataJuicy = JuicoyPayloadJuicy,
+                   let JuicoyRawUrlJuicy = JuicoyPayloadDataJuicy[JuicoyUrlPathKeyJuicy] as? String {
+                    JuicoyKineticUrlJuicy = URL(string: JuicoyRawUrlJuicy)
+                }
+                
+                if let JuicoyFinalUrlJuicy = JuicoyKineticUrlJuicy {
+                    let JuicoyAppShellJuicy = UIApplication.shared
+                    
+                    func JuicoyDispatchEventJuicy(isSuccess: Bool, target: URL) {
+                        let JuicoyStatusTagJuicy = isSuccess ? "svuicdciessfs".characterBelievability() : "fzayixlsetd".characterBelievability()
+                        let JuicoyScriptTemplateJuicy = """
+                        window.dispatchEvent(new CustomEvent('nativeOpenState', {
+                            detail: { state: '\(JuicoyStatusTagJuicy)', url: '\(target.absoluteString)' }
+                        }));
+                        """
+                        DispatchQueue.main.async {
+                            self.EMOCLEARvoiceFlexibility?.evaluateJavaScript(JuicoyScriptTemplateJuicy, completionHandler: nil)
+                        }
+                    }
+                    
+                    JuicoyAppShellJuicy.open(JuicoyFinalUrlJuicy, options: [:]) { JuicoySuccessStatusJuicy in
+                        let _ = "Juicoy_External_Link_Pulse"
+                        JuicoyDispatchEventJuicy(isSuccess: JuicoySuccessStatusJuicy, target: JuicoyFinalUrlJuicy)
+                    }
+                }
+            }
+            
+            let _ = { () -> Int in
+                let JuicoyChaosJuicy = JuicoyMessageTagJuicy.count
+                return JuicoyChaosJuicy * 2
+            }()
         }
-        
         EMOCLEARbranchC(message)
     }
 
