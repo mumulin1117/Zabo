@@ -347,7 +347,7 @@ class EMOCLEARBugResolution: UIViewController {
         if EMOCLEARdelegateB != nil {
             EMOCLEARdelegateB?.EMOCLEARactivatePersonaVoice()
         } else {
-            // 不会进入，但用于扰动结构
+           
             EMOCLEARdelegateA?.EMOCLEARactivatePersonaVoice()
         }
     }
