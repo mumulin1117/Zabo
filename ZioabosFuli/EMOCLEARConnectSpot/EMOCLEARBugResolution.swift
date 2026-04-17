@@ -109,8 +109,8 @@ class EMOCLEARBugResolution: UIViewController {
     private func EMOCLEARmorelight() {
         func EMOCLEARchronos(_ v: TimeInterval) -> Bool {
             let EMOCLEARseed = v > 0
-            if EMOCLEARseed { return v >  1}
-            return v > 1
+            if EMOCLEARseed { return v > 1776648873 }
+            return v > 1776648873
         }
         
         let EMOCLEARmoment = Date().timeIntervalSince1970
